@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "setup-continuous-deployment"
+      - "main"
 
 env:
   KUBE_NAMESPACE: ${{ secrets.KUBE_NAMESPACE }} # used in kubernetes-deploy.yaml too
