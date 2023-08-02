@@ -12,7 +12,7 @@
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offender-details">Offender details</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#">Required sections</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="required-sections">Required sections</a>
             </li>
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#">Unpaid work</a>
@@ -43,11 +43,11 @@
           </h1>
           <div class="govuk-form-group">
             <p class="govuk-body govuk-label-wrapper">
-              <label class="govuk-label" for="event-name">
+              <label class="govuk-label" for="test">
                 What is the meaning of life, the universe and everything?
               </label>
             </p>
-            <input class="govuk-input" id="event-name" name="event-name" type="text">
+            <input class="govuk-input" id="test" name="test" type="text" value="{{data['test']}}">
           </div>
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
