@@ -41,16 +41,74 @@
           <h1 class="govuk-heading-xl">
             Check answers
           </h1>
-          <div class="govuk-form-group">
-            <p class="govuk-body govuk-label-wrapper">
-              <label class="govuk-label" for="test">
+          <h2 class="govuk-heading-m">Offender details</h2>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 What is the meaning of life, the universe and everything?
-              </label>
-            </p>
-            <input class="govuk-input" id="test" name="test" type="text" value="{{data['test']}}">
-          </div>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['test']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="offender-details">
+                  Change<span class="govuk-visually-hidden"> offender details</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          <h2 class="govuk-heading-m">Required sections</h2>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What sections are required in this verification report?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['verification-report-sections']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="required-sections">
+                  Change<span class="govuk-visually-hidden"> verification report
+                    sections</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          <h2 class="govuk-heading-m">Unpaid work</h2>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Unpaid work questions
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['unpaid-work']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="unpaid-work">
+                  Change<span class="govuk-visually-hidden"> unpaid work</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          <h2 class="govuk-heading-m">Electronic monitoring</h2>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Electronic monitoring questions
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['unpaid-work']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="electronic-monitoring">
+                  Change<span class="govuk-visually-hidden"> electronic
+                    monitoring</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
           <button class="govuk-button" data-module="govuk-button">
-            Save and continue
+            Submit
           </button>
         </form>
       </main>
