@@ -74,39 +74,43 @@
               </dd>
             </div>
           </dl>
-          <h2 class="govuk-heading-m">Unpaid work</h2>
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Unpaid work questions
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['unpaid-work']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="unpaid-work">
-                  Change<span class="govuk-visually-hidden"> unpaid work</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
-          <h2 class="govuk-heading-m">Electronic monitoring</h2>
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Electronic monitoring questions
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['electronic-monitoring']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="electronic-monitoring">
-                  Change<span class="govuk-visually-hidden"> electronic
-                    monitoring</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
+          {% if (data['verification-report-sections'] == 'unpaidWork') or (data['verification-report-sections'] == 'both') %}
+            <h2 class="govuk-heading-m">Unpaid work</h2>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Unpaid work questions
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['unpaid-work']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="unpaid-work">
+                    Change<span class="govuk-visually-hidden"> unpaid work</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          {% endif %}
+          {% if (data['verification-report-sections'] == 'electronicMonitoring') or (data['verification-report-sections'] == 'both') %}
+            <h2 class="govuk-heading-m">Electronic monitoring</h2>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Electronic monitoring questions
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['electronic-monitoring']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="electronic-monitoring">
+                    Change<span class="govuk-visually-hidden"> electronic
+                      monitoring</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          {% endif %}
           <button class="govuk-button" data-module="govuk-button">
             Submit
           </button>
