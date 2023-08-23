@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Start" %}
+{% set pageName="Offender details" %}
 
 {% block content %}
   <div class="app-split-pane app-width-container">
@@ -44,10 +44,10 @@
           <div class="govuk-form-group">
             <p class="govuk-body govuk-label-wrapper">
               <label class="govuk-label" for="test">
-                What is the meaning of life, the universe and everything?
+                Full name
               </label>
             </p>
-            <input class="govuk-input" id="test" name="test" type="text" value="{{data['test']}}">
+            <input class="govuk-input" id="test" name="full-name" type="full-name" value="{{data['full-name']}}">
           </div>
           <button class="govuk-button" data-module="govuk-button">
             Save and continue

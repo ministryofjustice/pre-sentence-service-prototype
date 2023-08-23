@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Start" %}
+{% set pageName="Check answers" %}
 
 {% block content %}
   <div class="app-split-pane app-width-container">
@@ -45,10 +45,10 @@
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                What is the meaning of life, the universe and everything?
+                Full name
               </dt>
               <dd class="govuk-summary-list__value">
-                {{data['test']}}
+                {{data['full-name']}}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="offender-details">
