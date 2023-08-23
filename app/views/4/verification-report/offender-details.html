@@ -87,44 +87,59 @@
             </fieldset>
           </div>
           <div class="govuk-form-group">
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-birth-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <h1 class="govuk-fieldset__heading">
-                    Date of birth
-                  </h1>
-                </legend>
-                <div id="date-of-birth-hint" class="govuk-hint">
-                  For example, 27 3 2004
-                </div>
-                <div class="govuk-date-input" id="date-of-birth">
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="date-of-birth-day">
-                        Day
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-day" name="date-of-birth-day" type="text" inputmode="numeric" value="{{data['date-of-birth-day']}}">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="date-of-birth-month">
-                        Month
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-month" name="date-of-birth-month" type="text" inputmode="numeric" value="{{data['date-of-birth-month']}}">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="date-of-birth-year">
-                        Year
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" name="date-of-birth-year" type="text" inputmode="numeric" value="{{data['date-of-birth-year']}}">
-                    </div>
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-birth-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Date of birth
+                </h1>
+              </legend>
+              <div id="date-of-birth-hint" class="govuk-hint">
+                For example, 27 3 2004
+              </div>
+              <div class="govuk-date-input" id="date-of-birth">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="date-of-birth-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-day" name="date-of-birth-day" type="text" inputmode="numeric" value="{{data['date-of-birth-day']}}">
                   </div>
                 </div>
-              </fieldset>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="date-of-birth-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-month" name="date-of-birth-month" type="text" inputmode="numeric" value="{{data['date-of-birth-month']}}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="date-of-birth-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" name="date-of-birth-year" type="text" inputmode="numeric" value="{{data['date-of-birth-year']}}">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-l" for="full-name">
+              CRN
+            </h2>
+            <input class="govuk-input" id="test" name="case-reference-number" type="case-reference-number" value="{{data['case-reference-number']}}">
+          </div>
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="offences">
+                Offences
+              </label>
+            </h1>
+            <div id="offences-hint" class="govuk-hint">
+              Do we need hint text?
             </div>
+            <textarea class="govuk-textarea" id="offences" name="offences" rows="5" aria-describedby="offences-hint">{{data['offences']}}</textarea>
           </div>
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
