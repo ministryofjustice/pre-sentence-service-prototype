@@ -8,7 +8,7 @@ module.exports = function (router) {
 
   router.post('/' + version + '/verification-report/offender-details', function (req, res) {
     res.redirect('required-sections')
-  })
+  });
 
   router.get('/' + version + '/verification-report/required-sections', function (req, res) {
     res.render(version + '/verification-report/required-sections')
@@ -22,7 +22,7 @@ module.exports = function (router) {
     }else {
       res.redirect('electronic-monitoring')
     }
-  })
+  });
 
   router.get('/' + version + '/verification-report/unpaid-work', function (req, res) {
     res.render(version + '/verification-report/unpaid-work')
