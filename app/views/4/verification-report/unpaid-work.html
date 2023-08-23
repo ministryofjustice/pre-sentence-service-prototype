@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Start" %}
+{% set pageName="Unpaid work questions" %}
 
 {% block content %}
   <div class="app-split-pane app-width-container">
@@ -45,12 +45,10 @@
             Unpaid work questions
           </h1>
           <div class="govuk-form-group">
-            <p class="govuk-body govuk-label-wrapper">
-              <label class="govuk-label" for="unpaid-work">
-                Unpaid work question?
-              </label>
-            </p>
-            <input class="govuk-input" id="unpaid-work" name="unpaid-work" type="text" value="{{data['unpaid-work']}}">
+            <h2 class="govuk-heading-l" for="verify-no-health-conditions">
+              Verify no health conditions
+            </h2>
+            <input class="govuk-input" id="verify-no-health-conditions" name="verify-no-health-conditions" type="verify-no-health-conditions" value="{{data['verify-no-health-conditions']}}">
           </div>
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
