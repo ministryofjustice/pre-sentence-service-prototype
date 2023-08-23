@@ -56,6 +56,45 @@
             </h2>
             <input class="govuk-input" id="test" name="safeguarding-checks" type="safeguarding-checks" value="{{data['safeguarding-checks']}}">
           </div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-fieldset__heading">
+                  Other addresses
+                </h2>
+              </legend>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="other-address-line-1">
+                  Other address line 1
+                </label>
+                <input class="govuk-input" id="other-address-line-1" name="other-address-line-1" type="text" value="{{data['other-address-line-1']}}">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-2">
+                  Other address line 2 (optional)
+                </label>
+                <input class="govuk-input" id="other-address-line-2" name="other-address-line-2" type="text" value="{{data['other-address-line-2']}}">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="other-address-town">
+                  Other town or city
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="other-address-town" name="other-address-town" type="text" value="{{data['other-address-town']}}">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-county">
+                  Other county (optional)
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="other-address-county" name="other-address-county" type="text" value="{{data['other-address-county']}}">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="other-address-postcode">
+                  Other postcode
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="other-address-postcode" name="other-address-postcode" type="text" value="{{data['other-address-postcode']}}">
+              </div>
+            </fieldset>
+          </div>
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>
