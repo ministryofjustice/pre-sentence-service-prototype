@@ -7,6 +7,14 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/offender-details', function (req, res) {
+    res.redirect('common-data')
+  });
+
+  router.get('/' + version + '/verification-report/common-data', function (req, res) {
+    res.render(version + '/verification-report/common-data')
+  });
+
+  router.post('/' + version + '/verification-report/common-data', function (req, res) {
     res.redirect('required-sections')
   });
 
