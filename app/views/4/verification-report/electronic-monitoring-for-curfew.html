@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Start" %}
+{% set pageName="Electronic monitoring for curfew" %}
 
 {% block content %}
   <div class="app-split-pane app-width-container">
@@ -37,20 +37,20 @@
     </div>
     <div class="app-split-pane__content">
       <main id="main-content" class="app-content" role="main">
-        <form action="electronic-monitoring" method="post" novalidate>
+        <form action="electronic-monitoring-for-curfew" method="post" novalidate>
           <span class="govuk-caption-xl">
             Jo Wade X1234567
           </span>
           <h1 class="govuk-heading-xl">
-            Electronic monitoring questions
+            Electronic monitoring for curfew questions
           </h1>
           <div class="govuk-form-group">
             <p class="govuk-body govuk-label-wrapper">
-              <label class="govuk-label" for="electronic-monitoring">
-                Electronic monitoring question?
+              <label class="govuk-label" for="consent-electronic-monitoring-curfew">
+                Verify consent for electronic monitoring curfew
               </label>
             </p>
-            <input class="govuk-input" id="electronic-monitoring" name="electronic-monitoring" type="text" value="{{data['electronic-monitoring']}}">
+            <input class="govuk-input" id="consent-electronic-monitoring-curfew" name="consent-electronic-monitoring-curfew" type="text" value="{{data['consent-electronic-monitoring-curfew']}}">
           </div>
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
