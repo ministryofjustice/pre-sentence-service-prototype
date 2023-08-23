@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Start" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Report sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offender-details">Offender details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="required-sections">Required sections</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">Unpaid work</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring">Electronic monitoring</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#">Assessor details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="check-answers">Check answers</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#">Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="offender-details" method="post" novalidate>
+          <span class="govuk-caption-xl">
+            Jo Wade X1234567
+          </span>
+          <h1 class="govuk-heading-xl">
+            Offender Details
+          </h1>
+          <div class="govuk-form-group">
+            <p class="govuk-body govuk-label-wrapper">
+              <label class="govuk-label" for="test">
+                What is the meaning of life, the universe and everything?
+              </label>
+            </p>
+            <input class="govuk-input" id="test" name="test" type="text" value="{{data['test']}}">
+          </div>
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link"
+        href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+          xmlns="http://www.w3.org/2000/svg" width="13" height="17"
+          viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z">
+          </path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}
