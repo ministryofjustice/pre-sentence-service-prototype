@@ -2,11 +2,11 @@ module.exports = function (router) {
 
   var version = "5";
 
-  router.get('/' + version + '/verification-report/offender-details', function (req, res) {
-    res.render(version + '/verification-report/offender-details')
+  router.get('/' + version + '/verification-report/defendant-details', function (req, res) {
+    res.render(version + '/verification-report/defendant-details')
   });
 
-  router.post('/' + version + '/verification-report/offender-details', function (req, res) {
+  router.post('/' + version + '/verification-report/defendant-details', function (req, res) {
     res.redirect('common-data')
   });
 
