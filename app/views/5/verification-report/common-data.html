@@ -1,0 +1,165 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Common data" %}
+
+{% block content %}
+<div class="app-split-pane app-width-container">
+  <div class="app-split-pane__nav">
+    <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+      <h2 class="govuk-visually-hidden" id="app-subnav-heading">Report sections</h2>
+        <ul class="app-subnav__section">
+          <li class="app-subnav__section-item app-subnav__section-item--current">
+            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offender-details">Defendant details</a>
+          </li>
+          <li class="app-subnav__section-item app-subnav__section-item--current">
+            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offence-information">Offences</a>
+          </li>
+          <li class="app-subnav__section-item">
+            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="required-sections">Tailor your report</a>
+          </li>
+          <li class="app-subnav__section-item">
+            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="common-data">Common data</a>
+          </li>
+          
+          <li class="app-subnav__section-item">
+            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">Suitability for unpaid work</a>
+          </li>
+          <li class="app-subnav__section-item">
+            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">Suitability for electronic monitoring</a>
+          </li>
+          <li class="app-subnav__section-item">
+            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="proposal">Proposal</a>
+          </li>
+          <li class="app-subnav__section-item">
+            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#">Assessor details</a>
+          </li>
+          <li class="app-subnav__section-item">
+            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="check-answers">Check your answers</a>
+          </li>
+          <li class="app-subnav__section-item">
+            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#">Publish report</a>
+          </li>
+        </ul>
+    </nav>
+  </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="common-data" method="post" novalidate>
+          <span class="govuk-caption-xl">
+            Dylan Adam Armstrong CRN: E234516
+          </span>
+          <h1 class="govuk-heading-xl">
+            Required information for any type of report
+          </h1>
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-l" for="domestic-abuse-checks">
+              Domestic abuse checks
+            </h2>
+            <div id="health-conditions-hint" class="govuk-hint">
+              You must check for any previous domestic violence charges or domestic abuse Police call-outs. 
+            </div>
+            <input class="govuk-input" id="test" name="domestic-abuse-checks" type="domestic-abuse-checks" value="{{data['domestic-abuse-checks']}}">
+          </div>
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-l" for="safeguarding-checks">
+              Safeguarding checks
+            </h2>
+            <div id="health-conditions-hint" class="govuk-hint">
+              You must check for [something I don't know about yet]. 
+            </div>
+            <input class="govuk-input" id="test" name="safeguarding-checks" type="safeguarding-checks" value="{{data['safeguarding-checks']}}">
+          </div>
+          <div class="govuk-form-group">
+            <h3 class="govuk-heading-m" for="health-verification">
+             How have you verified this information?
+            </h3>
+            <input class="govuk-input" id="health-verification" name="health-verification" type="health-verification" value="{{data['full-name']}}">
+          </div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-fieldset__heading">
+                  Other addresses
+                </h2>
+              </legend>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="other-address-line-1">
+                  Other address line 1
+                </label>
+                <input class="govuk-input" id="other-address-line-1" name="other-address-line-1" type="text" value="{{data['other-address-line-1']}}">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-2">
+                  Other address line 2 (optional)
+                </label>
+                <input class="govuk-input" id="other-address-line-2" name="other-address-line-2" type="text" value="{{data['other-address-line-2']}}">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="other-address-town">
+                  Other town or city
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="other-address-town" name="other-address-town" type="text" value="{{data['other-address-town']}}">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-county">
+                  Other county (optional)
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="other-address-county" name="other-address-county" type="text" value="{{data['other-address-county']}}">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="other-address-postcode">
+                  Other postcode
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="other-address-postcode" name="other-address-postcode" type="text" value="{{data['other-address-postcode']}}">
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-l" for="dependant-caring-responsibilities">
+              Dependants
+            </h2>
+            <div id="health-conditions-hint" class="govuk-hint">
+              Record and dependants and caring responsibilities that could impact someone's ability to do unpaid work or receive an electronic monitoring curfew. 
+            </div>
+            <input class="govuk-input" id="dependant-caring-responsibilities" name="dependant-caring-responsibilities" type="dependant-caring-responsibilities" value="{{data['dependant-caring-responsibilities']}}">
+          </div>
+          <div class="govuk-form-group">
+            <h3 class="govuk-heading-m" for="health-verification">
+             How have you verified this information?
+            </h3>
+            <input class="govuk-input" id="health-verification" name="health-verification" type="health-verification" value="{{data['full-name']}}">
+          </div>
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-l" for="dependant-caring-responsibilities">
+              Employment
+            </h2>
+            <div id="health-conditions-hint" class="govuk-hint">
+              Record their employment status and working pattern. 
+            </div>
+            <input class="govuk-input" id="verify-current-employment" name="verify-current-employment" type="verify-current-employment" value="{{data['verify-current-employment']}}">
+          </div>
+          <div class="govuk-form-group">
+            <h3 class="govuk-heading-m" for="health-verification">
+             How have you verified this information?
+            </h3>
+            <input class="govuk-input" id="health-verification" name="health-verification" type="health-verification" value="{{data['full-name']}}">
+          </div>
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link"
+        href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+          xmlns="http://www.w3.org/2000/svg" width="13" height="17"
+          viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z">
+          </path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}
