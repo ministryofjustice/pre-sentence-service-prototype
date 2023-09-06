@@ -7,14 +7,14 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/defendant-details', function (req, res) {
-    res.redirect('offence-information')
+    res.redirect('offences')
   });
 
-  router.get('/' + version + '/verification-report/offence-information', function (req, res) {
-    res.render(version + '/verification-report/offence-information')
+  router.get('/' + version + '/verification-report/offences', function (req, res) {
+    res.render(version + '/verification-report/offences')
   });
 
-  router.post('/' + version + '/verification-report/offence-information', function (req, res) {
+  router.post('/' + version + '/verification-report/offences', function (req, res) {
     res.redirect('required-sections')
   });
 
