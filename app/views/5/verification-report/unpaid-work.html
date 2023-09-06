@@ -44,58 +44,48 @@
     <div class="app-split-pane__content">
       <main id="main-content" class="app-content" role="main">
         <form action="unpaid-work" method="post" novalidate>
-          <span class="govuk-caption-l">
-            Dylan Adam Armstrong CRN: E234516
-          </span>
-          <h1 class="govuk-heading-l">
-            Suitability for unpaid work
-          </h1>
+          <span class="govuk-caption-l">Dylan Adam Armstrong CRN: E234516</span>
+          <h1 class="govuk-heading-l">Suitability for unpaid work</h1>
           <div class="govuk-form-group">
-            <h2 class="govuk-heading-m" for="verify-no-health-conditions">
-              Health conditions
-            </h2>
-            <div id="health-conditions-hint" class="govuk-hint">
-              Record any health conditions that may effect their ability to complete unpaid work.
-            </div>
+            <h2 class="govuk-heading-m" for="verify-no-health-conditions">Health
+               conditions</h2>
+            <div id="verify-no-health-conditions-hint" class="govuk-hint">Record
+              any health conditions that may effect their ability to complete
+              unpaid work.</div>
             <input class="govuk-input" id="verify-no-health-conditions" name="verify-no-health-conditions" type="text" value="{{data['verify-no-health-conditions']}}">
           </div>
           <div class="govuk-form-group">
-            <h3 class="govuk-heading-m" for="health-verification">
-             How have you verified this information?
-            </h3>
-            <input class="govuk-input" id="health-verification" name="health-verification" type="text" value="{{data['full-name']}}">
+            <h3 class="govuk-heading-m" for="health-verification">How have you
+              verified this information?</h3>
+            <input class="govuk-input" id="how-verified-health-conditions" name="how-verified-health-conditions" type="text" value="{{data['how-verified-health-conditions']}}">
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
-            <h2 class="govuk-heading-m" for="verify-dwp-involvement">
-              Department for Work and Pensions
-            </h2>
-            <div id="DWP-hint" class="govuk-hint">
-              Record any benefits that the defendant gets that may impact on their eligibility or fitness for unpaid work.
-            </div>
+            <h2 class="govuk-heading-m" for="verify-dwp-involvement">Department
+              for Work and Pensions</h2>
+            <div id="verify-dwp-involvement-hint" class="govuk-hint">
+              Record any benefits that the defendant gets that may impact on
+              their eligibility or fitness for unpaid work.</div>
             <input class="govuk-input" id="verify-dwp-involvement" name="verify-dwp-involvement" type="text" value="{{data['verify-dwp-involvement']}}">
           </div>
           <div class="govuk-form-group">
-            <h3 class="govuk-heading-m" for="health-verification">
-             How have you verified this information?
-            </h3>
-            <input class="govuk-input" id="health-verification" name="health-verification" type="text" value="{{data['full-name']}}">
+            <h3 class="govuk-heading-m" for="health-verification">How have you
+              verified this information?</h3>
+            <input class="govuk-input" id="how-verified-dwp" name="how-verified-dwp" type="text" value="{{data['how-verified-dwp']}}">
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--m" for="more-detail">
-                Supporting comments
-              </label>
+                Supporting comments</label>
             </h1>
-            <div id="more-detail-hint" class="govuk-hint">
-              Include any information here that supports your professional judgement. This will not be shared in the final report.
-            </div>
-            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            <div id="more-detail-hint" class="govuk-hint">Include any
+              information here that supports your professional judgement. This
+              will not be shared in the final report.</div>
+            <textarea class="govuk-textarea" id="supporting-information-unpaid-work" name="supporting-information-unpaid-work" rows="5" aria-describedby="more-detail-hint">{{data['supporting-information-unpaid-work']}}</textarea>
           </div>
-          <button class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>
+          <button class="govuk-button" data-module="govuk-button">Save and
+            continue</button>
         </form>
       </main>
     </div>
