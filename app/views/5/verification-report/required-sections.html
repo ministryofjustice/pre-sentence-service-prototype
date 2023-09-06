@@ -56,19 +56,19 @@
               </legend>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="verification-report-sections" name="verification-report-sections" type="radio" value="unpaidWork">
+                  <input class="govuk-radios__input" id="verification-report-sections" name="verification-report-sections" type="radio" value="unpaidWork" {{ checked("verification-report-sections", "unpaidWork") }}>
                   <label class="govuk-label govuk-radios__label" for="verification-report-sections">
                     Include sections for unpaid work only
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="verification-report-sections-2" name="verification-report-sections" type="radio" value="electronicMonitoring">
+                  <input class="govuk-radios__input" id="verification-report-sections-2" name="verification-report-sections" type="radio" value="electronicMonitoring" {{ checked("verification-report-sections", "electronicMonitoring") }}>
                   <label class="govuk-label govuk-radios__label" for="verification-report-sections-2">
                     Include sections for electronic monitoring only
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="verification-report-sections-3" name="verification-report-sections" type="radio" value="both">
+                  <input class="govuk-radios__input" id="verification-report-sections-3" name="verification-report-sections" type="radio" value="both" {{ checked("verification-report-sections", "both") }}>
                   <label class="govuk-label govuk-radios__label" for="verification-report-sections-3">
                     Include sections for both unpaid and electronic monitoring
                   </label>
