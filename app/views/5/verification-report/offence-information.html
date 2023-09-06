@@ -44,20 +44,18 @@
     <div class="app-split-pane__content">
       <main id="main-content" class="app-content" role="main">
         <form action="offender-details" method="post" novalidate>
-          <span class="govuk-caption-xl">
+          <span class="govuk-caption-l">
             Dylan Adam Armstrong CRN: E234516
           </span>
-          <h1 class="govuk-heading-xl">
+          <h1 class="govuk-heading-l">
             Offences
           </h1>
-
           <div class="govuk-form-group">
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="offences">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="offences">
                 List all offences this report relates to
               </label>
-            </h1>
-
+            </h2>
             <textarea class="govuk-textarea" id="offences" name="offences" rows="5" aria-describedby="offences-hint">{{data['offences']}}</textarea>
           </div>
           <button class="govuk-button" data-module="govuk-button">

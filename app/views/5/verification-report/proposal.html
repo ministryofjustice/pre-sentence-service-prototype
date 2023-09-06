@@ -44,19 +44,18 @@
     <div class="app-split-pane__content">
       <main id="main-content" class="app-content" role="main">
         <form action="offender-details" method="post" novalidate>
-          <span class="govuk-caption-xl">
+          <span class="govuk-caption-l">
             Dylan Adam Armstrong CRN: E234516
           </span>
-          <h1 class="govuk-heading-xl">
+          <h1 class="govuk-heading-l">
             Proposal
           </h1>
-
           <div class="govuk-form-group">
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="offences">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="offences">
                 Record your proposal for the sentencer
               </label>
-            </h1>
+            </h2>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="verification-report-sections" name="verification-report-sections" type="radio" value="unpaidWork">
@@ -76,9 +75,14 @@
                   Suitable for both unpaid and electronic monitoring
                 </label>
               </div>
-
-          </fieldset>
-        </div>
+            </div>
+          </div>
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="offences">
+                Working out
+              </label>
+            </h2>
             <textarea class="govuk-textarea" id="offences" name="offences" rows="5" aria-describedby="offences-hint">{{data['offences']}}</textarea>
           </div>
           <button class="govuk-button" data-module="govuk-button">
