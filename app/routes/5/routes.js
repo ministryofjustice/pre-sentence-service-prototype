@@ -7,14 +7,14 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/defendant-details', function (req, res) {
-    res.redirect('common-data')
+    res.redirect('offence-information')
   });
 
-  router.get('/' + version + '/verification-report/common-data', function (req, res) {
-    res.render(version + '/verification-report/common-data')
+  router.get('/' + version + '/verification-report/offence-information', function (req, res) {
+    res.render(version + '/verification-report/offence-information')
   });
 
-  router.post('/' + version + '/verification-report/common-data', function (req, res) {
+  router.post('/' + version + '/verification-report/offence-information', function (req, res) {
     res.redirect('required-sections')
   });
 
@@ -23,6 +23,14 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/required-sections', function (req, res) {
+    res.redirect('common-data')
+  });
+
+  router.get('/' + version + '/verification-report/common-data', function (req, res) {
+    res.render(version + '/verification-report/common-data')
+  });
+
+  router.post('/' + version + '/verification-report/common-data', function (req, res) {
     const verificationReportSections = req.session.data['verification-report-sections']
 
     if (verificationReportSections == 'unpaidWork' || verificationReportSections == 'both'){
@@ -30,6 +38,7 @@ module.exports = function (router) {
     }else {
       res.redirect('electronic-monitoring-for-curfew')
     }
+
   });
 
   router.get('/' + version + '/verification-report/unpaid-work', function (req, res) {
@@ -51,6 +60,14 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/electronic-monitoring-for-curfew', function (req, res) {
+    res.redirect('proposal')
+  })
+
+  router.get('/' + version + '/verification-report/proposal', function (req, res) {
+    res.render(version + '/verification-report/proposal')
+  });
+
+  router.post('/' + version + '/verification-report/proposal', function (req, res) {
     res.redirect('check-answers')
   })
 }
