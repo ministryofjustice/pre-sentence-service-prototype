@@ -78,4 +78,28 @@ module.exports = function (router) {
   router.post('/' + version + '/verification-report/check-answers', function (req, res) {
     res.redirect('assessor-details')
   })
+
+  router.get('/' + version + '/verification-report/assessor-details', function (req, res) {
+    res.render(version + '/verification-report/assessor-details')
+  });
+
+  router.post('/' + version + '/verification-report/assessor-details', function (req, res) {
+    res.redirect('publish-report')
+  })
+
+  router.get('/' + version + '/verification-report/publish-report', function (req, res) {
+    res.render(version + '/verification-report/publish-report')
+  });
+
+  router.post('/' + version + '/verification-report/publish-report', function (req, res) {
+    res.redirect('confirmation')
+  })
+
+  router.get('/' + version + '/verification-report/confirmation', function (req, res) {
+    res.render(version + '/verification-report/confirmation')
+  });
+
+  router.post('/' + version + '/verification-report/confirmation', function (req, res) {
+    res.redirect('PAGE')
+  })
 }
