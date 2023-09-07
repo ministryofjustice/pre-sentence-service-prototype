@@ -70,4 +70,12 @@ module.exports = function (router) {
   router.post('/' + version + '/verification-report/proposal', function (req, res) {
     res.redirect('check-answers')
   })
+
+  router.get('/' + version + '/verification-report/check-answers', function (req, res) {
+    res.render(version + '/verification-report/check-answers')
+  });
+
+  router.post('/' + version + '/verification-report/check-answers', function (req, res) {
+    res.redirect('assessor-details')
+  })
 }
