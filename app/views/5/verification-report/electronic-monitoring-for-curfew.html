@@ -3,120 +3,105 @@
 {% set pageName="Electronic monitoring for curfew" %}
 
 {% block content %}
-<div class="app-split-pane app-width-container">
-  <div class="app-split-pane__nav">
-    <nav class="app-subnav" aria-labelledby="app-subnav-heading">
-      <h2 class="govuk-visually-hidden" id="app-subnav-heading">Report sections</h2>
-        <ul class="app-subnav__section">
-          <li class="app-subnav__section-item app-subnav__section-item--current">
-            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offender-details">Defendant details</a>
-          </li>
-          <li class="app-subnav__section-item app-subnav__section-item--current">
-            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offence-information">Offences</a>
-          </li>
-          <li class="app-subnav__section-item">
-            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="required-sections">Tailor your report</a>
-          </li>
-          <li class="app-subnav__section-item">
-            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="common-data">Common data</a>
-          </li>
-          
-          <li class="app-subnav__section-item">
-            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">Suitability for unpaid work</a>
-          </li>
-          <li class="app-subnav__section-item">
-            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">Suitability for electronic monitoring</a>
-          </li>
-          <li class="app-subnav__section-item">
-            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="proposal">Proposal</a>
-          </li>
-          <li class="app-subnav__section-item">
-            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#">Assessor details</a>
-          </li>
-          <li class="app-subnav__section-item">
-            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="check-answers">Check your answers</a>
-          </li>
-          <li class="app-subnav__section-item">
-            <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#">Publish report</a>
-          </li>
-        </ul>
-    </nav>
-  </div>
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Report sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link" href="defendant-details">Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-underline" href="offence-information">Offences</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="required-sections">Tailor your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="common-data">Common data</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">Suitability for unpaid work</a>
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">Suitability for electronic monitoring</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="proposal">Proposal</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="check-answers">Check your answers</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="assessor-details">Assessor details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#">Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
     <div class="app-split-pane__content">
       <main id="main-content" class="app-content" role="main">
         <form action="electronic-monitoring-for-curfew" method="post" novalidate>
-          <span class="govuk-caption-xl">
-            Dylan Adam Armstrong CRN: E234516
-          </span>
-          <h1 class="govuk-heading-xl">
-            Suitability for electronic monitoring
-          </h1>
+          <span class="govuk-caption-l">Dylan Adam Armstrong CRN: E234516</span>
+          <h1 class="govuk-heading-l">Suitability for electronic monitoring</h1>
           <div class="govuk-form-group">
-            <h2 class="govuk-heading-l" for="consent-electronic-monitoring-curfew">
-              Informed consent to an electronic monitoring curfew
-            </h2>
-            <div id="health-conditions-hint" class="govuk-hint">
-              It is a legal requirement that the defendant gives their informed consent to submit to electronic monitoring. 
-            </div>
+            <h2 class="govuk-heading-m" for="consent-electronic-monitoring-curfew">
+              Informed consent to an electronic monitoring curfew</h2>
+            <div id="health-conditions-hint" class="govuk-hint">It is a legal
+              requirement that the defendant gives their informed consent to
+              submit to electronic monitoring.</div>
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+                    <input class="govuk-radios__input" id="informed-consent-electronic-monitoring" name="informed-consent-electronic-monitoring" type="radio" value="Yes, they have given informed consent" {{ checked("informed-consent-electronic-monitoring", "Yes, they have given informed consent") }}>
                     <label class="govuk-label govuk-radios__label" for="where-do-you-live">
                       Yes, they have given informed consent
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
-                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                      No, they have not given informed consent
-                    </label>
+                    <input class="govuk-radios__input" id="informed-consent-electronic-monitoring-2" name="informed-consent-electronic-monitoring" type="radio" value="No, they have not given informed consent" {{ checked("informed-consent-electronic-monitoring", "No, they have not given informed consent") }}>
+                    <label class="govuk-label govuk-radios__label" for="informed-consent-electronic-monitoring-2">
+                      No, they have not given informed consent</label>
                   </div>
-                  
-                  
                 </div>
               </fieldset>
             </div>
             <div class="govuk-form-group">
-              <h3 class="govuk-heading-m" for="health-verification">
-               How have you verified this information?
-              </h3>
-              <input class="govuk-input" id="health-verification" name="health-verification" type="health-verification" value="{{data['full-name']}}">
+              <h3 class="govuk-heading-m" for="health-verification">How have you
+                verified this information?</h3>
+              <input class="govuk-input" id="how-verified-informed-consent-electronic-monitoring" name="how-verified-informed-consent-electronic-monitoring" type="text" value="{{data['how-verified-informed-consent-electronic-monitoring']}}">
             </div>
           </div>
-          
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
-            <h2 class="govuk-heading-l" for="verify-substance-misuse-mental-health">
-              Health
-            </h2>
-            <div id="health-conditions-hint" class="govuk-hint">
-            Record any health conditions that may effect their suitability to receive an electronic monitoring curfew.
-          </div>
-          <input class="govuk-input" id="verify-substance-misuse-mental-health" name="verify-substance-misuse-mental-health" type="text" value="{{data['verify-substance-misuse-mental-health']}}">
+            <h2 class="govuk-heading-m" for="health-electronic-monitoring">
+              Health</h2>
+            <div id="health-electronic-monitoring-hint" class="govuk-hint">
+            Record any health conditions that may effect their suitability to
+            receive an electronic monitoring curfew.</div>
+            <textarea class="govuk-textarea" id="health-electronic-monitoring" name="health-electronic-monitoring" rows="5" aria-describedby="health-electronic-monitoring-hint">{{data['health-electronic-monitoring']}}</textarea>
           </div>
           <div class="govuk-form-group">
-            <h3 class="govuk-heading-m" for="health-verification">
-             How have you verified this information?
-            </h3>
-            <input class="govuk-input" id="health-verification" name="health-verification" type="health-verification" value="{{data['full-name']}}">
+            <h3 class="govuk-heading-m" for="how-verified-health-electronic-monitoring">
+              How have you verified this information?</h3>
+            <input class="govuk-input" id="how-verified-health-electronic-monitoring" name="how-verified-health-electronic-monitoring" type="text" value="{{data['how-verified-health-electronic-monitoring']}}">
           </div>
-          
-          
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="more-detail">
-                Supporting comments
-              </label>
+              <label class="govuk-label govuk-label--m" for="more-detail">
+                Supporting comments</label>
             </h1>
-            <div id="more-detail-hint" class="govuk-hint">
-              Include any information here that supports your professional judgement. This will not be shared in the final report.
-            </div>
-            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            <div id="electronic-monitoring-supporting-hint" class="govuk-hint">Include any
+              information here that supports your professional judgement. This
+              will not be shared in the final report.</div>
+            <textarea class="govuk-textarea" id="supporting-information-electronic-monitoring" name="supporting-information-electronic-monitoring" rows="5" aria-describedby="supporting-information-electronic-monitoring-hint">{{data['supporting-information-electronic-monitoring']}}</textarea>
           </div>
-          
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>

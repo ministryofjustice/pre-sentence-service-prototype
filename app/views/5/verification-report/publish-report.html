@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Proposal" %}
+{% set pageName="Assessor details" %}
 
 {% block content %}
   <div class="app-split-pane app-width-container">
@@ -26,7 +26,7 @@
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">Suitability for electronic monitoring</a>
             </li>
-            <li class="app-subnav__section-item app-subnav__section-item--current">
+            <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="proposal">Proposal</a>
             </li>
             <li class="app-subnav__section-item">
@@ -35,66 +35,29 @@
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="assessor-details">Assessor details</a>
             </li>
-            <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#">Publish report</a>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">Publish report</a>
             </li>
           </ul>
       </nav>
     </div>
     <div class="app-split-pane__content">
       <main id="main-content" class="app-content" role="main">
-        <form action="proposal" method="post" novalidate>
+        <form action="publish-report" method="post" novalidate>
           <span class="govuk-caption-l">
             Dylan Adam Armstrong CRN: E234516
           </span>
-          <h1 class="govuk-heading-l">
-            Proposal
-          </h1>
-          <div class="govuk-form-group">
-            <h2 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="offences">
-                Record your proposal for the sentencer
-              </label>
-            </h2>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="verification-report-sections" name="verification-report-sections" type="radio" value="unpaidWork">
-                <label class="govuk-label govuk-radios__label" for="verification-report-sections">
-                  Suitable for unpaid work only
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="verification-report-sections-2" name="verification-report-sections" type="radio" value="electronicMonitoring">
-                <label class="govuk-label govuk-radios__label" for="verification-report-sections-2">
-                  Suitable for electronic monitoring only
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="verification-report-sections-3" name="verification-report-sections" type="radio" value="both">
-                <label class="govuk-label govuk-radios__label" for="verification-report-sections-3">
-                  Suitable for both unpaid and electronic monitoring
-                </label>
-              </div>
-              <div class="govuk-radios__divider">or</div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="verification-report-sections-4" name="verification-report-sections" type="radio" value="Not suitable">
-                <label class="govuk-label govuk-radios__label" for="verification-report-sections-4">
-                  Not suitable
-                </label>
-              </div>
-            </div>
+          <h1 class="govuk-heading-l">Are you sure you want to lock and publish
+            this report?</h1>
+          <p class="govuk-body">You cannot edit published reports.</p>
+          <p class="govuk-body"> Make sure that any gatekeeping or checking has
+            been completed.</p>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Lock and publish
+            </button>
+            <a class="govuk-link" href="assessor-details">Cancel</a>
           </div>
-          <div class="govuk-form-group">
-            <h2 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="offences">
-                Supporting comments
-              </label>
-            </h2>
-            <textarea class="govuk-textarea" id="offences" name="offences" rows="5" aria-describedby="offences-hint">{{data['offences']}}</textarea>
-          </div>
-          <button class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>
         </form>
       </main>
     </div>
