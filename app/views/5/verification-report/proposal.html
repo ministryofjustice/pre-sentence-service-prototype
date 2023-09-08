@@ -75,12 +75,19 @@
                   Suitable for both unpaid and electronic monitoring
                 </label>
               </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="verification-report-sections-4" name="verification-report-sections" type="radio" value="Not suitable">
+                <label class="govuk-label govuk-radios__label" for="verification-report-sections-4">
+                  Not suitable
+                </label>
+              </div>
             </div>
           </div>
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--m" for="offences">
-                Working out
+                Supporting comments
               </label>
             </h2>
             <textarea class="govuk-textarea" id="offences" name="offences" rows="5" aria-describedby="offences-hint">{{data['offences']}}</textarea>
