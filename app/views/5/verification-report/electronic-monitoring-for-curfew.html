@@ -12,31 +12,50 @@
               <a class="app-subnav__link govuk-link" href="defendant-details">Defendant details</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-underline" href="offence-information">Offences</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-underline" href="offence-information">
+                Offences</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="required-sections">Tailor your report</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="required-sections">
+                Tailor your report</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="common-data">Common data</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="common-data">
+                Common data</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">Suitability for unpaid work</a>
-            </li>
-            <li class="app-subnav__section-item app-subnav__section-item--current">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">Suitability for electronic monitoring</a>
-            </li>
-            <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="proposal">Proposal</a>
-            </li>
-            <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="check-answers">Check your answers</a>
+              {% if (data['verification-report-sections'] == 'unpaidWork') or (data['verification-report-sections'] == 'both')  %}
+                <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">
+                  Suitability for unpaid work</a>
+              {% else %}
+                  <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-link--disabled" href="unpaid-work">
+                    Suitability for unpaid work</a>
+              {% endif %}
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="assessor-details">Assessor details</a>
+              {% if (data['verification-report-sections'] == 'electronicMonitoring') or (data['verification-report-sections'] == 'both')  %}
+                <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">
+                  Suitability for electronic monitoring</a>
+              {% else %}
+                  <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-link--disabled" href="electronic-monitoring-for-curfew">
+                    Suitability for electronic monitoring</a>
+              {% endif %}
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#">Publish report</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="proposal">
+                Proposal</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="check-answers">
+                Check your answers</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="assessor-details">
+                Assessor details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
             </li>
           </ul>
       </nav>

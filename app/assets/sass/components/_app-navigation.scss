@@ -120,3 +120,8 @@
   right: govuk-spacing(1);
   bottom: govuk-spacing(5);
 }
+
+.govuk-link--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
