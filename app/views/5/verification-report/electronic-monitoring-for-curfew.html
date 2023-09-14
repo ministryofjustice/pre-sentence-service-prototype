@@ -12,31 +12,50 @@
               <a class="app-subnav__link govuk-link" href="defendant-details">Defendant details</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-underline" href="offence-information">Offences</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-underline" href="offence-information">
+                Offences</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="required-sections">Tailor your report</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="required-sections">
+                Tailor your report</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="common-data">Common data</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="common-data">
+                Common data</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">Suitability for unpaid work</a>
-            </li>
-            <li class="app-subnav__section-item app-subnav__section-item--current">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">Suitability for electronic monitoring</a>
-            </li>
-            <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="proposal">Proposal</a>
-            </li>
-            <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="check-answers">Check your answers</a>
+              {% if (data['verification-report-sections'] == 'unpaidWork') or (data['verification-report-sections'] == 'both')  %}
+                <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">
+                  Suitability for unpaid work</a>
+              {% else %}
+                  <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-link--disabled" href="unpaid-work">
+                    Suitability for unpaid work</a>
+              {% endif %}
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="assessor-details">Assessor details</a>
+              {% if (data['verification-report-sections'] == 'electronicMonitoring') or (data['verification-report-sections'] == 'both')  %}
+                <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">
+                  Suitability for electronic monitoring</a>
+              {% else %}
+                  <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-link--disabled" href="electronic-monitoring-for-curfew">
+                    Suitability for electronic monitoring</a>
+              {% endif %}
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#">Publish report</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="proposal">
+                Proposal</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="check-answers">
+                Check your answers</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
             </li>
           </ul>
       </nav>
@@ -50,8 +69,7 @@
             <h2 class="govuk-heading-m" for="consent-electronic-monitoring-curfew">
               Informed consent to an electronic monitoring curfew</h2>
             <div id="health-conditions-hint" class="govuk-hint">It is a legal
-              requirement that the defendant gives their informed consent to
-              submit to electronic monitoring.</div>
+              requirement that the defendant and anyone staying at the address they will be curfewed to gives their informed consent to to electronic monitoring.</div>
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -80,10 +98,11 @@
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
             <h2 class="govuk-heading-m" for="health-electronic-monitoring">
-              Health</h2>
+              Health conditions</h2>
             <div id="health-electronic-monitoring-hint" class="govuk-hint">
-            Record any health conditions that may effect their suitability to
-            receive an electronic monitoring curfew.</div>
+              Record any health conditions that may effect their suitability to
+              receive an electronic monitoring curfew. <br/><br/>For example
+              mental health conditions or substance misuse.</div>
             <textarea class="govuk-textarea" id="health-electronic-monitoring" name="health-electronic-monitoring" rows="5" aria-describedby="health-electronic-monitoring-hint">{{data['health-electronic-monitoring']}}</textarea>
           </div>
           <div class="govuk-form-group">

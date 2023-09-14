@@ -76,14 +76,14 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/check-answers', function (req, res) {
-    res.redirect('assessor-details')
+    res.redirect('sign-your-report')
   })
 
-  router.get('/' + version + '/verification-report/assessor-details', function (req, res) {
-    res.render(version + '/verification-report/assessor-details')
+  router.get('/' + version + '/verification-report/sign-your-report', function (req, res) {
+    res.render(version + '/verification-report/sign-your-report')
   });
 
-  router.post('/' + version + '/verification-report/assessor-details', function (req, res) {
+  router.post('/' + version + '/verification-report/sign-your-report', function (req, res) {
     res.redirect('publish-report')
   })
 
