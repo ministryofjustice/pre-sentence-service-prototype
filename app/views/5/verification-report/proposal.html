@@ -72,33 +72,33 @@
           </h1>
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="offences">
-                Record your proposal for the sentencer
+              <label class="govuk-label govuk-label--m" for="suitable-for">
+                What is the defendant suitable for?
               </label>
             </h2>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="verification-report-sections" name="verification-report-sections" type="radio" value="unpaidWork">
-                <label class="govuk-label govuk-radios__label" for="verification-report-sections">
-                  Suitable for unpaid work only
+                <input class="govuk-radios__input" id="suitable-for" name="suitable-for" type="radio" value="Unpaid work only">
+                <label class="govuk-label govuk-radios__label" for="suitable-for">
+                  Unpaid work only
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="verification-report-sections-2" name="verification-report-sections" type="radio" value="electronicMonitoring">
-                <label class="govuk-label govuk-radios__label" for="verification-report-sections-2">
-                  Suitable for electronic monitoring only
+                <input class="govuk-radios__input" id="suitable-for-2" name="suitable-for" type="radio" value="Electronic monitoring only">
+                <label class="govuk-label govuk-radios__label" for="suitable-for-2">
+                  Electronic monitoring only
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="verification-report-sections-3" name="verification-report-sections" type="radio" value="both">
-                <label class="govuk-label govuk-radios__label" for="verification-report-sections-3">
-                  Suitable for both unpaid and electronic monitoring
+                <input class="govuk-radios__input" id="suitable-for-3" name="suitable-for" type="radio" value="Both unpaid and electronic monitoring">
+                <label class="govuk-label govuk-radios__label" for="suitable-for-3">
+                  Both unpaid and electronic monitoring
                 </label>
               </div>
               <div class="govuk-radios__divider">or</div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="verification-report-sections-4" name="verification-report-sections" type="radio" value="Not suitable">
-                <label class="govuk-label govuk-radios__label" for="verification-report-sections-4">
+                <input class="govuk-radios__input" id="suitable-for-4" name="suitable-for" type="radio" value="Not suitable">
+                <label class="govuk-label govuk-radios__label" for="suitable-for-4">
                   Not suitable
                 </label>
               </div>
@@ -106,11 +106,11 @@
           </div>
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="offences">
-                Supporting comments
+              <label class="govuk-label govuk-label--m" for="proposal">
+                Explain why they are suitable
               </label>
             </h2>
-            <textarea class="govuk-textarea" id="offences" name="offences" rows="5" aria-describedby="offences-hint">{{data['offences']}}</textarea>
+            <textarea class="govuk-textarea" id="suitability-explanation" name="suitability-explanation" rows="5" aria-describedby="suitability-explanation-hint">{{data['suitability-explanation']}}</textarea>
           </div>
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
