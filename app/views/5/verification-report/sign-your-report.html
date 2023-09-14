@@ -51,8 +51,8 @@
                 Check your answers</a>
             </li>
             <li class="app-subnav__section-item app-subnav__section-item--current">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="assessor-details">
-                Assessor details</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
             </li>
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
@@ -63,15 +63,14 @@
     </div>
     <div class="app-split-pane__content">
       <main id="main-content" class="app-content" role="main">
-        <form action="assessor-details" method="post" novalidate>
-          <span class="govuk-caption-l">
-            Dylan Adam Armstrong CRN: E234516
-          </span>
-          <h1 class="govuk-heading-l">
-            Sign your report
-          </h1>
+        <form action="sign-your-report" method="post" novalidate>
           <div class="govuk-form-group">
-            <h2 class="govuk-heading-m" for="assessor-name">Sign this report</h2>
+            <span class="govuk-caption-l">
+              Dylan Adam Armstrong CRN: E234516
+            </span>
+            <h1 class="govuk-heading-l">
+              Sign your report
+            </h1>
             <input class="govuk-input govuk-input--width-20" id="assessor-name" name="assessor-name" type="assessor-name" value="{{data['assessor-name']}}">
           </div>
           <button class="govuk-button" data-module="govuk-button">
