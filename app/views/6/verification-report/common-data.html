@@ -84,22 +84,65 @@
             Required information for any type of report
           </h1>
           <div class="govuk-form-group">
-            <h2 class="govuk-heading-m" for="domestic-abuse-checks">
-              Domestic abuse checks
-            </h2>
-            <div id="domestic-abuse-checks-hint" class="govuk-hint">
-              You must check for any previous domestic violence charges or domestic abuse Police call-outs.
-            </div>
-            <input class="govuk-input" id="test" name="domestic-abuse-checks" type="text" value="{{data['domestic-abuse-checks']}}">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">
+                  Domestic abuse checks
+                </h2>
+              </legend>
+              <div id="domestic-abuse-checks-hint" class="govuk-hint">You must
+                check for any previous domestic violence charges or domestic
+                abuse Police call-outs.</div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="domestic-abuse-check-result" name="domestic-abuse-check-result" type="radio" value="No issues" {{ checked("domestic-abuse-check-result", "No issues") }}>
+                  <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result">
+                    No domestic abuse issues
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="domestic-abuse-check-result-2" name="domestic-abuse-check-result" type="radio" value="Has issues" {{ checked("domestic-abuse-check-result", "Has issues") }}>
+                  <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result-2">
+                    Has domestic abuse issues
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="domestic-abuse-check-result-3" name="domestic-abuse-check-result" type="radio" value="Check pending" {{ checked("domestic-abuse-check-result", "Check pending") }}>
+                  <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result-3">
+                    Check pending for domestic abuse
+                  </label>
+                </div>
+              </div>
+            </fieldset>
           </div>
           <div class="govuk-form-group">
-            <h2 class="govuk-heading-m" for="safeguarding-checks">
-              Safeguarding checks
-            </h2>
-            <div id="safeguarding-checks-hint" class="govuk-hint">
-              You must check for [something I don't know about yet].
-            </div>
-            <input class="govuk-input" id="test" name="safeguarding-checks" type="text" value="{{data['safeguarding-checks']}}">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">
+                  Safeguarding checks
+                </h2>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="safeguarding-check-result" name="safeguarding-check-result" type="radio" value="No issues" {{ checked("safeguarding-check-result", "No issues") }}>
+                  <label class="govuk-label govuk-radios__label" for="safeguarding-check-result">
+                    No safeguarding issues
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="safeguarding-check-result-2" name="safeguarding-check-result" type="radio" value="Has issues" {{ checked("safeguarding-check-result", "Has issues") }}>
+                  <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-2">
+                    Has safeguarding issues
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="safeguarding-check-result-3" name="safeguarding-check-result" type="radio" value="Check pending" {{ checked("safeguarding-check-result", "Check pending") }}>
+                  <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-3">
+                    Check pending for safeguarding
+                  </label>
+                </div>
+              </div>
+            </fieldset>
           </div>
           <div class="govuk-form-group">
             <h3 class="govuk-heading-m" for="checks-verification">

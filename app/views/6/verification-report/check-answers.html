@@ -172,7 +172,7 @@
                 Domestic abuse checks
               </dt>
               <dd class="govuk-summary-list__value">
-                {{data['domestic-abuse-checks']}}
+                {{data['domestic-abuse-check-result']}}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="common-data">Change
@@ -185,7 +185,20 @@
                 Safeguarding checks
               </dt>
               <dd class="govuk-summary-list__value">
-                {{data['safeguarding-checks']}}
+                {{data['safeguarding-check-result']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="common-data">Change
+                  <span class="govuk-visually-hidden">Safeguarding checks</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                How have you verified these checks?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['check-verification']}}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="common-data">Change
