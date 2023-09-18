@@ -63,6 +63,22 @@
     </div>
     <div class="app-split-pane__content">
       <main id="main-content" class="app-content" role="main">
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#proposal">To proceed with Electronic monitoring for
+                    curfew domestic abuse checks, safe guarding checks must come
+                    back without any issues and informed consent must be given.</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <form action="proposal" method="post" novalidate>
           <span class="govuk-caption-l">
             Dylan Adam Armstrong CRN: E234516
@@ -70,12 +86,20 @@
           <h1 class="govuk-heading-l">
             Proposal
           </h1>
-          <div class="govuk-form-group">
-            <h2 class="govuk-label-wrapper">
+          <div class="govuk-form-group govuk-form-group--error">
+            <h2 class="govuk-label-wrapper" id="proposal">
               <label class="govuk-label govuk-label--m" for="suitable-for">
                 What is the defendant suitable for?
               </label>
             </h2>
+            <p id="proposal-error" class="govuk-error-message"><span class="govuk-visually-hidden">
+              Error:</span> You cannot select electronic
+              monitoring. Change your recommendation or resolve errors with:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-error-message">
+                <li><a href="common-data">Domestic abuse checks</a></li>
+                <li><a href="common-data">Safeguarding checks</a></li>
+                <li><a href="electronic-monitoring-for-curfew">Informed consent</a></li>
+            </ul>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="suitable-for" name="suitable-for" type="radio" value="Unpaid work only" {{ checked("suitable-for", "Unpaid work only") }}>
@@ -92,7 +116,7 @@
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="suitable-for-3" name="suitable-for" type="radio" value="Both unpaid work and electronic monitoring" {{ checked("suitable-for", "Both unpaid work and electronic monitoring") }}>
                 <label class="govuk-label govuk-radios__label" for="suitable-for-3">
-                  Both unpaid work and electronic monitoring
+                  Both unpaid and electronic monitoring
                 </label>
               </div>
               <div class="govuk-radios__divider">or</div>

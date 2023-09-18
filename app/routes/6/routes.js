@@ -68,7 +68,20 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/proposal', function (req, res) {
-    res.redirect('check-answers')
+    const suitableFor = req.session.data['suitable-for']
+    const domesticAbuseResult = req.session.data['domestic-abuse-check-result']
+    const safeguardingResult = req.session.data['safeguarding-check-result']
+    const informedConsent = req.session.data['informed-consent-electronic-monitoring']
+
+    if (suitableFor == 'Electronic monitoring only' || suitableFor == 'Both unpaid work and electronic monitoring'){
+      if (domesticAbuseResult != 'No domestic abuse issues' || safeguardingResult != 'No safeguarding issues' || informedConsent != 'Yes, they have given informed consent'){
+        res.redirect('proposal-error')
+      } else {
+        res.redirect('check-answers')
+      }
+    } else {
+      res.redirect('check-answers')
+    }
   })
 
   router.get('/' + version + '/verification-report/check-answers', function (req, res) {
