@@ -71,9 +71,12 @@
             <div class="govuk-error-summary__body">
               <ul class="govuk-list govuk-error-summary__list">
                 <li>
-                  <a href="#proposal">To proceed with Electronic monitoring for
-                    curfew domestic abuse checks, safe guarding checks must come
-                    back without any issues and informed consent must be given.</a>
+                  <a href="#proposal">You can only select electronic monitoring curfew if you answered:
+                    <br/>No concerns for domestic abuse.
+                    <br/>No concerns for child safeguarding.
+                    <br/>Yes to informed consent.
+                    <br/>Change your recommendation or update the checks and consents.
+                  </a>
                 </li>
               </ul>
             </div>
@@ -93,13 +96,11 @@
               </label>
             </h2>
             <p id="proposal-error" class="govuk-error-message"><span class="govuk-visually-hidden">
-              Error:</span> You cannot select electronic
-              monitoring. Change your recommendation or resolve errors with:</p>
-            <ul class="govuk-list govuk-list--bullet govuk-error-message">
-                <li><a href="common-data">Domestic abuse checks</a></li>
-                <li><a href="common-data">Safeguarding checks</a></li>
-                <li><a href="electronic-monitoring-for-curfew">Informed consent</a></li>
-            </ul>
+              Error:</span> You can only select electronic monitoring curfew if you answered: 
+              <ul class="govuk-list govuk-list--bullet govuk-error-message">
+                <li><a href="essential-information">No concerns for domestic abuse</a></li>
+                <li><a href="essential-information">No concerns for child safeguarding</a></li>
+                <li><a href="electronic-monitoring-for-curfew">Yes to informed consent</a></li>Change your recommendation or update the checks and consent.</ul>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="suitable-for" name="suitable-for" type="radio" value="Unpaid work only" {{ checked("suitable-for", "Unpaid work only") }}>
