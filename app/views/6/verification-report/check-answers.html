@@ -70,398 +70,445 @@
           <h1 class="govuk-heading-xl">
             Check your answers
           </h1>
-          <h2 class="govuk-heading-m">Defendant details</h2>
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Full name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['full-name']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="offender-details">Change
-                  <span class="govuk-visually-hidden">full name</span>
-                </a>
-              </dd>
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">Defendant details</h2>
             </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Current address
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['address-line-1']}}<br />
-                {% if (data['address-line-2']) %}
-                  {{data['address-line-2']}}<br />
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Full name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['full-name']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="offender-details">Change
+                      <span class="govuk-visually-hidden">full name</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Current address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['address-line-1']}}<br />
+                    {% if (data['address-line-2']) %}
+                      {{data['address-line-2']}}<br />
+                    {% endif %}
+                    {{data['address-town']}}<br />
+                    {% if (data['address-county']) %}
+                      {{data['address-county']}}<br />
+                    {% endif %}
+                    {{data['address-postcode']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="offender-details">Change
+                      <span class="govuk-visually-hidden">address</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Address verified by
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['address-verification']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="offender-details">Change
+                      <span class="govuk-visually-hidden">address verification</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Date of birth
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['date-of-birth-day']}}/{{data['date-of-birth-month']}}/{{data['date-of-birth-year']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="offender-details">Change
+                      <span class="govuk-visually-hidden">date of birth</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Offences
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['offences']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="offence-information">Change
+                      <span class="govuk-visually-hidden">case reference number</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">Required sections</h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    What sections are required in this verification report?
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['verification-report-sections']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="required-sections">Change
+                      <span class="govuk-visually-hidden">verification report
+                        sections</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">Common data</h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Domestic abuse checks
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['domestic-abuse-check-result']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="common-data">Change
+                      <span class="govuk-visually-hidden">domestic abuse checks</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Safeguarding checks
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['safeguarding-check-result']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="common-data">Change
+                      <span class="govuk-visually-hidden">Safeguarding checks</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    How have you verified these checks?
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['check-verification']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="common-data">Change
+                      <span class="govuk-visually-hidden">Safeguarding checks</span>
+                    </a>
+                  </dd>
+                </div>
+                {% if (data['other-address-description']) %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Other addresses
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['other-address-description']}}<br /><br>
+                      {{data['other-address-line-1']}}<br />
+                      {% if (data['other-address-line-2']) %}
+                        {{data['other-address-line-2']}}<br />
+                      {% endif %}
+                      {{data['other-address-town']}}<br />
+                      {% if (data['other-address-county']) %}
+                        {{data['other-address-county']}}<br />
+                      {% endif %}
+                      {{data['other-address-postcode']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="common-data">Change
+                        <span class="govuk-visually-hidden">other addresses</span>
+                      </a>
+                    </dd>
+                  </div>
                 {% endif %}
-                {{data['address-town']}}<br />
-                {% if (data['address-county']) %}
-                  {{data['address-county']}}<br />
-                {% endif %}
-                {{data['address-postcode']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="offender-details">Change
-                  <span class="govuk-visually-hidden">address</span>
-                </a>
-              </dd>
+              </dl>
             </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Address verified by
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['address-verification']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="offender-details">Change
-                  <span class="govuk-visually-hidden">address verification</span>
-                </a>
-              </dd>
+          </div>
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">Common data</h2>
             </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Date of birth
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['date-of-birth-day']}}/{{data['date-of-birth-month']}}/{{data['date-of-birth-year']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="offender-details">Change
-                  <span class="govuk-visually-hidden">date of birth</span>
-                </a>
-              </dd>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Dependants
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['dependant-caring-responsibilities']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="common-data">
+                      Change <span class="govuk-visually-hidden">Verify dependant
+                      and caring responsibilities</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Dependants verified by
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['how-verified-dependants']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="common-data">Change
+                      <span class="govuk-visually-hidden">Verify dependant and
+                        caring responsibilities</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Employment
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['verify-current-employment']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="common-data">Change
+                      <span class="govuk-visually-hidden">Verify current
+                      employment</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Employment verified by
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['how-verified-current-employment']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="common-data">Change
+                      <span class="govuk-visually-hidden">Verify current employment</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
             </div>
-          </dl>
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Offences
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['offences']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="offence-information">Change
-                  <span class="govuk-visually-hidden">case reference number</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
-          <h2 class="govuk-heading-m">Required sections</h2>
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                What sections are required in this verification report?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['verification-report-sections']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="required-sections">Change
-                  <span class="govuk-visually-hidden">verification report
-                    sections</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
-          <h2 class="govuk-heading-m">Common data</h2>
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Domestic abuse checks
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['domestic-abuse-check-result']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="common-data">Change
-                  <span class="govuk-visually-hidden">domestic abuse checks</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Safeguarding checks
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['safeguarding-check-result']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="common-data">Change
-                  <span class="govuk-visually-hidden">Safeguarding checks</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                How have you verified these checks?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['check-verification']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="common-data">Change
-                  <span class="govuk-visually-hidden">Safeguarding checks</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Other addresses
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['other-address-description']}}<br /><br>
-                {{data['other-address-line-1']}}<br />
-                {% if (data['other-address-line-2']) %}
-                  {{data['other-address-line-2']}}<br />
-                {% endif %}
-                {{data['other-address-town']}}<br />
-                {% if (data['other-address-county']) %}
-                  {{data['other-address-county']}}<br />
-                {% endif %}
-                {{data['other-address-postcode']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="common-data">Change
-                  <span class="govuk-visually-hidden">other addresses</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Dependants
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['dependant-caring-responsibilities']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="common-data">
-                  Change <span class="govuk-visually-hidden">Verify dependant
-                  and caring responsibilities</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Dependants verified by
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['how-verified-dependants']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="common-data">Change
-                  <span class="govuk-visually-hidden">Verify dependant and
-                    caring responsibilities</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Employment
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['verify-current-employment']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="common-data">Change
-                  <span class="govuk-visually-hidden">Verify current
-                  employment</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Employment verified by
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['how-verified-current-employment']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="common-data">Change
-                  <span class="govuk-visually-hidden">Verify current employment</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
+          </div>
           {% if (data['verification-report-sections'] == 'unpaidWork') or (data['verification-report-sections'] == 'both') %}
-            <h2 class="govuk-heading-m">Suitability for unpaid work</h2>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Health conditions
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['verify-no-health-conditions']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="unpaid-work">Change
-                    <span class="govuk-visually-hidden"> verify no health
-                      conditions</span>
-                  </a>
-                </dd>
+            <div class="govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">Suitability for unpaid work</h2>
               </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Health conditions verified by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['how-verified-health-conditions']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="unpaid-work">Change
-                    <span class="govuk-visually-hidden"> health conditions
-                      verified by</span>
-                  </a>
-                </dd>
+              <div class="govuk-summary-card__content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Health conditions
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['verify-no-health-conditions']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="unpaid-work">Change
+                        <span class="govuk-visually-hidden"> verify no health
+                          conditions</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Health conditions verified by
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['how-verified-health-conditions']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="unpaid-work">Change
+                        <span class="govuk-visually-hidden"> health conditions
+                          verified by</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Verify DWP involvement
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['verify-dwp-involvement']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="unpaid-work">Change
+                        <span class="govuk-visually-hidden">verify DWP involvement</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      DWP verified by
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['how-verified-dwp']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="unpaid-work">Change
+                        <span class="govuk-visually-hidden">DWP verified by</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Supporting comments for unpaid work
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['supporting-information-unpaid-work']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="unpaid-work">Change
+                        <span class="govuk-visually-hidden">supporting comments for
+                          unpaid work</span>
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
               </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Verify DWP involvement
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['verify-dwp-involvement']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="unpaid-work">Change
-                    <span class="govuk-visually-hidden">verify DWP involvement</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  DWP verified by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['how-verified-dwp']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="unpaid-work">Change
-                    <span class="govuk-visually-hidden">DWP verified by</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Supporting comments for unpaid work
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['supporting-information-unpaid-work']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="unpaid-work">Change
-                    <span class="govuk-visually-hidden">supporting comments for
-                      unpaid work</span>
-                  </a>
-                </dd>
-              </div>
-            </dl>
+            </div>
           {% endif %}
           {% if (data['verification-report-sections'] == 'electronicMonitoring') or (data['verification-report-sections'] == 'both') %}
-            <h2 class="govuk-heading-m">Suitability for electronic monitoring for curfew</h2>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Informed consent to an electronic monitoring curfew
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['informed-consent-electronic-monitoring']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="electronic-monitoring-for-curfew">
-                    Change<span class="govuk-visually-hidden"> electronic
-                      monitoring for curfew</span>
-                  </a>
-                </dd>
+            <div class="govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">Suitability for electronic
+                  monitoring for curfew</h2>
               </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Informed consent verified by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['how-verified-informed-consent-electronic-monitoring']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="electronic-monitoring-for-curfew">
-                    Change<span class="govuk-visually-hidden"> electronic
-                      monitoring for curfew</span>
-                  </a>
-                </dd>
+              <div class="govuk-summary-card__content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Informed consent to an electronic monitoring curfew
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['informed-consent-electronic-monitoring']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="electronic-monitoring-for-curfew">
+                        Change<span class="govuk-visually-hidden"> electronic
+                          monitoring for curfew</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Informed consent verified by
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['how-verified-informed-consent-electronic-monitoring']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="electronic-monitoring-for-curfew">
+                        Change<span class="govuk-visually-hidden"> electronic
+                          monitoring for curfew</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Health conditions
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['health-electronic-monitoring']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="electronic-monitoring-for-curfew">
+                        Change <span class="govuk-visually-hidden"> Verify health
+                          for substance misuse or mental health conditions</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Health conditions verified by
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['how-verified-health-electronic-monitoring']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="electronic-monitoring-for-curfew">
+                        Change <span class="govuk-visually-hidden">health conditions
+                        verified by</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Supporting comments for electronic monitoring for curfew
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['supporting-information-electronic-monitoring']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="electronic-monitoring-for-curfew">
+                        Change <span class="govuk-visually-hidden"> Electronic
+                          monitoring for curfew supporting comments</span>
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
               </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Health conditions
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['health-electronic-monitoring']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="electronic-monitoring-for-curfew">
-                    Change <span class="govuk-visually-hidden"> Verify health
-                      for substance misuse or mental health conditions</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Health conditions verified by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['how-verified-health-electronic-monitoring']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="electronic-monitoring-for-curfew">
-                    Change <span class="govuk-visually-hidden">health conditions
-                    verified by</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Supporting comments for electronic monitoring for curfew
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['supporting-information-electronic-monitoring']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="electronic-monitoring-for-curfew">
-                    Change <span class="govuk-visually-hidden"> Electronic
-                      monitoring for curfew supporting comments</span>
-                  </a>
-                </dd>
-              </div>
-            </dl>
+            </div>
           {% endif %}
-          <h2 class="govuk-heading-m">Proposal</h2>
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                What is the defendant suitable for?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['suitable-for']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="offender-details">Change
-                  <span class="govuk-visually-hidden"> what the defendant is
-                    suitable for</span>
-                </a>
-              </dd>
+            <div class="govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">Proposal</h2>
+              </div>
+              <div class="govuk-summary-card__content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      What is the defendant suitable for?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['suitable-for']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="offender-details">Change
+                        <span class="govuk-visually-hidden"> what the defendant is
+                          suitable for</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Explain why they are suitable
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['suitability-explanation']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="offender-details">
+                        Change<span class="govuk-visually-hidden"> address</span>
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
             </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Explain why they are suitable
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['suitability-explanation']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="offender-details">
-                  Change<span class="govuk-visually-hidden"> address</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
+
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>
