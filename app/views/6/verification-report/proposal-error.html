@@ -110,13 +110,13 @@
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="suitable-for-2" name="suitable-for" type="radio" value="Electronic monitoring only" {{ checked("suitable-for", "Electronic monitoring only") }}>
                 <label class="govuk-label govuk-radios__label" for="suitable-for-2">
-                  Electronic monitoring only
+                  Electronic monitoring curfew only
                 </label>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="suitable-for-3" name="suitable-for" type="radio" value="Both unpaid work and electronic monitoring" {{ checked("suitable-for", "Both unpaid work and electronic monitoring") }}>
                 <label class="govuk-label govuk-radios__label" for="suitable-for-3">
-                  Both unpaid and electronic monitoring
+                  Both unpaid and electronic monitoring curfew
                 </label>
               </div>
               <div class="govuk-radios__divider">or</div>
@@ -131,7 +131,7 @@
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--m" for="proposal">
-                Explain why they are suitable
+                Explain your recommendation
               </label>
             </h2>
             <textarea class="govuk-textarea" id="suitability-explanation" name="suitability-explanation" rows="9" aria-describedby="suitability-explanation-hint">{{data['suitability-explanation']}}</textarea>
