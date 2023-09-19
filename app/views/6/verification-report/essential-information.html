@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Common data" %}
+{% set pageName="Essential information" %}
 
 {% block pageScripts %}
   <script type="text/javascript">
@@ -34,8 +34,8 @@
                 Choose sections</a>
             </li>
             <li class="app-subnav__section-item app-subnav__section-item--current">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="common-data">
-                Common data</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="essential-information">
+                Essential information</a>
             </li>
             <li class="app-subnav__section-item">
               {% if (data['verification-report-sections'] == 'unpaidWork') or (data['verification-report-sections'] == 'both')  %}
@@ -56,8 +56,8 @@
               {% endif %}
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="proposal">
-                Proposal</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="recommendation">
+                Recommendation</a>
             </li>
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="check-answers">
@@ -81,7 +81,7 @@
             Dylan Adam Armstrong CRN: E234516
           </span>
           <h1 class="govuk-heading-l">
-            Required information for any type of report
+            Essential information
           </h1>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -92,24 +92,24 @@
               </legend>
               <div id="domestic-abuse-checks-hint" class="govuk-hint">You must
                 check for any previous domestic violence charges or domestic
-                abuse Police call-outs.</div>
+                abuse police callouts.</div>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="domestic-abuse-check-result" name="domestic-abuse-check-result" type="radio" value="No domestic abuse issues" {{ checked("domestic-abuse-check-result", "No domestic abuse issues") }}>
                   <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result">
-                    No domestic abuse issues
+                    No concerns about domestic abuse 
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="domestic-abuse-check-result-2" name="domestic-abuse-check-result" type="radio" value="Has domestic abuse issues" {{ checked("domestic-abuse-check-result", "Has domestic abuse issues") }}>
                   <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result-2">
-                    Has domestic abuse issues
+                    Concerns about domestic abuse
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="domestic-abuse-check-result-3" name="domestic-abuse-check-result" type="radio" value="Check pending" {{ checked("domestic-abuse-check-result", "Check pending") }}>
                   <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result-3">
-                    Check pending for domestic abuse
+                    Waiting for information to come back
                   </label>
                 </div>
               </div>
@@ -122,23 +122,24 @@
                   Safeguarding checks
                 </h2>
               </legend>
+              <div id="safeguarding-checks-hint" class="govuk-hint">Check with social services for any concerns about child safety.</div>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="safeguarding-check-result" name="safeguarding-check-result" type="radio" value="No safeguarding issues" {{ checked("safeguarding-check-result", "No safeguarding issues") }}>
                   <label class="govuk-label govuk-radios__label" for="safeguarding-check-result">
-                    No safeguarding issues
+                    No child safeguarding concerns
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="safeguarding-check-result-2" name="safeguarding-check-result" type="radio" value="Has safeguarding issues" {{ checked("safeguarding-check-result", "Has safeguarding issues") }}>
                   <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-2">
-                    Has safeguarding issues
+                    Concerns about child safeguarding
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="safeguarding-check-result-3" name="safeguarding-check-result" type="radio" value="Check pending" {{ checked("safeguarding-check-result", "Check pending") }}>
                   <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-3">
-                    Check pending for safeguarding
+                    Waiting for information to come back
                   </label>
                 </div>
               </div>
@@ -157,10 +158,9 @@
                 <h2 class="govuk-fieldset__heading">Addresses</h2>
               </legend>
               <div id="changedName-hint" class="govuk-hint">
-                These are all the addresses relevant to the defendant and any
-                interventions they are being considered for.
+                Record all addresses that the defendant lives at.
               </div>
-              <h3 class="govuk-heading-s">Current Address</h3>
+              <h3 class="govuk-heading-s">Current address</h3>
               <p class="govuk-body">
                 {{data['address-line-1']}}<br />
                   {% if (data['address-line-2']) %}
@@ -223,7 +223,7 @@
               Dependants
             </h2>
             <div id="dependant-caring-responsibilities-hint" class="govuk-hint">
-              Record and dependants and caring responsibilities that could impact someone's ability to do unpaid work or receive an electronic monitoring curfew.
+              Record any dependants and caring responsibilities that could impact the defendant's ability to do unpaid work or receive an electronic monitoring curfew.
             </div>
             <textarea class="govuk-textarea" id="dependant-caring-responsibilities" name="dependant-caring-responsibilities" rows="5" aria-describedby="dependant-caring-responsibilities-hint">{{data['dependant-caring-responsibilities']}}</textarea>
           </div>
