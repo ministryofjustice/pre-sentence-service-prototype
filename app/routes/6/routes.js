@@ -23,14 +23,14 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/required-sections', function (req, res) {
-    res.redirect('common-data')
+    res.redirect('essential-information')
   });
 
-  router.get('/' + version + '/verification-report/common-data', function (req, res) {
-    res.render(version + '/verification-report/common-data')
+  router.get('/' + version + '/verification-report/essential-information', function (req, res) {
+    res.render(version + '/verification-report/essential-information')
   });
 
-  router.post('/' + version + '/verification-report/common-data', function (req, res) {
+  router.post('/' + version + '/verification-report/essential-information', function (req, res) {
     const verificationReportSections = req.session.data['verification-report-sections']
 
     if (verificationReportSections == 'unpaidWork' || verificationReportSections == 'both'){
