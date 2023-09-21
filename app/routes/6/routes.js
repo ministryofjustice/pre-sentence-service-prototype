@@ -30,21 +30,21 @@ module.exports = function (router) {
     if (draftSaved == 'true'){
       res.redirect('offences')
     } else {
-      res.redirect('required-sections')
+      res.redirect('choose-sections')
     }
   });
 
-  router.get('/' + version + '/verification-report/required-sections', function (req, res) {
+  router.get('/' + version + '/verification-report/choose-sections', function (req, res) {
     req.session.data.draftSaved = 'false'
 
-    res.render(version + '/verification-report/required-sections')
+    res.render(version + '/verification-report/choose-sections')
   });
 
-  router.post('/' + version + '/verification-report/required-sections', function (req, res) {
+  router.post('/' + version + '/verification-report/choose-sections', function (req, res) {
     const draftSaved = req.session.data['draftSaved']
 
     if (draftSaved == 'true'){
-      res.redirect('required-sections')
+      res.redirect('choose-sections')
     } else {
       res.redirect('essential-information')
     }
