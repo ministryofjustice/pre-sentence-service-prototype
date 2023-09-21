@@ -249,9 +249,14 @@
             </h3>
             <input class="govuk-input" id="how-verified-current-employment" name="how-verified-current-employment" type="text" value="{{data['how-verified-current-employment']}}">
           </div>
-          <button class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="draftSaved" value="true">
+              Save draft
+            </button>
+          </div>
         </form>
       </main>
     </div>

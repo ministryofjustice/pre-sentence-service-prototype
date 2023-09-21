@@ -118,14 +118,19 @@
                 Supporting comments</label>
             </h1>
             <div id="electronic-monitoring-supporting-hint" class="govuk-hint">Include
-              information here that supports your professional judgement. 
+              information here that supports your professional judgement.
               <br/>You should include anything of concern that you have considered and how it has affected your recommendation.
               <br/>This will not be published in the final report but it will be recorded.</div>
             <textarea class="govuk-textarea" id="supporting-information-electronic-monitoring" name="supporting-information-electronic-monitoring" rows="5" aria-describedby="supporting-information-electronic-monitoring-hint">{{data['supporting-information-electronic-monitoring']}}</textarea>
           </div>
-          <button class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="draftSaved" value="true">
+              Save draft
+            </button>
+          </div>
         </form>
       </main>
     </div>
