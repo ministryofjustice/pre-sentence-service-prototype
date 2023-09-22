@@ -138,9 +138,14 @@
             </h2>
             <textarea class="govuk-textarea" id="suitability-explanation" name="suitability-explanation" rows="9" aria-describedby="suitability-explanation-hint">{{data['suitability-explanation']}}</textarea>
           </div>
-          <button class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="draftSaved" value="true">
+              Save draft
+            </button>
+          </div>
         </form>
       </main>
     </div>
