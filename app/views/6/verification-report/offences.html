@@ -17,7 +17,7 @@
                 Offences</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="required-sections">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="choose-sections">
                 Choose sections</a>
             </li>
             <li class="app-subnav__section-item">
@@ -78,12 +78,16 @@
             </h2>
             <div id="offences-hint" class="govuk-hint">
               Include a description of the offences and the dates that they were committed.</div>
-            <div class="govuk-form-group">
-            <textarea class="govuk-textarea" id="offences" name="offences" rows="5" aria-describedby="offences-hint">{{data['offences']}}</textarea>
+            <textarea class="govuk-textarea" id="offences" name="offences" rows="5" aria-describedby="offences-hint">{{data['offences'] | default('Theft from a shop 24/08/2023')}}</textarea>
           </div>
-          <button class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="draftSaved" value="true">
+              Save draft
+            </button>
+          </div>
         </form>
       </main>
     </div>

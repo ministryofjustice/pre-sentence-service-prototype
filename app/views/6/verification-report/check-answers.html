@@ -17,7 +17,7 @@
                 Offences</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="required-sections">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="choose-sections">
                 Choose sections</a>
             </li>
             <li class="app-subnav__section-item">
@@ -494,46 +494,50 @@
               </div>
             </div>
           {% endif %}
-            <div class="govuk-summary-card">
-              <div class="govuk-summary-card__title-wrapper">
-                <h2 class="govuk-summary-card__title">Proposal</h2>
-              </div>
-              <div class="govuk-summary-card__content">
-                <dl class="govuk-summary-list">
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      What is the defendant suitable for?
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      {{data['suitable-for']}}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a class="govuk-link" href="offender-details">Change
-                        <span class="govuk-visually-hidden"> what the defendant is
-                          suitable for</span>
-                      </a>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Explain why they are suitable
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      {{data['suitability-explanation']}}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a class="govuk-link" href="offender-details">
-                        Change<span class="govuk-visually-hidden"> address</span>
-                      </a>
-                    </dd>
-                  </div>
-                </dl>
-              </div>
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">Proposal</h2>
             </div>
-
-          <button class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    What is the defendant suitable for?
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['suitable-for']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="offender-details">Change
+                      <span class="govuk-visually-hidden"> what the defendant is
+                        suitable for</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Explain why they are suitable
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['suitability-explanation']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="offender-details">
+                      Change<span class="govuk-visually-hidden"> address</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="draftSaved" value="true">
+              Save draft
+            </button>
+          </div>
         </form>
       </main>
     </div>

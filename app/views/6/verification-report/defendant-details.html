@@ -17,7 +17,7 @@
                 Offences</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="required-sections">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="choose-sections">
                 Choose sections</a>
             </li>
             <li class="app-subnav__section-item">
@@ -74,7 +74,7 @@
             <h2 class="govuk-heading-m" for="full-name">
               Full name
             </h2>
-            <input class="govuk-input" id="full-name" name="full-name" type="full-name" value="{{data['full-name'] | default('Dylan Adam Armstrong')}}">
+            <input class="govuk-input govuk-input--width-30" id="full-name" name="full-name" type="full-name" value="{{data['full-name'] | default('Dylan Adam Armstrong')}}">
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
@@ -91,25 +91,25 @@
                 <label class="govuk-label" for="address-line-1">
                   Address line 1
                 </label>
-                <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="off" value="{{data['address-line-1'] | default('19 Penn Street')}}">
+                <input class="govuk-input govuk-input--width-30" id="address-line-1" name="address-line-1" type="text" autocomplete="off" value="{{data['address-line-1'] | default('19 Penn Street')}}">
               </div>
               <div class="govuk-form-group">
                 <label class="govuk-label" for="address-line-2">
                   Address line 2 (optional)
                 </label>
-                <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="off" value="{{data['address-line-2']}}">
+                <input class="govuk-input govuk-input--width-30" id="address-line-2" name="address-line-2" type="text" autocomplete="off" value="{{data['address-line-2']}}">
               </div>
               <div class="govuk-form-group">
                 <label class="govuk-label" for="address-town">
                   Town or city
                 </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" autocomplete="off" type="text" value="{{data['address-town'] | default('Oakworth')}}">
+                <input class="govuk-input govuk-input--width-20" id="address-town" name="address-town" autocomplete="off" type="text" value="{{data['address-town'] | default('Oakworth')}}">
               </div>
               <div class="govuk-form-group">
                 <label class="govuk-label" for="address-county">
                   County (optional)
                 </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" autocomplete="off" type="text" value="{{data['address-county']}}">
+                <input class="govuk-input govuk-input--width-20" id="address-county" name="address-county" autocomplete="off" type="text" value="{{data['address-county']}}">
               </div>
               <div class="govuk-form-group">
                 <label class="govuk-label" for="address-postcode">
@@ -120,9 +120,8 @@
             </fieldset>
           </div>
           <div class="govuk-form-group">
-            <h2 class="govuk-heading-m" for="full-name">
-             How have you verified that the defendant is living at this address?
-            </h2>
+            <h2 class="govuk-heading-m" for="full-name">How have you verified
+              this address?</h2>
             <input class="govuk-input" id="address-verification" name="address-verification" type="address-verification" value="{{data['address-verification']}}">
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -142,7 +141,7 @@
                     <label class="govuk-label govuk-date-input__label" for="date-of-birth-day">
                       Day
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-day" name="date-of-birth-day" type="text" inputmode="numeric" value="{{data['date-of-birth-day']}}">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-day" name="date-of-birth-day" type="text" inputmode="numeric" value="{{data['date-of-birth-day'] | default('15')}}">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -150,7 +149,7 @@
                     <label class="govuk-label govuk-date-input__label" for="date-of-birth-month">
                       Month
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-month" name="date-of-birth-month" type="text" inputmode="numeric" value="{{data['date-of-birth-month']}}">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-month" name="date-of-birth-month" type="text" inputmode="numeric" value="{{data['date-of-birth-month'] | default('03')}}">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -158,15 +157,20 @@
                     <label class="govuk-label govuk-date-input__label" for="date-of-birth-year">
                       Year
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" name="date-of-birth-year" type="text" inputmode="numeric" value="{{data['date-of-birth-year']}}">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" name="date-of-birth-year" type="text" inputmode="numeric" value="{{data['date-of-birth-year'] | default('1996')}}">
                   </div>
                 </div>
               </div>
             </fieldset>
           </div>
-          <button class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="draftSaved" value="true">
+              Save draft
+            </button>
+          </div>
         </form>
       </main>
     </div>

@@ -17,7 +17,7 @@
                 Offences</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="required-sections">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="choose-sections">
                 Choose sections</a>
             </li>
             <li class="app-subnav__section-item">
@@ -71,18 +71,14 @@
             <div class="govuk-error-summary__body">
               <ul class="govuk-list govuk-error-summary__list">
                 <li>
-                  <a href="#proposal">You can only select electronic monitoring curfew if you answered:
-                    <br/>No concerns for domestic abuse.
-                    <br/>No concerns for child safeguarding.
-                    <br/>Yes to informed consent.
-                    <br/>Change your recommendation or update the checks and consents.
-                  </a>
+                  <a href="#proposal">Change your recommendation or update the
+                    checks and consents.</a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        <form action="proposal" method="post" novalidate>
+        <form action="recommendation" method="post" novalidate>
           <span class="govuk-caption-l">
             Dylan Adam Armstrong CRN: E234516
           </span>
@@ -96,11 +92,16 @@
               </label>
             </h2>
             <p id="proposal-error" class="govuk-error-message"><span class="govuk-visually-hidden">
-              Error:</span> You can only select electronic monitoring curfew if you answered: 
+              Error:</span> You can only select
+                electronic monitoring curfew if you answered:
               <ul class="govuk-list govuk-list--bullet govuk-error-message">
                 <li><a href="essential-information">No concerns for domestic abuse</a></li>
                 <li><a href="essential-information">No concerns for child safeguarding</a></li>
-                <li><a href="electronic-monitoring-for-curfew">Yes to informed consent</a></li>Change your recommendation or update the checks and consent.</ul>
+                <li><a href="electronic-monitoring-for-curfew">Yes to informed consent</a></li>
+              </ul>
+              <p class="govuk-body govuk-error-message">Change your
+                recommendation or update the checks and consent.</p>
+            </p>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="suitable-for" name="suitable-for" type="radio" value="Unpaid work only" {{ checked("suitable-for", "Unpaid work only") }}>
@@ -137,9 +138,14 @@
             </h2>
             <textarea class="govuk-textarea" id="suitability-explanation" name="suitability-explanation" rows="9" aria-describedby="suitability-explanation-hint">{{data['suitability-explanation']}}</textarea>
           </div>
-          <button class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="draftSaved" value="true">
+              Save draft
+            </button>
+          </div>
         </form>
       </main>
     </div>
