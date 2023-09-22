@@ -126,7 +126,7 @@ module.exports = function (router) {
     } else {
       if (suitableFor == 'Electronic monitoring only' || suitableFor == 'Both unpaid work and electronic monitoring'){
         if (domesticAbuseResult != 'No domestic abuse issues' || safeguardingResult != 'No safeguarding issues' || informedConsent != 'Yes, they have given informed consent'){
-          res.redirect('proposal-error')
+          res.redirect('recommendation-error')
         } else {
           res.redirect('check-answers')
         }
