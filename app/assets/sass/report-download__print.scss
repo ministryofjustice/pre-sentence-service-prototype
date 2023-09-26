@@ -1,0 +1,90 @@
+@page{
+  size: A4 portrait;
+  @bottom-right{
+    content: 'Page ' counter(page) ' of ' counter(pages);
+  }
+}
+
+@page:blank{
+  @top-center{content: 'This page in blank.'}
+}
+
+h1:not(:first-of-type){
+  page-break-before: always;
+}
+
+h1, h2, h3, h4, h5{
+  page-break-after: avoid;
+}
+
+caption > *{
+  margin-bottom: 0 !important;
+}
+
+table, figure, .govuk-grid-row{
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.govuk-main-wrapper{
+  padding:0;
+}
+
+.govuk-width-container{
+  max-width: 960px;
+}
+
+.govuk-grid-column-one-half {
+  width: 50%;
+  float: left;
+}
+
+.govuk-body-s, .govuk-table {
+  color: #0b0c0c;
+  font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.1428571429;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.govuk-table__caption--m{
+  margin-bottom: 20px;
+}
+
+.govuk-table__header, .govuk-table__cell{
+  padding:5px 10px 5px 0;
+  border: 0 none;
+}
+
+.govuk-table .govuk-table__body .govuk-table__row:last-of-type > *{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.govuk-grid-row{
+  margin-bottom: 30px;
+}
+
+.report-header{
+  background-color: #6b3485;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+  a{
+    color: #ffffff;
+  }
+}
+
+.report-heading--purple{
+  color: #6b3485;
+}
+
+.report-proposal{
+  border:10px solid #6b3485;
+  padding:10px;
+}
