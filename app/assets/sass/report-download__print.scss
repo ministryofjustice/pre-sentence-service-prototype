@@ -52,11 +52,12 @@ table, figure, .govuk-grid-row{
   margin-bottom: 15px;
 }
 
-.govuk-table{
-  margin-bottom: 0;
+.govuk-table__caption--m{
+  margin-bottom: 20px;
 }
 
 .govuk-table__header, .govuk-table__cell{
+  padding:5px 10px 5px 0;
   border: 0 none;
 }
 
@@ -65,14 +66,8 @@ table, figure, .govuk-grid-row{
   padding-bottom: 0;
 }
 
-.govuk-table__caption--m{
-  margin-bottom: 20px;
-}
-
 .govuk-grid-row{
   margin-bottom: 30px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid grey;
 }
 
 .report-header{
