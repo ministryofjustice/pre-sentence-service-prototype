@@ -1,0 +1,138 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Recommendation" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">
+                Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offences">
+                Offences</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="choose-sections">
+                Choose sections</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="essential-information">
+                Essential  information</a>
+            </li>
+            <li class="app-subnav__section-item">
+              {% if (data['verification-report-sections'] == 'unpaidWork') or (data['verification-report-sections'] == 'both')  %}
+                <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">
+                  Suitability for unpaid work</a>
+              {% else %}
+                  <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-link--disabled" href="unpaid-work">
+                    Suitability for unpaid work</a>
+              {% endif %}
+            </li>
+            <li class="app-subnav__section-item">
+              {% if (data['verification-report-sections'] == 'electronicMonitoring') or (data['verification-report-sections'] == 'both')  %}
+                <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">
+                  Suitability for electronic monitoring</a>
+              {% else %}
+                  <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-link--disabled" href="electronic-monitoring-for-curfew">
+                    Suitability for electronic monitoring</a>
+              {% endif %}
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="recommendation">
+                Recommendation</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="check-answers">
+                Check your answers</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="recommendation" method="post" novalidate>
+          <span class="govuk-caption-l">
+            Dylan Adam Armstrong CRN: E234516
+          </span>
+          <h1 class="govuk-heading-l">
+            Recommendation
+          </h1>
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="suitable-for">
+                What is the defendant suitable for?
+              </label>
+            </h2>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="suitable-for" name="suitable-for" type="radio" value="Unpaid work only" {{ checked("suitable-for", "Unpaid work only") }}>
+                <label class="govuk-label govuk-radios__label" for="suitable-for">
+                  Unpaid work only
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="suitable-for-2" name="suitable-for" type="radio" value="Electronic monitoring only" {{ checked("suitable-for", "Electronic monitoring only") }}>
+                <label class="govuk-label govuk-radios__label" for="suitable-for-2">
+                  Electronic monitoring curfew only
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="suitable-for-3" name="suitable-for" type="radio" value="Both unpaid work and electronic monitoring" {{ checked("suitable-for", "Both unpaid work and electronic monitoring") }}>
+                <label class="govuk-label govuk-radios__label" for="suitable-for-3">
+                  Both unpaid work and electronic monitoring curfew
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="suitable-for-4" name="suitable-for" type="radio" value="Not suitable" {{ checked("suitable-for", "Not suitable") }}>
+                <label class="govuk-label govuk-radios__label" for="suitable-for-4">
+                  Not suitable
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="proposal">
+                Explain your recommendation
+              </label>
+            </h2>
+            <textarea class="govuk-textarea" id="suitability-explanation" name="suitability-explanation" rows="9" aria-describedby="suitability-explanation-hint">{{data['suitability-explanation']}}</textarea>
+          </div>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="draftSaved" value="true">
+              Save draft
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link"
+        href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+          xmlns="http://www.w3.org/2000/svg" width="13" height="17"
+          viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z">
+          </path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}
