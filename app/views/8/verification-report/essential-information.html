@@ -333,7 +333,32 @@
                       No
                     </label>
                   </div>
-                  
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                  <div class="govuk-form-group">
+                    <h2 class="govuk-heading-m" for="verify-no-health-conditions">Health
+                       conditions</h2>
+                    <div id="verify-no-health-conditions-hint" class="govuk-hint">Record
+                      any health conditions that may affect their ability to complete
+                      unpaid work or receive an electronic monitoring curfew.
+                      <br>You should include both physical and mental health conditions.</div>
+                    <textarea class="govuk-textarea" id="verify-no-health-conditions" name="verify-no-health-conditions" rows="5" aria-describedby="verify-no-health-conditions-hint">{{data['verify-no-health-conditions']}}</textarea>
+                  </div>
+                  <div class="govuk-form-group">
+                    <div class="govuk-form-group">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="subject">
+                          <h2 class="govuk-heading-m">Have you verified this information?</h2>
+                        </label>
+                        <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
+                          <option value="choose" selected>Choose an option</option>
+                          <option value="householdbill">Doctor's note</option>
+                          <option value="tenancyagreement">Prescription</option>
+                          <option value="mortgagestatement">Something else</option>
+                          <option value="counciltaxstatement">Something else</option>
+                          <option value="other">Other</option>
+                          <option value="noproofofaddress">I have not seen evidence</option>
+                        </select>
+                      </div>
                 </div>
               </fieldset>
             </div>
