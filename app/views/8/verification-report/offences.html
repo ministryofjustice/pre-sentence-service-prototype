@@ -77,9 +77,23 @@
               </label>
             </h2>
             <div id="offences-hint" class="govuk-hint">
-              Include a description of the offences and the dates that they were committed.</div>
-            <textarea class="govuk-textarea" id="offences" name="offences" rows="5" aria-describedby="offences-hint">{{data['offences'] | default('Theft from a shop 24/08/2023')}}</textarea>
+              Enter the name of the offence and the date it was committed.</div>
+            <textarea class="govuk-textarea" for="one-half" id="offences" name="offences" rows="1" aria-describedby="offences-hint">{{data['offences'] | default('Theft from a shop 24/08/2023')}}</textarea>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="offence-information">
+                Enter extra information about this offence, for example the value of stolen goods.
+              </label>
+              <input class="govuk-input" id="offence-information" name="offence-information" type="text">
+            </div>
           </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="one-half">Enter the name of the offence and the date it was committed</label>
+              <input class="govuk-input govuk-!-width-one-half" id="one-half" name="oneHalf" type="text">
+            <label class="govuk-label" for="offence-information">
+              Enter extra information about this offence, for example the value of stolen goods.
+            </label>
+            <input class="govuk-input" id="offence-information" name="offence-informatione" type="text">
+        </div>
           <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button">
               Save and continue
