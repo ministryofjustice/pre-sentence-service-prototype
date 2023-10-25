@@ -77,10 +77,24 @@
             <textarea class="govuk-textarea" id="verify-dwp-involvement" name="verify-dwp-involvement" rows="5" aria-describedby="verify-dwp-involvement-hint">{{data['verify-dwp-involvement']}}</textarea>
           </div>
           <div class="govuk-form-group">
-            <h3 class="govuk-heading-m" for="health-verification">How have you
-              verified this information?</h3>
-            <input class="govuk-input" id="how-verified-dwp" name="how-verified-dwp" type="text" value="{{data['how-verified-dwp']}}">
-          </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m" for="health-electronic-monitoring">
+                How have you verified this information?</h2>
+              <div id="subject-hint" class="govuk-hint">
+                Record proof of benefits
+              </div>
+              <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
+                <option value="choose" selected>Choose an option</option>
+                <option value="departmentofworkandpensions">confirmation from Department of Work and Pensions</option>
+                <option value="jobcentre">a letter from the Jobcentre Plus</option>
+                <option value="pensionservice">a letter from The Pension Service</option>
+                <option value="hmrc">a letter from H M Revenue and Customs</option>
+                <option value="pensionadvice">a pension advice slip</option>
+                <option value="bankstatement">a recent bank statement</option>
+                <option value="other">Other</option>
+                <option value="noproofofbenefits">I have not recorded proof of benefits</option>
+              </select>
+            </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
