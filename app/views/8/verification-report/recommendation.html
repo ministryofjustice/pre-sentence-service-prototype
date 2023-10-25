@@ -68,14 +68,10 @@
             Dylan Adam Armstrong CRN: E234516
           </span>
           <h1 class="govuk-heading-l">
-            Recommendation
+            Suitability decision
           </h1>
           <div class="govuk-form-group">
-            <h2 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="suitable-for">
-                What is the defendant suitable for?
-              </label>
-            </h2>
+            <p class="govuk-body-l">Based on the information you have from agency checks and the defendant interview, what is the defendant suitable for?</p>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="suitable-for" name="suitable-for" type="radio" value="Unpaid work only" {{ checked("suitable-for", "Unpaid work only") }}>
@@ -107,9 +103,14 @@
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--m" for="proposal">
-                Explain your recommendation
+                Explain your decision
               </label>
             </h2>
+            <div id="suitability-explanation-hint" class="govuk-hint">
+              This will be included in the final report which is presented to the Magistrate. 
+              <br>You should include the things you have taken into consideration in making your decision.
+              <br>Keep your explanation focussed on the checks you have done, and the things you found out at interview.  
+            </div>
             <textarea class="govuk-textarea" id="suitability-explanation" name="suitability-explanation" rows="9" aria-describedby="suitability-explanation-hint">{{data['suitability-explanation']}}</textarea>
           </div>
           <div class="govuk-button-group">
