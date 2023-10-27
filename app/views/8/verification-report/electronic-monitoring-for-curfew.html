@@ -93,23 +93,18 @@
               </fieldset>
             </div>
             <div class="govuk-form-group">
-              <div class="govuk-form-group">
-                <h2 class="govuk-heading-m" for="health-electronic-monitoring">
-                  How have you verified this information?</h2>
-                <div id="subject-hint" class="govuk-hint">
-                  You should record how you have recorded consent.
-                </div>
-                <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
-                  <option value="choose" selected>Choose an option</option>
-                  <option value="householdbill">Phone call</option>
-                  <option value="tenancyagreement">Email</option>
-                  <option value="mortgagestatement">Text message</option>
-                  <option value="counciltaxstatement">In person</option>
-                  <option value="other">Other</option>
-                  <option value="noproofofaddress">I have not recorded consent</option>
-                </select>
-              </div>
-          </div>
+              {{ govukSelect({
+                id: "electronic-monitoring-curfew-verification",
+                name: "electronic-monitoring-curfew-verification",
+                label: {
+                  text: "How have you verified this information?"
+                },
+                  hint: {
+                  text: "You should record how you have recorded consent."
+                },
+                items: electronicMonitoringCurfewVerificationList
+              }) }}
+            </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">

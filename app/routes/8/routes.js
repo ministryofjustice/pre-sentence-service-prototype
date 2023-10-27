@@ -111,7 +111,23 @@ module.exports = function (router) {
   router.get('/' + version + '/verification-report/electronic-monitoring-for-curfew', function (req, res) {
     req.session.data.draftSaved = 'false'
 
-    res.render(version + '/verification-report/electronic-monitoring-for-curfew')
+    const electronicMonitoringCurfewVerificationList = [
+      'Choose an option',
+      'Email',
+      'I have not recorded consent',
+      'In person',
+      'Other',
+      'Phone call',
+      'Text message'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['electronic-monitoring-curfew-verification']
+      }
+    })
+
+    res.render(version + '/verification-report/electronic-monitoring-for-curfew', {electronicMonitoringCurfewVerificationList})
   });
 
   router.post('/' + version + '/verification-report/electronic-monitoring-for-curfew', function (req, res) {
