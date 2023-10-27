@@ -69,7 +69,21 @@ module.exports = function (router) {
   router.get('/' + version + '/verification-report/essential-information', function (req, res) {
     req.session.data.draftSaved = 'false'
 
-    res.render(version + '/verification-report/essential-information')
+    const healthConditionsVerificationList = [
+      'Choose an option',
+      'Doctor\'s note',
+      'Prescription',
+      'I have not seen proof of health conditions',
+      'Other'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['health-conditions-verification']
+      }
+    })
+
+    res.render(version + '/verification-report/essential-information', {healthConditionsVerificationList})
   });
 
   router.post('/' + version + '/verification-report/essential-information', function (req, res) {

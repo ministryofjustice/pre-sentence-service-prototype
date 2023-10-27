@@ -287,7 +287,7 @@
                       No
                     </label>
                   </div>
-                  
+
                 </div>
               </fieldset>
             </div>
@@ -344,21 +344,18 @@
                     <textarea class="govuk-textarea" id="verify-no-health-conditions" name="verify-no-health-conditions" rows="5" aria-describedby="verify-no-health-conditions-hint">{{data['verify-no-health-conditions']}}</textarea>
                   </div>
                   <div class="govuk-form-group">
-                    <div class="govuk-form-group">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label" for="subject">
-                          <h2 class="govuk-heading-m">Have you verified this information?</h2>
-                        </label>
-                        <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
-                          <option value="choose" selected>Choose an option</option>
-                          <option value="householdbill">Doctor's note</option>
-                          <option value="tenancyagreement">Prescription</option>
-                          <option value="mortgagestatement">Something else</option>
-                          <option value="counciltaxstatement">Something else</option>
-                          <option value="other">Other</option>
-                          <option value="noproofofaddress">I have not seen evidence</option>
-                        </select>
-                      </div>
+                    {{ govukSelect({
+                      id: "health-conditions-verification",
+                      name: "health-conditions-verification",
+                      label: {
+                        text: "How have you verified this information?"
+                      },
+                        hint: {
+                        text: "Record proof health conditions."
+                      },
+                      items: healthConditionsVerificationList
+                    }) }}
+                  </div>
                 </div>
               </fieldset>
             </div>
