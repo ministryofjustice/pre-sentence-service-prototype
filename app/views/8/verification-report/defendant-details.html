@@ -71,7 +71,7 @@
             Defendant details
           </h1>
           <div id="defendant-details-hint" class="govuk-hint">
-            This information comes from NDelius. If it is not accurate you can update it here. You will need to update NDelius separately. 
+            This information comes from NDelius. If it is not accurate you can update it here. You will need to update NDelius separately.
           </div>
           <div class="govuk-form-group">
             <h2 class="govuk-heading-m" for="full-name">
@@ -124,22 +124,19 @@
           </div>
           <div class="govuk-form-group">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="subject">
-                Have you seen proof of address?
-              </label>
-              <div id="subject-hint" class="govuk-hint">
-                You can enter a proof of address once you have seen one.
-              </div>
-              <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
-                <option value="choose" selected>Choose proof of address</option>
-                <option value="householdbill">Household bill</option>
-                <option value="tenancyagreement">Tenancy agreement</option>
-                <option value="mortgagestatement">Mortgage statement</option>
-                <option value="counciltaxstatement">Council tax statement</option>
-                <option value="other">Other</option>
-                <option value="noproofofaddress">I have not seen proof of address</option>
-              </select>
-            </div> </div>
+              {{ govukSelect({
+                id: "address-verification",
+                name: "address-verification",
+                label: {
+                  text: "How have you checked this address?"
+                },
+                  hint: {
+                  text: "You can enter a proof of address once you have seen one."
+                },
+                items: addressVerificationList
+              }) }}
+            </div>
+          </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-birth-hint">

@@ -1,11 +1,27 @@
 module.exports = function (router) {
 
-  var version = "7";
+  var version = "8";
 
   router.get('/' + version + '/verification-report/defendant-details', function (req, res) {
     req.session.data.draftSaved = 'false'
 
-    res.render(version + '/verification-report/defendant-details')
+    const addressVerificationList = [
+      'Choose proof of address',
+      'Council tax statement',
+      'Household bill',
+      'I have not seen proof of address',
+      'Mortgage statement',
+      'Other',
+      'Tenancy agreement'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['address-verification']
+      }
+    })
+
+    res.render(version + '/verification-report/defendant-details' , {addressVerificationList})
   });
 
   router.post('/' + version + '/verification-report/defendant-details', function (req, res) {
