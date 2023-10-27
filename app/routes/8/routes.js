@@ -90,7 +90,25 @@ module.exports = function (router) {
   router.get('/' + version + '/verification-report/unpaid-work', function (req, res) {
     req.session.data.draftSaved = 'false'
 
-    res.render(version + '/verification-report/unpaid-work')
+    const benefitsVerificationList = [
+      'Choose an option',
+      'Confirmation from Department of Work and Pensions',
+      'I have not recorded proof of benefits',
+      'Letter from HM Revenue and Customs',
+      'Letter from the Jobcentre Plus',
+      'Letter from The Pension Service',
+      'Other',
+      'Pension advice slip',
+      'Recent bank statement'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['benefits-verification']
+      }
+    })
+
+    res.render(version + '/verification-report/unpaid-work', {benefitsVerificationList})
   });
 
   router.post('/' + version + '/verification-report/unpaid-work', function (req, res) {
