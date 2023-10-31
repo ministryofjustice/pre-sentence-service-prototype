@@ -69,6 +69,32 @@ module.exports = function (router) {
   router.get('/' + version + '/verification-report/essential-information', function (req, res) {
     req.session.data.draftSaved = 'false'
 
+    const domesticAbuseVerificationList = [
+      'Choose an option',
+      'Concerns on police checks',
+      'I have not seen proof domestic abuse checks',
+      'No concerns on police checks'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['domestic-abuse-verification']
+      }
+    })
+
+    const safeguardingVerificationList = [
+      'Choose an option',
+      'Concerns from social services',
+      'I have not seen proof of safeguarding checks',
+      'No concerns from social services'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['safeguarding-verification']
+      }
+    })
+
     const healthConditionsVerificationList = [
       'Choose an option',
       'I have not seen proof of health conditions',
@@ -98,7 +124,7 @@ module.exports = function (router) {
       }
     })
 
-    res.render(version + '/verification-report/essential-information', {healthConditionsVerificationList, dependantsCaringVerificationList})
+    res.render(version + '/verification-report/essential-information', {domesticAbuseVerificationList, safeguardingVerificationList, healthConditionsVerificationList, dependantsCaringVerificationList})
   });
 
   router.post('/' + version + '/verification-report/essential-information', function (req, res) {

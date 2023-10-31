@@ -98,13 +98,13 @@
                 abuse police callouts.</div>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="domestic-abuse-check-result" name="domestic-abuse-check-result" type="radio" value="No domestic abuse issues" {{ checked("domestic-abuse-check-result", "No domestic abuse issues") }}>
+                  <input class="govuk-radios__input" id="domestic-abuse-check-result" name="domestic-abuse-check-result" type="radio" value="No concerns about domestic abuse" {{ checked("domestic-abuse-check-result", "No concerns about domestic abuse") }}>
                   <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result">
                     No concerns about domestic abuse
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="domestic-abuse-check-result-2" name="domestic-abuse-check-result" type="radio" value="Has domestic abuse issues" {{ checked("domestic-abuse-check-result", "Has domestic abuse issues") }}>
+                  <input class="govuk-radios__input" id="domestic-abuse-check-result-2" name="domestic-abuse-check-result" type="radio" value="Concerns about domestic abuse" {{ checked("domestic-abuse-check-result", "Concerns about domestic abuse") }}>
                   <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result-2">
                     Concerns about domestic abuse
                   </label>
@@ -118,6 +118,17 @@
               </div>
             </fieldset>
           </div>
+          <div class="govuk-form-group">
+            {{ govukSelect({
+              id: "domestic-abuse-verification",
+              name: "domestic-abuse-verification",
+              label: {
+                text: "How have you verified this information?"
+              },
+              items: domesticAbuseVerificationList
+            }) }}
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -149,35 +160,14 @@
             </fieldset>
           </div>
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="essential-checks-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h3 class="govuk-fieldset__heading">
-                  Have you verified this information?
-                </h3>
-              </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="essential-checks" name="essential-checks" type="radio" value="Yes" data-aria-controls="conditional-essential-checks">
-                  <label class="govuk-label govuk-radios__label" for="essential-checks">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="contact-by-email">
-                      How  have you verified this information?
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="essentialChecksYes" name="essentialChecksYes" type="Yes" spellcheck="false" autocomplete="Yes">
-                  </div>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="essential-checks-2" name="essential-checks" type="radio" value="No" data-aria-controls="essential-checks-2">
-                  <label class="govuk-label govuk-radios__label" for="essential-checks-2">
-                    No
-                  </label>
-                </div>
-              </div>
-            </fieldset>
+            {{ govukSelect({
+              id: "safeguarding-verification",
+              name: "safeguarding-verification",
+              label: {
+                text: "How have you verified this information?"
+              },
+              items: safeguardingVerificationList
+            }) }}
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
