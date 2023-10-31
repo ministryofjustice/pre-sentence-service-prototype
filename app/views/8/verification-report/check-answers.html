@@ -136,19 +136,6 @@
                     </a>
                   </dd>
                 </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Offences
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data['offences']}}
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="offence-information">Change
-                      <span class="govuk-visually-hidden">case reference number</span>
-                    </a>
-                  </dd>
-                </div>
               </dl>
             </div>
           </div>
@@ -160,10 +147,49 @@
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Offences
+                    Offence
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{data['offences']}}
+                    {{data['offence-1']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="offences.html">Change
+                      <span class="govuk-visually-hidden">Offences</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Extra offence info
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['offence-1-information']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="offences.html">Change
+                      <span class="govuk-visually-hidden">Offences</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Offence two
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['offence-2']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="offences.html">Change
+                      <span class="govuk-visually-hidden">Offences</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Extra offence 2 info
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['offence-1-information']}}
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="offences.html">Change

@@ -78,21 +78,22 @@
             </h2>
             <div id="offences-hint" class="govuk-hint">
               Enter the name of the offence and the date it was committed.</div>
-            <textarea class="govuk-textarea" for="one-half" id="offences" name="offences" rows="1" aria-describedby="offences-hint">{{data['offences'] | default('Theft from a shop 24/08/2023')}}</textarea>
+            <textarea class="govuk-textarea" for="one-half" id="offence-1" name="offence-1" rows="1" aria-describedby="offences-hint">{{data['offence-1'] | default('Theft from a shop 24/08/2023')}}</textarea>
             <div class="govuk-form-group">
               <label class="govuk-label" for="offence-information">
                 Enter extra information about this offence, for example the value of stolen goods.
               </label>
-              <input class="govuk-input" id="offence-information" name="offence-information" type="text">
+              <input class="govuk-input" id="offence-1-information" name="offence-1-information" type="text" value="{{data['offence-1-information'] | default('About offence 1')}}">
             </div>
           </div>
             <div class="govuk-form-group">
               <label class="govuk-label" for="one-half">Enter the name of the offence and the date it was committed</label>
-              <input class="govuk-input govuk-!-width-one-half" id="one-half" name="oneHalf" type="text">
+              <input class="govuk-input govuk-!-width-one-half" id="offence-2" name="offence-2" type="text" value="{{data['offence-2'] | default('Offence 2 24/08/2023')}}">
             <label class="govuk-label" for="offence-information">
               Enter extra information about this offence, for example the value of stolen goods.
             </label>
-            <input class="govuk-input" id="offence-information" name="offence-informatione" type="text">
+            <input class="govuk-input" id="offence-2-information" name="offence-2-information" type="text" value="{{data['offence-2
+            -information'] | default('About offence 2')}}">
         </div>
           <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button">
