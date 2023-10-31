@@ -38,7 +38,7 @@
                 Essential information</a>
             </li>
             <li class="app-subnav__section-item">
-              {% if (data['verification-report-sections'] == 'unpaidWork') or (data['verification-report-sections'] == 'both')  %}
+              {% if (data['verification-report-sections'] == 'unpaidWork') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
                 <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">
                   Suitability for unpaid work</a>
               {% else %}
@@ -47,7 +47,7 @@
               {% endif %}
             </li>
             <li class="app-subnav__section-item">
-              {% if (data['verification-report-sections'] == 'electronicMonitoring') or (data['verification-report-sections'] == 'both')  %}
+              {% if (data['verification-report-sections'] == 'electronicMonitoring') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
                 <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">
                   Suitability for electronic monitoring</a>
               {% else %}
@@ -176,6 +176,7 @@
                     No
                   </label>
                 </div>
+              </div>
             </fieldset>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -250,45 +251,25 @@
               Dependants and caring responsibilities
             </h2>
             <div id="dependant-caring-responsibilities-hint" class="govuk-hint">
-              Record any dependants and caring responsibilities that could impact the defendant's ability to do unpaid work or receive an electronic monitoring curfew.
+              Record any dependants and caring responsibilities that could
+              impact the defendant's ability to do unpaid work or receive an
+              electronic monitoring curfew.
             </div>
             <textarea class="govuk-textarea" id="dependant-caring-responsibilities" name="dependant-caring-responsibilities" rows="2" aria-describedby="dependant-caring-responsibilities-hint">{{data['dependant-caring-responsibilities']}}</textarea>
           </div>
           <div class="govuk-form-group">
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                  <h2 class="govuk-fieldset__heading">
-                    Have you verified this information?
-                  </h2>
-                </legend>
-                <div id="contact-hint" class="govuk-hint">
-                  Select one option.
-                </div>
-                <div class="govuk-radios" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
-                    <label class="govuk-label govuk-radios__label" for="contact">
-                      Yes
-                    </label>
-                  </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label" for="contact-by-email">
-                        How have you verified this information?
-                      </label>
-                      <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-                    </div>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-                    <label class="govuk-label govuk-radios__label" for="contact-2">
-                      No
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
+            {{ govukSelect({
+              id: "dependants-caring-verification",
+              name: "dependants-caring-verification",
+              label: {
+                text: "How have you verified this information?"
+              },
+                hint: {
+                text: "Record proof of dependants and caring responsibilities."
+              },
+              items: dependantsCaringVerificationList
+            }) }}
+          </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
             <h2 class="govuk-heading-m" for="verify-current-employment">

@@ -83,7 +83,22 @@ module.exports = function (router) {
       }
     })
 
-    res.render(version + '/verification-report/essential-information', {healthConditionsVerificationList})
+    const dependantsCaringVerificationList = [
+      'Choose an option',
+      'I have not seen proof of dependants/caring responsibilities',
+      'Other',
+      'Telephone call',
+      'Email',
+      'Waiting for information to come back'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['dependants-caring-verification']
+      }
+    })
+
+    res.render(version + '/verification-report/essential-information', {healthConditionsVerificationList, dependantsCaringVerificationList})
   });
 
   router.post('/' + version + '/verification-report/essential-information', function (req, res) {
@@ -93,7 +108,7 @@ module.exports = function (router) {
     if (draftSaved == 'true'){
       res.redirect('essential-information')
     } else {
-      if (verificationReportSections == 'unpaidWork' || verificationReportSections == 'both'){
+      if (verificationReportSections == 'unpaidWork' || verificationReportSections == 'Include sections for both unpaid work and electronic monitoring'){
         res.redirect('unpaid-work')
       }else {
         res.redirect('electronic-monitoring-for-curfew')
@@ -132,7 +147,7 @@ module.exports = function (router) {
     if (draftSaved == 'true'){
       res.redirect('unpaid-work')
     } else {
-      if (verificationReportSections == 'both'){
+      if (verificationReportSections == 'Include sections for both unpaid work and electronic monitoring'){
         res.redirect('electronic-monitoring-for-curfew')
       }else {
         res.redirect('check-answers')
@@ -188,7 +203,7 @@ module.exports = function (router) {
     if (draftSaved == 'true'){
       res.redirect('recommendation')
     } else {
-      if (suitableFor == 'Electronic monitoring only' || suitableFor == 'Both unpaid work and electronic monitoring'){
+      if (suitableFor == 'Electronic monitoring only' || suitableFor == 'Include sections for both unpaid work and electronic monitoring'){
         if (domesticAbuseResult != 'No domestic abuse issues' || safeguardingResult != 'No safeguarding issues' || informedConsent != 'Yes, they have given informed consent'){
           res.redirect('recommendation-error')
         } else {
