@@ -108,7 +108,7 @@ module.exports = function (router) {
     if (draftSaved == 'true'){
       res.redirect('essential-information')
     } else {
-      if (verificationReportSections == 'unpaidWork' || verificationReportSections == 'Include sections for both unpaid work and electronic monitoring'){
+      if (verificationReportSections == 'Include sections for unpaid work only' || verificationReportSections == 'Include sections for both unpaid work and electronic monitoring'){
         res.redirect('unpaid-work')
       }else {
         res.redirect('electronic-monitoring-for-curfew')
@@ -203,7 +203,7 @@ module.exports = function (router) {
     if (draftSaved == 'true'){
       res.redirect('recommendation')
     } else {
-      if (suitableFor == 'Electronic monitoring only' || suitableFor == 'Include sections for both unpaid work and electronic monitoring'){
+      if (suitableFor == 'Include sections for electronic monitoring only' || suitableFor == 'Include sections for both unpaid work and electronic monitoring'){
         if (domesticAbuseResult != 'No domestic abuse issues' || safeguardingResult != 'No safeguarding issues' || informedConsent != 'Yes, they have given informed consent'){
           res.redirect('recommendation-error')
         } else {

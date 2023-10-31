@@ -25,7 +25,7 @@
                 Essential information</a>
             </li>
             <li class="app-subnav__section-item">
-              {% if (data['verification-report-sections'] == 'unpaidWork') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
+              {% if (data['verification-report-sections'] == 'Include sections for unpaid work only') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
                 <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">
                   Suitability for unpaid work</a>
               {% else %}
@@ -34,7 +34,7 @@
               {% endif %}
             </li>
             <li class="app-subnav__section-item">
-              {% if (data['verification-report-sections'] == 'electronicMonitoring') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
+              {% if (data['verification-report-sections'] == 'Include sections for electronic monitoring only') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
                 <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">
                   Suitability for electronic monitoring</a>
               {% else %}
@@ -79,13 +79,13 @@
               </div>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="verification-report-sections" name="verification-report-sections" type="radio" value="unpaidWork" {{ checked("verification-report-sections", "unpaidWork") }}>
+                  <input class="govuk-radios__input" id="verification-report-sections" name="verification-report-sections" type="radio" value="Include sections for unpaid work only" {{ checked("verification-report-sections", "Include sections for unpaid work only") }}>
                   <label class="govuk-label govuk-radios__label" for="verification-report-sections">
                     Include sections for unpaid work only
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="verification-report-sections-2" name="verification-report-sections" type="radio" value="electronicMonitoring" {{ checked("verification-report-sections", "electronicMonitoring") }}>
+                  <input class="govuk-radios__input" id="verification-report-sections-2" name="verification-report-sections" type="radio" value="Include sections for electronic monitoring only" {{ checked("verification-report-sections", "Include sections for electronic monitoring only") }}>
                   <label class="govuk-label govuk-radios__label" for="verification-report-sections-2">
                     Include sections for electronic monitoring only
                   </label>
