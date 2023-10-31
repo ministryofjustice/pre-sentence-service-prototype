@@ -271,64 +271,39 @@
             <input class="govuk-input" id="verify-current-employment" name="verify-current-employment" type="text" value="{{data['verify-current-employment']}}">
           </div>
           <div class="govuk-form-group">
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                  <h2 class="govuk-fieldset__heading">
-                    Have you verified this information?
-                  </h2>
-                </legend>
-                <div id="contact-hint" class="govuk-hint">
-                  Select one option.
-                </div>
-                <div class="govuk-radios" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
-                    <label class="govuk-label govuk-radios__label" for="contact">
-                      Yes
-                    </label>
-                  </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label" for="contact-by-email">
-                        How have you verified this information?
-                      </label>
-                      <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-                    </div>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-                    <label class="govuk-label govuk-radios__label" for="contact-2">
-                      No
-                    </label>
-                  </div>
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                  <div class="govuk-form-group">
-                    <h2 class="govuk-heading-m" for="verify-no-health-conditions">Health
-                       conditions</h2>
-                    <div id="verify-no-health-conditions-hint" class="govuk-hint">
-                      Record any health conditions that may affect their ability
-                      to complete unpaid work or receive an electronic
-                      monitoring curfew.<br />You should include both physical
-                      and mental health conditions.</div>
-                    <textarea class="govuk-textarea" id="verify-no-health-conditions" name="verify-no-health-conditions" rows="5" aria-describedby="verify-no-health-conditions-hint">{{data['verify-no-health-conditions']}}</textarea>
-                  </div>
-                  <div class="govuk-form-group">
-                    {{ govukSelect({
-                      id: "health-conditions-verification",
-                      name: "health-conditions-verification",
-                      label: {
-                        text: "How have you verified this information?"
-                      },
-                        hint: {
-                        text: "Record proof health conditions."
-                      },
-                      items: healthConditionsVerificationList
-                    }) }}
-                  </div>
-                </div>
-              </fieldset>
-            </div>
+            {{ govukSelect({
+              id: "employment-verification",
+              name: "employment-verification",
+              label: {
+                text: "How have you verified this information?"
+              },
+              items: employmentVerificationList
+            }) }}
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m" for="health-conditions">Health
+              conditions</h2>
+            <div id="health-conditions-hint" class="govuk-hint">
+              Record any health conditions that may affect their ability
+              to complete unpaid work or receive an electronic
+              monitoring curfew.<br />You should include both physical
+              and mental health conditions.</div>
+            <textarea class="govuk-textarea" id="health-conditions" name="health-conditions" rows="5" aria-describedby="health-conditions-hint">{{data['health-conditions']}}</textarea>
+          </div>
+          <div class="govuk-form-group">
+            {{ govukSelect({
+              id: "health-conditions-verification",
+              name: "health-conditions-verification",
+              label: {
+                text: "How have you verified this information?"
+              },
+                hint: {
+                text: "Record proof health conditions."
+              },
+              items: healthConditionsVerificationList
+            }) }}
+          </div>
           <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button">
               Save and continue

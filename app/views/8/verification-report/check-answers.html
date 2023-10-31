@@ -307,15 +307,6 @@
                     </dd>
                   </div>
                 {% endif %}
-              </dl>
-            </div>
-          </div>
-          <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper">
-              <h2 class="govuk-summary-card__title">Essential information</h2>
-            </div>
-            <div class="govuk-summary-card__content">
-              <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     Dependants and caring responsibilities
@@ -353,8 +344,7 @@
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="common-data">Change
-                      <span class="govuk-visually-hidden">Verify current
-                      employment</span>
+                      <span class="govuk-visually-hidden">employment</span>
                     </a>
                   </dd>
                 </div>
@@ -363,11 +353,39 @@
                     Employment verified by
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{data['how-verified-current-employment']}}
+                    {{data['employment-verification']}}
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="common-data">Change
-                      <span class="govuk-visually-hidden">Verify current employment</span>
+                      <span class="govuk-visually-hidden">Employment verified by</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Health conditions
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['health-conditions']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="common-data">Change
+                      <span class="govuk-visually-hidden">Verify current
+                      employment</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Health conditions verified by
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['health-conditions-verification']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="common-data">Change
+                      <span class="govuk-visually-hidden">health conditions
+                        verified by</span>
                     </a>
                   </dd>
                 </div>

@@ -124,7 +124,28 @@ module.exports = function (router) {
       }
     })
 
-    res.render(version + '/verification-report/essential-information', {domesticAbuseVerificationList, safeguardingVerificationList, healthConditionsVerificationList, dependantsCaringVerificationList})
+    const employmentVerificationList = [
+      'Choose an option',
+      'I have not seen proof of employment and working patterns',
+      'Other',
+      'Telephone call',
+      'Email',
+      'Waiting for information to come back'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['employment-verification']
+      }
+    })
+
+    res.render(version + '/verification-report/essential-information', {
+      domesticAbuseVerificationList,
+      safeguardingVerificationList,
+      healthConditionsVerificationList,
+      dependantsCaringVerificationList,
+      employmentVerificationList
+    })
   });
 
   router.post('/' + version + '/verification-report/essential-information', function (req, res) {
