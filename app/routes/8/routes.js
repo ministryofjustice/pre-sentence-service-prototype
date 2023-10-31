@@ -230,17 +230,17 @@ module.exports = function (router) {
     if (draftSaved == 'true'){
       res.redirect('electronic-monitoring-for-curfew')
     } else {
-      res.redirect('recommendation')
+      res.redirect('suitability-decision')
     }
   })
 
-  router.get('/' + version + '/verification-report/recommendation', function (req, res) {
+  router.get('/' + version + '/verification-report/suitability-decision', function (req, res) {
     req.session.data.draftSaved = 'false'
 
-    res.render(version + '/verification-report/recommendation')
+    res.render(version + '/verification-report/suitability-decision')
   });
 
-  router.post('/' + version + '/verification-report/recommendation', function (req, res) {
+  router.post('/' + version + '/verification-report/suitability-decision', function (req, res) {
     const draftSaved = req.session.data['draftSaved']
     const suitableFor = req.session.data['suitable-for']
     const domesticAbuseResult = req.session.data['domestic-abuse-check-result']
@@ -248,11 +248,11 @@ module.exports = function (router) {
     const informedConsent = req.session.data['informed-consent-electronic-monitoring']
 
     if (draftSaved == 'true'){
-      res.redirect('recommendation')
+      res.redirect('suitability-decision')
     } else {
       if (suitableFor == 'Include sections for electronic monitoring only' || suitableFor == 'Include sections for both unpaid work and electronic monitoring'){
         if (domesticAbuseResult != 'No domestic abuse issues' || safeguardingResult != 'No safeguarding issues' || informedConsent != 'Yes, they have given informed consent'){
-          res.redirect('recommendation-error')
+          res.redirect('suitability-decision-error')
         } else {
           res.redirect('check-answers')
         }
