@@ -392,7 +392,7 @@
               </dl>
             </div>
           </div>
-          {% if (data['verification-report-sections'] == 'unpaidWork') or (data['verification-report-sections'] == 'both') %}
+          {% if (data['verification-report-sections'] == 'Include sections for unpaid work only') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring') %}
             <div class="govuk-summary-card">
               <div class="govuk-summary-card__title-wrapper">
                 <h2 class="govuk-summary-card__title">Suitability for unpaid work</h2>
@@ -471,7 +471,7 @@
               </div>
             </div>
           {% endif %}
-          {% if (data['verification-report-sections'] == 'electronicMonitoring') or (data['verification-report-sections'] == 'both') %}
+          {% if (data['verification-report-sections'] == 'Include sections for electronic monitoring only') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring') %}
             <div class="govuk-summary-card">
               <div class="govuk-summary-card__title-wrapper">
                 <h2 class="govuk-summary-card__title">Suitability for electronic
