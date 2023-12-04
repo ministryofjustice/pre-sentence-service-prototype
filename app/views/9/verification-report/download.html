@@ -365,6 +365,11 @@
               <td class="govuk-table__cell not-known-on-form">Not applicable</td>
             </tr>
             <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Benefits</th>
+              <td class="govuk-table__cell">{{data['benefits-verification']}}</td>
+              <td class="govuk-table__cell not-known-on-form">DATE</td>
+            </tr>
+            <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Employment</th>
               <td class="govuk-table__cell">{{data['employment-verification']}}</td>
               <td class="govuk-table__cell not-known-on-form">16/02/2023</td>
@@ -398,9 +403,8 @@
             {% if (data['verification-report-sections'] == 'Include sections for electronic monitoring only') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Informed consent for EMC</th>
-                <td class="govuk-table__cell not-known-on-form">Yes</td>
-                <td class="govuk-table__cell not-known-on-form">Not applicable</td>
-                <td class="govuk-table__cell not-known-on-form">Not applicable</td>
+                <td class="govuk-table__cell">{{data['electronic-monitoring-curfew-verification']}}</td>
+                <td class="govuk-table__cell not-known-on-form">DATE</td>
               </tr>
             {% endif %}
           </tbody>
