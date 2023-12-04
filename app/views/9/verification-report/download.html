@@ -286,31 +286,35 @@
             <h2 class="govuk-heading-m report-heading--purple">Suitability</h2>
           </caption>
           <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header not-known-on-form">Unpaid work</th>
-              <td class="govuk-table__cell not-known-on-form">
-                <p class="govuk-body-s not-known-on-form">The defendant has been assesed as suitable for
-                  a stand-alone requirement.</p>
-                <p class="govuk-body-s not-known-on-form">Mr Armstrong tells me that he currently
-                  works full time Monday to Friday, this has been verified
-                  following production of his wage slip; he is fit and able to
-                  work and will be able to complete his unpaid work hours at
-                  weekends.</p>
+            {% if (data['verification-report-sections'] == 'Include sections for unpaid work only') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header not-known-on-form">Unpaid work</th>
+                <td class="govuk-table__cell not-known-on-form">
+                  <p class="govuk-body-s not-known-on-form">The defendant has been assesed as suitable for
+                    a stand-alone requirement.</p>
+                  <p class="govuk-body-s not-known-on-form">Mr Armstrong tells me that he currently
+                    works full time Monday to Friday, this has been verified
+                    following production of his wage slip; he is fit and able to
+                    work and will be able to complete his unpaid work hours at
+                    weekends.</p>
+                  </td>
+              </tr>
+            {% endif %}
+            {% if (data['verification-report-sections'] == 'Include sections for electronic monitoring only') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header not-known-on-form">Electronic monitoring curfew</th>
+                <td class="govuk-table__cell">
+                  <p class="govuk-body-s not-known-on-form">The defendant has been assesed as not
+                    suitable for an electronically monitored curfew requirement.</p>
+                  <p class="govuk-body-s not-known-on-form">Mr Armstrong has previously been the
+                    subject of a community order for an offence involving domestic
+                    abuse. Whilst he has sucessfully completed that order, he
+                    currently resides with his partner and child and as such he is
+                    deemed unsuitable for an electronic curefew requirement.
+                    </p>
                 </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header not-known-on-form">Electronic monitoring curfew</th>
-              <td class="govuk-table__cell">
-                <p class="govuk-body-s not-known-on-form">The defendant has been assesed as not
-                  suitable for an electronically monitored curfew requirement.</p>
-                <p class="govuk-body-s not-known-on-form">Mr Armstrong has previously been the
-                  subject of a community order for an offence involving domestic
-                  abuse. Whilst he has sucessfully completed that order, he
-                  currently resides with his partner and child and as such he is
-                  deemed unsuitable for an electronic curefew requirement.
-                  </p>
-              </td>
-            </tr>
+              </tr>
+            {% endif %}
           </tbody>
         </table>
       </div>
@@ -391,12 +395,14 @@
               <td class="govuk-table__cell">{{data['safeguarding-verification']}}</td>
               <td class="govuk-table__cell not-known-on-form">15/02/2023</td>
             </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Informed consent for EMC</th>
-              <td class="govuk-table__cell not-known-on-form">Yes</td>
-              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
-              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
-            </tr>
+            {% if (data['verification-report-sections'] == 'Include sections for electronic monitoring only') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Informed consent for EMC</th>
+                <td class="govuk-table__cell not-known-on-form">Yes</td>
+                <td class="govuk-table__cell not-known-on-form">Not applicable</td>
+                <td class="govuk-table__cell not-known-on-form">Not applicable</td>
+              </tr>
+            {% endif %}
           </tbody>
         </table>
       </div>
