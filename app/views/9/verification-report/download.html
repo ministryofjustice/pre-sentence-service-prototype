@@ -219,11 +219,11 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Defendant name:</th>
-              <td class="govuk-table__cell">Dylan Adam Armstrong</td>
+              <td class="govuk-table__cell">{{data['full-name']}}</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Date of brith</th>
-              <td class="govuk-table__cell">15/03/1996</td>
+              <td class="govuk-table__cell">{{data['date-of-birth-day']}}/{{data['date-of-birth-month']}}/{{data['date-of-birth-year']}}</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">CRN</th>
@@ -231,9 +231,16 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Current address</th>
-              <td class="govuk-table__cell">19 Penn Street<br>
-                Oakworth<br>
-                OA17</td>
+              <td class="govuk-table__cell">
+                {{data['address-line-1']}}<br />
+                {% if (data['address-line-2']) %}
+                  {{data['address-line-2']}}<br />
+                {% endif %}
+                {{data['address-town']}}<br />
+                {% if (data['address-county']) %}
+                  {{data['address-county']}}<br />
+                {% endif %}
+                {{data['address-postcode']}}
             </tr>
           </tbody>
         </table>
@@ -246,19 +253,27 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Requesting court:</th>
-              <td class="govuk-table__cell">Testville Magistrates</td>
+              <td class="govuk-table__cell not-known-on-form">Testville Magistrates</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Appearance date</th>
-              <td class="govuk-table__cell">15/02/2023</td>
+              <td class="govuk-table__cell not-known-on-form">15/02/2023</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Offences</th>
-              <td class="govuk-table__cell">Theft from a shop 24/08/2023</td>
+              <td class="govuk-table__cell">
+                {{data['offence-1']}}<br/>
+                {{data['offence-1-information']}}<br/>
+                {% if (data['offence-2']) %}
+                  <br/>
+                  {{data['offence-2']}}<br/>
+                  {{data['offence-2-information']}}<br/>
+                {% endif %}
+              </td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Sentencing range</th>
-              <td class="govuk-table__cell">Discharge - 3 months custody</td>
+              <td class="govuk-table__cell not-known-on-form">Discharge - 3 months custody</td>
             </tr>
           </tbody>
         </table>
@@ -272,29 +287,10 @@
           </caption>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Unpaid work</th>
+              <th scope="row" class="govuk-table__header">{{data['suitable-for']}}</th>
               <td class="govuk-table__cell">
-                <p class="govuk-body-s">The defendant has been assesed as suitable for
-                  a stand-alone requirement.</p>
-                <p class="govuk-body-s">Mr Armstrong tells me that he currently
-                  works full time Monday to Friday, this has been verified
-                  following production of his wage slip; he is fit and able to
-                  work and will be able to complete his unpaid work hours at
-                  weekends.</p>
+                <p class="govuk-body-s not-known-on-form">{{data['suitability-explanation']}}</p>
                 </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Electronic monitoring curfew</th>
-              <td class="govuk-table__cell">
-                <p class="govuk-body-s">The defendant has been assesed as not
-                  suitable for an electronically monitored curfew requirement.</p>
-                <p class="govuk-body-s">Mr Armstrong has previously been the
-                  subject of a community order for an offence involving domestic
-                  abuse. Whilst he has sucessfully completed that order, he
-                  currently resides with his partner and child and as such he is
-                  deemed unsuitable for an electronic curefew requirement.
-                  </p>
-              </td>
             </tr>
           </tbody>
         </table>
@@ -303,10 +299,10 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
         <h2 class="govuk-heading-m report-heading--purple">Proposal</h2>
-        <div class="report-proposal">
-          <p class="govuk-body-s">The defendant has been assesed as suitable for
+        <div class="report-proposal not-known-on-form">
+          <p class="govuk-body-s not-known-on-form">The defendant has been assesed as suitable for
             a stand-alone requirement.</p>
-          <p class="govuk-body-s">It is proposed that the defendant is made the
+          <p class="govuk-body-s not-known-on-form">It is proposed that the defendant is made the
             subject of a Community Order with an unpaid work requirement. The
             court has indicated that they are considering a medium level
             community order. Guidelines indicate that an unpaid work requirement
@@ -323,7 +319,6 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header"></th>
-              <th scope="col" class="govuk-table__header">Have we verified this?</th>
               <th scope="col" class="govuk-table__header">How did we verify this?</th>
               <th scope="col" class="govuk-table__header">Date</th>
             </tr>
@@ -331,58 +326,64 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Address</th>
-              <td class="govuk-table__cell">Yes</td>
-              <td class="govuk-table__cell">Utility Bill</td>
-              <td class="govuk-table__cell">15/02/2023</td>
+              <td class="govuk-table__cell">{{data['address-verification']}}</td>
+              <td class="govuk-table__cell not-known-on-form">15/02/2023</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">National insurance number</th>
-              <td class="govuk-table__cell">Yes</td>
-              <td class="govuk-table__cell">Wage slip</td>
-              <td class="govuk-table__cell">15/02/2023</td>
+              <td class="govuk-table__cell not-known-on-form">Yes</td>
+              <td class="govuk-table__cell not-known-on-form">Wage slip</td>
+              <td class="govuk-table__cell not-known-on-form">15/02/2023</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">DWP Involvement</th>
-              <td class="govuk-table__cell">Not applicable</td>
-              <td class="govuk-table__cell">Not applicable</td>
-              <td class="govuk-table__cell">Not applicable</td>
+              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
+              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
+              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Benefits</th>
+              <td class="govuk-table__cell">{{data['benefits-verification']}}</td>
+              <td class="govuk-table__cell not-known-on-form">DATE</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Employment</th>
-              <td class="govuk-table__cell">Yes</td>
-              <td class="govuk-table__cell">Wage slip</td>
-              <td class="govuk-table__cell">16/02/2023</td>
+              <td class="govuk-table__cell">{{data['employment-verification']}}</td>
+              <td class="govuk-table__cell not-known-on-form">16/02/2023</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Caring Responsibilities</th>
-              <td class="govuk-table__cell">Not applicable</td>
-              <td class="govuk-table__cell">Not applicable</td>
-              <td class="govuk-table__cell">Not applicable</td>
+              <td class="govuk-table__cell">{{data['dependants-caring-verification']}}</td>
+              <td class="govuk-table__cell not-known-on-form">DATE</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Health considerations</th>
-              <td class="govuk-table__cell">No</td>
-              <td class="govuk-table__cell">Disclosed fit and well and working</td>
-              <td class="govuk-table__cell">16/02/2023</td>
+              <td class="govuk-table__cell not-known-on-form">{{data['health-conditions-verification']}}</td>
+              <td class="govuk-table__cell not-known-on-form">16/02/2023</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Immigration Status</th>
-              <td class="govuk-table__cell">Not applicable</td>
-              <td class="govuk-table__cell">Not applicable</td>
-              <td class="govuk-table__cell">Not applicable</td>
+              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
+              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
+              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Domestic abuse history</th>
-              <td class="govuk-table__cell">Yes</td>
-              <td class="govuk-table__cell">Checks with Testville police</td>
-              <td class="govuk-table__cell">15/02/2023</td>
+              <td class="govuk-table__cell">{{data['domestic-abuse-verification']}}</td>
+              <td class="govuk-table__cell not-known-on-form">15/02/2023</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Informed consent for EMC</th>
-              <td class="govuk-table__cell">Yes</td>
-              <td class="govuk-table__cell">Not applicable</td>
-              <td class="govuk-table__cell">Not applicable</td>
+              <th scope="row" class="govuk-table__header">Safeguarding checks</th>
+              <td class="govuk-table__cell">{{data['safeguarding-verification']}}</td>
+              <td class="govuk-table__cell not-known-on-form">15/02/2023</td>
             </tr>
+            {% if (data['verification-report-sections'] == 'Include sections for electronic monitoring only') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Informed consent for EMC</th>
+                <td class="govuk-table__cell">{{data['electronic-monitoring-curfew-verification']}}</td>
+                <td class="govuk-table__cell not-known-on-form">DATE</td>
+              </tr>
+            {% endif %}
           </tbody>
         </table>
       </div>
@@ -397,14 +398,14 @@
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Supporting comments</th>
               <td class="govuk-table__cell">
-                <p class="govuk-body-s">Lorem ipsum dolor sit amet,
+                <p class="govuk-body-s not-known-on-form">Lorem ipsum dolor sit amet,
                   consectetur adipiscing elit.</p>
-                <p class="govuk-body-s">Phasellus diam neque, suscipit a
+                <p class="govuk-body-s not-known-on-form">Phasellus diam neque, suscipit a
                   mauris non, sagittis placerat arcu. Duis faucibus posuere
                   est. Curabitur non nunc orci.</p>
-                <p class="govuk-body-s">Donec ac purus scelerisque, dapibus
+                <p class="govuk-body-s not-known-on-form">Donec ac purus scelerisque, dapibus
                   velit sit amet, hendrerit magna.</p>
-                </td>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -419,33 +420,33 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">PNC ID:</th>
-              <td class="govuk-table__cell">95/1253551545C</td>
+              <td class="govuk-table__cell not-known-on-form">95/1253551545C</td>
               <td class="govuk-table__cell">NINO:</td>
-              <td class="govuk-table__cell">QQ123456C</td>
+              <td class="govuk-table__cell not-known-on-form">QQ123456C</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Local justice area:</th>
-              <td class="govuk-table__cell">Testvilleshite</td>
+              <td class="govuk-table__cell not-known-on-form">Testvilleshite</td>
               <td class="govuk-table__cell">Solicitor:</td>
-              <td class="govuk-table__cell">Anna Turney</td>
+              <td class="govuk-table__cell not-known-on-form">Anna Turney</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Court Case Number:</th>
-              <td class="govuk-table__cell">HJ25226143122521</td>
+              <td class="govuk-table__cell not-known-on-form">HJ25226143122521</td>
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell"></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Employment</th>
-              <td class="govuk-table__cell">Yes</td>
-              <td class="govuk-table__cell">Wage slip</td>
-              <td class="govuk-table__cell">16/02/2023</td>
+              <td class="govuk-table__cell not-known-on-form">Yes</td>
+              <td class="govuk-table__cell not-known-on-form">Wage slip</td>
+              <td class="govuk-table__cell not-known-on-form">16/02/2023</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Caring Responsibilities</th>
-              <td class="govuk-table__cell">Not applicable</td>
-              <td class="govuk-table__cell">Not applicable</td>
-              <td class="govuk-table__cell">Not applicable</td>
+              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
+              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
+              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
             </tr>
           </tbody>
         </table>
@@ -453,29 +454,29 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Report Author:</th>
-              <td class="govuk-table__cell" colspan="3">Celia Fate</td>
+              <td class="govuk-table__cell not-known-on-form" colspan="3">Celia Fate</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Grade:</th>
-              <td class="govuk-table__cell">Probation Services Officer</td>
+              <td class="govuk-table__cell not-known-on-form">Probation Services Officer</td>
               <td class="govuk-table__cell">Team:</td>
-              <td class="govuk-table__cell">Testville Court Team</td>
+              <td class="govuk-table__cell not-known-on-form">Testville Court Team</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Office Number:</th>
-              <td class="govuk-table__cell">012345 567890</td>
+              <td class="govuk-table__cell not-known-on-form">012345 567890</td>
               <td class="govuk-table__cell">Team Email:</td>
-              <td class="govuk-table__cell">testville-probation-court-admin@justic.co.uk</td>
+              <td class="govuk-table__cell not-known-on-form">testville-probation-court-admin@justic.co.uk</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Office location:</th>
-              <td class="govuk-table__cell">Testvill Court Probation Office</td>
+              <td class="govuk-table__cell not-known-on-form">Testvill Court Probation Office</td>
               <td class="govuk-table__cell">Line Manager:</td>
-              <td class="govuk-table__cell">David Taskmaster</td>
+              <td class="govuk-table__cell not-known-on-form">David Taskmaster</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Signature</th>
-              <td class="govuk-table__cell" colspan="3">NE Body</td>
+              <td class="govuk-table__cell" colspan="3">{{data['assessor-signature']}}</td>
             </tr>
           </tbody>
         </table>
