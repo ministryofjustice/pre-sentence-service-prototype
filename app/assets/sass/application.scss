@@ -9,3 +9,9 @@
 @import "components/govuk-layout";
 @import "components/split-pane";
 @import "components/subnav";
+
+
+.not-known-on-form{
+ font-weight: bold !important;
+ color: red !important;
+}
