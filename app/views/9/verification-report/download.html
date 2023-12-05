@@ -257,7 +257,7 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Appearance date</th>
-              <td class="govuk-table__cell not-known-on-form">15/02/2023</td>
+              <td class="govuk-table__cell">15/02/2023</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Offences</th>
@@ -270,10 +270,6 @@
                   {{data['offence-2-information']}}<br/>
                 {% endif %}
               </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Sentencing range</th>
-              <td class="govuk-table__cell not-known-on-form">Discharge - 3 months custody</td>
             </tr>
           </tbody>
         </table>
@@ -294,20 +290,6 @@
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-m report-heading--purple">Proposal</h2>
-        <div class="report-proposal not-known-on-form">
-          <p class="govuk-body-s not-known-on-form">The defendant has been assesed as suitable for
-            a stand-alone requirement.</p>
-          <p class="govuk-body-s not-known-on-form">It is proposed that the defendant is made the
-            subject of a Community Order with an unpaid work requirement. The
-            court has indicated that they are considering a medium level
-            community order. Guidelines indicate that an unpaid work requirement
-          with hours ranging between 80 and 150 hours would be suitable in this case.</p>
-        </div>
       </div>
     </div>
     <div class="govuk-grid-row">
@@ -336,12 +318,6 @@
               <td class="govuk-table__cell not-known-on-form">15/02/2023</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">DWP Involvement</th>
-              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
-              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
-              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
-            </tr>
-            <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Benefits</th>
               <td class="govuk-table__cell">{{data['benefits-verification']}}</td>
               <td class="govuk-table__cell not-known-on-form">DATE</td>
@@ -358,7 +334,7 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Health considerations</th>
-              <td class="govuk-table__cell not-known-on-form">{{data['health-conditions-verification']}}</td>
+              <td class="govuk-ss">{{data['health-conditions-verification']}}</td>
               <td class="govuk-table__cell not-known-on-form">16/02/2023</td>
             </tr>
             <tr class="govuk-table__row">
@@ -392,42 +368,13 @@
       <div class="govuk-grid-column-full">
         <table class="govuk-table">
           <caption class="govuk-table__caption govuk-table__caption--m">
-            <h2 class="govuk-heading-m report-heading--purple">Suitability</h2>
-          </caption>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Supporting comments</th>
-              <td class="govuk-table__cell">
-                <p class="govuk-body-s not-known-on-form">Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit.</p>
-                <p class="govuk-body-s not-known-on-form">Phasellus diam neque, suscipit a
-                  mauris non, sagittis placerat arcu. Duis faucibus posuere
-                  est. Curabitur non nunc orci.</p>
-                <p class="govuk-body-s not-known-on-form">Donec ac purus scelerisque, dapibus
-                  velit sit amet, hendrerit magna.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <table class="govuk-table">
-          <caption class="govuk-table__caption govuk-table__caption--m">
             <h2 class="govuk-heading-m report-heading--purple">Assessor details and identifiers</h2>
           </caption>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">PNC ID:</th>
-              <td class="govuk-table__cell not-known-on-form">95/1253551545C</td>
-              <td class="govuk-table__cell">NINO:</td>
-              <td class="govuk-table__cell not-known-on-form">QQ123456C</td>
-            </tr>
-            <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Local justice area:</th>
-              <td class="govuk-table__cell not-known-on-form">Testvilleshite</td>
-              <td class="govuk-table__cell">Solicitor:</td>
+              <td class="govuk-table__cell not-known-on-form">Testvilleshire</td>
+              <th class="govuk-table__cell">Solicitor:</td>
               <td class="govuk-table__cell not-known-on-form">Anna Turney</td>
             </tr>
             <tr class="govuk-table__row">
@@ -437,46 +384,14 @@
               <td class="govuk-table__cell"></td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Employment</th>
-              <td class="govuk-table__cell not-known-on-form">Yes</td>
-              <td class="govuk-table__cell not-known-on-form">Wage slip</td>
-              <td class="govuk-table__cell not-known-on-form">16/02/2023</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Caring Responsibilities</th>
-              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
-              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
-              <td class="govuk-table__cell not-known-on-form">Not applicable</td>
-            </tr>
-          </tbody>
-        </table>
-        <table class="govuk-table">
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Report Author:</th>
-              <td class="govuk-table__cell not-known-on-form" colspan="3">Celia Fate</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Grade:</th>
-              <td class="govuk-table__cell not-known-on-form">Probation Services Officer</td>
-              <td class="govuk-table__cell">Team:</td>
-              <td class="govuk-table__cell not-known-on-form">Testville Court Team</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Office Number:</th>
-              <td class="govuk-table__cell not-known-on-form">012345 567890</td>
-              <td class="govuk-table__cell">Team Email:</td>
-              <td class="govuk-table__cell not-known-on-form">testville-probation-court-admin@justic.co.uk</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Office location:</th>
-              <td class="govuk-table__cell not-known-on-form">Testvill Court Probation Office</td>
-              <td class="govuk-table__cell">Line Manager:</td>
-              <td class="govuk-table__cell not-known-on-form">David Taskmaster</td>
-            </tr>
-            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">FULL NAME</td>
               <th scope="row" class="govuk-table__header">Signature</th>
-              <td class="govuk-table__cell" colspan="3">{{data['assessor-signature']}}</td>
+              <td class="govuk-table__cell">{{data['assessor-signature']}}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell">Team Email:</th>
+              <td class="govuk-table__cell not-known-on-form">testville-probation-court-admin@justic.co.uk</td>
             </tr>
           </tbody>
         </table>
