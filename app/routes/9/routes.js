@@ -72,8 +72,8 @@ module.exports = function (router) {
 
     const domesticAbuseVerificationList = [
       'Choose an option',
-      'Police checks or PNC laptop',
-      'I have not seen proof domestic abuse checks'
+      'I have not seen proof domestic abuse checks',
+      'Police checks or PNC laptop'
     ].map(item => {
       return {
         value: item,
@@ -84,8 +84,8 @@ module.exports = function (router) {
 
     const safeguardingVerificationList = [
       'Choose an option',
-      'Social services checks',
-      'I have not seen proof of safeguarding checks'
+      'I have not seen proof of safeguarding checks',
+      'Social services checks'
     ].map(item => {
       return {
         value: item,
@@ -96,11 +96,11 @@ module.exports = function (router) {
 
     const healthConditionsVerificationList = [
       'Choose an option',
+      'I have not seen proof of health conditions',
       'Other',
       'Prescription',
       'Professional judgement',
-      'Statement of Fitness to Work',
-      'I have not seen proof of health conditions'
+      'Statement of Fitness to Work'
     ].map(item => {
       return {
         value: item,
@@ -112,10 +112,10 @@ module.exports = function (router) {
     const dependantsCaringVerificationList = [
       'Choose an option',
       'Email',
+      'I have not seen proof of dependants/caring responsibilities',
       'Other',
       'Professional judgement',
-      'Telephone call',
-      'I have not seen proof of dependants/caring responsibilities'
+      'Telephone call'
     ].map(item => {
       return {
         value: item,
@@ -126,11 +126,10 @@ module.exports = function (router) {
 
     const employmentVerificationList = [
       'Choose an option',
+      'Email',
       'I have not seen proof of employment and working patterns',
       'Other',
-      'Telephone call',
-      'Email',
-      'Waiting for information to come back'
+      'Telephone call'
     ].map(item => {
       return {
         value: item,
@@ -175,6 +174,7 @@ module.exports = function (router) {
       'Letter from The Pension Service',
       'Other',
       'Pension advice slip',
+      'Professional judgment',
       'Recent bank statement'
     ].map(item => {
       return {
