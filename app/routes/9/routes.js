@@ -72,9 +72,8 @@ module.exports = function (router) {
 
     const domesticAbuseVerificationList = [
       'Choose an option',
-      'Concerns on police checks',
-      'I have not seen proof domestic abuse checks',
-      'No concerns on police checks'
+      'Police checks or PNC laptop',
+      'I have not seen proof domestic abuse checks'
     ].map(item => {
       return {
         value: item,
@@ -85,9 +84,8 @@ module.exports = function (router) {
 
     const safeguardingVerificationList = [
       'Choose an option',
-      'Concerns from social services',
-      'I have not seen proof of safeguarding checks',
-      'No concerns from social services'
+      'Social services checks',
+      'I have not seen proof of safeguarding checks'
     ].map(item => {
       return {
         value: item,
@@ -98,10 +96,11 @@ module.exports = function (router) {
 
     const healthConditionsVerificationList = [
       'Choose an option',
-      'I have not seen proof of health conditions',
       'Other',
       'Prescription',
-      'Statement of Fitness to Work'
+      'Professional judgement',
+      'Statement of Fitness to Work',
+      'I have not seen proof of health conditions'
     ].map(item => {
       return {
         value: item,
@@ -112,11 +111,11 @@ module.exports = function (router) {
 
     const dependantsCaringVerificationList = [
       'Choose an option',
-      'I have not seen proof of dependants/caring responsibilities',
-      'Other',
-      'Telephone call',
       'Email',
-      'Waiting for information to come back'
+      'Other',
+      'Professional judgement',
+      'Telephone call',
+      'I have not seen proof of dependants/caring responsibilities'
     ].map(item => {
       return {
         value: item,
