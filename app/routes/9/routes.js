@@ -12,6 +12,7 @@ module.exports = function (router) {
       'I have not seen proof of address',
       'Mortgage statement',
       'Other',
+      'Professional Judgement',
       'Tenancy agreement'
     ].map(item => {
       return {
@@ -71,9 +72,8 @@ module.exports = function (router) {
 
     const domesticAbuseVerificationList = [
       'Choose an option',
-      'Concerns on police checks',
       'I have not seen proof domestic abuse checks',
-      'No concerns on police checks'
+      'Police checks or PNC laptop'
     ].map(item => {
       return {
         value: item,
@@ -84,9 +84,8 @@ module.exports = function (router) {
 
     const safeguardingVerificationList = [
       'Choose an option',
-      'Concerns from social services',
       'I have not seen proof of safeguarding checks',
-      'No concerns from social services'
+      'Social services checks'
     ].map(item => {
       return {
         value: item,
@@ -100,6 +99,7 @@ module.exports = function (router) {
       'I have not seen proof of health conditions',
       'Other',
       'Prescription',
+      'Professional judgement',
       'Statement of Fitness to Work'
     ].map(item => {
       return {
@@ -111,11 +111,11 @@ module.exports = function (router) {
 
     const dependantsCaringVerificationList = [
       'Choose an option',
+      'Email',
       'I have not seen proof of dependants/caring responsibilities',
       'Other',
-      'Telephone call',
-      'Email',
-      'Waiting for information to come back'
+      'Professional judgement',
+      'Telephone call'
     ].map(item => {
       return {
         value: item,
@@ -126,11 +126,10 @@ module.exports = function (router) {
 
     const employmentVerificationList = [
       'Choose an option',
+      'Email',
       'I have not seen proof of employment and working patterns',
       'Other',
-      'Telephone call',
-      'Email',
-      'Waiting for information to come back'
+      'Telephone call'
     ].map(item => {
       return {
         value: item,
@@ -175,6 +174,7 @@ module.exports = function (router) {
       'Letter from The Pension Service',
       'Other',
       'Pension advice slip',
+      'Professional judgment',
       'Recent bank statement'
     ].map(item => {
       return {
