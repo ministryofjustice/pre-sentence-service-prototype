@@ -12,6 +12,7 @@ module.exports = function (router) {
       'I have not seen proof of address',
       'Mortgage statement',
       'Other',
+      'Professional Judgement',
       'Tenancy agreement'
     ].map(item => {
       return {
