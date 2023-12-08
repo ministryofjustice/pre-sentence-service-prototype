@@ -72,31 +72,74 @@
           </h1>
           <p class="govuk-body">This information will be included in the
             verification report and shared with magistrates and the court.</p>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Help changing offences
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govukl-body">
+                  Offences that are not relevant to the hearing or report can be
+                  removed by deleting the information from the boxes below.
+                </p>
+                <p class="govukl-body">
+                  Add offences by recording them in NDelius, then reload this
+                  page to view them.
+                </p>
+              </div>
+            </details>
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--m" for="offences">
-                List all offences this report relates to
+                Offence 1
               </label>
             </h2>
-            <div id="offences-hint" class="govuk-hint">
-              Enter the name of the offence and the date it was committed.</div>
-            <textarea class="govuk-textarea" for="one-half" id="offence-1" name="offence-1" rows="1" aria-describedby="offences-hint">{{data['offence-1'] | default('Theft from a shop 24/08/2023')}}</textarea>
             <div class="govuk-form-group">
-              <label class="govuk-label" for="offence-information">
-                Enter extra information about this offence, for example the value of stolen goods.
-              </label>
-              <input class="govuk-input" id="offence-1-information" name="offence-1-information" type="text" value="{{data['offence-1-information'] | default('About offence 1')}}">
+              <h3 class="govuk-heading-s">
+                Enter the name of the offence and the date it was committed.
+              </h3>
+              <input class="govuk-input" id="offence-1" name="offence-1" type="text" value="{{data['offence-1'] | default('Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place')}}">
+            </div>
+            <div class="govuk-form-group">
+              <h3 class="govuk-heading-s" for="offence-information">
+                Enter additional information about this offence, for example the value of stolen goods.
+              </h3>
+              <textarea class="govuk-textarea" id="offence-1-information" name="offence-1-information" rows="2" aria-describedby="offences-hint">{{data['offence-1-information'] | default('On 13/06/2023 at Kings Lynn unlawfully and intentionally, threatened another person namely Sarah Smith with an article to which section 139 of the Criminal Justice Act 1988 applies, namely a knife, in a private place, namely a flat, in such a awy that there was an immediate risk of serious physical harm to that person.')}}</textarea>
+            </div>
+            <div class="govuk-form-group">
+              <h3 class="govuk-heading-s" for="offence-information">
+                Act relating to offence
+              </h3>
+              <input class="govuk-input" id="offence-1-act" name="offence-1-act" type="text" value="{{data['offence-1-act'] | default('Contrary to section 52(1) and (6) of the Offensive Weapons Act 2019')}}">
             </div>
           </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="offences">
+                Offence 2
+              </label>
+            </h2>
             <div class="govuk-form-group">
-              <label class="govuk-label" for="one-half">Enter the name of the offence and the date it was committed</label>
-              <input class="govuk-input govuk-!-width-one-half" id="offence-2" name="offence-2" type="text" value="{{data['offence-2'] | default('Offence 2 24/08/2023')}}">
-            <label class="govuk-label" for="offence-information">
-              Enter extra information about this offence, for example the value of stolen goods.
-            </label>
-            <input class="govuk-input" id="offence-2-information" name="offence-2-information" type="text" value="{{data['offence-2
-            -information'] | default('About offence 2')}}">
-        </div>
+              <h3 class="govuk-heading-s">
+                Enter the name of the offence and the date it was committed.
+              </h3>
+              <input class="govuk-input" id="offence-2" name="offence-2" type="text" value="{{data['offence-2'] | default('Theft from a shop 24/08/2023')}}">
+            </div>
+            <div class="govuk-form-group">
+              <h3 class="govuk-heading-s" for="offence-information">
+                Enter additional information about this offence, for example the value of stolen goods.
+              </h3>
+              <textarea class="govuk-textarea" id="offence-2-information" name="offence-2-information" rows="2" aria-describedby="offences-hint">{{data['offence-2-information'] | default('About offence 2')}}</textarea>
+            </div>
+            <div class="govuk-form-group">
+              <h3 class="govuk-heading-s" for="offence-information">
+                Act relating to offence
+              </h3>
+              <input class="govuk-input" id="offence-2-act" name="offence-2-act" type="text" value="{{data['offence-2-act'] | default('OFFENCE 2 ACT')}}">
+            </div>
+          </div>
           <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button">
               Save and continue
