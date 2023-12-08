@@ -281,19 +281,18 @@
           <div class="govuk-form-group">
             <h2 class="govuk-heading-m" for="health-conditions">Health
               conditions</h2>
-            <div id="health-conditions-hint" class="govuk-hint">
-              Record any health conditions that may affect their ability
-              to complete unpaid work or receive an electronic
-              monitoring curfew.<br />You should include both physical
-              and mental health conditions.</div>
-            <textarea class="govuk-textarea" id="health-conditions" name="health-conditions" rows="5" aria-describedby="health-conditions-hint">{{data['health-conditions']}}</textarea>
+            <div id="health-conditions-hint" class="govuk-hint">Record any
+              health conditions that may affect the defendant's ability to
+              complete unpaid work or receive an electronic monitoring curfew.
+              This should include both physical and mental health conditions.</div>
+            <textarea class="govuk-textarea" id="health-conditions" name="health-conditions" rows="2" aria-describedby="health-conditions-hint">{{data['health-conditions']}}</textarea>
           </div>
           <div class="govuk-form-group">
             {{ govukSelect({
               id: "health-conditions-verification",
               name: "health-conditions-verification",
               label: {
-                html: "<h3 class='govuk-header-s'>How have checked relevant health conditions?</h3>"
+                html: "<h3 class='govuk-header-s'>How have you checked relevant health conditions?</h3>"
               },
               items: healthConditionsVerificationList
             }) }}

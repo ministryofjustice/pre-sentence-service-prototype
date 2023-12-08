@@ -97,11 +97,11 @@ module.exports = function (router) {
 
     const healthConditionsVerificationList = [
       'Choose an option',
+      'Fit note (Statement of Fitness to Work)',
       'I have not seen proof of health conditions',
       'Other',
       'Prescription',
-      'Professional judgement',
-      'Statement of Fitness to Work'
+      'Professional judgement'
     ].map(item => {
       return {
         value: item,
