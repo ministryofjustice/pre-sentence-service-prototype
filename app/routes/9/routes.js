@@ -7,12 +7,13 @@ module.exports = function (router) {
 
     const addressVerificationList = [
       'Choose proof of address',
-      'Council tax statement',
-      'Household bill',
+      'Bank or credit card statement',
+      'Council tax bill',
       'I have not seen proof of address',
       'Mortgage statement',
       'Other',
-      'Professional Judgement',
+      'Professional judgement',
+      'Utility bill',
       'Tenancy agreement'
     ].map(item => {
       return {
