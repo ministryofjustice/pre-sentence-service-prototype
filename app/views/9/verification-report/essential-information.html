@@ -111,7 +111,7 @@
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="domestic-abuse-check-result-3" name="domestic-abuse-check-result" type="radio" value="Check pending" {{ checked("domestic-abuse-check-result", "Check pending") }}>
                   <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result-3">
-                    Waiting for information to come back
+                    Check pending
                   </label>
                 </div>
               </div>
@@ -131,20 +131,19 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h2 class="govuk-fieldset__heading">
-                  Safeguarding checks
-                </h2>
+                <h2 class="govuk-fieldset__heading">Are there concerns about
+                  child safeguarding?</h2>
               </legend>
               <div id="safeguarding-checks-hint" class="govuk-hint">Check with social services for any concerns about child safety.</div>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="safeguarding-check-result" name="safeguarding-check-result" type="radio" value="No safeguarding issues" {{ checked("safeguarding-check-result", "No safeguarding issues") }}>
+                  <input class="govuk-radios__input" id="safeguarding-check-result" name="safeguarding-check-result" type="radio" value="No concerns about child safeguarding" {{ checked("safeguarding-check-result", "No concerns about child safeguarding") }}>
                   <label class="govuk-label govuk-radios__label" for="safeguarding-check-result">
-                    No child safeguarding concerns
+                    No concerns about child safeguarding
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="safeguarding-check-result-2" name="safeguarding-check-result" type="radio" value="Has safeguarding issues" {{ checked("safeguarding-check-result", "Has safeguarding issues") }}>
+                  <input class="govuk-radios__input" id="safeguarding-check-result-2" name="safeguarding-check-result" type="radio" value="Concerns about child safeguarding" {{ checked("safeguarding-check-result", "Concerns about child safeguarding") }}>
                   <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-2">
                     Concerns about child safeguarding
                   </label>
@@ -152,7 +151,7 @@
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="safeguarding-check-result-3" name="safeguarding-check-result" type="radio" value="Check pending" {{ checked("safeguarding-check-result", "Check pending") }}>
                   <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-3">
-                    Waiting for information to come back
+                    Check pending
                   </label>
                 </div>
               </div>
@@ -163,7 +162,7 @@
               id: "safeguarding-verification",
               name: "safeguarding-verification",
               label: {
-                html: "<h3 class='govuk-header-s'>How have you checked for concerns about child safety?</h3>"
+                html: "<h3 class='govuk-header-s'>How have you checked for concerns about child safeguarding?</h3>"
               },
               items: safeguardingVerificationList
             }) }}
