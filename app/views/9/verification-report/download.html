@@ -262,12 +262,15 @@
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Offences</th>
               <td class="govuk-table__cell">
-                {{data['offence-1']}}<br/>
-                {{data['offence-1-information']}}<br/>
+                {{data['offence-1']}}<br/><br/>
+                {{data['offence-1-information']}}<br/><br/>
+                {{data['offence-1-act']}}<br/>
+                <hr/>
                 {% if (data['offence-2']) %}
                   <br/>
-                  {{data['offence-2']}}<br/>
-                  {{data['offence-2-information']}}<br/>
+                  {{data['offence-2']}}<br/><br/>
+                  {{data['offence-2-information']}}<br/><br/>
+                  {{data['offence-2-act']}}<br/>
                 {% endif %}
               </td>
             </tr>
