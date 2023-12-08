@@ -7,12 +7,13 @@ module.exports = function (router) {
 
     const addressVerificationList = [
       'Choose proof of address',
-      'Council tax statement',
-      'Household bill',
+      'Bank or credit card statement',
+      'Council tax bill',
       'I have not seen proof of address',
       'Mortgage statement',
       'Other',
-      'Professional Judgement',
+      'Professional judgement',
+      'Utility bill',
       'Tenancy agreement'
     ].map(item => {
       return {
@@ -72,8 +73,8 @@ module.exports = function (router) {
 
     const domesticAbuseVerificationList = [
       'Choose an option',
-      'I have not seen proof domestic abuse checks',
-      'Police checks or PNC laptop'
+      'I have not seen of proof domestic abuse checks',
+      'Police checks or PND laptop'
     ].map(item => {
       return {
         value: item,
@@ -96,11 +97,11 @@ module.exports = function (router) {
 
     const healthConditionsVerificationList = [
       'Choose an option',
+      'Fit note (Statement of Fitness to Work)',
       'I have not seen proof of health conditions',
       'Other',
       'Prescription',
-      'Professional judgement',
-      'Statement of Fitness to Work'
+      'Professional judgement'
     ].map(item => {
       return {
         value: item,
@@ -127,7 +128,7 @@ module.exports = function (router) {
     const employmentVerificationList = [
       'Choose an option',
       'Email',
-      'I have not seen proof of employment and working patterns',
+      'I have not seen proof of employment/working patterns',
       'Other',
       'Telephone call'
     ].map(item => {

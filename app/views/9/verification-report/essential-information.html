@@ -89,9 +89,8 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h2 class="govuk-fieldset__heading">
-                  Domestic abuse checks
-                </h2>
+                <h2 class="govuk-fieldset__heading">Are there any concerns about
+                  domestic abuse?</h2>
               </legend>
               <div id="domestic-abuse-checks-hint" class="govuk-hint">You must
                 check for any previous domestic violence charges or domestic
@@ -112,7 +111,7 @@
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="domestic-abuse-check-result-3" name="domestic-abuse-check-result" type="radio" value="Check pending" {{ checked("domestic-abuse-check-result", "Check pending") }}>
                   <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result-3">
-                    Waiting for information to come back
+                    Check pending
                   </label>
                 </div>
               </div>
@@ -123,7 +122,7 @@
               id: "domestic-abuse-verification",
               name: "domestic-abuse-verification",
               label: {
-                text: "How have you checked for previous domestic abuse charges?"
+                html: "<h3 class='govuk-header-s'>How have you checked for previous domestic abuse charges?</h3>"
               },
               items: domesticAbuseVerificationList
             }) }}
@@ -132,20 +131,19 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h2 class="govuk-fieldset__heading">
-                  Safeguarding checks
-                </h2>
+                <h2 class="govuk-fieldset__heading">Are there concerns about
+                  child safeguarding?</h2>
               </legend>
               <div id="safeguarding-checks-hint" class="govuk-hint">Check with social services for any concerns about child safety.</div>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="safeguarding-check-result" name="safeguarding-check-result" type="radio" value="No safeguarding issues" {{ checked("safeguarding-check-result", "No safeguarding issues") }}>
+                  <input class="govuk-radios__input" id="safeguarding-check-result" name="safeguarding-check-result" type="radio" value="No concerns about child safeguarding" {{ checked("safeguarding-check-result", "No concerns about child safeguarding") }}>
                   <label class="govuk-label govuk-radios__label" for="safeguarding-check-result">
-                    No child safeguarding concerns
+                    No concerns about child safeguarding
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="safeguarding-check-result-2" name="safeguarding-check-result" type="radio" value="Has safeguarding issues" {{ checked("safeguarding-check-result", "Has safeguarding issues") }}>
+                  <input class="govuk-radios__input" id="safeguarding-check-result-2" name="safeguarding-check-result" type="radio" value="Concerns about child safeguarding" {{ checked("safeguarding-check-result", "Concerns about child safeguarding") }}>
                   <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-2">
                     Concerns about child safeguarding
                   </label>
@@ -153,7 +151,7 @@
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="safeguarding-check-result-3" name="safeguarding-check-result" type="radio" value="Check pending" {{ checked("safeguarding-check-result", "Check pending") }}>
                   <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-3">
-                    Waiting for information to come back
+                    Check pending
                   </label>
                 </div>
               </div>
@@ -164,7 +162,7 @@
               id: "safeguarding-verification",
               name: "safeguarding-verification",
               label: {
-                text: "How have you checked for concerns about child safety?"
+                html: "<h3 class='govuk-header-s'>How have you checked for concerns about child safeguarding?</h3>"
               },
               items: safeguardingVerificationList
             }) }}
@@ -242,8 +240,8 @@
             </h2>
             <div id="dependant-caring-responsibilities-hint" class="govuk-hint">
               Record any dependants and caring responsibilities that could
-              impact the defendant's ability to do unpaid work or receive an
-              electronic monitoring curfew.
+              affect the defendant's capacity for unpaid work or electronic
+              monitoring curfew.
             </div>
             <textarea class="govuk-textarea" id="dependant-caring-responsibilities" name="dependant-caring-responsibilities" rows="2" aria-describedby="dependant-caring-responsibilities-hint">{{data['dependant-caring-responsibilities']}}</textarea>
           </div>
@@ -252,7 +250,7 @@
               id: "dependants-caring-verification",
               name: "dependants-caring-verification",
               label: {
-                text: "How have checked dependant and caring responsibilities"
+                html: "<h3 class='govuk-header-s'>How have you checked dependants and caring responsibilities?</h3>"
               },
               items: dependantsCaringVerificationList
             }) }}
@@ -263,16 +261,18 @@
               Employment
             </h2>
             <div id="health-conditions-hint" class="govuk-hint">
-              Record their employment status and working pattern.
+              Record whether the defendant is employed or not and their working
+              pattern. This should include current employment and known changes
+              to employment in the future.
             </div>
-            <input class="govuk-input" id="verify-current-employment" name="verify-current-employment" type="text" value="{{data['verify-current-employment']}}">
+            <textarea class="govuk-textarea" id="verify-current-employment" name="verify-current-employment" rows="2" aria-describedby="verify-current-employment-hint">{{data['verify-current-employment']}}</textarea>
           </div>
           <div class="govuk-form-group">
             {{ govukSelect({
               id: "employment-verification",
               name: "employment-verification",
               label: {
-                text: "How have you check employment status and working pattern?"
+                html: "<h3 class='govuk-header-s'>How have you checked their employment/working pattern?</h3>"
               },
               items: employmentVerificationList
             }) }}
@@ -281,19 +281,18 @@
           <div class="govuk-form-group">
             <h2 class="govuk-heading-m" for="health-conditions">Health
               conditions</h2>
-            <div id="health-conditions-hint" class="govuk-hint">
-              Record any health conditions that may affect their ability
-              to complete unpaid work or receive an electronic
-              monitoring curfew.<br />You should include both physical
-              and mental health conditions.</div>
-            <textarea class="govuk-textarea" id="health-conditions" name="health-conditions" rows="5" aria-describedby="health-conditions-hint">{{data['health-conditions']}}</textarea>
+            <div id="health-conditions-hint" class="govuk-hint">Record any
+              health conditions that may affect the defendant's ability to
+              complete unpaid work or receive an electronic monitoring curfew.
+              This should include both physical and mental health conditions.</div>
+            <textarea class="govuk-textarea" id="health-conditions" name="health-conditions" rows="2" aria-describedby="health-conditions-hint">{{data['health-conditions']}}</textarea>
           </div>
           <div class="govuk-form-group">
             {{ govukSelect({
               id: "health-conditions-verification",
               name: "health-conditions-verification",
               label: {
-                text: "How have checked relevant health conditions?"
+                html: "<h3 class='govuk-header-s'>How have you checked relevant health conditions?</h3>"
               },
               items: healthConditionsVerificationList
             }) }}
