@@ -128,7 +128,7 @@ module.exports = function (router) {
     const employmentVerificationList = [
       'Choose an option',
       'Email',
-      'I have not seen proof of employment and working patterns',
+      'I have not seen proof of employment/working patterns',
       'Other',
       'Telephone call'
     ].map(item => {

@@ -261,16 +261,18 @@
               Employment
             </h2>
             <div id="health-conditions-hint" class="govuk-hint">
-              Record their employment status and working pattern.
+              Record whether the defendant is employed or not and their working
+              pattern. This should include current employment and known changes
+              to employment in the future.
             </div>
-            <input class="govuk-input" id="verify-current-employment" name="verify-current-employment" type="text" value="{{data['verify-current-employment']}}">
+            <textarea class="govuk-textarea" id="verify-current-employment" name="verify-current-employment" rows="2" aria-describedby="verify-current-employment-hint">{{data['verify-current-employment']}}</textarea>
           </div>
           <div class="govuk-form-group">
             {{ govukSelect({
               id: "employment-verification",
               name: "employment-verification",
               label: {
-                html: "<h3 class='govuk-header-s'>How have you check employment status and working pattern?</h3>"
+                html: "<h3 class='govuk-header-s'>How have you checked their employment/working pattern?</h3>"
               },
               items: employmentVerificationList
             }) }}
