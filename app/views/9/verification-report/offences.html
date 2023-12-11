@@ -96,19 +96,19 @@
               </label>
             </h2>
             <div class="govuk-form-group">
-              <h3 class="govuk-heading-s">
+              <h3 class="govuk-heading-s" for="offence-1">
                 Enter the name of the offence and the date it was committed.
               </h3>
               <input class="govuk-input" id="offence-1" name="offence-1" type="text" value="{{data['offence-1'] | default('Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place')}}">
             </div>
             <div class="govuk-form-group">
-              <h3 class="govuk-heading-s" for="offence-information">
+              <h3 class="govuk-heading-s" for="offence-1-information">
                 Enter additional information about this offence, for example the value of stolen goods.
               </h3>
               <textarea class="govuk-textarea" id="offence-1-information" name="offence-1-information" rows="2" aria-describedby="offences-hint">{{data['offence-1-information'] | default('On 13/06/2023 at Kings Lynn unlawfully and intentionally, threatened another person namely Sarah Smith with an article to which section 139 of the Criminal Justice Act 1988 applies, namely a knife, in a private place, namely a flat, in such a awy that there was an immediate risk of serious physical harm to that person.')}}</textarea>
             </div>
             <div class="govuk-form-group">
-              <h3 class="govuk-heading-s" for="offence-information">
+              <h3 class="govuk-heading-s" for="offence-1-act">
                 Act relating to offence
               </h3>
               <input class="govuk-input" id="offence-1-act" name="offence-1-act" type="text" value="{{data['offence-1-act'] | default('Contrary to section 52(1) and (6) of the Offensive Weapons Act 2019')}}">
@@ -122,19 +122,19 @@
               </label>
             </h2>
             <div class="govuk-form-group">
-              <h3 class="govuk-heading-s">
+              <h3 class="govuk-heading-s" for="offence-2>
                 Enter the name of the offence and the date it was committed.
               </h3>
               <input class="govuk-input" id="offence-2" name="offence-2" type="text" value="{{data['offence-2'] | default('Theft from a shop 24/08/2023')}}">
             </div>
             <div class="govuk-form-group">
-              <h3 class="govuk-heading-s" for="offence-information">
+              <h3 class="govuk-heading-s" for="offence-2-information">
                 Enter additional information about this offence, for example the value of stolen goods.
               </h3>
               <textarea class="govuk-textarea" id="offence-2-information" name="offence-2-information" rows="2" aria-describedby="offences-hint">{{data['offence-2-information'] | default('About offence 2')}}</textarea>
             </div>
             <div class="govuk-form-group">
-              <h3 class="govuk-heading-s" for="offence-information">
+              <h3 class="govuk-heading-s" for="offence-2-act">
                 Act relating to offence
               </h3>
               <input class="govuk-input" id="offence-2-act" name="offence-2-act" type="text" value="{{data['offence-2-act'] | default('OFFENCE 2 ACT')}}">
