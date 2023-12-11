@@ -168,11 +168,11 @@ module.exports = function (router) {
 
     const benefitsVerificationList = [
       'Choose an option',
-      'Confirmation from Department of Work and Pensions',
+      'Confirmation from the Department of Work and Pensions (DWP)',
       'I have not recorded proof of benefits',
       'Letter from HM Revenue and Customs',
-      'Letter from the Jobcentre Plus',
-      'Letter from The Pension Service',
+      'Letter from Jobcentre Plus',
+      'Letter from the Pension Service',
       'Other',
       'Pension advice slip',
       'Professional judgment',
