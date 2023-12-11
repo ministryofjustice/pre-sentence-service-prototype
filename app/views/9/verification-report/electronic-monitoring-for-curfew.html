@@ -12,7 +12,7 @@
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">Defendant details</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-underline" href="offence-information">
+              <a class="app-subnav__link govuk-link govuk-link--no-underline" href="offences">
                 Offences</a>
             </li>
             <li class="app-subnav__section-item">
@@ -72,10 +72,9 @@
               Informed consent to an electronic monitoring curfew</h2>
             <div id="health-conditions-hint" class="govuk-hint">It is a legal
               requirement that the defendant gives their informed consent to an
-              electronic monitoring curfew.<br /><br />
-              If the main occupier of the address where the defendant will be
-              curfewed to is not the defendant, they must also give their
-              informed consent.</div>
+              electronic monitoring curfew. If the defendant is not the main
+              occupier of the address, they must both give their informed
+              consent.</div>
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -100,10 +99,7 @@
                 id: "electronic-monitoring-curfew-verification",
                 name: "electronic-monitoring-curfew-verification",
                 label: {
-                  text: "How have you verified this information?"
-                },
-                  hint: {
-                  text: "You should record how you have recorded consent."
+                  html: "<h3 class='govuk-header-s'>How have you checked for informed consent?</h3>"
                 },
                 items: electronicMonitoringCurfewVerificationList
               }) }}
