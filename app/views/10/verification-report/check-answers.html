@@ -538,7 +538,7 @@
                     What is the defendant suitable for?
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{data['suitable-for']}}
+                    {{data['suitability-decision']}}
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="offender-details">Change
@@ -547,20 +547,84 @@
                     </a>
                   </dd>
                 </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Explain why they are suitable
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data['suitability-explanation']}}
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="offender-details">
-                      Change<span class="govuk-visually-hidden"> suitability
-                        explanation</span>
-                    </a>
-                  </dd>
-                </div>
+                {% if (data['suitability-decision']) == 'Unpaid work only' %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Explain why they are suitable
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['unpaid-work-only-rationale']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="offender-details">
+                        Change<span class="govuk-visually-hidden"> suitability
+                          explanation</span>
+                      </a>
+                    </dd>
+                  </div>
+                {% endif %}
+                {% if (data['suitability-decision']) == 'Electronic monitoring curfew only' %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Explain why they are suitable
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['electronic-monitoring-curfew-only-rationale']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="offender-details">
+                        Change<span class="govuk-visually-hidden"> suitability
+                          explanation</span>
+                      </a>
+                    </dd>
+                  </div>
+                {% endif %}
+                {% if (data['suitability-decision']) == 'Both unpaid work and electronic monitoring curfew' %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Explain why they are suitable for unpaid work
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['unpaid-work-rationale']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="offender-details">
+                        Change<span class="govuk-visually-hidden"> suitability
+                          explanation</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Explain why they are suitable for electronic monitoring curfew
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['electronic-monitoring-curfew-rationale']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="offender-details">
+                        Change<span class="govuk-visually-hidden"> suitability
+                          explanation</span>
+                      </a>
+                    </dd>
+                  </div>
+                {% endif %}
+                {% if (data['suitability-decision']) == 'Not suitable' %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Explain why they are not suitable
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{data['not-suitable-rationale']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="offender-details">
+                        Change<span class="govuk-visually-hidden"> suitability
+                          explanation</span>
+                      </a>
+                    </dd>
+                  </div>
+                {% endif %}
               </dl>
             </div>
           </div>
