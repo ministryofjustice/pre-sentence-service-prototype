@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Start page" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Start page</h1>
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">What is a verification report?</h2>
+            <p class="govuk-body">A verification report is a new kind of
+              pre-sentence advice. It identifies people who are suitable for
+              electronic monitoring curfew, unpaid work sentences or both. By
+              letting low risk defendants be sentenced on the day, the report is
+              intended to reduce adjournments.</p>
+            <p class="govuk-body">When someone meets the criteria for a
+              verification report, you will:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>request domestic violence checks from the police</li>
+              <li>request child safeguarding checks from social services</li>
+              <li>interview the defendant before their first hearing</li>
+            </ul>
+            <p class="govuk-body">Using the information from the police,
+              children's services checks and interview, you can assess someone's
+              suitability for either electronic monitoring curfew, unpaid work
+              or both.</p>
+            <p class="govuk-body">You can deliver this information to the court
+              in a defendant's plea hearing. The court will not need to adjourn
+              for a pre-sentence report to be prepared.</p>
+            <h2 class="govuk-heading-m">What are the criteria for a verification
+              report?</h2>
+            <p class="govuk-body">Someone can be considered for a verification
+              report if:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>their most serious offence is in scope for a community order
+                  but not severe enough for a custodial sentence</li>
+                <li>they have entered a guilty anticipated plea</li>
+                <li>they have no specific risk flags in NDelius </li>
+                <li>there are no case markers in Common Platform</li>
+                <li>they are at liberty on the day of their plea hearing</li>
+              </ul>
+            <p class="govuk-body">Defendants from black and ethnic minority
+              backgrounds, female defendants and those aged between 18 to 25
+              years old are not eligible for verification reports. They must
+              receive a full pre-sentence report.</p>
+            <p class="govuk-body">There are also times when a sentencer may
+              request a verification report either before or after a plea
+              hearing, or after a trial. A probation officer may also assess
+              someone for a pre-sentence report and decide that they are more
+              suitable for a verification report.</p>
+            <p class="govuk-body">This service will identify cases which meet
+              these criteria automatically. You must confirm if it has
+              identified cases correctly, and identified all eligible cases by
+              confirming each defendant's suitability for either a verification
+              report, a pre-sentence report or no advice.</p>
+            <h2 class="govuk-heading-m">How to use this service</h2>
+            <p class="govuk-body">You can complete this form in any order,
+              over a period of time. </p>
+            <p class="govuk-body">You should add information as you get it. We
+              know that some of the checks might not come back quickly, you
+              should save a draft and complete the missing information when you
+              get it.</p>
+            <a href="defendant-details" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+              Start now
+              <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+              </svg></a>
+            </div>
+        </div>
+      </main>
+    </div>
+  </div>
+{% endblock %}
