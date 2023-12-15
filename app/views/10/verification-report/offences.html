@@ -1,0 +1,169 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Offences details" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">
+                Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offences">
+                Offences</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="choose-sections">
+                Choose sections</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="essential-information">
+                Essential information</a>
+            </li>
+            <li class="app-subnav__section-item">
+              {% if (data['verification-report-sections'] == 'Include sections for unpaid work only') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
+                <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">
+                  Suitability for unpaid work</a>
+              {% else %}
+                  <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-link--disabled" href="unpaid-work">
+                    Suitability for unpaid work</a>
+              {% endif %}
+            </li>
+            <li class="app-subnav__section-item">
+              {% if (data['verification-report-sections'] == 'Include sections for electronic monitoring only') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
+                <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">
+                  Suitability for electronic monitoring</a>
+              {% else %}
+                  <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-link--disabled" href="electronic-monitoring-for-curfew">
+                    Suitability for electronic monitoring</a>
+              {% endif %}
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="suitability-decision">
+                Suitability decision</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="check-answers">
+                Check your answers</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="offences" method="post" novalidate>
+          <span class="govuk-caption-l">
+            Dylan Adam Armstrong CRN: E234516
+          </span>
+          <h1 class="govuk-heading-l">
+            Offences
+          </h1>
+          <p class="govuk-body">This information will be included in the
+            verification report which will be visible to the court and judiciary.</p>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Help changing offences
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govukl-body">
+                  Offences that are not relevant to the hearing or report can be
+                  removed by deleting the information from the relevant boxes.
+                </p>
+                <p class="govukl-body">
+                  Add offences by recording them in Common Platform , then reload
+                  this page to view them or do something in Libra.<br>
+                  TODO<br>
+                  - check we can add offences in common Platform<br>
+                  - articualte if/how and offence can be added to Libra<br>
+                </p>
+              </div>
+            </details>
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="offences">
+                Offence 1
+              </label>
+            </h2>
+            <div class="govuk-form-group">
+              <h3 class="govuk-heading-s" for="offence-1">
+                Enter the name of the offence and the date it was committed.
+              </h3>
+              <input class="govuk-input" id="offence-1" name="offence-1" type="text" value="{{data['offence-1'] | default('Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place')}}">
+            </div>
+            <div class="govuk-form-group">
+              <h3 class="govuk-heading-s" for="offence-1-information">
+                Enter additional information about this offence, for example the value of stolen goods.
+              </h3>
+              <textarea class="govuk-textarea" id="offence-1-information" name="offence-1-information" rows="2" aria-describedby="offences-hint">{{data['offence-1-information'] | default('On 13/06/2023 at Kings Lynn unlawfully and intentionally, threatened another person namely Sarah Smith with an article to which section 139 of the Criminal Justice Act 1988 applies, namely a knife, in a private place, namely a flat, in such a awy that there was an immediate risk of serious physical harm to that person.')}}</textarea>
+            </div>
+            <div class="govuk-form-group">
+              <h3 class="govuk-heading-s" for="offence-1-act">
+                Act relating to offence
+              </h3>
+              <input class="govuk-input" id="offence-1-act" name="offence-1-act" type="text" value="{{data['offence-1-act'] | default('Contrary to section 52(1) and (6) of the Offensive Weapons Act 2019')}}">
+            </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="offences">
+                Offence 2
+              </label>
+            </h2>
+            <div class="govuk-form-group">
+              <h3 class="govuk-heading-s" for="offence-2>
+                Enter the name of the offence and the date it was committed.
+              </h3>
+              <input class="govuk-input" id="offence-2" name="offence-2" type="text" value="{{data['offence-2'] | default('Theft from a shop 24/08/2023')}}">
+            </div>
+            <div class="govuk-form-group">
+              <h3 class="govuk-heading-s" for="offence-2-information">
+                Enter additional information about this offence, for example the value of stolen goods.
+              </h3>
+              <textarea class="govuk-textarea" id="offence-2-information" name="offence-2-information" rows="2" aria-describedby="offences-hint">{{data['offence-2-information'] | default('About offence 2')}}</textarea>
+            </div>
+            <div class="govuk-form-group">
+              <h3 class="govuk-heading-s" for="offence-2-act">
+                Act relating to offence
+              </h3>
+              <input class="govuk-input" id="offence-2-act" name="offence-2-act" type="text" value="{{data['offence-2-act'] | default('OFFENCE 2 ACT')}}">
+            </div>
+          </div>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="draftSaved" value="true">
+              Save draft
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link"
+        href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+          xmlns="http://www.w3.org/2000/svg" width="13" height="17"
+          viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z">
+          </path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}
