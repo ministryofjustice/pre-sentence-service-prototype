@@ -85,8 +85,8 @@
           </h1>
           <p class="govuk-body">Request these checks from the relevant agencies
             and record the results when you have them. If you are waiting on
-            checks, you can select this option, continue with the report and
-            update this section later.</p>
+            checks, you can select the check pending option, continue with the
+            report and update this section later.</p>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -135,7 +135,8 @@
                 <h2 class="govuk-fieldset__heading">Are there concerns about
                   child safeguarding?</h2>
               </legend>
-              <div id="safeguarding-checks-hint" class="govuk-hint">Check with social services for any concerns about child safety.</div>
+              <div id="safeguarding-checks-hint" class="govuk-hint">You must
+                check with social services for any concerns about child safety.</div>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="safeguarding-check-result" name="safeguarding-check-result" type="radio" value="No concerns about child safeguarding" {{ checked("safeguarding-check-result", "No concerns about child safeguarding") }}>
@@ -251,7 +252,7 @@
               id: "dependants-caring-verification",
               name: "dependants-caring-verification",
               label: {
-                html: "<h3 class='govuk-header-s'>How have you checked dependants and caring responsibilities?</h3>"
+                html: "<h3 class='govuk-header-s'>How have you checked their dependants and caring responsibilities?</h3>"
               },
               items: dependantsCaringVerificationList
             }) }}
@@ -263,8 +264,8 @@
             </h2>
             <div id="health-conditions-hint" class="govuk-hint">
               Record whether the defendant is employed or not and their working
-              pattern. This should include current employment and known changes
-              to employment in the future.
+              pattern, if applicable. This should include current employment and
+              known changes to employment in the future.
             </div>
             <textarea class="govuk-textarea" id="verify-current-employment" name="verify-current-employment" rows="2" aria-describedby="verify-current-employment-hint">{{data['verify-current-employment']}}</textarea>
           </div>
