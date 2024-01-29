@@ -18,3 +18,4 @@ require('./routes/7/routes.js')(router);
 require('./routes/8/routes.js')(router);
 require('./routes/9/routes.js')(router);
 require('./routes/10/routes.js')(router);
+require('./routes/11/routes.js')(router);
