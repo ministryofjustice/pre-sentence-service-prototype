@@ -2,19 +2,6 @@
 
 {% set pageName="Essential information" %}
 
-{% block pageScripts %}
-  <script type="text/javascript">
-    function showAnotherAddress() {
-      var x = document.getElementById("another-address");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        alert("This would allow you to add a 2nd, 3rd, etc address in the real thing.")
-      }
-    }
-  </script>
-{% endblock %}
-
 {% block content %}
   <div class="app-split-pane app-width-container">
     <div class="app-split-pane__nav">
@@ -190,47 +177,7 @@
                   {% endif %}
                   {{data['address-postcode']}}
               </p>
-              <div id="another-address" class="govuk-!-margin-bottom-9" style="display:none;">
-                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                <h3 class="govuk-heading-s">New address</h3>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="other-address-description">
-                    Address description
-                  </label>
-                  <input class="govuk-input govuk-input--width-20"" id="other-address-description" name="other-address-description" type="text" autocomplete="off" value="{{data['other-address-description']}}">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="other-address-line-1">
-                    Address line 1
-                  </label>
-                  <input class="govuk-input govuk-input--width-30" id="other-address-line-1" name="other-address-line-1" type="text" autocomplete="off" value="{{data['other-address-line-1']}}">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address-line-2">
-                    Address line 2 (optional)
-                  </label>
-                  <input class="govuk-input govuk-input--width-30" id="other-address-line-2" name="other-address-line-2" type="text" autocomplete="off" value="{{data['other-address-line-2']}}">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="other-address-town">
-                    Town or city
-                  </label>
-                  <input class="govuk-input govuk-input--width-20" id="other-address-town" name="other-address-town" autocomplete="off" type="text" value="{{data['other-address-town']}}">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address-county">
-                    County (optional)
-                  </label>
-                  <input class="govuk-input govuk-input--width-20" id="other-address-county" name="other-address-county" autocomplete="off" type="text" value="{{data['other-address-county']}}">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="other-address-postcode">
-                    Postcode
-                  </label>
-                  <input class="govuk-input govuk-input--width-10" id="other-address-postcode" name="other-address-postcode" type="text" autocomplete="off" value="{{data['other-address-postcode']}}">
-                </div>
-              </div>
-              <div id="add-another-address" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="showAnotherAddress()">
+              <div id="add-another-address" class="govuk-button govuk-button--secondary" data-module="govuk-button" value="add-address">
                 Add another address
               </div>
             </fieldset>
@@ -303,7 +250,7 @@
             <button class="govuk-button" data-module="govuk-button">
               Save and continue
             </button>
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="draftSaved" value="true">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
               Save draft
             </button>
           </div>
