@@ -152,10 +152,12 @@ module.exports = function (router) {
     const verificationReportSections = req.session.data['verification-report-sections']
     const pageAction = req.session.data['pageAction']
 
-    if (pageAction == 'saveDraft'){
+    if (pageAction === 'saveDraft'){
       res.redirect('essential-information')
+    } else if (pageAction ==='addAddress'){
+      res.redirect('addresses/add-address')
     } else {
-      if (verificationReportSections == 'Include sections for unpaid work only' || verificationReportSections == 'Include sections for both unpaid work and electronic monitoring'){
+      if (verificationReportSections === 'Include sections for unpaid work only' || verificationReportSections == 'Include sections for both unpaid work and electronic monitoring'){
         res.redirect('unpaid-work')
       }else {
         res.redirect('electronic-monitoring-for-curfew')
@@ -314,5 +316,13 @@ module.exports = function (router) {
 
   router.post('/' + version + '/verification-report/confirmation', function (req, res) {
     res.redirect('PAGE')
+  })
+
+  router.get('/' + version + '/verification-report/addresses/add-address', function (req, res) {
+    res.render(version + '/verification-report/addresses/add-address')
+  });
+
+  router.post('/' + version + '/verification-report/addresses/add-address', function (req, res) {
+    res.redirect('../essential-information')
   })
 }

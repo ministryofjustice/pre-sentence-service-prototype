@@ -165,22 +165,70 @@
               <div id="changedName-hint" class="govuk-hint">
                 Record all addresses that the defendant lives at.
               </div>
-              <h3 class="govuk-heading-s">Current address</h3>
-              <p class="govuk-body">
-                {{data['address-line-1']}}<br />
-                  {% if (data['address-line-2']) %}
-                    {{data['address-line-2']}}<br />
-                  {% endif %}
-                  {{data['address-town']}}<br />
-                  {% if (data['address-county']) %}
-                    {{data['address-county']}}<br />
-                  {% endif %}
-                  {{data['address-postcode']}}
-              </p>
-              <div id="add-another-address" class="govuk-button govuk-button--secondary" data-module="govuk-button" value="add-address">
-                Add another address
+              <div class="moj-ticket-panel-container">
+                <article class="moj-ticket-panel" aria-label="Current">
+                  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                    <h3 class="govuk-heading-s">Current address</h3>
+                    <p class="govuk-body">
+                      {{data['address-line-1']}}<br />
+                        {% if (data['address-line-2']) %}
+                          {{data['address-line-2']}}<br />
+                        {% endif %}
+                        {{data['address-town']}}<br />
+                        {% if (data['address-county']) %}
+                          {{data['address-county']}}<br />
+                        {% endif %}
+                        {{data['address-postcode']}}
+                    </p>
+                  </section>
+                </article>
+                <article class="moj-ticket-panel" aria-label="Current">
+                  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                    {% if (data['other-address-description']) %}
+                      <h3 class="govuk-heading-s">{{data['other-address-description']}}</h3>
+                      <p class="govuk-body">
+                        {{data['other-address-line-1']}}<br />
+                        {% if (data['other-address-line-2']) %}
+                        {{data['other-address-line-2']}}<br />
+                        {% endif %}
+                        {{data['other-address-town']}}<br />
+                        {% if (data['other-address-county']) %}
+                        {{data['other-address-county']}}<br />
+                        {% endif %}
+                        {{data['other-address-postcode']}}
+                      </p>
+                    {% endif %}
+                  </section>
+                </article>
+                <article class="moj-ticket-panel" aria-label="Current">
+                  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                    <h3 class="govuk-heading-s">Parent's address</h3>
+                    <p class="govuk-body">
+                      111b Baker Street<br />
+                      Fauxsham<br />
+                      Bedfordshire<br />
+                      BY1 8UT
+                    </p>
+                  </section>
+                </article>
+                <article class="moj-ticket-panel" aria-label="Current">
+                  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                    <h3 class="govuk-heading-s">Friends's address</h3>
+                    <p class="govuk-body">
+                      257b North Southstreet<br />
+                      Loughborough<br />
+                      Leicestershire<br />
+                      LE12 3RT
+                    </p>
+                  </section>
+                </article>
               </div>
             </fieldset>
+            <div class="govuk-button-group">
+              <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="addAddress">
+                Add address
+              </button>
+            </div>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
