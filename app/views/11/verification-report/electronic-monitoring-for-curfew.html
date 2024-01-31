@@ -104,6 +104,94 @@
                 items: electronicMonitoringCurfewVerificationList
               }) }}
             </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m" for="consent-electronic-monitoring-curfew">
+              Addresses for curfew</h2>
+            <div id="more-detail-hint" class="govuk-hint">Curfews are usually
+              for a single address but it can be considered for two addresses.
+              The primary address is usually their home, and the secondary
+              address is usually their work.</div>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h3 class="govuk-fieldset__heading">
+                      Primary address
+                    </h3>
+                  </legend>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="primary-address-line-1">
+                      Address line 1
+                    </label>
+                    <input class="govuk-input govuk-input--width-30" id="primary-address-line-1" name="primary-address-line-1" type="text" autocomplete="off" value="{{data['primary-address-line-1']}}">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="address-line-2">
+                      Address line 2 (optional)
+                    </label>
+                    <input class="govuk-input govuk-input--width-30" id="primary-address-line-2" name="primary-address-line-2" type="text" autocomplete="off" value="{{data['primary-address-line-2']}}">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="primary-address-town">
+                      Town or city
+                    </label>
+                    <input class="govuk-input govuk-input--width-20" id="primary-address-town" name="primary-address-town" autocomplete="off" type="text" value="{{data['primary-address-town']}}">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="address-county">
+                      County (optional)
+                    </label>
+                    <input class="govuk-input govuk-input--width-20" id="primary-address-county" name="primary-address-county" autocomplete="off" type="text" value="{{data['primary-address-county']}}">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="primary-address-postcode">
+                      Postcode
+                    </label>
+                    <input class="govuk-input govuk-input--width-10" id="primary-address-postcode" name="primary-address-postcode" type="text" autocomplete="off" value="{{data['primary-address-postcode']}}">
+                  </div>
+                </fieldset>
+              </div>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h3 class="govuk-fieldset__heading">
+                      Secondary address (optional)
+                    </h3>
+                  </legend>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="secondary-address-line-1">
+                      Address line 1
+                    </label>
+                    <input class="govuk-input govuk-input--width-30" id="secondary-address-line-1" name="secondary-address-line-1" type="text" autocomplete="off" value="{{data['secondary-address-line-1']}}">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="address-line-2">
+                      Address line 2 (optional)
+                    </label>
+                    <input class="govuk-input govuk-input--width-30" id="secondary-address-line-2" name="secondary-address-line-2" type="text" autocomplete="off" value="{{data['secondary-address-line-2']}}">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="secondary-address-town">
+                      Town or city
+                    </label>
+                    <input class="govuk-input govuk-input--width-20" id="secondary-address-town" name="secondary-address-town" autocomplete="off" type="text" value="{{data['secondary-address-town']}}">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="address-county">
+                      County (optional)
+                    </label>
+                    <input class="govuk-input govuk-input--width-20" id="secondary-address-county" name="secondary-address-county" autocomplete="off" type="text" value="{{data['secondary-address-county']}}">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="secondary-address-postcode">
+                      Postcode
+                    </label>
+                    <input class="govuk-input govuk-input--width-10" id="secondary-address-postcode" name="secondary-address-postcode" type="text" autocomplete="off" value="{{data['secondary-address-postcode']}}">
+                  </div>
+                </fieldset>
+              </div>
+          </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
