@@ -160,32 +160,28 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h2 class="govuk-fieldset__heading">Addresses</h2>
+                <h2 class="govuk-fieldset__heading">Other addresses</h2>
               </legend>
               <div id="changedName-hint" class="govuk-hint">
-                Record all addresses that the defendant lives at.
+                Record any other addresses that the defendant spends a
+                significant amount of time at. These will be used as part of any
+                domestic abuse and safeguarding checks.
               </div>
               <div class="moj-ticket-panel-container">
-                <article class="moj-ticket-panel" aria-label="Current">
-                  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
-                    <h3 class="govuk-heading-s">Current address</h3>
-                    <p class="govuk-body">
-                      {{data['address-line-1']}}<br />
-                        {% if (data['address-line-2']) %}
-                          {{data['address-line-2']}}<br />
-                        {% endif %}
-                        {{data['address-town']}}<br />
-                        {% if (data['address-county']) %}
-                          {{data['address-county']}}<br />
-                        {% endif %}
-                        {{data['address-postcode']}}
-                    </p>
-                  </section>
-                </article>
-                <article class="moj-ticket-panel" aria-label="Current">
+                <article class="moj-ticket-panel" aria-label="Other address 1">
                   <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
                     {% if (data['other-address-description']) %}
-                      <h3 class="govuk-heading-s">{{data['other-address-description']}}</h3>
+                      <div class="govuk-grid-row govuk-!-margin-bottom-3">
+                        <div class="govuk-grid-column-two-thirds">
+                          <h3 class="govuk-heading-s">{{data['other-address-description']}}</h3>
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          <a href="#" class="govuk-link" style="font-weight: normal;">
+                            Edit</a> |
+                          <a href="#" class="govuk-link" style="font-weight: normal;">
+                            Delete</a>
+                        </div>
+                      </div>
                       <p class="govuk-body">
                         {{data['other-address-line-1']}}<br />
                         {% if (data['other-address-line-2']) %}
@@ -200,9 +196,19 @@
                     {% endif %}
                   </section>
                 </article>
-                <article class="moj-ticket-panel" aria-label="Current">
+                <article class="moj-ticket-panel" aria-label="Other address 2">
                   <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
-                    <h3 class="govuk-heading-s">Parent's address</h3>
+                    <div class="govuk-grid-row govuk-!-margin-bottom-3">
+                      <div class="govuk-grid-column-two-thirds">
+                        <h3 class="govuk-heading-s">Parent's address</h3>
+                      </div>
+                      <div class="govuk-grid-column-one-third">
+                        <a href="#" class="govuk-link" style="font-weight: normal;">
+                          Edit</a> |
+                        <a href="#" class="govuk-link" style="font-weight: normal;">
+                          Delete</a>
+                      </div>
+                    </div>
                     <p class="govuk-body">
                       111b Baker Street<br />
                       Fauxsham<br />
@@ -211,9 +217,19 @@
                     </p>
                   </section>
                 </article>
-                <article class="moj-ticket-panel" aria-label="Current">
+                <article class="moj-ticket-panel" aria-label="Other address 3">
                   <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
-                    <h3 class="govuk-heading-s">Friends's address</h3>
+                    <div class="govuk-grid-row govuk-!-margin-bottom-3">
+                      <div class="govuk-grid-column-two-thirds">
+                        <h3 class="govuk-heading-s">Friend's address</h3>
+                      </div>
+                      <div class="govuk-grid-column-one-third">
+                        <a href="#" class="govuk-link" style="font-weight: normal;">
+                          Edit</a> |
+                        <a href="#" class="govuk-link" style="font-weight: normal;">
+                          Delete</a>
+                      </div>
+                    </div>
                     <p class="govuk-body">
                       257b North Southstreet<br />
                       Loughborough<br />
