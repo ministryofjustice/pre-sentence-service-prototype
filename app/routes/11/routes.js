@@ -27,6 +27,11 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/defendant-details', function (req, res) {
+    req.session.data['primary-address-line-1'] = req.session.data['address-line-1']
+    req.session.data['primary-address-line-2'] = req.session.data['address-line-2']
+    req.session.data['primary-address-town'] = req.session.data['address-town']
+    req.session.data['primary-address-county'] = req.session.data['address-county']
+    req.session.data['primary-address-postcode'] = req.session.data['address-postcode']
     const pageAction = req.session.data['pageAction']
 
     if (pageAction == 'saveDraft'){
@@ -323,6 +328,19 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/addresses/add-address', function (req, res) {
+    req.session.data.addEditAddress = "Add "
+    req.session.data.parentsAddressVisible = 'true'
+
+    res.redirect('../essential-information')
+  })
+
+  router.get('/' + version + '/verification-report/addresses/delete-address', function (req, res) {
+    res.render(version + '/verification-report/addresses/delete-address')
+  });
+
+  router.post('/' + version + '/verification-report/addresses/delete-address', function (req, res) {
+    req.session.data.parentsAddressVisible = 'false'
+
     res.redirect('../essential-information')
   })
 }

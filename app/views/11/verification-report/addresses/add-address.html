@@ -14,7 +14,7 @@
             Dylan Adam Armstrong CRN: E234516
           </span>
           <h1 class="govuk-heading-l">
-            Add an address
+            {{data['addEditAddress'] | default('Add') }} address
           </h1>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -60,10 +60,6 @@
             <button class="govuk-button" data-module="govuk-button">
               Save and return
             </button>
-            <!-- <button type="submit" disabled aria-disabled="true" class="govuk-button govuk-button--warning" data-module="govuk-button">
-              Delete address
-            </button>
-            <a href="#" class="govuk-link" style="font-weight: normal;">Cancel</a> -->
           </div>
         </form>
       </main>
