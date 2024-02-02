@@ -2,19 +2,6 @@
 
 {% set pageName="Essential information" %}
 
-{% block pageScripts %}
-  <script type="text/javascript">
-    function showAnotherAddress() {
-      var x = document.getElementById("another-address");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        alert("This would allow you to add a 2nd, 3rd, etc address in the real thing.")
-      }
-    }
-  </script>
-{% endblock %}
-
 {% block content %}
   <div class="app-split-pane app-width-container">
     <div class="app-split-pane__nav">
@@ -173,67 +160,93 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h2 class="govuk-fieldset__heading">Addresses</h2>
+                <h2 class="govuk-fieldset__heading">Other addresses</h2>
               </legend>
               <div id="changedName-hint" class="govuk-hint">
-                Record all addresses that the defendant lives at.
+                Record any other addresses that the defendant spends a
+                significant amount of time at. These will be used as part of any
+                domestic abuse and safeguarding checks.
               </div>
-              <h3 class="govuk-heading-s">Current address</h3>
-              <p class="govuk-body">
-                {{data['address-line-1']}}<br />
-                  {% if (data['address-line-2']) %}
-                    {{data['address-line-2']}}<br />
+              {% if (data['other-address-description']) %}
+                <div class="moj-ticket-panel-container">
+                  <article class="moj-ticket-panel" aria-label="Other address 1">
+                    <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                        <div class="govuk-grid-row govuk-!-margin-bottom-3">
+                          <div class="govuk-grid-column-two-thirds">
+                            <h3 class="govuk-heading-s">{{data['other-address-description']}}</h3>
+                          </div>
+                          <div class="govuk-grid-column-one-third">
+                            <a href="addresses/add-address.html?addEditAddress=Edit" class="govuk-link" style="font-weight: normal;">
+                              Edit</a> |
+                            <a href="addresses/delete-address" class="govuk-link" style="font-weight: normal;">
+                              Delete</a>
+                          </div>
+                        </div>
+                        <p class="govuk-body">
+                          {{data['other-address-line-1']}}<br />
+                          {% if (data['other-address-line-2']) %}
+                          {{data['other-address-line-2']}}<br />
+                          {% endif %}
+                          {{data['other-address-town']}}<br />
+                          {% if (data['other-address-county']) %}
+                          {{data['other-address-county']}}<br />
+                          {% endif %}
+                          {{data['other-address-postcode']}}
+                        </p>
+                    </section>
+                  </article>
+                  {% if (data['parentsAddressVisible'] === 'true') %}
+                    <article class="moj-ticket-panel" aria-label="Other address 2">
+                      <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                        <div class="govuk-grid-row govuk-!-margin-bottom-3">
+                          <div class="govuk-grid-column-two-thirds">
+                            <h3 class="govuk-heading-s">Parent's address</h3>
+                          </div>
+                          <div class="govuk-grid-column-one-third">
+                            <a href="addresses/add-address.html?addEditAddress=Edit" class="govuk-link" style="font-weight: normal;">
+                              Edit</a> |
+                            <a href="addresses/delete-address" class="govuk-link" style="font-weight: normal;">
+                              Delete</a>
+                          </div>
+                        </div>
+                        <p class="govuk-body">
+                          111b Baker Street<br />
+                          Fauxsham<br />
+                          Bedfordshire<br />
+                          BY1 8UT
+                        </p>
+                      </section>
+                    </article>
                   {% endif %}
-                  {{data['address-town']}}<br />
-                  {% if (data['address-county']) %}
-                    {{data['address-county']}}<br />
-                  {% endif %}
-                  {{data['address-postcode']}}
-              </p>
-              <div id="another-address" class="govuk-!-margin-bottom-9" style="display:none;">
-                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                <h3 class="govuk-heading-s">New address</h3>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="other-address-description">
-                    Address description
-                  </label>
-                  <input class="govuk-input govuk-input--width-20"" id="other-address-description" name="other-address-description" type="text" autocomplete="off" value="{{data['other-address-description']}}">
+                  <article class="moj-ticket-panel" aria-label="Other address 3">
+                    <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                      <div class="govuk-grid-row govuk-!-margin-bottom-3">
+                        <div class="govuk-grid-column-two-thirds">
+                          <h3 class="govuk-heading-s">Friend's address</h3>
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          <a href="addresses/add-address.html?addEditAddress=Edit" class="govuk-link" style="font-weight: normal;">
+                            Edit</a> |
+                          <a href="addresses/delete-address" class="govuk-link" style="font-weight: normal;">
+                            Delete</a>
+                        </div>
+                      </div>
+                      <p class="govuk-body">
+                        257b North Southstreet<br />
+                        Loughborough<br />
+                        Leicestershire<br />
+                        LE12 3RT
+                      </p>
+                    </section>
+                  </article>
                 </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="other-address-line-1">
-                    Address line 1
-                  </label>
-                  <input class="govuk-input govuk-input--width-30" id="other-address-line-1" name="other-address-line-1" type="text" autocomplete="off" value="{{data['other-address-line-1']}}">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address-line-2">
-                    Address line 2 (optional)
-                  </label>
-                  <input class="govuk-input govuk-input--width-30" id="other-address-line-2" name="other-address-line-2" type="text" autocomplete="off" value="{{data['other-address-line-2']}}">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="other-address-town">
-                    Town or city
-                  </label>
-                  <input class="govuk-input govuk-input--width-20" id="other-address-town" name="other-address-town" autocomplete="off" type="text" value="{{data['other-address-town']}}">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address-county">
-                    County (optional)
-                  </label>
-                  <input class="govuk-input govuk-input--width-20" id="other-address-county" name="other-address-county" autocomplete="off" type="text" value="{{data['other-address-county']}}">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="other-address-postcode">
-                    Postcode
-                  </label>
-                  <input class="govuk-input govuk-input--width-10" id="other-address-postcode" name="other-address-postcode" type="text" autocomplete="off" value="{{data['other-address-postcode']}}">
-                </div>
-              </div>
-              <div id="add-another-address" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="showAnotherAddress()">
-                Add another address
-              </div>
+              {% endif %}
             </fieldset>
+            <div class="govuk-button-group">
+              <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="addAddress">
+                Add address
+              </button>
+            </div>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
@@ -303,7 +316,7 @@
             <button class="govuk-button" data-module="govuk-button">
               Save and continue
             </button>
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="draftSaved" value="true">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
               Save draft
             </button>
           </div>

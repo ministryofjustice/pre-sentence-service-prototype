@@ -1,9 +1,9 @@
 module.exports = function (router) {
 
-  var version = "10";
+  var version = "11";
 
   router.get('/' + version + '/verification-report/defendant-details', function (req, res) {
-    req.session.data.draftSaved = 'false'
+    req.session.data.pageAction = 'false'
 
     const addressVerificationList = [
       'Choose proof of address',
@@ -27,9 +27,14 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/defendant-details', function (req, res) {
-    const draftSaved = req.session.data['draftSaved']
+    req.session.data['primary-address-line-1'] = req.session.data['address-line-1']
+    req.session.data['primary-address-line-2'] = req.session.data['address-line-2']
+    req.session.data['primary-address-town'] = req.session.data['address-town']
+    req.session.data['primary-address-county'] = req.session.data['address-county']
+    req.session.data['primary-address-postcode'] = req.session.data['address-postcode']
+    const pageAction = req.session.data['pageAction']
 
-    if (draftSaved == 'true'){
+    if (pageAction == 'saveDraft'){
       res.redirect('defendant-details')
     } else {
       res.redirect('offences')
@@ -37,15 +42,15 @@ module.exports = function (router) {
   });
 
   router.get('/' + version + '/verification-report/offences', function (req, res) {
-    req.session.data.draftSaved = 'false'
+    req.session.data.pageAction = 'false'
 
     res.render(version + '/verification-report/offences')
   });
 
   router.post('/' + version + '/verification-report/offences', function (req, res) {
-    const draftSaved = req.session.data['draftSaved']
+    const pageAction = req.session.data['pageAction']
 
-    if (draftSaved == 'true'){
+    if (pageAction == 'saveDraft'){
       res.redirect('offences')
     } else {
       res.redirect('choose-sections')
@@ -53,15 +58,15 @@ module.exports = function (router) {
   });
 
   router.get('/' + version + '/verification-report/choose-sections', function (req, res) {
-    req.session.data.draftSaved = 'false'
+    req.session.data.pageAction = 'false'
 
     res.render(version + '/verification-report/choose-sections')
   });
 
   router.post('/' + version + '/verification-report/choose-sections', function (req, res) {
-    const draftSaved = req.session.data['draftSaved']
+    const pageAction = req.session.data['pageAction']
 
-    if (draftSaved == 'true'){
+    if (pageAction == 'saveDraft'){
       res.redirect('choose-sections')
     } else {
       res.redirect('essential-information')
@@ -69,7 +74,7 @@ module.exports = function (router) {
   });
 
   router.get('/' + version + '/verification-report/essential-information', function (req, res) {
-    req.session.data.draftSaved = 'false'
+    req.session.data.pageAction = 'false'
 
     const domesticAbuseVerificationList = [
       'Choose an option',
@@ -150,12 +155,14 @@ module.exports = function (router) {
 
   router.post('/' + version + '/verification-report/essential-information', function (req, res) {
     const verificationReportSections = req.session.data['verification-report-sections']
-    const draftSaved = req.session.data['draftSaved']
+    const pageAction = req.session.data['pageAction']
 
-    if (draftSaved == 'true'){
+    if (pageAction === 'saveDraft'){
       res.redirect('essential-information')
+    } else if (pageAction ==='addAddress'){
+      res.redirect('addresses/add-address')
     } else {
-      if (verificationReportSections == 'Include sections for unpaid work only' || verificationReportSections == 'Include sections for both unpaid work and electronic monitoring'){
+      if (verificationReportSections === 'Include sections for unpaid work only' || verificationReportSections == 'Include sections for both unpaid work and electronic monitoring'){
         res.redirect('unpaid-work')
       }else {
         res.redirect('electronic-monitoring-for-curfew')
@@ -164,7 +171,7 @@ module.exports = function (router) {
   });
 
   router.get('/' + version + '/verification-report/unpaid-work', function (req, res) {
-    req.session.data.draftSaved = 'false'
+    req.session.data.pageAction = 'false'
 
     const benefitsVerificationList = [
       'Choose an option',
@@ -190,9 +197,9 @@ module.exports = function (router) {
 
   router.post('/' + version + '/verification-report/unpaid-work', function (req, res) {
     const verificationReportSections = req.session.data['verification-report-sections']
-    const draftSaved = req.session.data['draftSaved']
+    const pageAction = req.session.data['pageAction']
 
-    if (draftSaved == 'true'){
+    if (pageAction == 'saveDraft'){
       res.redirect('unpaid-work')
     } else {
       if (verificationReportSections == 'Include sections for both unpaid work and electronic monitoring'){
@@ -204,7 +211,7 @@ module.exports = function (router) {
   })
 
   router.get('/' + version + '/verification-report/electronic-monitoring-for-curfew', function (req, res) {
-    req.session.data.draftSaved = 'false'
+    req.session.data.pageAction = 'false'
 
     const electronicMonitoringCurfewVerificationList = [
       'Choose an option',
@@ -226,9 +233,9 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/electronic-monitoring-for-curfew', function (req, res) {
-    const draftSaved = req.session.data['draftSaved']
+    const pageAction = req.session.data['pageAction']
 
-    if (draftSaved == 'true'){
+    if (pageAction == 'saveDraft'){
       res.redirect('electronic-monitoring-for-curfew')
     } else {
       res.redirect('suitability-decision')
@@ -236,19 +243,19 @@ module.exports = function (router) {
   })
 
   router.get('/' + version + '/verification-report/suitability-decision', function (req, res) {
-    req.session.data.draftSaved = 'false'
+    req.session.data.pageAction = 'false'
 
     res.render(version + '/verification-report/suitability-decision')
   });
 
   router.post('/' + version + '/verification-report/suitability-decision', function (req, res) {
-    const draftSaved = req.session.data['draftSaved']
+    const pageAction = req.session.data['pageAction']
     const suitableFor = req.session.data['suitable-for']
     const domesticAbuseResult = req.session.data['domestic-abuse-check-result']
     const safeguardingResult = req.session.data['safeguarding-check-result']
     const informedConsent = req.session.data['informed-consent-electronic-monitoring']
 
-    if (draftSaved == 'true'){
+    if (pageAction == 'saveDraft'){
       res.redirect('suitability-decision')
     } else {
       if (suitableFor == 'Include sections for electronic monitoring only' || suitableFor == 'Include sections for both unpaid work and electronic monitoring'){
@@ -265,15 +272,15 @@ module.exports = function (router) {
   })
 
   router.get('/' + version + '/verification-report/check-answers', function (req, res) {
-    req.session.data.draftSaved = 'false'
+    req.session.data.pageAction = 'false'
 
     res.render(version + '/verification-report/check-answers')
   });
 
   router.post('/' + version + '/verification-report/check-answers', function (req, res) {
-    const draftSaved = req.session.data['draftSaved']
+    const pageAction = req.session.data['pageAction']
 
-    if (draftSaved == 'true'){
+    if (pageAction == 'saveDraft'){
       res.redirect('check-answers')
     } else {
       res.redirect('sign-your-report')
@@ -281,15 +288,15 @@ module.exports = function (router) {
   })
 
   router.get('/' + version + '/verification-report/sign-your-report', function (req, res) {
-    req.session.data.draftSaved = 'false'
+    req.session.data.pageAction = 'false'
 
     res.render(version + '/verification-report/sign-your-report')
   });
 
   router.post('/' + version + '/verification-report/sign-your-report', function (req, res) {
-    const draftSaved = req.session.data['draftSaved']
+    const pageAction = req.session.data['pageAction']
 
-    if (draftSaved == 'true'){
+    if (pageAction == 'saveDraft'){
       res.redirect('sign-your-report')
     } else {
       res.redirect('publish-report')
@@ -297,7 +304,7 @@ module.exports = function (router) {
   })
 
   router.get('/' + version + '/verification-report/publish-report', function (req, res) {
-    req.session.data.draftSaved = 'false'
+    req.session.data.pageAction = 'false'
 
     res.render(version + '/verification-report/publish-report')
   });
@@ -307,12 +314,33 @@ module.exports = function (router) {
   })
 
   router.get('/' + version + '/verification-report/confirmation', function (req, res) {
-    req.session.data.draftSaved = 'false'
+    req.session.data.pageAction = 'false'
 
     res.render(version + '/verification-report/confirmation')
   });
 
   router.post('/' + version + '/verification-report/confirmation', function (req, res) {
     res.redirect('PAGE')
+  })
+
+  router.get('/' + version + '/verification-report/addresses/add-address', function (req, res) {
+    res.render(version + '/verification-report/addresses/add-address')
+  });
+
+  router.post('/' + version + '/verification-report/addresses/add-address', function (req, res) {
+    req.session.data.addEditAddress = "Add "
+    req.session.data.parentsAddressVisible = 'true'
+
+    res.redirect('../essential-information')
+  })
+
+  router.get('/' + version + '/verification-report/addresses/delete-address', function (req, res) {
+    res.render(version + '/verification-report/addresses/delete-address')
+  });
+
+  router.post('/' + version + '/verification-report/addresses/delete-address', function (req, res) {
+    req.session.data.parentsAddressVisible = 'false'
+
+    res.redirect('../essential-information')
   })
 }
