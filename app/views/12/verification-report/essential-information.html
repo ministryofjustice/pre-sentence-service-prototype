@@ -1,0 +1,338 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Essential information" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">
+                Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offences">
+                Offences</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="choose-sections">
+                Choose sections</a>
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="essential-information">
+                Essential information</a>
+            </li>
+            <li class="app-subnav__section-item">
+              {% if (data['verification-report-sections'] == 'Include sections for unpaid work only') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
+                <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">
+                  Suitability for unpaid work</a>
+              {% else %}
+                  <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-link--disabled" href="unpaid-work">
+                    Suitability for unpaid work</a>
+              {% endif %}
+            </li>
+            <li class="app-subnav__section-item">
+              {% if (data['verification-report-sections'] == 'Include sections for electronic monitoring only') or (data['verification-report-sections'] == 'Include sections for both unpaid work and electronic monitoring')  %}
+                <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">
+                  Suitability for electronic monitoring</a>
+              {% else %}
+                  <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-link--disabled" href="electronic-monitoring-for-curfew">
+                    Suitability for electronic monitoring</a>
+              {% endif %}
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="suitability-decision">
+                Suitability decision</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="check-answers">
+                Check your answers</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="essential-information" method="post" novalidate>
+          <span class="govuk-caption-l">
+            Dylan Adam Armstrong CRN: E234516
+          </span>
+          <h1 class="govuk-heading-l">
+            Essential information
+          </h1>
+          <p class="govuk-body">Request these checks from the relevant agencies
+            and record the results when you have them. If you are waiting on
+            checks, you can select the check pending option, continue with the
+            report and update this section later.</p>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">Are there any concerns about
+                  domestic abuse?</h2>
+              </legend>
+              <div id="domestic-abuse-checks-hint" class="govuk-hint">You must
+                check for any previous domestic violence charges or domestic
+                abuse police call outs.</div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="domestic-abuse-check-result" name="domestic-abuse-check-result" type="radio" value="No concerns about domestic abuse" {{ checked("domestic-abuse-check-result", "No concerns about domestic abuse") }}>
+                  <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result">
+                    No concerns about domestic abuse
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="domestic-abuse-check-result-2" name="domestic-abuse-check-result" type="radio" value="Concerns about domestic abuse" {{ checked("domestic-abuse-check-result", "Concerns about domestic abuse") }}>
+                  <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result-2">
+                    Concerns about domestic abuse
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="domestic-abuse-check-result-3" name="domestic-abuse-check-result" type="radio" value="Check pending" {{ checked("domestic-abuse-check-result", "Check pending") }}>
+                  <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result-3">
+                    Check pending
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            {{ govukSelect({
+              id: "domestic-abuse-verification",
+              name: "domestic-abuse-verification",
+              label: {
+                html: "<h3 class='govuk-header-s'>How have you checked for previous domestic abuse charges?</h3>"
+              },
+              items: domesticAbuseVerificationList
+            }) }}
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">Are there concerns about
+                  child safeguarding?</h2>
+              </legend>
+              <div id="safeguarding-checks-hint" class="govuk-hint">You must
+                check with social services for any concerns about child safety.</div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="safeguarding-check-result" name="safeguarding-check-result" type="radio" value="No concerns about child safeguarding" {{ checked("safeguarding-check-result", "No concerns about child safeguarding") }}>
+                  <label class="govuk-label govuk-radios__label" for="safeguarding-check-result">
+                    No concerns about child safeguarding
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="safeguarding-check-result-2" name="safeguarding-check-result" type="radio" value="Concerns about child safeguarding" {{ checked("safeguarding-check-result", "Concerns about child safeguarding") }}>
+                  <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-2">
+                    Concerns about child safeguarding
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="safeguarding-check-result-3" name="safeguarding-check-result" type="radio" value="Check pending" {{ checked("safeguarding-check-result", "Check pending") }}>
+                  <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-3">
+                    Check pending
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            {{ govukSelect({
+              id: "safeguarding-verification",
+              name: "safeguarding-verification",
+              label: {
+                html: "<h3 class='govuk-header-s'>How have you checked for concerns about child safeguarding?</h3>"
+              },
+              items: safeguardingVerificationList
+            }) }}
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">Other addresses</h2>
+              </legend>
+              <div id="changedName-hint" class="govuk-hint">
+                Record any other addresses that the defendant spends a
+                significant amount of time at. These will be used as part of any
+                domestic abuse and safeguarding checks.
+              </div>
+              {% if (data['other-address-description']) %}
+                <div class="moj-ticket-panel-container">
+                  <article class="moj-ticket-panel" aria-label="Other address 1">
+                    <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                        <div class="govuk-grid-row govuk-!-margin-bottom-3">
+                          <div class="govuk-grid-column-two-thirds">
+                            <h3 class="govuk-heading-s">{{data['other-address-description']}}</h3>
+                          </div>
+                          <div class="govuk-grid-column-one-third">
+                            <a href="addresses/add-address.html?addEditAddress=Edit" class="govuk-link" style="font-weight: normal;">
+                              Edit</a> |
+                            <a href="addresses/delete-address" class="govuk-link" style="font-weight: normal;">
+                              Delete</a>
+                          </div>
+                        </div>
+                        <p class="govuk-body">
+                          {{data['other-address-line-1']}}<br />
+                          {% if (data['other-address-line-2']) %}
+                          {{data['other-address-line-2']}}<br />
+                          {% endif %}
+                          {{data['other-address-town']}}<br />
+                          {% if (data['other-address-county']) %}
+                          {{data['other-address-county']}}<br />
+                          {% endif %}
+                          {{data['other-address-postcode']}}
+                        </p>
+                    </section>
+                  </article>
+                  {% if (data['parentsAddressVisible'] === 'true') %}
+                    <article class="moj-ticket-panel" aria-label="Other address 2">
+                      <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                        <div class="govuk-grid-row govuk-!-margin-bottom-3">
+                          <div class="govuk-grid-column-two-thirds">
+                            <h3 class="govuk-heading-s">Parent's address</h3>
+                          </div>
+                          <div class="govuk-grid-column-one-third">
+                            <a href="addresses/add-address.html?addEditAddress=Edit" class="govuk-link" style="font-weight: normal;">
+                              Edit</a> |
+                            <a href="addresses/delete-address" class="govuk-link" style="font-weight: normal;">
+                              Delete</a>
+                          </div>
+                        </div>
+                        <p class="govuk-body">
+                          111b Baker Street<br />
+                          Fauxsham<br />
+                          Bedfordshire<br />
+                          BY1 8UT
+                        </p>
+                      </section>
+                    </article>
+                  {% endif %}
+                  <article class="moj-ticket-panel" aria-label="Other address 3">
+                    <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                      <div class="govuk-grid-row govuk-!-margin-bottom-3">
+                        <div class="govuk-grid-column-two-thirds">
+                          <h3 class="govuk-heading-s">Friend's address</h3>
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          <a href="addresses/add-address.html?addEditAddress=Edit" class="govuk-link" style="font-weight: normal;">
+                            Edit</a> |
+                          <a href="addresses/delete-address" class="govuk-link" style="font-weight: normal;">
+                            Delete</a>
+                        </div>
+                      </div>
+                      <p class="govuk-body">
+                        257b North Southstreet<br />
+                        Loughborough<br />
+                        Leicestershire<br />
+                        LE12 3RT
+                      </p>
+                    </section>
+                  </article>
+                </div>
+              {% endif %}
+            </fieldset>
+            <div class="govuk-button-group">
+              <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="addAddress">
+                Add address
+              </button>
+            </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m" for="dependant-caring-responsibilities">
+              Dependants and caring responsibilities
+            </h2>
+            <div id="dependant-caring-responsibilities-hint" class="govuk-hint">
+              Record any dependants and caring responsibilities that could
+              affect the defendant's capacity for unpaid work or electronic
+              monitoring curfew.
+            </div>
+            <textarea class="govuk-textarea" id="dependant-caring-responsibilities" name="dependant-caring-responsibilities" rows="2" aria-describedby="dependant-caring-responsibilities-hint">{{data['dependant-caring-responsibilities']}}</textarea>
+          </div>
+          <div class="govuk-form-group">
+            {{ govukSelect({
+              id: "dependants-caring-verification",
+              name: "dependants-caring-verification",
+              label: {
+                html: "<h3 class='govuk-header-s'>How have you checked their dependants and caring responsibilities?</h3>"
+              },
+              items: dependantsCaringVerificationList
+            }) }}
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m" for="verify-current-employment">
+              Employment
+            </h2>
+            <div id="health-conditions-hint" class="govuk-hint">
+              Record whether the defendant is employed or not and their working
+              pattern, if applicable. This should include current employment and
+              known changes to employment in the future.
+            </div>
+            <textarea class="govuk-textarea" id="verify-current-employment" name="verify-current-employment" rows="2" aria-describedby="verify-current-employment-hint">{{data['verify-current-employment']}}</textarea>
+          </div>
+          <div class="govuk-form-group">
+            {{ govukSelect({
+              id: "employment-verification",
+              name: "employment-verification",
+              label: {
+                html: "<h3 class='govuk-header-s'>How have you checked their employment/working pattern?</h3>"
+              },
+              items: employmentVerificationList
+            }) }}
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m" for="health-conditions">Health
+              conditions</h2>
+            <div id="health-conditions-hint" class="govuk-hint">Record any
+              health conditions that may affect the defendant's ability to
+              complete unpaid work or receive an electronic monitoring curfew.
+              This should include both physical and mental health conditions.</div>
+            <textarea class="govuk-textarea" id="health-conditions" name="health-conditions" rows="2" aria-describedby="health-conditions-hint">{{data['health-conditions']}}</textarea>
+          </div>
+          <div class="govuk-form-group">
+            {{ govukSelect({
+              id: "health-conditions-verification",
+              name: "health-conditions-verification",
+              label: {
+                html: "<h3 class='govuk-header-s'>How have you checked relevant health conditions?</h3>"
+              },
+              items: healthConditionsVerificationList
+            }) }}
+          </div>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
+              Save draft
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link"
+        href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+          xmlns="http://www.w3.org/2000/svg" width="13" height="17"
+          viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z">
+          </path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}
