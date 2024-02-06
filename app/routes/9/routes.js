@@ -74,7 +74,7 @@ module.exports = function (router) {
     const domesticAbuseVerificationList = [
       'Choose an option',
       'I have not seen of proof domestic abuse checks',
-      'Police checks or PND laptop'
+      'Police checks or Police National Database laptop'
     ].map(item => {
       return {
         value: item,
