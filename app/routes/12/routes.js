@@ -53,22 +53,6 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('offences')
     } else {
-      res.redirect('choose-sections')
-    }
-  });
-
-  router.get('/' + version + '/verification-report/choose-sections', function (req, res) {
-    req.session.data.pageAction = 'false'
-
-    res.render(version + '/verification-report/choose-sections')
-  });
-
-  router.post('/' + version + '/verification-report/choose-sections', function (req, res) {
-    const pageAction = req.session.data['pageAction']
-
-    if (pageAction == 'saveDraft'){
-      res.redirect('choose-sections')
-    } else {
       res.redirect('essential-information')
     }
   });
