@@ -138,7 +138,6 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/essential-information', function (req, res) {
-    const verificationReportSections = req.session.data['verification-report-sections']
     const pageAction = req.session.data['pageAction']
 
     if (pageAction === 'saveDraft'){
@@ -146,11 +145,7 @@ module.exports = function (router) {
     } else if (pageAction ==='addAddress'){
       res.redirect('addresses/add-address')
     } else {
-      if (verificationReportSections === 'Include sections for unpaid work only' || verificationReportSections == 'Include sections for both unpaid work and electronic monitoring'){
-        res.redirect('unpaid-work')
-      }else {
-        res.redirect('electronic-monitoring-for-curfew')
-      }
+      res.redirect('unpaid-work')
     }
   });
 
@@ -180,17 +175,12 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/unpaid-work', function (req, res) {
-    const verificationReportSections = req.session.data['verification-report-sections']
     const pageAction = req.session.data['pageAction']
 
     if (pageAction == 'saveDraft'){
       res.redirect('unpaid-work')
     } else {
-      if (verificationReportSections == 'Include sections for both unpaid work and electronic monitoring'){
-        res.redirect('electronic-monitoring-for-curfew')
-      }else {
-        res.redirect('check-answers')
-      }
+      res.redirect('electronic-monitoring-for-curfew')
     }
   })
 
