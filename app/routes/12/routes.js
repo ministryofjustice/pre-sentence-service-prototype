@@ -224,25 +224,22 @@ module.exports = function (router) {
 
   router.post('/' + version + '/verification-report/suitability-decision', function (req, res) {
     const pageAction = req.session.data['pageAction']
-    const suitableFor = req.session.data['suitable-for']
     const domesticAbuseResult = req.session.data['domestic-abuse-check-result']
     const safeguardingResult = req.session.data['safeguarding-check-result']
     const informedConsent = req.session.data['informed-consent-electronic-monitoring']
+    const suitabilityDecision = req.session.data['suitability-decision']
 
     if (pageAction == 'saveDraft'){
       res.redirect('suitability-decision')
-    } else {
-      if (suitableFor == 'Include sections for electronic monitoring only' || suitableFor == 'Include sections for both unpaid work and electronic monitoring'){
-        if (domesticAbuseResult != 'No domestic abuse issues' || safeguardingResult != 'No safeguarding issues' || informedConsent != 'Yes, they have given informed consent'){
-          res.redirect('suitability-decision-error')
-        } else {
-          res.redirect('check-answers')
-        }
+    } else if (suitabilityDecision == 'Electronic monitoring curfew only' || suitabilityDecision == 'Both unpaid work and electronic monitoring curfew') {
+      if (domesticAbuseResult != 'No concerns about domestic abuse' || safeguardingResult != 'No concerns about child safeguarding' || informedConsent != 'Yes, they have given informed consent'){
+        res.redirect('suitability-decision-error')
       } else {
         res.redirect('check-answers')
       }
+    } else {
+      res.redirect('check-answers')
     }
-
   })
 
   router.get('/' + version + '/verification-report/check-answers', function (req, res) {
