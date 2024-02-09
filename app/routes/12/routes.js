@@ -11,7 +11,6 @@ module.exports = function (router) {
       'Council tax bill',
       'I have not seen proof of address',
       'Mortgage statement',
-      'Other',
       'Self reported',
       'Tenancy agreement',
       'Utility bill'
