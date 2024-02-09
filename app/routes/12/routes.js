@@ -11,10 +11,9 @@ module.exports = function (router) {
       'Council tax bill',
       'I have not seen proof of address',
       'Mortgage statement',
-      'Other',
-      'Professional judgement',
-      'Utility bill',
-      'Tenancy agreement'
+      'Self reported',
+      'Tenancy agreement',
+      'Utility bill'
     ].map(item => {
       return {
         value: item,
@@ -63,7 +62,7 @@ module.exports = function (router) {
     const domesticAbuseVerificationList = [
       'Choose an option',
       'I have not seen of proof domestic abuse checks',
-      'Police checks or PND laptop'
+      'Police checks or Police National Database laptop'
     ].map(item => {
       return {
         value: item,
@@ -74,7 +73,6 @@ module.exports = function (router) {
 
     const safeguardingVerificationList = [
       'Choose an option',
-      'I have not seen proof of safeguarding checks',
       'Social services checks'
     ].map(item => {
       return {
@@ -90,7 +88,7 @@ module.exports = function (router) {
       'I have not seen proof of health conditions',
       'Other',
       'Prescription',
-      'Professional judgement'
+      'Self reported'
     ].map(item => {
       return {
         value: item,
@@ -101,10 +99,9 @@ module.exports = function (router) {
 
     const dependantsCaringVerificationList = [
       'Choose an option',
-      'Email',
+      'Email or letter',
       'I have not seen proof of dependants/caring responsibilities',
-      'Other',
-      'Professional judgement',
+      'Self reported',
       'Telephone call'
     ].map(item => {
       return {
@@ -119,7 +116,8 @@ module.exports = function (router) {
       'Email',
       'I have not seen proof of employment/working patterns',
       'Other',
-      'Telephone call'
+      'Telephone call',
+      'Wage slip or contract'
     ].map(item => {
       return {
         value: item,
@@ -161,8 +159,8 @@ module.exports = function (router) {
       'Letter from the Pension Service',
       'Other',
       'Pension advice slip',
-      'Professional judgment',
-      'Recent bank statement'
+      'Recent bank statement',
+      'Self reported'
     ].map(item => {
       return {
         value: item,
@@ -189,12 +187,9 @@ module.exports = function (router) {
 
     const electronicMonitoringCurfewVerificationList = [
       'Choose an option',
-      'Email',
       'I have not recorded consent',
       'In person',
-      'Other',
-      'Phone call',
-      'Text message'
+      'Telephone call'
     ].map(item => {
       return {
         value: item,
