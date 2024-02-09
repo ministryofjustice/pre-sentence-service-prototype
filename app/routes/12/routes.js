@@ -53,22 +53,6 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('offences')
     } else {
-      res.redirect('choose-sections')
-    }
-  });
-
-  router.get('/' + version + '/verification-report/choose-sections', function (req, res) {
-    req.session.data.pageAction = 'false'
-
-    res.render(version + '/verification-report/choose-sections')
-  });
-
-  router.post('/' + version + '/verification-report/choose-sections', function (req, res) {
-    const pageAction = req.session.data['pageAction']
-
-    if (pageAction == 'saveDraft'){
-      res.redirect('choose-sections')
-    } else {
       res.redirect('essential-information')
     }
   });
@@ -154,7 +138,6 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/essential-information', function (req, res) {
-    const verificationReportSections = req.session.data['verification-report-sections']
     const pageAction = req.session.data['pageAction']
 
     if (pageAction === 'saveDraft'){
@@ -162,11 +145,7 @@ module.exports = function (router) {
     } else if (pageAction ==='addAddress'){
       res.redirect('addresses/add-address')
     } else {
-      if (verificationReportSections === 'Include sections for unpaid work only' || verificationReportSections == 'Include sections for both unpaid work and electronic monitoring'){
-        res.redirect('unpaid-work')
-      }else {
-        res.redirect('electronic-monitoring-for-curfew')
-      }
+      res.redirect('unpaid-work')
     }
   });
 
@@ -196,17 +175,12 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/verification-report/unpaid-work', function (req, res) {
-    const verificationReportSections = req.session.data['verification-report-sections']
     const pageAction = req.session.data['pageAction']
 
     if (pageAction == 'saveDraft'){
       res.redirect('unpaid-work')
     } else {
-      if (verificationReportSections == 'Include sections for both unpaid work and electronic monitoring'){
-        res.redirect('electronic-monitoring-for-curfew')
-      }else {
-        res.redirect('check-answers')
-      }
+      res.redirect('electronic-monitoring-for-curfew')
     }
   })
 
@@ -250,25 +224,22 @@ module.exports = function (router) {
 
   router.post('/' + version + '/verification-report/suitability-decision', function (req, res) {
     const pageAction = req.session.data['pageAction']
-    const suitableFor = req.session.data['suitable-for']
     const domesticAbuseResult = req.session.data['domestic-abuse-check-result']
     const safeguardingResult = req.session.data['safeguarding-check-result']
     const informedConsent = req.session.data['informed-consent-electronic-monitoring']
+    const suitabilityDecision = req.session.data['suitability-decision']
 
     if (pageAction == 'saveDraft'){
       res.redirect('suitability-decision')
-    } else {
-      if (suitableFor == 'Include sections for electronic monitoring only' || suitableFor == 'Include sections for both unpaid work and electronic monitoring'){
-        if (domesticAbuseResult != 'No domestic abuse issues' || safeguardingResult != 'No safeguarding issues' || informedConsent != 'Yes, they have given informed consent'){
-          res.redirect('suitability-decision-error')
-        } else {
-          res.redirect('check-answers')
-        }
+    } else if (suitabilityDecision == 'Electronic monitoring curfew only' || suitabilityDecision == 'Both unpaid work and electronic monitoring curfew') {
+      if (domesticAbuseResult != 'No concerns about domestic abuse' || safeguardingResult != 'No concerns about child safeguarding' || informedConsent != 'Yes, they have given informed consent'){
+        res.redirect('suitability-decision-error')
       } else {
         res.redirect('check-answers')
       }
+    } else {
+      res.redirect('check-answers')
     }
-
   })
 
   router.get('/' + version + '/verification-report/check-answers', function (req, res) {
