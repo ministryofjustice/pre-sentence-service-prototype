@@ -50,10 +50,10 @@
     <div class="app-split-pane__content">
       <main id="main-content" class="app-content" role="main">
         <form action="offences" method="post" novalidate>
-          <span class="govuk-caption-l">
+          <span class="govuk-caption-xl">
             Dylan Adam Armstrong CRN: E234516
           </span>
-          <h1 class="govuk-heading-l">
+          <h1 class="govuk-heading-xl">
             Offences
           </h1>
           <p class="govuk-body">This information will be included in the
@@ -73,24 +73,24 @@
             </details>
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="offences">
+              <label class="govuk-label govuk-label--l" for="offences">
                 Offence 1
               </label>
             </h2>
             <div class="govuk-form-group">
-              <h3 class="govuk-heading-s" for="offence-1">
+              <h3 class="govuk-heading-m" for="offence-1">
                 Enter the name of the offence and the date it was committed.
               </h3>
               <input class="govuk-input" id="offence-1" name="offence-1" type="text" value="{{data['offence-1'] | default('Committed an act of criminal damage')}}">
             </div>
             <div class="govuk-form-group">
-              <h3 class="govuk-heading-s" for="offence-1-information">
+              <h3 class="govuk-heading-m" for="offence-1-information">
                 Enter additional information about this offence, for example the value of stolen goods.
               </h3>
               <textarea class="govuk-textarea" id="offence-1-information" name="offence-1-information" rows="4" aria-describedby="offences-hint">{{data['offence-1-information'] | default('On 13/06/2023, unlawfully and intentionally, committed an act of criminal damage by scratching the paintwork on four cars causing damage to the value of £2,500.')}}</textarea>
             </div>
             <div class="govuk-form-group">
-              <h3 class="govuk-heading-s" for="offence-1-act">
+              <h3 class="govuk-heading-m" for="offence-1-act">
                 Act relating to offence.
               </h3>
               <input class="govuk-input" id="offence-1-act" name="offence-1-act" type="text" value="{{data['offence-1-act'] | default('Contrary to section 1 (1) of the Crime and Disorder Act 1971')}}">
@@ -99,24 +99,24 @@
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="offences">
+              <label class="govuk-label govuk-label--l" for="offences">
                 Offence 2
               </label>
             </h2>
             <div class="govuk-form-group">
-              <h3 class="govuk-heading-s" for="offence-2-information">
+              <h3 class="govuk-heading-m" for="offence-2-information">
                 Enter the name of the offence and the date it was committed.
               </h3>
               <input class="govuk-input" id="offence-2-information" name="offence-2-information" type="text" value="{{data['offence-2-information'] | default('Theft from a motor vehicle')}}">
             </div>
             <div class="govuk-form-group">
-              <h3 class="govuk-heading-s" for="offence-1-information">
+              <h3 class="govuk-heading-m" for="offence-1-information">
                 Enter additional information about this offence, for example the value of stolen goods.
               </h3>
               <textarea class="govuk-textarea" id="offence-1-information" name="offence-1-information" rows="4" aria-describedby="offences-hint">{{data['offence-1-information'] | default('On 13/06/2023, unlawfully and intentionally, committed an act of theft from a motor vehicle by stealing a mobile phone to the value of £700.')}}</textarea>
             </div>
             <div class="govuk-form-group">
-              <h3 class="govuk-heading-s" for="offence-1-act">
+              <h3 class="govuk-heading-m" for="offence-1-act">
                 Act relating to offence.
               </h3>
               <input class="govuk-input" id="offence-1-act" name="offence-1-act" type="text" value="{{data['offence-1-act'] | default('Contrary to the Theft Act 1968')}}">

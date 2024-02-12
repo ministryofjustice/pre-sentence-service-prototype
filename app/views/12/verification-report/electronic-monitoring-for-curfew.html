@@ -49,20 +49,20 @@
     <div class="app-split-pane__content">
       <main id="main-content" class="app-content" role="main">
         <form action="electronic-monitoring-for-curfew" method="post" novalidate>
-          <span class="govuk-caption-l">Dylan Adam Armstrong CRN: E234516</span>
-          <h1 class="govuk-heading-l">Suitability for electronic monitoring curfew</h1>
+          <span class="govuk-caption-xl">Dylan Adam Armstrong CRN: E234516</span>
+          <h1 class="govuk-heading-xl">Suitability for electronic monitoring curfew</h1>
           <div class="govuk-form-group">
-            <h2 class="govuk-heading-m" for="consent-electronic-monitoring-curfew">
-              Informed consent to an electronic monitoring curfew</h2>
-            <div id="health-conditions-hint" class="govuk-hint">It is a legal
-              requirement that the homeowner or main tenant gives their
-              informed consent for electronic monitoring equipment to be
-              installed at their property. If the defendant isn't the homeowner
-              or main tenant they will need to ask for permission.</div>
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h2 class="govuk-fieldset__heading" for="consent-electronic-monitoring-curfew">
+                    Informed consent to an electronic monitoring curfew</h2>
                 </legend>
+                <div id="health-conditions-hint" class="govuk-hint">It is a legal
+                  requirement that the homeowner or main tenant gives their
+                  informed consent for electronic monitoring equipment to be
+                  installed at their property. If the defendant isn't the homeowner
+                  or main tenant they will need to ask for permission.</div>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="informed-consent-electronic-monitoring" name="informed-consent-electronic-monitoring" type="radio" value="Yes, they have given informed consent" {{ checked("informed-consent-electronic-monitoring", "Yes, they have given informed consent") }}>
@@ -83,7 +83,7 @@
                 id: "electronic-monitoring-curfew-verification",
                 name: "electronic-monitoring-curfew-verification",
                 label: {
-                  html: "<h3 class='govuk-header-s'>How have you checked for informed consent?</h3>"
+                  html: "<h3 class='govuk-heading-m'>How have you checked for informed consent?</h3>"
                 },
                 items: electronicMonitoringCurfewVerificationList
               }) }}
@@ -91,7 +91,7 @@
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
-            <h2 class="govuk-heading-m" for="consent-electronic-monitoring-curfew">
+            <h2 class="govuk-heading-l" for="consent-electronic-monitoring-curfew">
               Addresses for curfew</h2>
             <div id="more-detail-hint" class="govuk-hint">Curfews are usually
               for a single address but it can be considered for two addresses.
@@ -99,7 +99,7 @@
               address is usually their work.</div>
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                     <h3 class="govuk-fieldset__heading">
                       Primary address
                     </h3>
@@ -138,7 +138,7 @@
               </div>
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                     <h3 class="govuk-fieldset__heading">
                       Secondary address (optional)
                     </h3>
@@ -179,7 +179,7 @@
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="more-detail">
+              <label class="govuk-label govuk-label--l" for="more-detail">
                 Supporting comments</label>
             </h1>
             <div id="electronic-monitoring-supporting-hint" class="govuk-hint">
