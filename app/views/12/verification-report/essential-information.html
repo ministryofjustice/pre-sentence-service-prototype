@@ -50,102 +50,15 @@
     <div class="app-split-pane__content">
       <main id="main-content" class="app-content" role="main">
         <form action="essential-information" method="post" novalidate>
-          <span class="govuk-caption-l">
+          <span class="govuk-caption-xl">
             Dylan Adam Armstrong CRN: E234516
           </span>
-          <h1 class="govuk-heading-l">
+          <h1 class="govuk-heading-xl">
             Essential information
           </h1>
-          <p class="govuk-body">Request these checks from the relevant agencies
-            and record the results when you have them. If you are waiting on
-            checks, you can select the check pending option, continue with the
-            report and update this section later.</p>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h2 class="govuk-fieldset__heading">Are there any concerns about
-                  domestic abuse?</h2>
-              </legend>
-              <div id="domestic-abuse-checks-hint" class="govuk-hint">You must
-                check for any previous domestic violence charges or domestic
-                abuse history (including callouts).</div>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="domestic-abuse-check-result" name="domestic-abuse-check-result" type="radio" value="No concerns about domestic abuse" {{ checked("domestic-abuse-check-result", "No concerns about domestic abuse") }}>
-                  <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result">
-                    No concerns about domestic abuse
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="domestic-abuse-check-result-2" name="domestic-abuse-check-result" type="radio" value="Concerns about domestic abuse" {{ checked("domestic-abuse-check-result", "Concerns about domestic abuse") }}>
-                  <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result-2">
-                    Concerns about domestic abuse
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="domestic-abuse-check-result-3" name="domestic-abuse-check-result" type="radio" value="Check pending" {{ checked("domestic-abuse-check-result", "Check pending") }}>
-                  <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result-3">
-                    Check pending
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-          <div class="govuk-form-group">
-            {{ govukSelect({
-              id: "domestic-abuse-verification",
-              name: "domestic-abuse-verification",
-              label: {
-                html: "<h3 class='govuk-header-s'>How have you checked for previous domestic abuse charges?</h3>"
-              },
-              items: domesticAbuseVerificationList
-            }) }}
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h2 class="govuk-fieldset__heading">Are there concerns about
-                  child safeguarding?</h2>
-              </legend>
-              <div id="safeguarding-checks-hint" class="govuk-hint">You must
-                check with social services for any concerns about child safety.</div>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="safeguarding-check-result" name="safeguarding-check-result" type="radio" value="No concerns about child safeguarding" {{ checked("safeguarding-check-result", "No concerns about child safeguarding") }}>
-                  <label class="govuk-label govuk-radios__label" for="safeguarding-check-result">
-                    No concerns about child safeguarding
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="safeguarding-check-result-2" name="safeguarding-check-result" type="radio" value="Concerns about child safeguarding" {{ checked("safeguarding-check-result", "Concerns about child safeguarding") }}>
-                  <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-2">
-                    Concerns about child safeguarding
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="safeguarding-check-result-3" name="safeguarding-check-result" type="radio" value="Check pending" {{ checked("safeguarding-check-result", "Check pending") }}>
-                  <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-3">
-                    Check pending
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-          <div class="govuk-form-group">
-            {{ govukSelect({
-              id: "safeguarding-verification",
-              name: "safeguarding-verification",
-              label: {
-                html: "<h3 class='govuk-header-s'>How have you checked for concerns about child safeguarding?</h3>"
-              },
-              items: safeguardingVerificationList
-            }) }}
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h2 class="govuk-fieldset__heading">Other addresses</h2>
               </legend>
               <div id="changedName-hint" class="govuk-hint">
@@ -235,8 +148,95 @@
             </div>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <h2 class="govuk-heading-l">Request and complete checks</h2>
+          <p class="govuk-body">Request these checks from the relevant agencies
+            and record the results when you have them. If you are waiting on
+            checks, you can select the check pending option, continue with the
+            report and update this section later.</p>
           <div class="govuk-form-group">
-            <h2 class="govuk-heading-m" for="dependant-caring-responsibilities">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h3 class="govuk-fieldset__heading">Are there any concerns about
+                  domestic abuse?</h3>
+              </legend>
+              <div id="domestic-abuse-checks-hint" class="govuk-hint">You must
+                check for any previous domestic violence charges or domestic
+                abuse history (including callouts).</div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="domestic-abuse-check-result" name="domestic-abuse-check-result" type="radio" value="No concerns about domestic abuse" {{ checked("domestic-abuse-check-result", "No concerns about domestic abuse") }}>
+                  <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result">
+                    No concerns about domestic abuse
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="domestic-abuse-check-result-2" name="domestic-abuse-check-result" type="radio" value="Concerns about domestic abuse" {{ checked("domestic-abuse-check-result", "Concerns about domestic abuse") }}>
+                  <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result-2">
+                    Concerns about domestic abuse
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="domestic-abuse-check-result-3" name="domestic-abuse-check-result" type="radio" value="Check pending" {{ checked("domestic-abuse-check-result", "Check pending") }}>
+                  <label class="govuk-label govuk-radios__label" for="domestic-abuse-check-result-3">
+                    Check pending
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group govuk-!-margin-bottom-9">
+            {{ govukSelect({
+              id: "domestic-abuse-verification",
+              name: "domestic-abuse-verification",
+              label: {
+                html: "<h4 class='govuk-heading-s'>How have you checked for previous domestic abuse charges?</h4>"
+              },
+              items: domesticAbuseVerificationList
+            }) }}
+          </div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">Are there concerns about
+                  child safeguarding?</h2>
+              </legend>
+              <div id="safeguarding-checks-hint" class="govuk-hint">You must
+                check with social services for any concerns about child safety.</div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="safeguarding-check-result" name="safeguarding-check-result" type="radio" value="No concerns about child safeguarding" {{ checked("safeguarding-check-result", "No concerns about child safeguarding") }}>
+                  <label class="govuk-label govuk-radios__label" for="safeguarding-check-result">
+                    No concerns about child safeguarding
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="safeguarding-check-result-2" name="safeguarding-check-result" type="radio" value="Concerns about child safeguarding" {{ checked("safeguarding-check-result", "Concerns about child safeguarding") }}>
+                  <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-2">
+                    Concerns about child safeguarding
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="safeguarding-check-result-3" name="safeguarding-check-result" type="radio" value="Check pending" {{ checked("safeguarding-check-result", "Check pending") }}>
+                  <label class="govuk-label govuk-radios__label" for="safeguarding-check-result-3">
+                    Check pending
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            {{ govukSelect({
+              id: "safeguarding-verification",
+              name: "safeguarding-verification",
+              label: {
+                html: "<h4 class='govuk-heading-s'>How have you checked for concerns about child safeguarding?</h4>"
+              },
+              items: safeguardingVerificationList
+            }) }}
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-l" for="dependant-caring-responsibilities">
               Dependants and caring responsibilities
             </h2>
             <div id="dependant-caring-responsibilities-hint" class="govuk-hint">
@@ -251,14 +251,14 @@
               id: "dependants-caring-verification",
               name: "dependants-caring-verification",
               label: {
-                html: "<h3 class='govuk-header-s'>How have you checked their dependants and caring responsibilities?</h3>"
+                html: "<h3 class='govuk-heading-m'>How have you checked their dependants and caring responsibilities?</h3>"
               },
               items: dependantsCaringVerificationList
             }) }}
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
-            <h2 class="govuk-heading-m" for="verify-current-employment">
+            <h2 class="govuk-heading-l" for="verify-current-employment">
               Employment
             </h2>
             <div id="health-conditions-hint" class="govuk-hint">
@@ -273,14 +273,14 @@
               id: "employment-verification",
               name: "employment-verification",
               label: {
-                html: "<h3 class='govuk-header-s'>How have you checked their employment/working pattern?</h3>"
+                html: "<h3 class='govuk-heading-m'>How have you checked their employment/working pattern?</h3>"
               },
               items: employmentVerificationList
             }) }}
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <div class="govuk-form-group">
-            <h2 class="govuk-heading-m" for="health-conditions">Health
+            <h2 class="govuk-heading-l" for="health-conditions">Health
               conditions</h2>
             <div id="health-conditions-hint" class="govuk-hint">Record any
               health conditions that may affect the defendant's ability to
@@ -293,7 +293,7 @@
               id: "health-conditions-verification",
               name: "health-conditions-verification",
               label: {
-                html: "<h3 class='govuk-header-s'>How have you checked relevant health conditions?</h3>"
+                html: "<h3 class='govuk-heading-s'>How have you checked relevant health conditions?</h3>"
               },
               items: healthConditionsVerificationList
             }) }}
