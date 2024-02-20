@@ -56,6 +56,18 @@ module.exports = function (router) {
     }
   });
 
+  router.get('/' + version + '/verification-report/offences/delete-offence', function (req, res) {
+    req.session.data.pageAction = 'false'
+
+    res.render(version + '/verification-report/offences/delete-offence')
+  });
+
+  router.post('/' + version + '/verification-report/offences/delete-offence', function (req, res) {
+    req.session.data.offenceOneHidden = 'true'
+
+    res.redirect('../offences')
+  });
+
   router.get('/' + version + '/verification-report/essential-information', function (req, res) {
     req.session.data.pageAction = 'false'
 

@@ -58,20 +58,61 @@
           </h1>
           <p class="govuk-body">This information will be included in the
             verification report which will be visible to the court and judiciary.</p>
-            <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Help changing offences
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <p class="govukl-body">
-                  Offences that are not relevant to the hearing or report can be
-                  removed by deleting the information from the relevant boxes.
-                </p>
-              </div>
-            </details>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Help changing offences
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govukl-body">
+                Offences that are not relevant to the hearing or report can be
+                removed by deleting the information from the relevant boxes.
+              </p>
+            </div>
+          </details>
+          <div class="govuk-form-group">
             <div class="moj-ticket-panel-container">
+              {% if (data['offenceOneHidden'] != "true") %}
+                <article class="moj-ticket-panel">
+                  <section class="moj-ticket-panel__actions moj-ticket-panel__actions--purple">
+                    <button class="govuk-move-button govuk-move-button__up"></button>
+                    <button class="govuk-move-button govuk-move-button__drag">
+                      <div class="govuk-move-button__drag-pattern">
+                        <svg width="100%" height="100%">
+                          <defs>
+                            <pattern id="polka-dots" x="0" y="0" width="24" height="20" patternUnits="userSpaceOnUse">
+                              <circle fill="#505a5f" cx="10" cy="10" r="5" />
+                            </pattern>
+                          </defs>
+                          <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
+                        </svg>
+                      </div>
+                    </button>
+                    <button class="govuk-move-button govuk-move-button__down"></button>
+                  </section>
+                  <section class="moj-ticket-panel__content">
+                    <div class="govuk-grid-row govuk-!-margin-bottom-3">
+                      <div class="govuk-grid-column-two-thirds">
+                        <h3 class="govuk-heading-s">Committed an act of criminal
+                          damage</h3>
+                      </div>
+                      <div class="govuk-grid-column-one-third moj-ticket-panel__links">
+                        <a href="addresses/add-address.html?addEditAddress=Edit" class="govuk-link" style="font-weight: normal;">
+                          Edit</a> |
+                        <a href="offences/delete-offence.html" class="govuk-link" style="font-weight: normal;">
+                          Delete</a>
+                      </div>
+                    </div>
+                    <p class="govuk-body">On 13/06/2023, unlawfully and
+                      intentionally, committed an act of criminal damage by
+                      scratching the paintwork on four cars causing damage to the
+                      value of £2,500.</p>
+                    <p class="govuk-body">Contrary to section 1 (1) of the Crime
+                      and Disorder Act 1971</p>
+                  </section>
+                </article>
+              {% endif %}
               <article class="moj-ticket-panel">
                 <section class="moj-ticket-panel__actions moj-ticket-panel__actions--purple">
                   <button class="govuk-move-button govuk-move-button__up"></button>
@@ -92,76 +133,24 @@
                 <section class="moj-ticket-panel__content">
                   <div class="govuk-grid-row govuk-!-margin-bottom-3">
                     <div class="govuk-grid-column-two-thirds">
-                      <h3 class="govuk-heading-s">Offence 1</h3>
+                      <h3 class="govuk-heading-s">Theft from a motor vehicle</h3>
                     </div>
                     <div class="govuk-grid-column-one-third moj-ticket-panel__links">
                       <a href="addresses/add-address.html?addEditAddress=Edit" class="govuk-link" style="font-weight: normal;">
                         Edit</a> |
-                      <a href="addresses/delete-address" class="govuk-link" style="font-weight: normal;">
+                      <a href="offences/delete-offence.html" class="govuk-link" style="font-weight: normal;">
                         Delete</a>
                     </div>
                   </div>
-                  <p class="govuk-body">
-                    OFFENCE 1 description including the date etc.  Lorem ipsum
-                    dolor sit amet, consectetur adipiscing elit. Nunc posuere
-                    justo in mi iaculis tincidunt. Donec tincidunt metus a
-                    vulputate rhoncus.
-                    <br><br>
-                    Donec diam turpis, dapibus eget consectetur sed, tincidunt
-                    a ex. Mauris in nunc quis velit porttitor fringilla.
-                  </p>
+                  <p class="govuk-body">On the 13/06/2023, unlawfully and
+                    intentionally, committed an act of theft from a motor
+                    vehicle by breaking in and then stealing several items from
+                    said vehicle to the value of £700.</p>
+                  <p class="govuk-body">This includes a mobile phone, coat,
+                    large shoulder bag and the  said shoulder bag's contents.</p>
+                  <p class="govuk-body">Contrary to the Theft Act 1968</p>
                 </section>
               </article>
-            </div>
-          <div class="govuk-form-group">
-            <h2 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="offences">
-                Offence 1
-              </label>
-            </h2>
-            <div class="govuk-form-group">
-              <h3 class="govuk-heading-m" for="offence-1">
-                Enter the name of the offence and the date it was committed.
-              </h3>
-              <input class="govuk-input" id="offence-1" name="offence-1" type="text" value="{{data['offence-1'] | default('Committed an act of criminal damage')}}">
-            </div>
-            <div class="govuk-form-group">
-              <h3 class="govuk-heading-m" for="offence-1-information">
-                Enter additional information about this offence, for example the value of stolen goods.
-              </h3>
-              <textarea class="govuk-textarea" id="offence-1-information" name="offence-1-information" rows="4" aria-describedby="offences-hint">{{data['offence-1-information'] | default('On 13/06/2023, unlawfully and intentionally, committed an act of criminal damage by scratching the paintwork on four cars causing damage to the value of £2,500.')}}</textarea>
-            </div>
-            <div class="govuk-form-group">
-              <h3 class="govuk-heading-m" for="offence-1-act">
-                Act relating to offence.
-              </h3>
-              <input class="govuk-input" id="offence-1-act" name="offence-1-act" type="text" value="{{data['offence-1-act'] | default('Contrary to section 1 (1) of the Crime and Disorder Act 1971')}}">
-            </div>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <div class="govuk-form-group">
-            <h2 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="offences">
-                Offence 2
-              </label>
-            </h2>
-            <div class="govuk-form-group">
-              <h3 class="govuk-heading-m" for="offence-2-information">
-                Enter the name of the offence and the date it was committed.
-              </h3>
-              <input class="govuk-input" id="offence-2-information" name="offence-2-information" type="text" value="{{data['offence-2-information'] | default('Theft from a motor vehicle')}}">
-            </div>
-            <div class="govuk-form-group">
-              <h3 class="govuk-heading-m" for="offence-1-information">
-                Enter additional information about this offence, for example the value of stolen goods.
-              </h3>
-              <textarea class="govuk-textarea" id="offence-1-information" name="offence-1-information" rows="4" aria-describedby="offences-hint">{{data['offence-1-information'] | default('On 13/06/2023, unlawfully and intentionally, committed an act of theft from a motor vehicle by stealing a mobile phone to the value of £700.')}}</textarea>
-            </div>
-            <div class="govuk-form-group">
-              <h3 class="govuk-heading-m" for="offence-1-act">
-                Act relating to offence.
-              </h3>
-              <input class="govuk-input" id="offence-1-act" name="offence-1-act" type="text" value="{{data['offence-1-act'] | default('Contrary to the Theft Act 1968')}}">
             </div>
           </div>
           <div class="govuk-button-group">
