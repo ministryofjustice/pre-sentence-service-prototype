@@ -1,0 +1,81 @@
+/* ==========================================================================
+   #MOVE BUTTON
+   ========================================================================== */
+
+.govuk-move-button{
+  border-radius: 100%;
+  width: 3rem;
+  height: 3rem;
+  background-color: govuk-colour("white");
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid  govuk-colour("mid-grey");
+  padding: 0;
+  display: block;
+  clear: both;
+  margin-bottom: govuk-spacing(2);
+
+  &:before{
+    content: '';
+    text-indent: -999999px;
+    position: absolute;
+  }
+
+  &.govuk-move-button__up:before{
+    content: 'Move up';
+  }
+
+  &.govuk-move-button__up:after{
+    position: relative;
+    top: -20px;
+    left: 0;
+    content: "";
+    height: 70%;
+    width: 70%;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid govuk-colour("dark-grey");
+  }
+
+  &:govuk-move-button__down{
+    content: 'Move down';
+  }
+
+  &.govuk-move-button__down:after{
+    position: relative;
+    top: 20px;
+    left: 0;
+    content: "";
+    height: 70%;
+    width: 70%;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid govuk-colour("dark-grey");
+  }
+  .pattern {
+    background-color: govuk-colour("white");
+    height: 100vh;
+  }
+
+  &.govuk-move-button__drag{
+    height: 4rem;
+    border-radius: 12px;
+    cursor: grab;
+
+    &:hover{
+      background-color: govuk-colour("mid-grey");
+    }
+  }
+
+  &.govuk-move-button__drag-pattern:before{
+    content: "Drag and drop";
+  }
+
+  &:focus{
+    background-color: govuk-colour("yellow");
+  }
+
+  &:hover{
+    background-color: govuk-colour("mid-grey");
+  }
+}

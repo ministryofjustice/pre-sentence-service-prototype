@@ -8,11 +8,75 @@
   }
 
   .moj-ticket-panel {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   margin-right: govuk-spacing(3);
   flex-wrap: wrap;
-  min-width: 26rem;
-  float: left;
+  flex-grow: 1;
+  border: 1px solid govuk-colour("mid-grey");
+  background-color: govuk-colour("white");
+  margin-bottom: govuk-spacing(3);
+
+  &__actions{
+    display: flex;
+    order: 1;
+    flex-shrink: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: govuk-spacing(2);
+    background-color: govuk-colour("light-grey");
+    border-left: 4px solid transparent;
+
+    &--grey {
+      border-left-color: $govuk-border-colour;
+
+      .moj-ticket-panel__actions{
+        background-color: $govuk-border-colour;
+      }
+    }
+    &--blue {
+      border-left-color: govuk-colour("blue");
+
+      .moj-ticket-panel__actions{
+        background-color: govuk-colour("blue");
+      }
+    }
+    &--red {
+      border-left-color: govuk-colour("red");
+
+      .moj-ticket-panel__actions{
+        background-color: govuk-colour("red");
+      }
+    }
+    &--yellow {
+      border-left-color: govuk-colour("yellow");
+
+      .moj-ticket-panel__actions{
+        background-color: govuk-colour("yellow");
+      }
+    }
+    &--green {
+      border-left-color: govuk-colour("green");
+
+      .moj-ticket-panel__actions{
+        background-color: govuk-colour("green");
+      }
+    }
+    &--purple {
+      border-left-color: govuk-colour("purple");
+
+      .moj-ticket-panel__actions{
+        background-color: govuk-colour("purple");
+      }
+    }
+    &--orange {
+      border-left-color: govuk-colour("orange");
+
+      .moj-ticket-panel__actions{
+        background-color: govuk-colour("orange");
+      }
+    }
+  }
 
     &--inline {
       @include govuk-media-query($from: desktop) {
@@ -30,35 +94,76 @@
     }
 
     &__content {
-      display: block;
       min-height: 7rem;
+      width: 26rem;
       position: relative;
-      background-color: govuk-colour("light-grey");
       padding: govuk-spacing(4);
-      margin-bottom: govuk-spacing(3);
-      flex-grow: 1;
+      flex-grow: 5;
+      order: 2;
       border-left: 4px solid transparent;
 
       &--grey {
         border-left-color: $govuk-border-colour;
+
+        .moj-ticket-panel__actions{
+          background-color: $govuk-border-colour;
+        }
       }
       &--blue {
         border-left-color: govuk-colour("blue");
+
+        .moj-ticket-panel__actions{
+          background-color: govuk-colour("blue");
+        }
       }
       &--red {
         border-left-color: govuk-colour("red");
+
+        .moj-ticket-panel__actions{
+          background-color: govuk-colour("red");
+        }
       }
       &--yellow {
         border-left-color: govuk-colour("yellow");
+
+        .moj-ticket-panel__actions{
+          background-color: govuk-colour("yellow");
+        }
       }
       &--green {
         border-left-color: govuk-colour("green");
+
+        .moj-ticket-panel__actions{
+          background-color: govuk-colour("green");
+        }
       }
       &--purple {
         border-left-color: govuk-colour("purple");
+
+        .moj-ticket-panel__actions{
+          background-color: govuk-colour("purple");
+        }
       }
       &--orange {
         border-left-color: govuk-colour("orange");
+
+        .moj-ticket-panel__actions{
+          background-color: govuk-colour("orange");
+        }
       }
+    }
+
+    &__content-with-actions {
+      padding: govuk-spacing(0);
+      border-left: 0;
+
+      .govuk-grid-row{
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &__links{
+      text-align: right;
     }
   }
