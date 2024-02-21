@@ -108,8 +108,6 @@
                       intentionally, committed an act of criminal damage by
                       scratching the paintwork on four cars causing damage to the
                       value of £2,500.</p>
-                    <p class="govuk-body">Contrary to section 1 (1) of the Crime
-                      and Disorder Act 1971</p>
                   </section>
                 </article>
               {% endif %}
@@ -148,9 +146,42 @@
                     said vehicle to the value of £700.</p>
                   <p class="govuk-body">This includes a mobile phone, coat,
                     large shoulder bag and the  said shoulder bag's contents.</p>
-                  <p class="govuk-body">Contrary to the Theft Act 1968</p>
                 </section>
               </article>
+              {% if (data['other-offence-details']) %}
+                <article class="moj-ticket-panel">
+                  <section class="moj-ticket-panel__actions moj-ticket-panel__actions--purple">
+                    <button class="govuk-move-button govuk-move-button__up"></button>
+                    <button class="govuk-move-button govuk-move-button__drag">
+                      <div class="govuk-move-button__drag-pattern">
+                        <svg width="100%" height="100%">
+                          <defs>
+                            <pattern id="polka-dots" x="0" y="0" width="24" height="20" patternUnits="userSpaceOnUse">
+                              <circle fill="#505a5f" cx="10" cy="10" r="5" />
+                            </pattern>
+                          </defs>
+                          <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
+                        </svg>
+                      </div>
+                    </button>
+                    <button class="govuk-move-button govuk-move-button__down"></button>
+                  </section>
+                  <section class="moj-ticket-panel__content">
+                    <div class="govuk-grid-row govuk-!-margin-bottom-3">
+                      <div class="govuk-grid-column-two-thirds">
+                        <h3 class="govuk-heading-s">{{data['other-offence-description']}}</h3>
+                      </div>
+                      <div class="govuk-grid-column-one-third moj-ticket-panel__links">
+                        <a href="addresses/add-address.html?addEditAddress=Edit" class="govuk-link" style="font-weight: normal;">
+                          Edit</a> |
+                        <a href="offences/delete-offence.html" class="govuk-link" style="font-weight: normal;">
+                          Delete</a>
+                      </div>
+                    </div>
+                    <p class="govuk-body">{{data['other-offence-details']}}</p>
+                  </section>
+                </article>
+              {% endif %}
             </div>
           </div>
           <div class="govuk-button-group">
@@ -159,6 +190,9 @@
             </button>
             <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
               Save draft
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="addOffence">
+              Add offence
             </button>
           </div>
         </form>

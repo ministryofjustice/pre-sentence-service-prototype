@@ -51,9 +51,21 @@ module.exports = function (router) {
 
     if (pageAction == 'saveDraft'){
       res.redirect('offences')
-    } else {
+    } else if(pageAction == 'addOffence') {
+      res.redirect('offences/add-offence')
+    }else {
       res.redirect('essential-information')
     }
+  });
+
+  router.get('/' + version + '/verification-report/offences/add-offence', function (req, res) {
+    req.session.data.pageAction = 'false'
+
+    res.render(version + '/verification-report/offences/add-offence')
+  });
+
+  router.post('/' + version + '/verification-report/offences/add-offence', function (req, res) {
+    res.redirect('../offences')
   });
 
   router.get('/' + version + '/verification-report/offences/delete-offence', function (req, res) {
