@@ -1,0 +1,182 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Suitability decision error" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">
+                Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offences">
+                Offences</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="essential-information">
+                Essential  information</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">
+                Suitability for unpaid work</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">
+                Suitability for electronic monitoring</a>
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="suitability-decision">
+                Suitability decision</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="check-answers">
+                Check your answers</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="suitability-decision" method="post" novalidate>
+          <div class="govuk-error-summary" data-module="govuk-error-summary">
+            <div role="alert">
+              <h2 class="govuk-error-summary__title">
+                There is a problem
+              </h2>
+              <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                    <a href="#proposal">Change your recommendation or update the
+                      checks and consents.</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <span class="govuk-caption-xl">
+            Dylan Adam Armstrong CRN: E234516
+          </span>
+          <h1 class="govuk-heading-xl">
+            Suitability decision
+          </h1>
+          <p class="govuk-body">This information will be included in the
+            verification report which will be visible to the court and judiciary.</p>
+          <div class="govuk-form-group govuk-form-group--error">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-fieldset__heading">Based on the information
+                  you have from agency checks and the defendant interview,
+                  what is the defendant suitable for?</h2>
+              </legend>
+              <p id="proposal-error" class="govuk-error-message"><span class="govuk-visually-hidden">
+                Error:</span> You can only select
+                  electronic monitoring curfew if you answered:
+                <ul class="govuk-list govuk-list--bullet govuk-error-message">
+                  <li><a href="essential-information">No concerns for domestic abuse</a></li>
+                  <li><a href="essential-information">No concerns for child safeguarding</a></li>
+                  <li><a href="electronic-monitoring-for-curfew">That you have
+                    received informed consent</a></li>
+                </ul>
+                <p class="govuk-body govuk-error-message">Change your
+                  recommendation or update the checks and consent.</p>
+              </p>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="suitability-decision" name="suitability-decision" type="radio" value="Unpaid work only" data-aria-controls="conditional-suitability-option" {{ checked("suitability-decision", "Unpaid work only") }}>
+                  <label class="govuk-label govuk-radios__label" for="suitability-decision">
+                    Unpaid work only
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-suitability-option">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="unpaid-work-only-rationale">
+                      Explain your rationale for unpaid work only
+                    </label>
+                    <textarea class="govuk-textarea" id="unpaid-work-only-rationale" name="unpaid-work-only-rationale" rows="4">{{data['unpaid-work-only-rationale']}}</textarea>
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="suitability-decision-2" name="suitability-decision" type="radio" value="Electronic monitoring curfew only" data-aria-controls="conditional-suitability-option-2" {{ checked("suitability-decision", "Electronic monitoring curfew only") }}>
+                  <label class="govuk-label govuk-radios__label" for="suitability-decision-2">
+                    Electronic monitoring curfew only
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-suitability-option-2">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="electronic-monitoring-curfew-only-rationale">
+                      Explain your rationale for Electronic monitoring curfew only
+                    </label>
+                    <textarea class="govuk-textarea" id="electronic-monitoring-curfew-only-rationale" name="electronic-monitoring-curfew-only-rationale" rows="4">{{data['electronic-monitoring-curfew-only-rationale']}}</textarea>
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="suitability-decision-3" name="suitability-decision" type="radio" value="Both unpaid work and electronic monitoring curfew" data-aria-controls="conditional-suitability-option-3" {{ checked("suitability-decision", "Both unpaid work and electronic monitoring curfew") }}>
+                  <label class="govuk-label govuk-radios__label" for="suitability-decision-3">
+                    Both unpaid work and electronic monitoring curfew
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-suitability-option-3">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="unpaid-work-rationale">
+                      Explain your rationale for unpaid work</label>
+                    <textarea class="govuk-textarea" id="unpaid-work-rationale" name="unpaid-work-rationale" rows="4">{{data['unpaid-work-rationale']}}</textarea>
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="electronic-monitoring-curfew-rationale">
+                      Explain your rationale for electronic monitoring curfew</label>
+                      <textarea class="govuk-textarea" id="electronic-monitoring-curfew-rationale" name="electronic-monitoring-curfew-rationale" rows="4">{{data['electronic-monitoring-curfew-rationale']}}</textarea>
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="suitability-decision-4" name="suitability-decision" type="radio" value="Not suitable" data-aria-controls="conditional-suitability-option-4" {{ checked("suitability-decision", "Not suitable") }}>
+                  <label class="govuk-label govuk-radios__label" for="suitability-decision-4">
+                    Not suitable
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-suitability-option-4">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="not-suitable-rationale">
+                      Explain your rationale for why the defendant is not
+                      suitable</label>
+                    <textarea class="govuk-textarea" id="not-suitable-rationale" name="not-suitable-rationale" rows="4">{{data['not-suitable-rationale']}}</textarea>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
+              Save draft
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link"
+        href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+          xmlns="http://www.w3.org/2000/svg" width="13" height="17"
+          viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z">
+          </path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}
