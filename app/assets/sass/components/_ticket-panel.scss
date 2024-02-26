@@ -12,7 +12,8 @@
   justify-content: space-between;
   margin-right: govuk-spacing(3);
   flex-wrap: nowrap;
-  flex-grow: 1;
+  flex-grow: 0;
+  min-width: 26rem;
   border: 1px solid govuk-colour("mid-grey");
   background-color: govuk-colour("white");
   margin-bottom: govuk-spacing(3);
@@ -151,6 +152,11 @@
           background-color: govuk-colour("orange");
         }
       }
+
+    }
+
+    .moj-ticket-panel__links{
+      text-align: right;
     }
 
     &__content-with-actions {
