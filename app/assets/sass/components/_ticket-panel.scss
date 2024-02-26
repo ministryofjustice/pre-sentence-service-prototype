@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   margin-right: govuk-spacing(3);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-grow: 1;
   border: 1px solid govuk-colour("mid-grey");
   background-color: govuk-colour("white");
@@ -95,7 +95,7 @@
 
     &__content {
       min-height: 7rem;
-      width: 26rem;
+
       position: relative;
       padding: govuk-spacing(4);
       flex-grow: 5;
@@ -156,6 +156,7 @@
     &__content-with-actions {
       padding: govuk-spacing(0);
       border-left: 0;
+      width: 26rem;
 
       .govuk-grid-row{
         margin-left: 0;
