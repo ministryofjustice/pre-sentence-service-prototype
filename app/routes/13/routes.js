@@ -273,6 +273,22 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('check-answers')
     } else {
+      res.redirect('preview-report')
+    }
+  })
+
+  router.get('/' + version + '/verification-report/preview-report', function (req, res) {
+    req.session.data.pageAction = 'false'
+
+    res.render(version + '/verification-report/preview-report')
+  });
+
+  router.post('/' + version + '/verification-report/preview-report', function (req, res) {
+    const pageAction = req.session.data['pageAction']
+
+    if (pageAction == 'saveDraft'){
+      res.redirect('check-answers')
+    } else {
       res.redirect('sign-your-report')
     }
   })
