@@ -1,0 +1,58 @@
+/* ==========================================================================
+   #REPORT PREVIEW
+   ========================================================================== */
+
+  .moj-preview-report-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .moj-report-page{
+    border: 2px solid govuk-colour("mid-grey");
+    box-shadow: 2px 2px 4px govuk-colour("mid-grey");
+    margin-bottom: govuk-spacing(6);
+    padding: govuk-spacing(3);
+    position: relative;
+
+    &.moj-report-page__probation-only:before, &.moj-report-page__probation-only:after{
+      content: 'NOT ON REPORT';
+      color: govuk-colour("black");
+      opacity: 0.3;
+      font-size: 5rem;
+      z-index: 99999;
+      position: absolute;
+      top: 220px;
+      left: 100px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: "GDS Transport", arial, sans-serif;
+      rotate: -45deg;
+    }
+
+    &.moj-report-page__probation-only:after{
+      top:auto;
+      bottom: 220px;
+    }
+
+    .govuk-table{
+      .govuk-table__header, .govuk-table__cell{
+        padding: 10px 20px 10px 0;
+        border-bottom: 0 none;
+        text-align: left;
+        vertical-align: top;
+      }
+    }
+
+    .moj-report-page__header{
+      margin-bottom: govuk-spacing(4);
+    }
+
+    .moj-report-page__footer{
+      margin-top: govuk-spacing(4);
+
+      .govuk-body{
+        color: govuk-colour("dark-grey");;
+      }
+    }
+  }

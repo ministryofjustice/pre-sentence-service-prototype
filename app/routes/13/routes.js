@@ -162,9 +162,9 @@ module.exports = function (router) {
   router.post('/' + version + '/verification-report/essential-information', function (req, res) {
     const pageAction = req.session.data['pageAction']
 
-    if (pageAction === 'saveDraft'){
+    if (pageAction == 'saveDraft'){
       res.redirect('essential-information')
-    } else if (pageAction ==='addAddress'){
+    } else if (pageAction =='addAddress'){
       res.redirect('addresses/add-address')
     } else {
       res.redirect('unpaid-work')

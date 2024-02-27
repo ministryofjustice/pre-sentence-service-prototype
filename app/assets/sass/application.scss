@@ -7,13 +7,9 @@
 @import "components/app-navigation";
 @import "components/error-summary";
 @import "components/govuk-layout";
+@import "components/report-preview";
 @import "components/split-pane";
 @import "components/subnav";
 @import "components/ticket-panel";
 @import "components/move-button";
 
-
-.not-known-on-form{
- font-weight: bold !important;
- color: red !important;
-}
