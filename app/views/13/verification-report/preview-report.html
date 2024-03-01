@@ -265,13 +265,19 @@
                           <tbody class="govuk-table__body">
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Defendant name:</th>
-                              <td class="govuk-table__cell">{{data['full-name']}}</td>
+                              <td class="govuk-table__cell">{{data['full-name']}}
+                                <br><a class="govuk-link" href="defendant-details">Change
+                                <span class="govuk-visually-hidden">full name</span>
+                              </a></td>
                               <th scope="row" class="govuk-table__header">Court case ID:</th>
                               <td class="govuk-table__cell">HJ25226143122521</td>
                             </tr>
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Date of birth:</th>
-                              <td class="govuk-table__cell">{{data['date-of-birth-day']}}/{{data['date-of-birth-month']}}/{{data['date-of-birth-year']}}</td>
+                              <td class="govuk-table__cell">{{data['date-of-birth-day']}}/{{data['date-of-birth-month']}}/{{data['date-of-birth-year']}}
+                                <br><a class="govuk-link" href="defendant-details">Change
+                                <span class="govuk-visually-hidden">date of birth</span>
+                              </a></td>
                               <th scope="row" class="govuk-table__header">PNC ID:</th>
                               <td class="govuk-table__cell">95/8973047415C</td>
                             </tr>
@@ -292,7 +298,10 @@
                                 {% if (data['address-county']) %}
                                   {{data['address-county']}}<br />
                                 {% endif %}
-                                {{data['address-postcode']}}
+                                {{data['address-postcode']}}<br>
+                                <a class="govuk-link" href="defendant-details">Change
+                                  <span class="govuk-visually-hidden">current address</span>
+                                </a>
                               </td>
                               <th scope="row" class="govuk-table__header">Hearing date:</th>
                               <td class="govuk-table__cell">4/6/2024</td>
@@ -314,7 +323,11 @@
                         <p class="govuk-body">On 13/06/2023, unlawfully and
                           intentionally, committed an act of criminal damage by
                           scratching the paintwork on four cars causing damage
-                          to the value of £2,500.</p>
+                          to the value of £2,500.<br>
+                          <a class="govuk-link" href="offences">Change
+                            <span class="govuk-visually-hidden">offences</span>
+                          </a>
+                        </p>
                       </div>
                       <div class="govuk-grid-column-one-half">
                         <h3 class="govuk-heading-s">Theft from a motor vehicle</h3>
@@ -324,7 +337,11 @@
                           from said vehicle to the value of £700.</p>
                         <p class="govuk-body">This includes a mobile phone,
                           coat, large shoulder bag and the said shoulder bag's
-                          contents.</p>
+                          contents.
+                          <br>
+                          <a class="govuk-link" href="offences">Change
+                            <span class="govuk-visually-hidden">offences</span>
+                          </a></p>
                       </div>
                     </div>
                     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -332,9 +349,52 @@
                       <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-m report-heading--purple">Suitability decision</h2>
                         <h3 class="govuk-heading-s">Suitable for unpaid work</h3>
-                        <p class="govuk-body">{{data['unpaid-work-rationale']}}</p>
+                        <p class="govuk-body">{{data['unpaid-work-rationale']}}
+                          <br><a class="govuk-link" href="suitability-decision">Change
+                            <span class="govuk-visually-hidden">suitability for unpaid work decision</span>
+                          </a></p>
                         <h3 class="govuk-heading-s">Suitable for electronic monitoring curfew</h3>
-                        <p class="govuk-body">{{data['electronic-monitoring-curfew-rationale']}}</p>
+                        <p class="govuk-body">{{data['electronic-monitoring-curfew-rationale']}}
+                          <br><a class="govuk-link" href="suitability-decision">Change
+                            <span class="govuk-visually-hidden">suitability for unpaid work decision</span>
+                          </a></p>
+                      </div>
+                    </div>
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half">
+                        <h4 class="govuk-heading-s">Primary curfew address:</h4>
+                        <p class="govuk-body">
+                          {{data['primary-address-line-1']}}<br />
+                          {% if (data['primary-address-line-2']) %}
+                            {{data['primary-address-line-2']}}<br />
+                          {% endif %}
+                          {{data['primary-address-town']}}<br />
+                          {% if (data['primary-address-county']) %}
+                            {{data['primary-address-county']}}<br />
+                          {% endif %}
+                          {{data['primary-address-postcode']}}<br>
+                          <a class="govuk-link" href="electronic-monitoring-for-curfew">Change
+                            <span class="govuk-visually-hidden">primary curfew address</span>
+                          </a>
+                        </p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <h4 class="govuk-heading-s">Secondary curfew address:</h4>
+                        <p class="govuk-body">
+                          {{data['secondary-address-line-1']}}<br />
+                          {% if (data['secondary-address-line-2']) %}
+                            {{data['secondary-address-line-2']}}<br />
+                          {% endif %}
+                          {{data['secondary-address-town']}}<br />
+                          {% if (data['secondary-address-county']) %}
+                            {{data['secondary-address-county']}}<br />
+                          {% endif %}
+                          {{data['secondary-address-postcode']}}
+                          <br>
+                          <a class="govuk-link" href="electronic-monitoring-for-curfew">Change
+                            <span class="govuk-visually-hidden">secondary curfew address</span>
+                          </a>
+                        </p>
                       </div>
                     </div>
                     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -553,27 +613,59 @@
                           <tbody class="govuk-table__body">
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Domestic abuse:</th>
-                              <td class="govuk-table__cell">{{data['domestic-abuse-verification']}}</td>
+                              <td class="govuk-table__cell">{{data['domestic-abuse-verification']}}
+                                <br><a class="govuk-link" href="essential-information">
+                                  Change <span class="govuk-visually-hidden">
+                                    domestic abuse verification</span></a>
+                              </td>
                               <th scope="row" class="govuk-table__header">Address:</th>
-                              <td class="govuk-table__cell">{{data['address-verification']}}</td>
+                              <td class="govuk-table__cell">{{data['address-verification']}}
+                                <br><a class="govuk-link" href="offences">
+                                  Change <span class="govuk-visually-hidden">
+                                    offences verification</span></a>
+                              </td>
                             </tr>
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Safeguarding:</th>
-                              <td class="govuk-table__cell">{{data['safeguarding-verification']}}</td>
+                              <td class="govuk-table__cell">{{data['safeguarding-verification']}}
+                                <br><a class="govuk-link" href="essential-information">
+                                  Change <span class="govuk-visually-hidden">
+                                    safeguarding verification</span></a>
+                              </td>
                               <th scope="row" class="govuk-table__header">Employment/ Working pattern:</th>
-                              <td class="govuk-table__cell">{{data['employment-verification']}}</td>
+                              <td class="govuk-table__cell">{{data['employment-verification']}}
+                                <br><a class="govuk-link" href="essential-information">
+                                  Change <span class="govuk-visually-hidden">
+                                    employment verification</span></a>
+                              </td>
                             </tr>
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Informed consent for Electronic monitoring curfew:</th>
-                              <td class="govuk-table__cell">{{data['electronic-monitoring-curfew-verification']}}</td>
+                              <td class="govuk-table__cell">{{data['electronic-monitoring-curfew-verification']}}
+                                <br><a class="govuk-link" href="electronic-monitoring-for-curfew">
+                                  Change <span class="govuk-visually-hidden">
+                                    Informed consent for electronic monitoring verification</span></a>
+                              </td>
                               <th scope="row" class="govuk-table__header">Health conditions:</th>
-                              <td class="govuk-table__cell">{{data['health-conditions-verification']}}</td>
+                              <td class="govuk-table__cell">{{data['health-conditions-verification']}}
+                                <br><a class="govuk-link" href="essential-information">
+                                  Change <span class="govuk-visually-hidden">
+                                    health considerations verification</span></a>
+                              </td>
                             </tr>
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Dependants and caring responsibilities:</th>
-                              <td class="govuk-table__cell">{{data['dependants-caring-verification']}}</td>
+                              <td class="govuk-table__cell">{{data['dependants-caring-verification']}}
+                                <br><a class="govuk-link" href="essential-information">
+                                  Change <span class="govuk-visually-hidden">
+                                    dependants and caring responsibilities verification</span></a>
+                              </td>
                               <th scope="row" class="govuk-table__header">Benefits:</th>
-                              <td class="govuk-table__cell">{{data['benefits-verification']}}</td>
+                              <td class="govuk-table__cell">{{data['benefits-verification']}}
+                                <br><a class="govuk-link" href="unpaid-work">
+                                  Change <span class="govuk-visually-hidden">
+                                    unpaid work verification</span></a>
+                              </td>
                             </tr>
                           </tbody>
                         </table>
@@ -584,28 +676,28 @@
                       <div class="govuk-grid-column-full">
                         <table class="govuk-table">
                           <caption class="govuk-table__caption govuk-table__caption--m">
-                            <h2 class="govuk-heading-m report-heading--purple">Assessor details</h2>
+                            <h2 class="govuk-heading-m report-heading--purple">Assessor details:</h2>
                           </caption>
                           <tbody class="govuk-table__body">
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Author:</th>
-                              <td class="govuk-table__cell">N E Body</td>
+                              <td class="govuk-table__cell">N E Body
+                                <br><a class="govuk-link" href="sign-your-report">
+                                  Change <span class="govuk-visually-hidden">
+                                    author</span></a>
+                              </td>
                             </tr>
                             <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Author's grade</th>
-                              <td class="govuk-table__cell">PSO</td>
+                              <th scope="row" class="govuk-table__header">Author's Team:</th>
+                              <td class="govuk-table__cell">Court admin team 12</td>
                             </tr>
                             <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Author's email</th>
-                              <td class="govuk-table__cell">n.e.body@justice.gov.uk</td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Author's Team</th>
+                              <th scope="row" class="govuk-table__header">Author's Team:</th>
                               <td class="govuk-table__cell">court-admin-team-12@justice.gov.uk</td>
                             </tr>
                             <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Date published</th>
-                              <td class="govuk-table__cell">Preview</td>
+                              <th scope="row" class="govuk-table__header">Date published:</th>
+                              <td class="govuk-table__cell">To be confirmed</td>
                             </tr>
                           </tbody>
                         </table>
@@ -830,11 +922,11 @@
                               <td class="govuk-table__cell">111b Baker Street<br>
                                 Fauxsham<br>
                                 Bedfordshire<br>
-                                BY1 8UT</td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Supporting comments:</th>
-                              <td class="govuk-table__cell">{{data['supporting-information-unpaid-work']}}</td>
+                                BY1 8UT<br>
+                                <a class="govuk-link" href="unpaid-work">
+                                  Change <span class="govuk-visually-hidden">
+                                    other addresses</span></a>
+                              </td>
                             </tr>
                           </tbody>
                         </table>
@@ -842,18 +934,27 @@
                     </div>
                     <div class="govuk-grid-row">
                       <div class="govuk-grid-column-full">
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                         <table class="govuk-table">
                           <caption class="govuk-table__caption govuk-table__caption--m">
-                            <h2 class="govuk-heading-m report-heading--purple">Benefits</h2>
+                            <h2 class="govuk-heading-m report-heading--purple">Suitability for unpaid work</h2>
                           </caption>
                           <tbody class="govuk-table__body">
                             <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Informed consent to an electronic monitoring curfew:</th>
-                              <td class="govuk-table__cell">{{data['informed-consent-electronic-monitoring']}}</td>
+                              <th scope="row" class="govuk-table__header">Benefits:</th>
+                              <td class="govuk-table__cell">{{data['verify-dwp-involvement']}}
+                                <br><a class="govuk-link" href="unpaid-work">
+                                  Change <span class="govuk-visually-hidden">
+                                    benefits</span></a>
+                              </td>
                             </tr>
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Supporting comments:</th>
-                              <td class="govuk-table__cell">{{data['supporting-information-unpaid-work']}}</td>
+                              <td class="govuk-table__cell">{{data['supporting-information-unpaid-work']}}
+                                <br><a class="govuk-link" href="unpaid-work">
+                                  Change <span class="govuk-visually-hidden">
+                                    supporting comments for unpaid work</span></a>
+                              </td>
                             </tr>
                           </tbody>
                         </table>
@@ -864,28 +965,24 @@
                       <div class="govuk-grid-column-full">
                         <table class="govuk-table">
                           <caption class="govuk-table__caption govuk-table__caption--m">
-                            <h2 class="govuk-heading-m report-heading--purple">Electronic monitoring curfew</h2>
+                            <h2 class="govuk-heading-m report-heading--purple">Suitability for electronic monitoring curfew</h2>
                           </caption>
                           <tbody class="govuk-table__body">
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Informed consent to an electronic monitoring curfew:</th>
-                              <td class="govuk-table__cell">{{data['informed-consent-electronic-monitoring']}}</td>
-                              <th scope="row" class="govuk-table__header">Addresses for curfew:</th>
-                              <td class="govuk-table__cell">
-                                {{data['primary-address-line-1']}}<br />
-                                {% if (data['primary-address-line-2']) %}
-                                  {{data['primary-address-line-2']}}<br />
-                                {% endif %}
-                                {{data['primary-address-town']}}<br />
-                                {% if (data['primary-address-county']) %}
-                                  {{data['primary-address-county']}}<br />
-                                {% endif %}
-                                {{data['primary-address-postcode']}}
+                              <td class="govuk-table__cell">{{data['informed-consent-electronic-monitoring']}}
+                                <br><a class="govuk-link" href="electronic-monitoring-for-curfew">
+                                  Change <span class="govuk-visually-hidden">
+                                    informed consent to an electronic monitoring curfew</span></a>
                               </td>
                             </tr>
                             <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Supporting comments</th>
-                              <td class="govuk-table__cell" colspan="3">{{data['supporting-information-electronic-monitoring']}}</td>
+                              <th scope="row" class="govuk-table__header">Supporting comments:</th>
+                              <td class="govuk-table__cell">{{data['supporting-information-electronic-monitoring']}}
+                                <br><a class="govuk-link" href="electronic-monitoring-for-curfew">
+                                  Change <span class="govuk-visually-hidden">
+                                    informed consent to an electronic monitoring curfew</span></a>
+                              </td>
                             </tr>
                           </tbody>
                         </table>
@@ -899,13 +996,10 @@
                         <p class="govuk-body">Probation only information</p>
                       </div>
                       <div class="govuk-grid-column-one-half" style="text-align: right;">
-                        <p class="govuk-body">Page 2 of 2</p>
+                        <p class="govuk-body"></p>
                       </div>
                     </div>
                   </div>
-                </article>
-                <article class="moj-report-page">
-                  PROBATION ONLY PAGE A
                 </article>
             </div>
           <div class="govuk-button-group">

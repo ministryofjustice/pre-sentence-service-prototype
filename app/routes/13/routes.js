@@ -2,6 +2,7 @@ module.exports = function (router) {
 
   var version = "13";
 
+
   router.get('/' + version + '/verification-report/defendant-details', function (req, res) {
     req.session.data.pageAction = 'false'
 
@@ -159,17 +160,18 @@ module.exports = function (router) {
     })
   });
 
-  router.post('/' + version + '/verification-report/essential-information', function (req, res) {
+    router.post('/' + version + '/verification-report/essential-information', function (req, res) {
     const pageAction = req.session.data['pageAction']
 
-    if (pageAction == 'saveDraft'){
+    if (pageAction === 'saveDraft'){
       res.redirect('essential-information')
-    } else if (pageAction =='addAddress'){
+    } else if (pageAction ==='addAddress'){
       res.redirect('addresses/add-address')
     } else {
       res.redirect('unpaid-work')
     }
   });
+
 
   router.get('/' + version + '/verification-report/unpaid-work', function (req, res) {
     req.session.data.pageAction = 'false'
@@ -273,7 +275,7 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('check-answers')
     } else {
-      res.redirect('preview-report')
+      res.redirect('sign-your-report')
     }
   })
 
@@ -287,11 +289,12 @@ module.exports = function (router) {
     const pageAction = req.session.data['pageAction']
 
     if (pageAction == 'saveDraft'){
-      res.redirect('check-answers')
+      res.redirect('preview-report')
     } else {
       res.redirect('sign-your-report')
     }
   })
+
 
   router.get('/' + version + '/verification-report/sign-your-report', function (req, res) {
     req.session.data.pageAction = 'false'
