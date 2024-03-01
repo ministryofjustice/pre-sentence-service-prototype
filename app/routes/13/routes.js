@@ -2,6 +2,7 @@ module.exports = function (router) {
 
   var version = "13";
 
+
   router.get('/' + version + '/verification-report/defendant-details', function (req, res) {
     req.session.data.pageAction = 'false'
 
@@ -159,7 +160,7 @@ module.exports = function (router) {
     })
   });
 
-  router.post('/' + version + '/verification-report/essential-information', function (req, res) {
+    router.post('/' + version + '/verification-report/essential-information', function (req, res) {
     const pageAction = req.session.data['pageAction']
 
     if (pageAction === 'saveDraft'){
@@ -170,6 +171,7 @@ module.exports = function (router) {
       res.redirect('unpaid-work')
     }
   });
+
 
   router.get('/' + version + '/verification-report/unpaid-work', function (req, res) {
     req.session.data.pageAction = 'false'
@@ -254,24 +256,24 @@ module.exports = function (router) {
       if (domesticAbuseResult != 'No concerns about domestic abuse' || safeguardingResult != 'No concerns about child safeguarding' || informedConsent != 'Yes, they have given informed consent'){
         res.redirect('suitability-decision-error')
       } else {
-        res.redirect('check-answers')
+        res.redirect('preview-report')
       }
     } else {
-      res.redirect('check-answers')
+      res.redirect('preview-report')
     }
   })
 
-  router.get('/' + version + '/verification-report/check-answers', function (req, res) {
+  router.get('/' + version + '/verification-report/preview-report', function (req, res) {
     req.session.data.pageAction = 'false'
 
-    res.render(version + '/verification-report/check-answers')
+    res.render(version + '/verification-report/preview-report')
   });
 
-  router.post('/' + version + '/verification-report/check-answers', function (req, res) {
+  router.post('/' + version + '/verification-report/preview-report', function (req, res) {
     const pageAction = req.session.data['pageAction']
 
     if (pageAction == 'saveDraft'){
-      res.redirect('check-answers')
+      res.redirect('preview-report')
     } else {
       res.redirect('sign-your-report')
     }
