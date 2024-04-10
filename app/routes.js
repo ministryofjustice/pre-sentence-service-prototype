@@ -21,3 +21,5 @@ require('./routes/10/routes.js')(router);
 require('./routes/11/routes.js')(router);
 require('./routes/12/routes.js')(router);
 require('./routes/13/routes.js')(router);
+require('./routes/14/verification-report.js')(router);
+require('./routes/14/pre-sentence-report.js')(router);
