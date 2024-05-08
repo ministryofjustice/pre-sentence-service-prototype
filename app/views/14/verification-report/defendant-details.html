@@ -109,6 +109,45 @@
             </fieldset>
           </div>
           <div class="govuk-form-group">
+            <label class="govuk-label" for="sort">
+              Regular HTML select
+            </label>
+            <select class="govuk-select" id="sort" name="sort">
+              <option value="published" selected>Choose</option>
+              <option value="updated" >Recently updated</option>
+              <option value="views">Most views</option>
+              <option value="comments">Most comments</option>
+            </select>
+          </div>
+          {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+          {{ govukSelect({
+            id: "sort",
+            name: "sort",
+            label: {
+              text: "Regular Nunjucks select"
+            },
+            items: [
+              {
+                value: "published",
+                text: "Choose",
+                selected: true
+              },
+              {
+                value: "updated",
+                text: "Recently updated"
+              },
+              {
+                value: "views",
+                text: "Most views"
+              },
+              {
+                value: "comments",
+                text: "Most comments"
+              }
+            ]
+          }) }}
+          <div class="govuk-form-group">
             <div class="govuk-form-group">
               {{ govukSelect({
                 id: "address-verification",
