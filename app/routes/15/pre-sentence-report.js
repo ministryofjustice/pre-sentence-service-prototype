@@ -57,7 +57,7 @@ module.exports = function (router) {
     } else if(pageAction == 'addOffence') {
       res.redirect('offences/add-offence')
     }else {
-      res.redirect('essential-information')
+      res.redirect('victim-impact-assessment')
     }
   });
 
@@ -81,6 +81,22 @@ module.exports = function (router) {
     req.session.data.offenceOneHidden = 'true'
 
     res.redirect('../offences')
+  });
+
+  router.get('/' + version + '/pre-sentence-report/victim-impact-assessment', function (req, res) {
+    req.session.data.pageAction = 'false'
+
+    res.render(version + '/pre-sentence-report/victim-impact-assessment')
+  });
+
+  router.post('/' + version + '/pre-sentence-report/victim-impact-assessment', function (req, res) {
+    const pageAction = req.session.data['pageAction']
+
+    if (pageAction == 'saveDraft'){
+      res.redirect('victim-impact-assessment')
+    } else {
+      res.redirect('essential-information')
+    }
   });
 
   router.get('/' + version + '/pre-sentence-report/essential-information', function (req, res) {
