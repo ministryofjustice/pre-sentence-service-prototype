@@ -36,6 +36,8 @@ module.exports = function (router) {
 
     if (pageAction == 'saveDraft'){
       res.redirect('defendant-details')
+    } else if (pageAction ==='addAddress'){
+      res.redirect('addresses/add-address')
     } else {
       res.redirect('offences')
     }
@@ -165,8 +167,6 @@ module.exports = function (router) {
 
     if (pageAction === 'saveDraft'){
       res.redirect('essential-information')
-    } else if (pageAction ==='addAddress'){
-      res.redirect('addresses/add-address')
     } else {
       res.redirect('unpaid-work')
     }
@@ -323,7 +323,7 @@ module.exports = function (router) {
     req.session.data.addEditAddress = "Add "
     req.session.data.parentsAddressVisible = 'true'
 
-    res.redirect('../essential-information')
+    res.redirect('../defendant-details')
   })
 
   router.get('/' + version + '/pre-sentence-report/addresses/delete-address', function (req, res) {
@@ -333,6 +333,6 @@ module.exports = function (router) {
   router.post('/' + version + '/pre-sentence-report/addresses/delete-address', function (req, res) {
     req.session.data.parentsAddressVisible = 'false'
 
-    res.redirect('../essential-information')
+    res.redirect('../defendant-details')
   })
 }
