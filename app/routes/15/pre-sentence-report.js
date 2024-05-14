@@ -111,6 +111,22 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('culpability-and-risk')
     } else {
+      res.redirect('consider-sentence-components')
+    }
+  });
+
+  router.get('/' + version + '/pre-sentence-report/consider-sentence-components', function (req, res) {
+    req.session.data.pageAction = 'false'
+
+    res.render(version + '/pre-sentence-report/consider-sentence-components')
+  });
+
+  router.post('/' + version + '/pre-sentence-report/consider-sentence-components', function (req, res) {
+    const pageAction = req.session.data['pageAction']
+
+    if (pageAction == 'saveDraft'){
+      res.redirect('consider-sentence-components')
+    } else {
       res.redirect('essential-information')
     }
   });
