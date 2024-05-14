@@ -1,0 +1,118 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Unpaid work questions" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">
+                Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offences">
+                Offences</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="victim-impact-assessment">
+                Victim impact assessment</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="culpability-and-risk">
+                Culpability and risk</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="consider-sentence-components">
+                Consider sentence components</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="essential-information">
+                Essential information</a>
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="unpaid-work">
+                Suitability for unpaid work</a>
+              </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="electronic-monitoring-for-curfew">
+                Suitability for electronic monitoring</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="suitability-decision">
+                Suitability decision</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="preview-report">
+                Preview report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="unpaid-work" method="post" novalidate>
+          <span class="govuk-caption-xl">Dylan Adam Armstrong CRN: E234516</span>
+          <h1 class="govuk-heading-xl">Suitability for unpaid work</h1>
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-l" for="verify-dwp-involvement">Benefits</h2>
+            <div id="verify-dwp-involvement-hint" class="govuk-hint">
+              Record any benefits the defendant gets that may affect their
+              eligibility or fitness for unpaid work.</div>
+            <textarea class="govuk-textarea" id="verify-dwp-involvement" name="verify-dwp-involvement" rows="5" aria-describedby="verify-dwp-involvement-hint">{{data['verify-dwp-involvement']}}</textarea>
+          </div>
+          <div class="govuk-form-group">
+            {{ govukSelect({
+              id: "benefits-verification",
+              name: "benefits-verification",
+              label: {
+                html: "<h3 class='govuk-heading-m'>How have you checked their benefits?</h3>"
+              },
+              items: benefitsVerificationList
+            }) }}
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="more-detail">
+                Supporting comments</label>
+            </h2>
+            <div id="more-detail-hint" class="govuk-hint">Include information
+              here that supports your professional judgement. You should include
+              anything of concern and explain how it has affected your
+              recommendation. This will not be published in the final report but
+              it will be recorded.</div>
+            <textarea class="govuk-textarea" id="supporting-information-unpaid-work" name="supporting-information-unpaid-work" rows="5" aria-describedby="more-detail-hint">{{data['supporting-information-unpaid-work']}}</textarea>
+          </div>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">Save and
+              continue</button>
+              <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
+              Save draft</button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link"
+        href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+          xmlns="http://www.w3.org/2000/svg" width="13" height="17"
+          viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z">
+          </path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}
