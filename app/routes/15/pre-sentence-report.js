@@ -95,6 +95,22 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('victim-impact-assessment')
     } else {
+      res.redirect('culpability-and-risk')
+    }
+  });
+
+  router.get('/' + version + '/pre-sentence-report/culpability-and-risk', function (req, res) {
+    req.session.data.pageAction = 'false'
+
+    res.render(version + '/pre-sentence-report/culpability-and-risk')
+  });
+
+  router.post('/' + version + '/pre-sentence-report/culpability-and-risk', function (req, res) {
+    const pageAction = req.session.data['pageAction']
+
+    if (pageAction == 'saveDraft'){
+      res.redirect('culpability-and-risk')
+    } else {
       res.redirect('essential-information')
     }
   });
