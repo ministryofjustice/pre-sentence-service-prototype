@@ -127,7 +127,23 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('consider-sentence-components')
     } else {
-      res.redirect('essential-information')
+      res.redirect('write-sentencing-proposal')
+    }
+  });
+
+  router.get('/' + version + '/pre-sentence-report/write-sentence-proposal', function (req, res) {
+    req.session.data.pageAction = 'false'
+
+    res.render(version + '/pre-sentence-report/write-sentence-proposal')
+  });
+
+  router.post('/' + version + '/pre-sentence-report/write-sentence-proposal', function (req, res) {
+    const pageAction = req.session.data['pageAction']
+
+    if (pageAction == 'saveDraft'){
+      res.redirect('write-sentence-proposal')
+    } else {
+      res.redirect('preview-report')
     }
   });
 
