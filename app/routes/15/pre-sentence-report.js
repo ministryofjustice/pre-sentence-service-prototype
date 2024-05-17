@@ -95,6 +95,38 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('victim-impact-assessment')
     } else {
+      res.redirect('pattern-of-offending-and-response-to-supervision')
+    }
+  });
+
+  router.get('/' + version + '/pre-sentence-report/pattern-of-offending-and-response-to-supervision', function (req, res) {
+    req.session.data.pageAction = 'false'
+
+    res.render(version + '/pre-sentence-report/pattern-of-offending-and-response-to-supervision')
+  });
+
+  router.post('/' + version + '/pre-sentence-report/pattern-of-offending-and-response-to-supervision', function (req, res) {
+    const pageAction = req.session.data['pageAction']
+
+    if (pageAction == 'saveDraft'){
+      res.redirect('pattern-of-offending-and-response-to-supervision')
+    } else {
+      res.redirect('additional-behaviours-and-lifestyle-considerations')
+    }
+  });
+
+  router.get('/' + version + '/pre-sentence-report/additional-behaviours-and-lifestyle-considerations', function (req, res) {
+    req.session.data.pageAction = 'false'
+
+    res.render(version + '/pre-sentence-report/additional-behaviours-and-lifestyle-considerations')
+  });
+
+  router.post('/' + version + '/pre-sentence-report/additional-behaviours-and-lifestyle-considerations', function (req, res) {
+    const pageAction = req.session.data['pageAction']
+
+    if (pageAction == 'saveDraft'){
+      res.redirect('additional-behaviours-and-lifestyle-considerations')
+    } else {
       res.redirect('culpability-and-risk')
     }
   });
