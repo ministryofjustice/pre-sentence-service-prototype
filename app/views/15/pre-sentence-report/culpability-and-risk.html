@@ -152,13 +152,13 @@
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="risk-of-harm-to-children" name="risk-of-harm-to-children" type="radio" value="Yes" data-aria-controls="conditional-risk-of-harm-to-children-yes" {{ checked("risk-of-harm-to-children", "Yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-to-known-individuals">
+                  <label class="govuk-label govuk-radios__label" for="risk-of-harm-to-children">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-risk-of-harm-to-children-yes">
                   <div class="govuk-form-group">
-                    <label class="govuk-label" for="conditional-reconviction-yes">
+                    <label class="govuk-label" for="conditional-risk-of-harm-to-children-yes">
                       What is the risk to children and what circumstances could affect this risk?
                     </label>
                     <textarea class="govuk-textarea" id="defendant-children-risk" name="defendant-children-risk" rows="8" aria-describedby="defendant-children-risk-hint">{{data['defendant-children-risk']}}</textarea>
@@ -230,8 +230,8 @@
                   </div>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-of-reconviction-2" name="risk-of-reconviction" type="radio" value="No" {{ checked("risk-of-reconviction", "No") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-of-reconviction-2">
+                  <input class="govuk-radios__input" id="risk-of-self-harm-2" name="risk-of-self-harm" type="radio" value="No" {{ checked("risk-of-self-harm", "No") }}>
+                  <label class="govuk-label govuk-radios__label" for="risk-of-self-harm-2">
                     No
                   </label>
                 </div>

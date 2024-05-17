@@ -77,7 +77,7 @@
                 <div id="consider-punitive-sentence-component-hint" class="govuk-hint">
                   Explain what you think the punitive aspect of this sentence
                   should be and why.</div>
-                <textarea class="govuk-textarea" id="consider-punitive-sentence-component" name="consider-punitive-sentence-component" rows="8" aria-describedby="consider-punitive-sentence-component-hint">{{data['consider-punitive-sentence-component']}}</textarea>
+                <textarea class="govuk-textarea" id="consider-punitive-sentence-component" name="consider-punitive-sentence-component" rows="12" aria-describedby="consider-punitive-sentence-component-hint">{{data['consider-punitive-sentence-component']}}</textarea>
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@
                   sentence is, giving reference to things like available
                   accredited programs available in your area that could benefit
                   the defendant or have proven effective previously.</div>
-                <textarea class="govuk-textarea" id="consider-rehabilitative-sentence-component" name="consider-rehabilitative-sentence-component" rows="8" aria-describedby="consider-rehabilitative-sentence-component-hint">{{data['consider-rehabilitative-sentence-component']}}</textarea>
+                <textarea class="govuk-textarea" id="consider-rehabilitative-sentence-component" name="consider-rehabilitative-sentence-component" rows="12" aria-describedby="consider-rehabilitative-sentence-component-hint">{{data['consider-rehabilitative-sentence-component']}}</textarea>
               </div>
             </div>
             <div class="govuk-grid-column-one-half">
@@ -166,15 +166,35 @@
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-half">
               <div class="govuk-form-group">
-                <h2 class="govuk-label-wrapper">
-                  <label class="govuk-label govuk-label--l" for="consider-public-safety-sentence-component">
-                    Public safety sentence component
-                  </label>
-                </h2>
-                <div id="consider-public-safety-sentence-component-hint" class="govuk-hint">
-                  Explain what you think the public safety aspect of the
-                  sentence is.</div>
-                <textarea class="govuk-textarea" id="consider-public-safety-sentence-component" name="consider-public-safety-sentence-component" rows="8" aria-describedby="consider-public-safety-sentence-component-hint">{{data['consider-public-safety-sentence-component']}}</textarea>
+                <fieldset class="govuk-fieldset" aria-describedby="risk-to-public-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h2 class="govuk-fieldset__heading">
+                      Does this sentence need a public safety sentence component?
+                    </h2>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-to-public" name="risk-to-public" type="radio" value="Yes" data-aria-controls="conditioal-risk-to-public-yes" {{ checked("risk-to-public", "Yes") }}>
+                      <label class="govuk-label govuk-radios__label" for="risk-to-public">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditioal-risk-to-public-yes">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="conditional-reconviction-yes">
+                          Explain what you think the public safety aspect of the sentence is.
+                        </label>
+                        <textarea class="govuk-textarea" id="consider-public-safety-sentence-component" name="consider-public-safety-sentence-component" rows="12" aria-describedby="consider-public-safety-sentence-component-hint">{{data['consider-public-safety-sentence-component']}}</textarea>
+                      </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-to-public-2" name="risk-to-public" type="radio" value="No" {{ checked("risk-to-public", "No") }}>
+                      <label class="govuk-label govuk-radios__label" for="risk-to-public-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
               </div>
             </div>
           </div>

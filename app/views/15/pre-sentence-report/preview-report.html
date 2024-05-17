@@ -967,7 +967,12 @@
                             </tr>
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Risk of harm to known individuals and partners:</th>
-                              <td class="govuk-table__cell">{{data['defendant-known-person-risk']}}
+                              <td class="govuk-table__cell">
+                                {% if (data['risk-to-known-individuals'] == 'No') %}
+                                  None
+                                {% else %}
+                                  {{data['defendant-known-person-risk']}}
+                                {% endif %}
                                 <br><a class="govuk-link" href="culpability-and-risk">
                                   Change <span class="govuk-visually-hidden">
                                     Risk of harm to known individuals and partners notes</span></a>
@@ -975,7 +980,12 @@
                             </tr>
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Risk of harm to children:</th>
-                              <td class="govuk-table__cell">{{data['defendant-children-risk']}}
+                              <td class="govuk-table__cell">
+                                {% if (data['risk-of-harm-to-children'] == 'No') %}
+                                  None
+                                {% else %}
+                                  {{data['defendant-children-risk']}}
+                                {% endif %}
                                 <br><a class="govuk-link" href="culpability-and-risk">
                                   Change <span class="govuk-visually-hidden">
                                     Risk of harm to children notes</span></a>
@@ -983,7 +993,12 @@
                             </tr>
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Risk of harm to others:</th>
-                              <td class="govuk-table__cell">{{data['defendant-public-risk']}}
+                              <td class="govuk-table__cell">
+                                {% if (data['risk-of-serious-harm'] == 'No') %}
+                                  None
+                                {% else %}
+                                  {{data['defendant-public-risk']}}
+                                {% endif %}
                                 <br><a class="govuk-link" href="culpability-and-risk">
                                   Change <span class="govuk-visually-hidden">
                                     Risk of harm to others notes</span></a>
@@ -991,7 +1006,12 @@
                             </tr>
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Risk of reconviction:</th>
-                              <td class="govuk-table__cell">{{data['defendant-reconviction-risk']}}
+                              <td class="govuk-table__cell">
+                                {% if (data['risk-of-reconviction'] == 'No') %}
+                                  None
+                                {% else %}
+                                  {{data['defendant-reconviction-risk']}}
+                                {% endif %}
                                 <br><a class="govuk-link" href="culpability-and-risk">
                                   Change <span class="govuk-visually-hidden">
                                     Risk of reconviction notes</span></a>
@@ -999,7 +1019,12 @@
                             </tr>
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Risk of self harm:</th>
-                              <td class="govuk-table__cell">{{data['defendant-self-harm-risk']}}
+                              <td class="govuk-table__cell">
+                                {% if (data['risk-of-self-harm'] == 'No') %}
+                                  None
+                                {% else %}
+                                  {{data['defendant-self-harm-risk']}}
+                                {% endif %}
                                 <br><a class="govuk-link" href="culpability-and-risk">
                                   Change <span class="govuk-visually-hidden">
                                     Risk of self harm notes</span></a>
@@ -1241,7 +1266,12 @@
                             </tr>
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Public safety sentence component:</th>
-                              <td class="govuk-table__cell">{{data['consider-public-safety-sentence-component']}}
+                              <td class="govuk-table__cell">
+                                {% if (data['risk-to-public'] == 'No') %}
+                                  None
+                                {% else %}
+                                  {{data['consider-public-safety-sentence-component']}}
+                                {% endif %}
                                 <br><a class="govuk-link" href="consider-sentence-components">
                                   Change <span class="govuk-visually-hidden">
                                     Public safety sentence component notes</span></a>
