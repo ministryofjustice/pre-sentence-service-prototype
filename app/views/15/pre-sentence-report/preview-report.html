@@ -396,7 +396,7 @@
                       <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-m report-heading--purple">Sentencing proposal</h2>
                         <p class="govuk-body">{{data['sentencing-proposal']}}
-                          <br><a class="govuk-link" href="suitability-decision">Change
+                          <br><a class="govuk-link" href="write-sentencing-proposal">Change
                             <span class="govuk-visually-hidden">sentencing proposal</span>
                           </a></p>
                       </div>
@@ -882,7 +882,7 @@
                             <tr class="govuk-table__row">
                               <td class="govuk-table__cell">
                                 {{data['victim-impact-assessment']}}
-                                <br><a class="govuk-link" href="unpaid-work">
+                                <br><a class="govuk-link" href="victim-impact-assessment">
                                   Change <span class="govuk-visually-hidden">
                                     Victim impact assessment notes</span></a>
                               </td>
@@ -903,7 +903,7 @@
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Pattern of offending:</th>
                               <td class="govuk-table__cell">{{data['pattern-of-offending']}}
-                                <br><a class="govuk-link" href="pattern-of-offending-and-reposonse-to-supervision">
+                                <br><a class="govuk-link" href="pattern-of-offending-and-response-to-supervision">
                                   Change <span class="govuk-visually-hidden">
                                     pattern of offending notes</span></a>
                               </td>
@@ -911,7 +911,7 @@
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Response to supervision:</th>
                               <td class="govuk-table__cell">{{data['defendant-known-person-risk']}}
-                                <br><a class="govuk-link" href="pattern-of-offending-and-reposonse-to-supervision">
+                                <br><a class="govuk-link" href="pattern-of-offending-and-response-to-supervision">
                                   Change <span class="govuk-visually-hidden">
                                     Risk of harm to known individuals and partners notes</span></a>
                               </td>
@@ -960,7 +960,7 @@
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Culpability:</th>
                               <td class="govuk-table__cell">{{data['defendant-culpability']}}
-                                <br><a class="govuk-link" href="unpaid-work">
+                                <br><a class="govuk-link" href="culpability-and-risk">
                                   Change <span class="govuk-visually-hidden">
                                     culpbaility notes</span></a>
                               </td>
@@ -968,7 +968,7 @@
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Risk of harm to known individuals and partners:</th>
                               <td class="govuk-table__cell">{{data['defendant-known-person-risk']}}
-                                <br><a class="govuk-link" href="unpaid-work">
+                                <br><a class="govuk-link" href="culpability-and-risk">
                                   Change <span class="govuk-visually-hidden">
                                     Risk of harm to known individuals and partners notes</span></a>
                               </td>
@@ -976,39 +976,31 @@
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Risk of harm to children:</th>
                               <td class="govuk-table__cell">{{data['defendant-children-risk']}}
-                                <br><a class="govuk-link" href="unpaid-work">
+                                <br><a class="govuk-link" href="culpability-and-risk">
                                   Change <span class="govuk-visually-hidden">
                                     Risk of harm to children notes</span></a>
                               </td>
                             </tr>
                             <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Risk of harm to children:</th>
+                              <th scope="row" class="govuk-table__header">Risk of harm to others:</th>
                               <td class="govuk-table__cell">{{data['defendant-public-risk']}}
-                                <br><a class="govuk-link" href="unpaid-work">
+                                <br><a class="govuk-link" href="culpability-and-risk">
                                   Change <span class="govuk-visually-hidden">
-                                    Risk of harm to children notes</span></a>
+                                    Risk of harm to others notes</span></a>
                               </td>
                             </tr>
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Risk of reconviction:</th>
                               <td class="govuk-table__cell">{{data['defendant-reconviction-risk']}}
-                                <br><a class="govuk-link" href="unpaid-work">
+                                <br><a class="govuk-link" href="culpability-and-risk">
                                   Change <span class="govuk-visually-hidden">
                                     Risk of reconviction notes</span></a>
                               </td>
                             </tr>
                             <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Risk of serious recidivism:</th>
-                              <td class="govuk-table__cell">{{data['defendant-recidivism-risk']}}
-                                <br><a class="govuk-link" href="unpaid-work">
-                                  Change <span class="govuk-visually-hidden">
-                                    Risk of serious recidivism notes</span></a>
-                              </td>
-                            </tr>
-                            <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Risk of self harm:</th>
                               <td class="govuk-table__cell">{{data['defendant-self-harm-risk']}}
-                                <br><a class="govuk-link" href="unpaid-work">
+                                <br><a class="govuk-link" href="culpability-and-risk">
                                   Change <span class="govuk-visually-hidden">
                                     Risk of self harm notes</span></a>
                               </td>
@@ -1234,7 +1226,7 @@
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Punitive sentence component notes:</th>
                               <td class="govuk-table__cell">{{data['consider-punitive-sentence-component']}}
-                                <br><a class="govuk-link" href="unpaid-work">
+                                <br><a class="govuk-link" href="consider-sentence-components">
                                   Change <span class="govuk-visually-hidden">
                                     Punitive sentence component notes</span></a>
                               </td>
@@ -1242,7 +1234,7 @@
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Rehabilititive sentencing component:</th>
                               <td class="govuk-table__cell">{{data['consider-rehabilitative-sentence-component']}}
-                                <br><a class="govuk-link" href="unpaid-work">
+                                <br><a class="govuk-link" href="consider-sentence-components">
                                   Change <span class="govuk-visually-hidden">
                                     Rehabilititive sentencing component notes</span></a>
                               </td>
@@ -1250,7 +1242,7 @@
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Public safety sentence component:</th>
                               <td class="govuk-table__cell">{{data['consider-public-safety-sentence-component']}}
-                                <br><a class="govuk-link" href="unpaid-work">
+                                <br><a class="govuk-link" href="consider-sentence-components">
                                   Change <span class="govuk-visually-hidden">
                                     Public safety sentence component notes</span></a>
                               </td>
