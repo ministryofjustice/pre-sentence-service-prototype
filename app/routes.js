@@ -25,3 +25,5 @@ require('./routes/14/verification-report.js')(router);
 require('./routes/14/pre-sentence-report.js')(router);
 require('./routes/15/verification-report.js')(router);
 require('./routes/15/pre-sentence-report.js')(router);
+require('./routes/16/verification-report.js')(router);
+require('./routes/16/pre-sentence-report.js')(router);

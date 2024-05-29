@@ -1,0 +1,232 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Write sentencing proposal" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">
+                Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offences">
+                Offences</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="victim-impact-assessment">
+                Victim impact assessment</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="pattern-of-offending-and-response-to-supervision">
+                Pattern of offending and response to supervision</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="additional-behaviours-and-lifestyle-considerations.html">
+                Additional behaviours and lifestyle considerations</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="culpability-and-risk">
+                Culpability and risk</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="consider-sentence-components">
+                Consider sentence components</a>
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="write-sentencing-proposal">
+                Write sentencing proposal</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="preview-report">
+                Preview report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="write-sentencing-proposal" method="post" novalidate>
+          <span class="govuk-caption-xl">
+            Dylan Adam Armstrong CRN: E234516
+          </span>
+          <h1 class="govuk-heading-xl">
+            Write sentencing proposal
+          </h1>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="sentencing-proposal">
+                    Sentencing proposal
+                  </label>
+                </h2>
+                <div id="sentencing-proposal-hint" class="govuk-hint">
+                  Create a sentencing proposal based on the all the information
+                  you have discovered. View notes made in previous sections to
+                  help inform your proposal.</div>
+                <textarea class="govuk-textarea" id="sentencing-proposal" name="sentencing-proposal" rows="30" aria-describedby="sentencing-proposal-hint">{{data['sentencing-proposal']}}</textarea>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <h2 class="govuk-heading-l">My notes</h2>
+              <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h3 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                        Review notes on victim impact assessment
+                      </span>
+                    </h3>
+                  </div>
+                  <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                    <p class="govuk-body">{{data['victim-impact-assessment'] | default('These are my notes on the victim impact assessment. They will be used to inform the sentencing proposal.')}}</p>
+                  </div>
+                </div>
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h3 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                        Review notes on culpability and risk to others
+                      </span>
+                    </h3>
+                  </div>
+                  <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                    <h3 class="govuk-heading-s">Culpability</h3>
+                    <p class="govuk-body">{{data['defendant-culpability'] | default('These are my notes on the defendants culpability. They will be used to inform the sentencing proposal.')}}</p>
+                    <h3 class="govuk-heading-s">Risk to known individuals and
+                      partners</h3>
+                    <p class="govuk-body">{{data['defendant-known-person-risk'] | default('These are my notes on the defendants risk to known people. They will be used to inform the sentencing proposal.')}}</p>
+                    <h3 class="govuk-heading-s">Risk of harm to children</h3>
+                    <p class="govuk-body">{{data['defendant-children-risk'] | default('These are my notes on the defendants reconviction risk. They will be used to inform the sentencing proposal.')}}</p>
+                    <h3 class="govuk-heading-s">Risk of harm to the public</h3>
+                    <p class="govuk-body">{{data['defendant-public-risk'] | default('These are my notes on the defendants risk to the public. They will be used to inform the sentencing proposal.')}}</p>
+                  </div>
+                </div>
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h3 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                        Review notes on risk to themselves
+                      </span>
+                    </h3>
+                  </div>
+                  <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                    <h3 class="govuk-heading-s">Risk of reconviction</h3>
+                    <p class="govuk-body">{{data['defendant-reconviction-risk'] | default('These are my notes on the defendants reconviction risk. They will be used to inform the sentencing proposal.')}}</p>
+                    <h3 class="govuk-heading-s">Risk of serious recidivisim</h3>
+                    <p class="govuk-body">{{data['defendant-recidivism-risk'] | default('These are my notes on the defendants risk of serious recidivism. They will be used to inform the sentencing proposal.')}}</p>
+                    <h3 class="govuk-heading-s">Risk of self harm</h3>
+                    <p class="govuk-body">{{data['defendant-children-risk'] | default('These are my notes on the defendants risk to children. They will be used to inform the sentencing proposal.')}}</p>
+                    <h3 class="govuk-heading-s">Risk of harm to the public</h3>
+                    <p class="govuk-body">{{data['defendant-public-risk'] | default('These are my notes on the defendants risk to the public. They will be used to inform the sentencing proposal.')}}</p>
+                  </div>
+                </div>
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h3 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                        Punitive component
+                      </span>
+                    </h3>
+                  </div>
+                  <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+                    <p class="govuk-body">{{data['consider-punitive-sentence-component'] | default('These are my notes on the punitive aspect of the proposed sentence.')}}</p>
+                  </div>
+                </div>
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h3 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                        Rehab component
+                      </span>
+                    </h3>
+                  </div>
+                  <div id="accordion-default-content-3" class="govuk-accordion__section-content">
+                    <p class="govuk-body">{{data['consider-rehabilitative-sentence-component'] | default('These are my notes on the rehabilitative aspect of the proposed sentence.')}}</p>
+                  </div>
+                </div>
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h3 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                        Public safety component
+                      </span>
+                    </h3>
+                  </div>
+                  <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+                    <p class="govuk-body">{{data['consider-public-safety-sentence-component'] | default('These are my notes on the public safety aspect of the proposed sentence.')}}</p>
+                  </div>
+                </div>
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h3 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                        Current offences
+                      </span>
+                    </h3>
+                  </div>
+                  <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+                    <p class="govuk-body govuk-!-font-weight-bold">Committed an
+                      act of criminal damage</p>
+                    <p class="govuk-body">On 13/06/2023, unlawfully and
+                      intentionally, committed an act of criminal damage by
+                      scratching the paintwork on four cars causing damage to
+                      the value of £2,500.</p>
+                    <p class="govuk-body govuk-!-font-weight-bold">Theft from a
+                      motor vehicle</p>
+                    <p class="govuk-body">On the 13/06/2023, unlawfully and
+                      intentionally, committed an act of theft from a motor
+                      vehicle by breaking in and then stealing several items
+                      from said vehicle to the value of £700.</p>
+                    <p class="govuk-body">This includes a mobile phone, coat,
+                      large shoulder bag and the said shoulder bag's contents.</p>
+                  </div>
+                </div>
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h3 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                        Historical offences
+                      </span>
+                    </h3>
+                  </div>
+                  <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+                    <p class="govuk-body">There are no historical offences</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
+              Save draft
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,220 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Consider sentence components" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">
+                Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offences">
+                Offences</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="victim-impact-assessment">
+                Victim impact assessment</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="pattern-of-offending-and-response-to-supervision">
+                Pattern of offending and response to supervision</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="additional-behaviours-and-lifestyle-considerations.html">
+                Additional behaviours and lifestyle considerations</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="culpability-and-risk">
+                Culpability and risk</a>
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="consider-sentence-components">
+                Consider sentence components</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="write-sentencing-proposal">
+                Write sentencing proposal</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="preview-report">
+                Preview report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="consider-sentence-components" method="post" novalidate>
+          <span class="govuk-caption-xl">
+            Dylan Adam Armstrong CRN: E234516
+          </span>
+          <h1 class="govuk-heading-xl">
+            Consider sentence components
+          </h1>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="consider-punitive-sentence-component">
+                    Punitive sentence component
+                  </label>
+                </h2>
+                <h2 class="govuk-heading-l" for="dependant-caring-responsibilities">
+                </h2>
+                <div id="consider-punitive-sentence-component-hint" class="govuk-hint">
+                  Explain what you think the punitive aspect of this sentence
+                  should be and why.</div>
+                <textarea class="govuk-textarea" id="consider-punitive-sentence-component" name="consider-punitive-sentence-component" rows="12" aria-describedby="consider-punitive-sentence-component-hint">{{data['consider-punitive-sentence-component']}}</textarea>
+              </div>
+            </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="consider-rehabilitative-sentence-component">
+                    Rehabilitative sentence component
+                  </label>
+                </h2>
+                <div id="consider-rehabilitative-sentence-component-hint" class="govuk-hint">
+                  Explain what you think the rehabilitative aspect of this
+                  sentence is, giving reference to things like available
+                  accredited programs available in your area that could benefit
+                  the defendant or have proven effective previously.</div>
+                <textarea class="govuk-textarea" id="consider-rehabilitative-sentence-component" name="consider-rehabilitative-sentence-component" rows="12" aria-describedby="consider-rehabilitative-sentence-component-hint">{{data['consider-rehabilitative-sentence-component']}}</textarea>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-half">
+              <div class="app-split-pane__supporting-information">
+                <div class="govuk-summary-card">
+                  <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Accredited programs
+                      based on offences | <a href="#">View all</a>
+                    </h2>
+                  </div>
+                  <div class="govuk-summary-card__content">
+                    <table class="govuk-table govuk-!-margin-bottom-9">
+                      <caption class="govuk-table__caption govuk-table__caption--s">
+                        Accredited programs near Leeds for criminal damage</caption>
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header">Program name</th>
+                          <th scope="col" class="govuk-table__header">Avg availability (next 6 months)</th>
+                          <th scope="col" class="govuk-table__header">Next available slot</th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Critical
+                            thinking</th>
+                          <td class="govuk-table__cell">18%</td>
+                          <td class="govuk-table__cell">12 June 2024</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Dealing
+                            with confrontation</th>
+                          <td class="govuk-table__cell">52%</td>
+                          <td class="govuk-table__cell">1 June 2024</td>
+                        </tr>
+                      </tbody>
+                    <table class="govuk-table">
+                      <caption class="govuk-table__caption govuk-table__caption--s">
+                        Accredited programs near Leeds for theft</caption>
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header">Program name</th>
+                          <th scope="col" class="govuk-table__header">Avg availability (next 6 months)</th>
+                          <th scope="col" class="govuk-table__header">Next available slot</th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Critical
+                            thinking</th>
+                          <td class="govuk-table__cell">18%</td>
+                          <td class="govuk-table__cell">12 June 2024</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Financial
+                            planning
+                          </th>
+                          <td class="govuk-table__cell">17%</td>
+                          <td class="govuk-table__cell">26 June 2024</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="risk-to-public-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h2 class="govuk-fieldset__heading">
+                      Does this sentence need a public safety sentence component?
+                    </h2>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-to-public" name="risk-to-public" type="radio" value="Yes" data-aria-controls="conditioal-risk-to-public-yes" {{ checked("risk-to-public", "Yes") }}>
+                      <label class="govuk-label govuk-radios__label" for="risk-to-public">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditioal-risk-to-public-yes">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="conditional-reconviction-yes">
+                          Explain what you think the public safety aspect of the sentence is.
+                        </label>
+                        <textarea class="govuk-textarea" id="consider-public-safety-sentence-component" name="consider-public-safety-sentence-component" rows="12" aria-describedby="consider-public-safety-sentence-component-hint">{{data['consider-public-safety-sentence-component']}}</textarea>
+                      </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-to-public-2" name="risk-to-public" type="radio" value="No" {{ checked("risk-to-public", "No") }}>
+                      <label class="govuk-label govuk-radios__label" for="risk-to-public-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
+              Save draft
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}
