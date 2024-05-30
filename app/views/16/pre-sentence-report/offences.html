@@ -63,132 +63,42 @@
           <h1 class="govuk-heading-xl">
             Offences
           </h1>
-          <p class="govuk-body">This information will be included in the
-            report which will be visible to the court and judiciary.</p>
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Help changing offences
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <p class="govukl-body">
-                Offences that are not relevant to the hearing or report can be
-                removed by deleting them, or editing an offence.
-              </p>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-form-group">
+                <h2 class="govuk-heading-l" for="summary-of-offences">
+                  Summary of offences
+                </h2>
+                <div id="summary-of-offences-hint" class="govuk-hint">
+                  Review current and pervious offences to identify any patterns of
+                  offending. This could include repeated similar or escalating
+                  offences.
+                </div>
+                <textarea class="govuk-textarea" id="summary-of-offences" name="summary-of-offences" rows="18" aria-describedby="summary-of-offences-hint">{{data['summary-of-offences']}}</textarea>
+              </div>
             </div>
-          </details>
-          <div class="govuk-form-group">
-            <div class="moj-ticket-panel-container">
-              {% if (data['offenceOneHidden'] != "true") %}
-                <article class="moj-ticket-panel">
-                  <section class="moj-ticket-panel__actions moj-ticket-panel__actions--purple">
-                    <button class="govuk-move-button govuk-move-button__up"></button>
-                    <button class="govuk-move-button govuk-move-button__drag">
-                      <div class="govuk-move-button__drag-pattern">
-                        <svg width="100%" height="100%">
-                          <defs>
-                            <pattern id="polka-dots" x="0" y="0" width="24" height="20" patternUnits="userSpaceOnUse">
-                              <circle fill="#505a5f" cx="10" cy="10" r="5" />
-                            </pattern>
-                          </defs>
-                          <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
-                        </svg>
-                      </div>
-                    </button>
-                    <button class="govuk-move-button govuk-move-button__down"></button>
-                  </section>
-                  <section class="moj-ticket-panel__content">
-                    <div class="govuk-grid-row govuk-!-margin-bottom-3">
-                      <div class="govuk-grid-column-two-thirds">
-                        <h3 class="govuk-heading-s">Committed an act of criminal
-                          damage</h3>
-                      </div>
-                      <div class="govuk-grid-column-one-third moj-ticket-panel__links">
-                        <a href="offences/add-offence.html?addEditOffence=Edit" class="govuk-link" style="font-weight: normal;">
-                          Edit</a> |
-                        <a href="offences/delete-offence.html" class="govuk-link" style="font-weight: normal;">
-                          Delete</a>
-                      </div>
-                    </div>
+            <div class="govuk-grid-column-one-third">
+              <div class="app-split-pane__supporting-information">
+                <div class="govuk-summary-card">
+                  <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Current offences</h2>
+                  </div>
+                  <div class="govuk-summary-card__content">
+                    <h3 class="govuk-heading-s">Committed an act of criminal
+                      damage</h3>
                     <p class="govuk-body">On 13/06/2023, unlawfully and
                       intentionally, committed an act of criminal damage by
-                      scratching the paintwork on four cars causing damage to the
-                      value of £2,500.</p>
-                  </section>
-                </article>
-              {% endif %}
-              <article class="moj-ticket-panel">
-                <section class="moj-ticket-panel__actions moj-ticket-panel__actions--purple">
-                  <button class="govuk-move-button govuk-move-button__up"></button>
-                  <button class="govuk-move-button govuk-move-button__drag">
-                    <div class="govuk-move-button__drag-pattern">
-                      <svg width="100%" height="100%">
-                        <defs>
-                          <pattern id="polka-dots" x="0" y="0" width="24" height="20" patternUnits="userSpaceOnUse">
-                            <circle fill="#505a5f" cx="10" cy="10" r="5" />
-                          </pattern>
-                        </defs>
-                        <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
-                      </svg>
-                    </div>
-                  </button>
-                  <button class="govuk-move-button govuk-move-button__down"></button>
-                </section>
-                <section class="moj-ticket-panel__content">
-                  <div class="govuk-grid-row govuk-!-margin-bottom-3">
-                    <div class="govuk-grid-column-two-thirds">
-                      <h3 class="govuk-heading-s">Theft from a motor vehicle</h3>
-                    </div>
-                    <div class="govuk-grid-column-one-third moj-ticket-panel__links">
-                      <a href="offences/add-offence.html?addEditOffence=Edit" class="govuk-link" style="font-weight: normal;">
-                        Edit</a> |
-                      <a href="offences/delete-offence.html" class="govuk-link" style="font-weight: normal;">
-                        Delete</a>
-                    </div>
+                      scratching the paintwork on four cars causing damage to
+                      the value of £2,500.</p>
+                    <h3 class="govuk-heading-s">Committed an act of criminal
+                      damage</h3>
+                    <p class="govuk-body">On 17/12/2018, unlawfully and
+                      intentionally, committed an act of criminal damage by
+                      smashing two side windows on a car causing damage
+                      to the value of £625.</p>
                   </div>
-                  <p class="govuk-body">On the 13/06/2023, unlawfully and
-                    intentionally, committed an act of theft from a motor
-                    vehicle by breaking in and then stealing several items from
-                    said vehicle to the value of £700.</p>
-                  <p class="govuk-body">This includes a mobile phone, coat,
-                    large shoulder bag and the  said shoulder bag's contents.</p>
-                </section>
-              </article>
-              {% if (data['other-offence-details']) %}
-                <article class="moj-ticket-panel">
-                  <section class="moj-ticket-panel__actions moj-ticket-panel__actions--purple">
-                    <button class="govuk-move-button govuk-move-button__up"></button>
-                    <button class="govuk-move-button govuk-move-button__drag">
-                      <div class="govuk-move-button__drag-pattern">
-                        <svg width="100%" height="100%">
-                          <defs>
-                            <pattern id="polka-dots" x="0" y="0" width="24" height="20" patternUnits="userSpaceOnUse">
-                              <circle fill="#505a5f" cx="10" cy="10" r="5" />
-                            </pattern>
-                          </defs>
-                          <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
-                        </svg>
-                      </div>
-                    </button>
-                    <button class="govuk-move-button govuk-move-button__down"></button>
-                  </section>
-                  <section class="moj-ticket-panel__content">
-                    <div class="govuk-grid-row govuk-!-margin-bottom-3">
-                      <div class="govuk-grid-column-two-thirds">
-                        <h3 class="govuk-heading-s">{{data['other-offence-description']}}</h3>
-                      </div>
-                      <div class="govuk-grid-column-one-third moj-ticket-panel__links">
-                        <a href="offences/add-offence.html?addEditOffence=Edit" class="govuk-link" style="font-weight: normal;">
-                          Edit</a> |
-                        <a href="offences/delete-offence.html" class="govuk-link" style="font-weight: normal;">
-                          Delete</a>
-                      </div>
-                    </div>
-                    <p class="govuk-body">{{data['other-offence-details']}}</p>
-                  </section>
-                </article>
-              {% endif %}
+                </div>
+              </div>
             </div>
           </div>
           <div class="govuk-button-group">
@@ -197,9 +107,6 @@
             </button>
             <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
               Save draft
-            </button>
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="addOffence">
-              Add offence
             </button>
           </div>
         </form>

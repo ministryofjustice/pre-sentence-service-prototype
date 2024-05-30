@@ -54,33 +54,9 @@ module.exports = function (router) {
 
     if (pageAction == 'saveDraft'){
       res.redirect('offences')
-    } else if(pageAction == 'addOffence') {
-      res.redirect('offences/add-offence')
     }else {
       res.redirect('victim-impact-assessment')
     }
-  });
-
-  router.get('/' + version + '/pre-sentence-report/offences/add-offence', function (req, res) {
-    req.session.data.pageAction = 'false'
-
-    res.render(version + '/pre-sentence-report/offences/add-offence')
-  });
-
-  router.post('/' + version + '/pre-sentence-report/offences/add-offence', function (req, res) {
-    res.redirect('../offences')
-  });
-
-  router.get('/' + version + '/pre-sentence-report/offences/delete-offence', function (req, res) {
-    req.session.data.pageAction = 'false'
-
-    res.render(version + '/pre-sentence-report/offences/delete-offence')
-  });
-
-  router.post('/' + version + '/pre-sentence-report/offences/delete-offence', function (req, res) {
-    req.session.data.offenceOneHidden = 'true'
-
-    res.redirect('../offences')
   });
 
   router.get('/' + version + '/pre-sentence-report/victim-impact-assessment', function (req, res) {
