@@ -1,0 +1,155 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Pattern of offending and response to supervision" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">
+                Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offences">
+                Offences</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="victim-impact-assessment">
+                Victim impact assessment</a>
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="pattern-of-offending-and-response-to-supervision">
+                Pattern of offending and response to supervision</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="additional-behaviours-and-lifestyle-considerations.html">
+                Additional behaviours and lifestyle considerations</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="culpability-and-risk">
+                Culpability and risk</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="consider-sentence-components">
+                Consider sentence components</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="write-sentencing-proposal">
+                Write sentencing proposal</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="preview-report">
+                Preview report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="pattern-of-offending-and-response-to-supervision" method="post" novalidate>
+          <span class="govuk-caption-xl">
+            Dylan Adam Armstrong CRN: E234516
+          </span>
+          <h1 class="govuk-heading-xl">
+            Pattern of offending and response to supervision
+          </h1>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <div class="govuk-form-group">
+                <h2 class="govuk-heading-l" for="pattern-of-offending">
+                  Pattern of offending
+                </h2>
+                <div id="pattern-of-offending-hint" class="govuk-hint">
+                  Review current and pervious offences to identify any patterns of
+                  offending. This could include repeated similar or escalating
+                  offences.
+                </div>
+                <textarea class="govuk-textarea" id="pattern-of-offending" name="pattern-of-offending" rows="18" aria-describedby="pattern-of-offending-hint">{{data['pattern-of-offending']}}</textarea>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-half">
+              <div class="app-split-pane__supporting-information">
+                <div class="govuk-summary-card">
+                  <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Historical offences</h2>
+                  </div>
+                  <div class="govuk-summary-card__content">
+                    <h3 class="govuk-heading-s">Committed an act of criminal
+                      damage</h3>
+                    <p class="govuk-body">On 11/04/2019, unlawfully and
+                      intentionally, committed an act of criminal damage by
+                      puncturing all four tyres on a car causing damage
+                      to the value of £1,175.</p>
+                    <h3 class="govuk-heading-s">Committed an act of criminal
+                      damage</h3>
+                    <p class="govuk-body">On 17/12/2018, unlawfully and
+                      intentionally, committed an act of criminal damage by
+                      smashing two side windows on a car causing damage
+                      to the value of £625.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <div class="govuk-form-group">
+                <h2 class="govuk-heading-l" for="response-to-supervision">
+                  Response to supervision
+                </h2>
+                <div id="response-to-supervision-hint" class="govuk-hint">
+                  Look for patterns that may indicate supervisions, interventions
+                  or accredited programs that may have reduced re-offending.</div>
+                <textarea class="govuk-textarea" id="response-to-supervision" name="response-to-supervision" rows="18" aria-describedby="response-to-supervision-hint">{{data['response-to-supervision']}}</textarea>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-half">
+              <div class="app-split-pane__supporting-information">
+                <div class="govuk-summary-card">
+                  <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Previous orders</h2>
+                  </div>
+                  <div class="govuk-summary-card__content">
+                    <h3 class="govuk-heading-s">ORA Community Order (12 Months)</h3>
+                    <p class="govuk-body">Curfew (Police Checks Only) - Curfew -
+                      12 Weeks</p>
+                    <p class="govuk-body">From 23 August 2023 to November 16
+                      2023</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
+              Save draft
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}

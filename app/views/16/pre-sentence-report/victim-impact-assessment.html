@@ -1,0 +1,114 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Victim impact assessment" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">
+                Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offences">
+                Offences</a>
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="victim-impact-assessment">
+                Victim impact assessment</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="pattern-of-offending-and-response-to-supervision">
+                Pattern of offending and response to supervision</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="additional-behaviours-and-lifestyle-considerations.html">
+                Additional behaviours and lifestyle considerations</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="culpability-and-risk">
+                Culpability and risk</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="consider-sentence-components">
+                Consider sentence components</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="write-sentencing-proposal">
+                Write sentencing proposal</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="preview-report">
+                Preview report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="victim-impact-assessment" method="post" novalidate>
+          <div class="govuk-form-group">
+            <span class="govuk-caption-xl">
+              Dylan Adam Armstrong CRN: E234516
+            </span>
+            <h1 class="govuk-heading-xl">
+              Victim impact assessment
+            </h1>
+            <p class="govuk-body">
+              The victim impact assessment is used to inform sentencing options
+              such as exclusion zones. You will be able to review this later as
+              you are writing your sentencing proposal.</p>
+            <p class="govuk-body">
+              <a class="govuk-link" href="#">
+                <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                  <path fill="#1d70b8" d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                </svg>
+                View CPS pack
+              </a>
+            </p>
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Help with victim impact assessment
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">
+                  The CPS pack usually includes a statement from the victim.
+                  Use this alongside the account provided in the pre-sentence
+                  interview to write the victim impact assessment. This should
+                  consider the defendant's:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>attitudes</li>
+                  <li>responsibility</li>
+                  <li>circumstances</li>
+                  <li>motivations</li>
+                </ul>
+              </div>
+            </details>
+            <textarea class="govuk-textarea" id="victim-impact-assessment" name="victim-impact-assessment" rows="10" aria-describedby="victim-impact-assessment-hint">{{data['victim-impact-assessment']}}</textarea>
+          </div>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
+              Save draft
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+{% endblock %}
