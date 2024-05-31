@@ -58,24 +58,26 @@
     <div class="app-split-pane__content">
       <main id="main-content" class="app-content" role="main">
         <form action="pattern-of-offending-and-response-to-supervision" method="post" novalidate>
-          <span class="govuk-caption-xl">
-            Dylan Adam Armstrong CRN: E234516
-          </span>
-          <h1 class="govuk-heading-xl">
-            Pattern of offending and response to supervision
-          </h1>
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-half">
               <div class="govuk-form-group">
-                <h2 class="govuk-heading-l" for="pattern-of-offending">
-                  Pattern of offending
-                </h2>
-                <div id="pattern-of-offending-hint" class="govuk-hint">
+                <span class="govuk-caption-xl">
+                  Dylan Adam Armstrong CRN: E234516
+                </span>
+                <h1 class="govuk-heading-xl" for="pattern-of-offending-and-response-to-supervision">
+                  Pattern of offending and response to supervision
+                </h1>
+                <div id="pattern-of-offending-and-response-to-supervision-hint" class="govuk-hint">
                   Review current and pervious offences to identify any patterns of
                   offending. This could include repeated similar or escalating
-                  offences.
+                  offences.<br/><br/>
+                  Look for patterns that may indicate supervisions, interventions
+                  or accredited programs that may have reduced re-offending.<br/><br/>
+                  It can be helpful for the judiciary to talk about one offence,
+                  the defendant's response to supervision for that offence at a
+                  time.
                 </div>
-                <textarea class="govuk-textarea" id="pattern-of-offending" name="pattern-of-offending" rows="18" aria-describedby="pattern-of-offending-hint">{{data['pattern-of-offending']}}</textarea>
+                <textarea class="govuk-textarea" id="pattern-of-offending-and-response-to-supervision" name="pattern-of-offending-and-response-to-supervision" rows="18" aria-describedby="pattern-of-offending-and-response-to-supervision-hint">{{data['pattern-of-offending-and-response-to-supervision']}}</textarea>
               </div>
             </div>
             <div class="govuk-grid-column-one-half">
@@ -100,21 +102,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-half">
-              <div class="govuk-form-group">
-                <h2 class="govuk-heading-l" for="response-to-supervision">
-                  Response to supervision
-                </h2>
-                <div id="response-to-supervision-hint" class="govuk-hint">
-                  Look for patterns that may indicate supervisions, interventions
-                  or accredited programs that may have reduced re-offending.</div>
-                <textarea class="govuk-textarea" id="response-to-supervision" name="response-to-supervision" rows="18" aria-describedby="response-to-supervision-hint">{{data['response-to-supervision']}}</textarea>
-              </div>
-            </div>
-            <div class="govuk-grid-column-one-half">
               <div class="app-split-pane__supporting-information">
                 <div class="govuk-summary-card">
                   <div class="govuk-summary-card__title-wrapper">
@@ -131,8 +118,6 @@
               </div>
             </div>
           </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
           <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button">
               Save and continue
