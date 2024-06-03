@@ -151,9 +151,26 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('write-sentencing-proposal')
     } else {
+      res.redirect('sources-of-information')
+    }
+  });
+
+  router.get('/' + version + '/pre-sentence-report/sources-of-information', function (req, res) {
+    req.session.data.pageAction = 'false'
+
+    res.render(version + '/pre-sentence-report/sources-of-information')
+  });
+
+  router.post('/' + version + '/pre-sentence-report/sources-of-information', function (req, res) {
+    const pageAction = req.session.data['pageAction']
+
+    if (pageAction == 'saveDraft'){
+      res.redirect('sources-of-information')
+    } else {
       res.redirect('preview-report')
     }
   });
+
 
   router.get('/' + version + '/pre-sentence-report/preview-report', function (req, res) {
     req.session.data.pageAction = 'false'

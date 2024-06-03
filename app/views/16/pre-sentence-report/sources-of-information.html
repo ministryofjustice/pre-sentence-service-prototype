@@ -1,0 +1,166 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Sources of Information" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">
+                Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offences">
+                Offences</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="victim-impact-assessment">
+                Victim impact assessment</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="pattern-of-offending-and-response-to-supervision">
+                Pattern of offending and response to supervision</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="additional-behaviours-and-lifestyle-considerations.html">
+                Additional behaviours and lifestyle considerations</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="culpability-and-risk">
+                Culpability and risk</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="consider-sentence-components">
+                Consider sentence components</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="write-sentencing-proposal">
+                Write sentencing proposal</a>
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sources-of-information">
+                Sources of information</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="preview-report">
+                Preview report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="sources-of-information" method="post" novalidate>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-xl">
+                      Dylan Adam Armstrong CRN: E234516
+                    </span>
+                    <h1 class="govuk-fieldset__heading  govuk-!-font-size-48">
+                      Sources of information
+                    </h1>
+                  </legend>
+                  <div id="sources-of-information-hint" class="govuk-hint">
+                    Select all sources used to inform this report.
+                  </div>
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="sources-of-information" name="sources-of-information" type="checkbox" value="CPS summary" {{ checked("sources-of-information", "CPS summary") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="sources-of-information">
+                        CPS summary
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="sources-of-information-2" name="sources-of-information" type="checkbox" value="Domestic abuse callout information" {{ checked("sources-of-information", "Domestic abuse callout information") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="sources-of-information-2">
+                        Domestic abuse callout information
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="sources-of-information-3" name="sources-of-information" type="checkbox" value="Equality information form" {{ checked("sources-of-information", "Equality information form") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="sources-of-information-3">
+                        Equality information form
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="sources-of-information-4" name="sources-of-information" type="checkbox" value="Interview" {{ checked("sources-of-information", "Interview") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="sources-of-information-4">
+                        Interview
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="sources-of-information-5" name="sources-of-information" type="checkbox" value="OASys assessments" {{ checked("sources-of-information", "OASys assessments") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="sources-of-information-5">
+                        OASys assessments
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="sources-of-information-6" name="sources-of-information" type="checkbox" value="Previous convictions" {{ checked("sources-of-information", "Previous convictions") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="sources-of-information-6">
+                        Previous convictions
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="sources-of-information-7" name="sources-of-information" type="checkbox" value="Safeguarding checks" {{ checked("sources-of-information", "Safeguarding checks") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="sources-of-information-7">
+                        Safeguarding checks
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="sources-of-information-8" name="sources-of-information" type="checkbox" value="Sentencing guidelines" {{ checked("sources-of-information", "Sentencing guidelines") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="sources-of-information-8">
+                        Sentencing guidelines
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="sources-of-information-9" name="sources-of-information" type="checkbox" value="Service records" {{ checked("sources-of-information", "Service records") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="sources-of-information-9">
+                        Service records
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="sources-of-information-10" name="sources-of-information" type="checkbox" value="Victim statement" {{ checked("sources-of-information", "Victim statement") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="sources-of-information-10">
+                        Victim statement
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
+              Save draft
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}
