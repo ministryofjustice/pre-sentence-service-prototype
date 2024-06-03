@@ -70,9 +70,15 @@
               <h1 class="govuk-heading-xl">
                 Defendant details
               </h1>
-              <div id="defendant-details-hint" class="govuk-hint">
-                This information comes from NDelius. If it is not accurate you can update it here. You will need to update NDelius separately.
-              </div>
+              <p class="govuk-body">This information comes from NDelius.</p>
+                <p class="govuk-body">If it is incorrect you will need to:</p>
+                <ol class="govuk-list govuk-list--number">
+                  <li>delete this pre-sentence report</li>
+                  <li>update the defendant's details in NDelius</li>
+                  <li>start a new pre-sentence report in NDelius</li>
+                </ol>
+                <p class="govuk-body">Once you have done this the updated
+                  information will pull through to the new pre-sentence report.</p>
               <div class="govuk-form-group">
                 <dl class="govuk-summary-list">
                   <div class="govuk-summary-list__row">
@@ -127,8 +133,8 @@
                     Record any other addresses that the defendant spends a
                     significant amount of time at. These will be used as part of any
                     domestic abuse and safeguarding checks.<br/><br/>
-                    Record any changes to existing addresses or new address
-                    here and in NDelius.
+                    If you need to add a new address or change an existing
+                    address you will need to update them here and on NDelius.
                   </div>
                   {% if (data['other-address-description']) %}
                     <div class="moj-ticket-panel-container">
