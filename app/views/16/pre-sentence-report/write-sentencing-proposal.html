@@ -85,6 +85,18 @@
             </div>
             <div class="govuk-grid-column-one-third">
               <h2 class="govuk-heading-l">My notes</h2>
+              <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                  <h3 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                      Summary of offences under consideration
+                    </span>
+                  </h3>
+                </div>
+                <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+                  <p class="govuk-body">{{data['summary-of-offences']}}</p>
+                </div>
+              </div>
               <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
                 <div class="govuk-accordion__section">
                   <div class="govuk-accordion__section-header">
@@ -171,18 +183,6 @@
                   </div>
                   <div id="accordion-default-content-4" class="govuk-accordion__section-content">
                     <p class="govuk-body">{{data['consider-public-safety-sentence-component'] | default('These are my notes on the public safety aspect of the proposed sentence.')}}</p>
-                  </div>
-                </div>
-                <div class="govuk-accordion__section">
-                  <div class="govuk-accordion__section-header">
-                    <h3 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-                        Summary of offences under consideration
-                      </span>
-                    </h3>
-                  </div>
-                  <div id="accordion-default-content-4" class="govuk-accordion__section-content">
-                    <p class="govuk-body">{{data['summary-of-offences']}}</p>
                   </div>
                 </div>
               </div>
