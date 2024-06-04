@@ -13,8 +13,8 @@
                 Defendant details</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offences">
-                Offences</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="summary-of-offences-under-consideration">
+                Summary of offences under consideration</a>
             </li>
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="victim-impact-assessment">
@@ -39,6 +39,10 @@
             <li class="app-subnav__section-item app-subnav__section-item--current">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="write-sentencing-proposal">
                 Write sentencing proposal</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sources-of-information">
+                Sources of information</a>
             </li>
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="preview-report">
@@ -81,6 +85,18 @@
             </div>
             <div class="govuk-grid-column-one-third">
               <h2 class="govuk-heading-l">My notes</h2>
+              <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                  <h3 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                      Summary of offences under consideration
+                    </span>
+                  </h3>
+                </div>
+                <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+                  <p class="govuk-body">{{data['summary-of-offences']}}</p>
+                </div>
+              </div>
               <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
                 <div class="govuk-accordion__section">
                   <div class="govuk-accordion__section-header">
@@ -149,7 +165,7 @@
                   <div class="govuk-accordion__section-header">
                     <h3 class="govuk-accordion__section-heading">
                       <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-                        Rehab component
+                        Rehabilitative component
                       </span>
                     </h3>
                   </div>
@@ -167,43 +183,6 @@
                   </div>
                   <div id="accordion-default-content-4" class="govuk-accordion__section-content">
                     <p class="govuk-body">{{data['consider-public-safety-sentence-component'] | default('These are my notes on the public safety aspect of the proposed sentence.')}}</p>
-                  </div>
-                </div>
-                <div class="govuk-accordion__section">
-                  <div class="govuk-accordion__section-header">
-                    <h3 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-                        Current offences
-                      </span>
-                    </h3>
-                  </div>
-                  <div id="accordion-default-content-4" class="govuk-accordion__section-content">
-                    <p class="govuk-body govuk-!-font-weight-bold">Committed an
-                      act of criminal damage</p>
-                    <p class="govuk-body">On 13/06/2023, unlawfully and
-                      intentionally, committed an act of criminal damage by
-                      scratching the paintwork on four cars causing damage to
-                      the value of £2,500.</p>
-                    <p class="govuk-body govuk-!-font-weight-bold">Theft from a
-                      motor vehicle</p>
-                    <p class="govuk-body">On the 13/06/2023, unlawfully and
-                      intentionally, committed an act of theft from a motor
-                      vehicle by breaking in and then stealing several items
-                      from said vehicle to the value of £700.</p>
-                    <p class="govuk-body">This includes a mobile phone, coat,
-                      large shoulder bag and the said shoulder bag's contents.</p>
-                  </div>
-                </div>
-                <div class="govuk-accordion__section">
-                  <div class="govuk-accordion__section-header">
-                    <h3 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-                        Historical offences
-                      </span>
-                    </h3>
-                  </div>
-                  <div id="accordion-default-content-4" class="govuk-accordion__section-content">
-                    <p class="govuk-body">There are no historical offences</p>
                   </div>
                 </div>
               </div>

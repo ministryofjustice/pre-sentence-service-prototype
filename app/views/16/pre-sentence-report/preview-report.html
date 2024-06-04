@@ -13,8 +13,8 @@
                 Defendant details</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offences">
-                Offences</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="summary-of-offences-under-consideration">
+                Summary of offences under consideration</a>
             </li>
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="victim-impact-assessment">
@@ -39,6 +39,9 @@
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="write-sentencing-proposal">
                 Write sentencing proposal</a>
+            </li><li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sources-of-information">
+                Sources of information</a>
             </li>
             <li class="app-subnav__section-item app-subnav__section-item--current">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="preview-report">
@@ -371,7 +374,7 @@
                           intentionally, committed an act of criminal damage by
                           scratching the paintwork on four cars causing damage
                           to the value of £2,500.<br>
-                          <a class="govuk-link" href="offences">Change
+                          <a class="govuk-link" href="summary-of-offences-under-consideration">Change
                             <span class="govuk-visually-hidden">offences</span>
                           </a>
                         </p>
@@ -386,7 +389,7 @@
                           coat, large shoulder bag and the said shoulder bag's
                           contents.
                           <br>
-                          <a class="govuk-link" href="offences">Change
+                          <a class="govuk-link" href="summary-of-offences-under-consideration">Change
                             <span class="govuk-visually-hidden">offences</span>
                           </a></p>
                       </div>
@@ -399,6 +402,42 @@
                           <br><a class="govuk-link" href="write-sentencing-proposal">Change
                             <span class="govuk-visually-hidden">sentencing proposal</span>
                           </a></p>
+                      </div>
+                    </div>
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-full">
+                        <h2 class="govuk-heading-m report-heading--purple">Sources of information</h2>
+                        {% if data['sources-of-information'].includes('CPS summary') %}
+                          <p class="govuk-body">CPS summary</p>
+                        {% endif %}
+                        {% if data['sources-of-information'].includes('Domestic abuse callout information') %}
+                          <p class="govuk-body">Domestic abuse callout information</p>
+                        {% endif %}
+                        {% if data['sources-of-information'].includes('Equality information form') %}
+                          <p class="govuk-body">Equality information form</p>
+                        {% endif %}
+                        {% if data['sources-of-information'].includes('Interview') %}
+                          <p class="govuk-body">Interview</p>
+                        {% endif %}
+                        {% if data['sources-of-information'].includes('OASys assessments') %}
+                          <p class="govuk-body">OASys assessments</p>
+                        {% endif %}
+                        {% if data['sources-of-information'].includes('Previous convictions') %}
+                          <p class="govuk-body">Previous convictions</p>
+                        {% endif %}
+                        {% if data['sources-of-information'].includes('Safeguarding checks') %}
+                          <p class="govuk-body">Safeguarding checks</p>
+                        {% endif %}
+                        {% if data['sources-of-information'].includes('Sentencing guidelines') %}
+                          <p class="govuk-body">Sentencing guidelines</p>
+                        {% endif %}
+                        {% if data['sources-of-information'].includes('Service records') %}
+                          <p class="govuk-body">Service records</p>
+                        {% endif %}
+                        {% if data['sources-of-information'].includes('Victim statement') %}
+                          <p class="govuk-body">Victim statement</p>
+                        {% endif %}
                       </div>
                     </div>
                   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -624,7 +663,7 @@
                               </td>
                               <th scope="row" class="govuk-table__header">ANOTHER THING THAT WAS CHECKED:</th>
                               <td class="govuk-table__cell">WAS CHECKED BY DOCUMENT 2
-                                <br><a class="govuk-link" href="offences">
+                                <br><a class="govuk-link" href="summary-of-offences-under-consideration">
                                   Change <span class="govuk-visually-hidden">
                                     ANOTHER THING THAT WAS CHECKED</span></a>
                               </td>

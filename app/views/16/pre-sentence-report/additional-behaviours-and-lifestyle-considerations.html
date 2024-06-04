@@ -13,8 +13,8 @@
                 Defendant details</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offences">
-                Offences</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="summary-of-offences-under-consideration">
+                Summary of offences under consideration</a>
             </li>
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="victim-impact-assessment">
@@ -39,6 +39,10 @@
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="write-sentencing-proposal">
                 Write sentencing proposal</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sources-of-information">
+                Sources of information</a>
             </li>
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="preview-report">
@@ -69,18 +73,27 @@
               Describe any additional behaviours and lifestyle considerations
               that could have in impact on the proposed sentence.
             </div>
-            <p class="govuk-body">You may want to consider:</p>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>accommodation</li>
-              <li>finances</li>
-              <li>lifestyle</li>
-              <li>associates</li>
-              <li>alcohol and drug use</li>
-              <li>mental health</li>
-              <li>thinking and behavioural issues</li>
-              <li>attitudes</li>
-              <li>general health</li>
-            </ul>
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Help with additional behaviours and lifestyle considerations
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">You may want to consider:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>accommodation</li>
+                  <li>finances</li>
+                  <li>lifestyle</li>
+                  <li>associates</li>
+                  <li>alcohol and drug use</li>
+                  <li>mental health</li>
+                  <li>thinking and behavioural issues</li>
+                  <li>attitudes</li>
+                  <li>general health</li>
+                </ul>
+              </div>
+            </details>
             <textarea class="govuk-textarea" id="additional-behaviours-and-lifestyle-considerations" name="additional-behaviours-and-lifestyle-considerations" rows="8" aria-describedby="additional-behaviours-and-lifestyle-considerations-hint">{{data['additional-behaviours-and-lifestyle-considerations']}}</textarea>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
