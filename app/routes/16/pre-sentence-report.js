@@ -140,6 +140,21 @@ module.exports = function (router) {
       }
     })
 
+    const riskDomesticAbuseList = [
+      'Choose an option',
+      'No risk',
+      'Low risk',
+      'Medium risk',
+      'High risk',
+      'Very high risk'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['risk-domestic-abuse-verification']
+      }
+    })
+
     const riskSeriousHarmChildrenList = [
       'Choose an option',
       'No risk',
@@ -203,6 +218,7 @@ module.exports = function (router) {
     res.render(version + '/pre-sentence-report/culpability-and-risk', {
       riskSeriousHarmOthersList,
       riskSeriousHarmKnownIndividualsList,
+      riskDomesticAbuseList,
       riskSeriousHarmChildrenList,
       riskReconvictionList,
       riskSeriousRecidivismList,
