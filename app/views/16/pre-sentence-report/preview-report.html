@@ -408,35 +408,37 @@
                     <div class="govuk-grid-row">
                       <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-m report-heading--purple">Sources of information</h2>
-                        {% if data['sources-of-information'].includes('CPS summary') %}
-                          <p class="govuk-body">CPS summary</p>
-                        {% endif %}
-                        {% if data['sources-of-information'].includes('Domestic abuse callout information') %}
-                          <p class="govuk-body">Domestic abuse callout information</p>
-                        {% endif %}
-                        {% if data['sources-of-information'].includes('Equality information form') %}
-                          <p class="govuk-body">Equality information form</p>
-                        {% endif %}
-                        {% if data['sources-of-information'].includes('Interview') %}
-                          <p class="govuk-body">Interview</p>
-                        {% endif %}
-                        {% if data['sources-of-information'].includes('OASys assessments') %}
-                          <p class="govuk-body">OASys assessments</p>
-                        {% endif %}
-                        {% if data['sources-of-information'].includes('Previous convictions') %}
-                          <p class="govuk-body">Previous convictions</p>
-                        {% endif %}
-                        {% if data['sources-of-information'].includes('Safeguarding checks') %}
-                          <p class="govuk-body">Safeguarding checks</p>
-                        {% endif %}
-                        {% if data['sources-of-information'].includes('Sentencing guidelines') %}
-                          <p class="govuk-body">Sentencing guidelines</p>
-                        {% endif %}
-                        {% if data['sources-of-information'].includes('Service records') %}
-                          <p class="govuk-body">Service records</p>
-                        {% endif %}
-                        {% if data['sources-of-information'].includes('Victim statement') %}
-                          <p class="govuk-body">Victim statement</p>
+                        {% if data['sources-of-information'] %}
+                          {% if data['sources-of-information'].includes('CPS summary') %}
+                            <p class="govuk-body">CPS summary</p>
+                          {% endif %}
+                          {% if data['sources-of-information'].includes('Domestic abuse callout information') %}
+                            <p class="govuk-body">Domestic abuse callout information</p>
+                          {% endif %}
+                          {% if data['sources-of-information'].includes('Equality information form') %}
+                            <p class="govuk-body">Equality information form</p>
+                          {% endif %}
+                          {% if data['sources-of-information'].includes('Interview') %}
+                            <p class="govuk-body">Interview</p>
+                          {% endif %}
+                          {% if data['sources-of-information'].includes('OASys assessments') %}
+                            <p class="govuk-body">OASys assessments</p>
+                          {% endif %}
+                          {% if data['sources-of-information'].includes('Previous convictions') %}
+                            <p class="govuk-body">Previous convictions</p>
+                          {% endif %}
+                          {% if data['sources-of-information'].includes('Safeguarding checks') %}
+                            <p class="govuk-body">Safeguarding checks</p>
+                          {% endif %}
+                          {% if data['sources-of-information'].includes('Sentencing guidelines') %}
+                            <p class="govuk-body">Sentencing guidelines</p>
+                          {% endif %}
+                          {% if data['sources-of-information'].includes('Service records') %}
+                            <p class="govuk-body">Service records</p>
+                          {% endif %}
+                          {% if data['sources-of-information'].includes('Victim statement') %}
+                            <p class="govuk-body">Victim statement</p>
+                          {% endif %}
                         {% endif %}
                       </div>
                     </div>
