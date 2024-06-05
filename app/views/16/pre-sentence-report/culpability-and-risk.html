@@ -106,6 +106,16 @@
               </div>
               <div class="govuk-form-group">
                 {{ govukSelect({
+                  id: "risk-domestic-abuse-verification",
+                  name: "risk-domestic-abuse-verification",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>What is the risk of domestic abuse?</h3>"
+                  },
+                  items: riskDomesticAbuseList
+                }) }}
+              </div>
+              <div class="govuk-form-group">
+                {{ govukSelect({
                   id: "risk-serious-harm-children-verification",
                   name: "risk-serious-harm-children-verification",
                   label: {
