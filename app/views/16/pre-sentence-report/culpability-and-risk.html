@@ -74,8 +74,7 @@
             </h2>
             <div id="defendant-culpability-hint" class="govuk-hint">
               Are there any extenuating circumstances that might make the
-              defendant less accountable for their action or inaction?
-            </div>
+              defendant less accountable for their action or inaction?</div>
             <textarea class="govuk-textarea" id="defendant-culpability" name="defendant-culpability" rows="8" aria-describedby="defendant-culpability-hint">{{data['defendant-culpability']}}</textarea>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -155,19 +154,21 @@
                 }) }}
               </div>
               <div class="govuk-form-group">
-                <h3 class="govuk-heading-m" for="defendant-nature-imminence-re-offending">Nature and
-                  imminence of re-offending</h3>
-                <div id="defendant-nature-imminence-re-offending-hint" class="govuk-hint">
-                  Describe what the nature of re-offending is and how it may be
+                <h3 class="govuk-heading-m" for="defendant-nature-imminence-reoffending">Nature and
+                  imminence of reoffending</h3>
+                <div id="defendant-nature-imminence-reoffending-hint" class="govuk-hint">
+                  Describe what the nature of reoffending is and how it may be
                   managed. If other factors contradict OGRS scores, then explain
                   why the OGRS score is wrong, what factor is affecting it, and
                   what the risk actually is.
                 </div>
-                <textarea class="govuk-textarea" id="defendant-nature-imminence-re-offending" name="defendant-nature-imminence-re-offending" rows="8" aria-describedby="defendant-nature-imminence-re-offending-hint" >{{data['defendant-nature-imminence-re-offending']}}</textarea>
+                <textarea class="govuk-textarea" id="defendant-nature-imminence-reoffending" name="defendant-nature-imminence-reoffending" rows="8" aria-describedby="defendant-nature-imminence-reoffending-hint" >{{data['defendant-nature-imminence-reoffending']}}</textarea>
               </div>
               <div class="govuk-form-group">
                 <h3 class="govuk-heading-m" for="defendant-culpability">Risk of
-                  seriousness</h3>
+                  serious harm</h3>
+                <div id="defendant-culpability-hint" class="govuk-hint">
+                  Summarise the risk of serious harm</div>
                 <textarea class="govuk-textarea" id="defendant-risk-of-seriousness" name="defendant-risk-of-seriousness" rows="8" >{{data['defendant-risk-of-seriousness']}}</textarea>
               </div>
               <div class="govuk-button-group">
@@ -199,21 +200,21 @@
                       </thead>
                       <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__header"><abbr title="OGRS3 Probability of proven re-offending">
+                          <th scope="row" class="govuk-table__header"><abbr title="OGRS3 Probability of proven reoffending">
                             OGRS3</abbr></th>
                           <td class="govuk-table__cell">22</td>
                           <td class="govuk-table__cell">36</td>
                           <td class="govuk-table__cell">Low</td>
                         </tr>
                         <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__header"><abbr title="OGP probability of proven non-violent re-offending">
+                          <th scope="row" class="govuk-table__header"><abbr title="OGP probability of proven non-violent reoffending">
                             OGP</abbr></th>
                           <td class="govuk-table__cell">22</td>
                           <td class="govuk-table__cell">34</td>
                           <td class="govuk-table__cell">Medium</td>
                         </tr>
                         <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__header"><abbr title="OVP probability of proven violent type re-offending">
+                          <th scope="row" class="govuk-table__header"><abbr title="OVP probability of proven violent type reoffending">
                             OVP</abbr></th>
                           <td class="govuk-table__cell">12</td>
                           <td class="govuk-table__cell">21</td>
@@ -227,7 +228,7 @@
                           <td class="govuk-table__cell">N/A</td>
                         </tr>
                         <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__header"><abbr title="OSP contact sexual re-offending risk">
+                          <th scope="row" class="govuk-table__header"><abbr title="OSP contact sexual reoffending risk">
                             OSP</abbr></th>
                           <td class="govuk-table__cell">N/A</td>
                           <td class="govuk-table__cell">N/A</td>
