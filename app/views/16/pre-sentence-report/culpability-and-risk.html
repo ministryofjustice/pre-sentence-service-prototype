@@ -79,244 +79,166 @@
             <textarea class="govuk-textarea" id="defendant-culpability" name="defendant-culpability" rows="8" aria-describedby="defendant-culpability-hint">{{data['defendant-culpability']}}</textarea>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <h2 class="govuk-heading-l" for="dependant-caring-responsibilities">
-            Risk to others
-          </h2>
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="risk-of-serious-harm-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h3 class="govuk-fieldset__heading">
-                  Is there a risk of serious harm to others?
-                </h3>
-              </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-of-serious-harm" name="risk-of-serious-harm" type="radio" value="Yes" data-aria-controls="conditional-serious-harm-yes" {{ checked("risk-of-serious-harm", "Yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-of-serious-harm">
-                    Yes
-                  </label>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <h2 class="govuk-heading-l" for="dependant-caring-responsibilities">
+                Risk scores
+              </h2>
+              <div class="govuk-form-group">
+                {{ govukSelect({
+                  id: "risk-serious-harm-others-verification",
+                  name: "risk-serious-harm-others-verification",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>What is the risk of serious harm to others?</h3>"
+                  },
+                  items: riskSeriousHarmOthersList
+                }) }}
+              </div>
+              <div class="govuk-form-group">
+                {{ govukSelect({
+                  id: "risk-serious-harm-known-individuals-verification",
+                  name: "risk-serious-harm-known-individuals-verification",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>What is the risk of serious harm to known individuals?</h3>"
+                  },
+                  items: riskSeriousHarmKnownIndividualsList
+                }) }}
+              </div>
+              <div class="govuk-form-group">
+                {{ govukSelect({
+                  id: "risk-serious-harm-children-verification",
+                  name: "risk-serious-harm-children-verification",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>What is the risk of serious harm to children?</h3>"
+                  },
+                  items: riskSeriousHarmChildrenList
+                }) }}
+              </div>
+              <div class="govuk-form-group">
+                {{ govukSelect({
+                  id: "risk-reconviction-verification",
+                  name: "risk-reconviction-verification",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>What is the risk of reconviction?</h3>"
+                  },
+                  items: riskReconvictionList
+                }) }}
+              </div>
+              <div class="govuk-form-group">
+                {{ govukSelect({
+                  id: "risk-serious-recidivism-verification",
+                  name: "risk-serious-recidivism-verification",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>What is the risk of serious recidivism?</h3>"
+                  },
+                  items: riskSeriousRecidivismList
+                }) }}
+              </div>
+              <div class="govuk-form-group">
+                {{ govukSelect({
+                  id: "risk-serious-harm-to-self-verification",
+                  name: "risk-serious-harm-to-self-verification",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>What is the risk serious harm to themselves?</h3>"
+                  },
+                  items: riskSeriousHarmToSelfList
+                }) }}
+              </div>
+              <div class="govuk-form-group">
+                <h3 class="govuk-heading-m" for="defendant-nature-imminence-re-offending">Nature and
+                  imminence of re-offending</h3>
+                <div id="defendant-nature-imminence-re-offending-hint" class="govuk-hint">
+                  Describe what the nature of re-offending is and how it may be
+                  managed. If other factors contradict ORGS scores, then explain
+                  why the ORGS score is wrong, what factor is affecting it, and
+                  what the risk actually is.
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-serious-harm-yes">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="conditional-reconviction-yes">
-                      How likely is the defendant to seriously harm others? What are the circumstances that could affect this risk?
-                    </label>
-                    <textarea class="govuk-textarea" id="defendant-public-risk" name="defendant-public-risk" rows="8" aria-describedby="defendant-public-risk-hint">{{data['defendant-public-risk']}}</textarea>
+                <textarea class="govuk-textarea" id="defendant-nature-imminence-re-offending" name="defendant-nature-imminence-re-offending" rows="8" aria-describedby="defendant-nature-imminence-re-offending-hint" >{{data['defendant-nature-imminence-re-offending']}}</textarea>
+              </div>
+              <div class="govuk-form-group">
+                <h3 class="govuk-heading-m" for="defendant-culpability">Risk of
+                  seriousness</h3>
+                <textarea class="govuk-textarea" id="defendant-risk-of-seriousness" name="defendant-risk-of-seriousness" rows="8" >{{data['defendant-risk-of-seriousness']}}</textarea>
+              </div>
+              <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                  Save and continue
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
+                  Save draft
+                </button>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <div class="app-split-pane__supporting-information">
+                <div class="govuk-summary-card">
+                  <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Risk predictors</h2>
+                  </div>
+                  <div class="govuk-summary-card__content">
+                    <table class="govuk-table">
+                      <caption class="govuk-table__caption govuk-table__caption--s">
+                        Predictor scores % and risk category</caption>
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header"></th>
+                          <th scope="col" class="govuk-table__header">1 Year</th>
+                          <th scope="col" class="govuk-table__header">2 Year</th>
+                          <th scope="col" class="govuk-table__header">Category</th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header"><abbr title="OGRS3 Probability of proven re-offending">
+                            OGRS3</abbr></th>
+                          <td class="govuk-table__cell">22</td>
+                          <td class="govuk-table__cell">36</td>
+                          <td class="govuk-table__cell">Low</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header"><abbr title="OGP probability of proven non-violent re-offending">
+                            OGP</abbr></th>
+                          <td class="govuk-table__cell">22</td>
+                          <td class="govuk-table__cell">34</td>
+                          <td class="govuk-table__cell">Medium</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header"><abbr title="OVP probability of proven violent type re-offending">
+                            OVP</abbr></th>
+                          <td class="govuk-table__cell">12</td>
+                          <td class="govuk-table__cell">21</td>
+                          <td class="govuk-table__cell">Low</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header"><abbr title="OSP indecent image offending risk">
+                            OSP</abbr></th>
+                          <td class="govuk-table__cell">N/A</td>
+                          <td class="govuk-table__cell">N/A</td>
+                          <td class="govuk-table__cell">N/A</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header"><abbr title="OSP contact sexual re-offending risk">
+                            OSP</abbr></th>
+                          <td class="govuk-table__cell">N/A</td>
+                          <td class="govuk-table__cell">N/A</td>
+                          <td class="govuk-table__cell">N/A</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header"><abbr title="RSR risk of serious recidivism">
+                            RSR</abbr></th>
+                          <td class="govuk-table__cell">N/A</td>
+                          <td class="govuk-table__cell">1.18</td>
+                          <td class="govuk-table__cell">Low (dynamic)</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-of-serious-harm-2" name="risk-of-serious-harm" type="radio" value="No" {{ checked("risk-of-serious-harm", "No") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-of-serious-harm-2">
-                    No
-                  </label>
-                </div>
               </div>
-            </fieldset>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="risk-to-known-individuals-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h3 class="govuk-fieldset__heading">
-                  Is there a risk of harm to known individuals?
-                </h3>
-              </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-to-known-individuals" name="risk-to-known-individuals" type="radio" value="Yes" data-aria-controls="conditional-harm-to-known-individuals-yes" {{ checked("risk-to-known-individuals", "Yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-to-known-individuals">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-harm-to-known-individuals-yes">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="conditional-reconviction-yes">
-                      What is the risk to specific people and what circumstances could affect this risk?
-                    </label>
-                    <textarea class="govuk-textarea" id="defendant-known-person-risk" name="defendant-known-person-risk" rows="8" aria-describedby="defendant-known-person-risk-hint">{{data['defendant-known-person-risk']}}</textarea>
-                  </div>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-to-known-individuals-2" name="risk-to-known-individuals" type="radio" value="No" {{ checked("risk-to-known-individuals", "No") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-to-known-individuals-2">
-                    No
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="risk-of-harm-to-children-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h3 class="govuk-fieldset__heading">
-                  Is there a risk of serious harm to children?
-                </h3>
-              </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-of-harm-to-children" name="risk-of-harm-to-children" type="radio" value="Yes" data-aria-controls="conditional-risk-of-harm-to-children-yes" {{ checked("risk-of-harm-to-children", "Yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-of-harm-to-children">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-risk-of-harm-to-children-yes">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="conditional-risk-of-harm-to-children-yes">
-                      What is the risk to children and what circumstances could affect this risk?
-                    </label>
-                    <textarea class="govuk-textarea" id="defendant-children-risk" name="defendant-children-risk" rows="8" aria-describedby="defendant-children-risk-hint">{{data['defendant-children-risk']}}</textarea>
-                  </div>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-of-harm-to-children-2" name="risk-of-harm-to-children" type="radio" value="No" {{ checked("risk-of-harm-to-children", "No") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-of-harm-to-children-2">
-                    No
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <h2 class="govuk-heading-l">Risk to themselves</h2>
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="risk-of-reconviction-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h3 class="govuk-fieldset__heading">
-                  Is there a general risk of reconviction?
-                </h3>
-              </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-of-reconviction" name="risk-of-reconviction" type="radio" value="Yes" data-aria-controls="conditional-reconviction-yes" {{ checked("risk-of-reconviction", "Yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-of-reconviction">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reconviction-yes">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="conditional-reconviction-yes">
-                      How likely is the defendant to reconvict? What are the circumstances that could affect this risk?
-                    </label>
-                    <textarea class="govuk-textarea" id="defendant-reconviction-risk" name="defendant-reconviction-risk" rows="8" aria-describedby="defendant-reconviction-risk-hint">{{data['defendant-reconviction-risk']}}</textarea>
-                  </div>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-of-reconviction-2" name="risk-of-reconviction" type="radio" value="No" {{ checked("risk-of-reconviction", "No") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-of-reconviction-2">
-                    No
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="risk-of-self-harm-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h3 class="govuk-fieldset__heading">
-                  Is there a risk of serious harm to themselves?
-                </h3>
-              </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-of-self-harm" name="risk-of-self-harm" type="radio" value="Yes" data-aria-controls="conditional-self-harm-yes" {{ checked("risk-of-self-harm", "Yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-of-self-harm">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-self-harm-yes">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="conditional-reconviction-yes">
-                      How likely is the defendant to reconvict? What are the circumstances that could affect this risk?
-                    </label>
-                    <textarea class="govuk-textarea" id="defendant-self-harm-risk" name="defendant-self-harm-risk" rows="8" aria-describedby="defendant-self-harm-risk-hint">{{data['defendant-self-harm-risk']}}</textarea>
-                  </div>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-of-self-harm-2" name="risk-of-self-harm" type="radio" value="No" {{ checked("risk-of-self-harm", "No") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-of-self-harm-2">
-                    No
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-          <div class="govuk-button-group">
-            <button class="govuk-button" data-module="govuk-button">
-              Save and continue
-            </button>
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
-              Save draft
-            </button>
+            </div>
           </div>
         </form>
       </main>
-    </div>
-    <div class="app-split-pane__supporting-information">
-      <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">Risk predictors</h2>
-        </div>
-        <div class="govuk-summary-card__content">
-          <table class="govuk-table">
-            <caption class="govuk-table__caption govuk-table__caption--s">
-              Predictor scores % and risk category</caption>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header"></th>
-                <th scope="col" class="govuk-table__header">1 Year</th>
-                <th scope="col" class="govuk-table__header">2 Year</th>
-                <th scope="col" class="govuk-table__header">Category</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><abbr title="OGRS3 Probability of proven re-offending">
-                  OGRS3</abbr></th>
-                <td class="govuk-table__cell">22</td>
-                <td class="govuk-table__cell">36</td>
-                <td class="govuk-table__cell">Low</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><abbr title="OGP probability of proven non-violent re-offending">
-                  OGP</abbr></th>
-                <td class="govuk-table__cell">22</td>
-                <td class="govuk-table__cell">34</td>
-                <td class="govuk-table__cell">Medium</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><abbr title="OVP probability of proven violent type re-offending">
-                  OVP</abbr></th>
-                <td class="govuk-table__cell">12</td>
-                <td class="govuk-table__cell">21</td>
-                <td class="govuk-table__cell">Low</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><abbr title="OSP indecent image offending risk">
-                  OSP</abbr></th>
-                <td class="govuk-table__cell">N/A</td>
-                <td class="govuk-table__cell">N/A</td>
-                <td class="govuk-table__cell">N/A</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><abbr title="OSP contact sexual re-offending risk">
-                  OSP</abbr></th>
-                <td class="govuk-table__cell">N/A</td>
-                <td class="govuk-table__cell">N/A</td>
-                <td class="govuk-table__cell">N/A</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><abbr title="RSR risk of serious recidivism">
-                  RSR</abbr></th>
-                <td class="govuk-table__cell">N/A</td>
-                <td class="govuk-table__cell">1.18</td>
-                <td class="govuk-table__cell">Low (dynamic)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
     </div>
     <div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
       <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">

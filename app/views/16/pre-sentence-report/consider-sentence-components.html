@@ -68,76 +68,110 @@
           <h1 class="govuk-heading-xl">
             Consider sentence components
           </h1>
-          <div class="govuk-form-group">
-            <h2 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="consider-punitive-sentence-component">
-                Punitive sentence component
-              </label>
-            </h2>
-            <h2 class="govuk-heading-l" for="dependant-caring-responsibilities">
-            </h2>
-            <div id="consider-punitive-sentence-component-hint" class="govuk-hint">
-              Explain what you think the punitive aspect of this sentence
-              should be and why.</div>
-            <textarea class="govuk-textarea" id="consider-punitive-sentence-component" name="consider-punitive-sentence-component" rows="12" aria-describedby="consider-punitive-sentence-component-hint">{{data['consider-punitive-sentence-component']}}</textarea>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <div class="govuk-form-group">
-            <h2 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="consider-rehabilitative-sentence-component">
-                Rehabilitative sentence component
-              </label>
-            </h2>
-            <div id="consider-rehabilitative-sentence-component-hint" class="govuk-hint">
-              Explain what you think the rehabilitative aspect of this
-              sentence is, giving reference to things like available
-              accredited programs available in your area that could benefit
-              the defendant or have proven effective previously.<br/><br/>
-              The <a href="https://epf.linkspace.uk" class="govuk-link" rel="noreferrer noopener" target="_blank">effective proposal framework
-                form (opens in new tab)</a>, if available, should help
-              complete this part of the report.
-              </div>
-            <textarea class="govuk-textarea" id="consider-rehabilitative-sentence-component" name="consider-rehabilitative-sentence-component" rows="12" aria-describedby="consider-rehabilitative-sentence-component-hint">{{data['consider-rehabilitative-sentence-component']}}</textarea>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="risk-to-public-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h2 class="govuk-fieldset__heading">
-                  Does this sentence need a public safety sentence component?
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="consider-punitive-sentence-component">
+                    Punitive sentence component
+                  </label>
                 </h2>
-              </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-to-public" name="risk-to-public" type="radio" value="Yes" data-aria-controls="conditioal-risk-to-public-yes" {{ checked("risk-to-public", "Yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-to-public">
-                    Yes
+                <div id="consider-punitive-sentence-component-hint" class="govuk-hint">
+                  Explain what you think the punitive aspect of this sentence
+                  should be and why.</div>
+                <textarea class="govuk-textarea" id="consider-punitive-sentence-component" name="consider-punitive-sentence-component" rows="12" aria-describedby="consider-punitive-sentence-component-hint">{{data['consider-punitive-sentence-component']}}</textarea>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="consider-rehabilitative-sentence-component">
+                    Rehabilitative sentence component
                   </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditioal-risk-to-public-yes">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="conditional-reconviction-yes">
-                      Explain what you think the public safety aspect of the sentence is.
-                    </label>
-                    <textarea class="govuk-textarea" id="consider-public-safety-sentence-component" name="consider-public-safety-sentence-component" rows="12" aria-describedby="consider-public-safety-sentence-component-hint">{{data['consider-public-safety-sentence-component']}}</textarea>
+                </h2>
+                <div id="consider-rehabilitative-sentence-component-hint" class="govuk-hint">
+                  Explain what you think the rehabilitative aspect of this
+                  sentence is, giving reference to things like available
+                  accredited programs available in your area that could benefit
+                  the defendant or have proven effective previously.<br/><br/>
+                  The <a href="https://epf.linkspace.uk" class="govuk-link" rel="noreferrer noopener" target="_blank">effective proposal framework
+                    form (opens in new tab)</a>, if available, should help
+                  complete this part of the report.
                   </div>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-to-public-2" name="risk-to-public" type="radio" value="No" {{ checked("risk-to-public", "No") }}>
-                  <label class="govuk-label govuk-radios__label" for="risk-to-public-2">
-                    No
+                <textarea class="govuk-textarea" id="consider-rehabilitative-sentence-component" name="consider-rehabilitative-sentence-component" rows="12" aria-describedby="consider-rehabilitative-sentence-component-hint">{{data['consider-rehabilitative-sentence-component']}}</textarea>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="risk-to-public-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h2 class="govuk-fieldset__heading">
+                      Does this sentence need a public safety sentence component?
+                    </h2>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-to-public" name="risk-to-public" type="radio" value="Yes" data-aria-controls="conditioal-risk-to-public-yes" {{ checked("risk-to-public", "Yes") }}>
+                      <label class="govuk-label govuk-radios__label" for="risk-to-public">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditioal-risk-to-public-yes">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="conditional-reconviction-yes">
+                          Explain what you think the public safety aspect of the sentence is.
+                        </label>
+                        <textarea class="govuk-textarea" id="consider-public-safety-sentence-component" name="consider-public-safety-sentence-component" rows="12" aria-describedby="consider-public-safety-sentence-component-hint">{{data['consider-public-safety-sentence-component']}}</textarea>
+                      </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-to-public-2" name="risk-to-public" type="radio" value="No" {{ checked("risk-to-public", "No") }}>
+                      <label class="govuk-label govuk-radios__label" for="risk-to-public-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="alternative-sentencing-options">
+                    Alternative sentencing options
                   </label>
+                </h2>
+                <div id="alternative-sentencing-options-hint" class="govuk-hint">
+                  Explain what relevant alternative sent options you considered
+                  and why that may be less appropriate.</div>
+                <textarea class="govuk-textarea" id="alternative-sentencing-options" name="alternative-sentencing-options" rows="12" aria-describedby="alternative-sentencing-options-hint">{{data['consider-punitive-sentence-component']}}</textarea>
+              </div>
+              <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                  Save and continue
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
+                  Save draft
+                </button>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                  <h2 class="govuk-summary-card__title">Electronic proposal form
+                    1</h2>
+                </div>
+                <div class="govuk-summary-card__content">
+                  <h3 class="govuk-heading-s">Sentence proposals</h3>
+                  <p class="govuk-body">COMMUNITY ORDER (medium seriousness)
+                    with 1-2 requirements</p>
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                  <h3 class="govuk-heading-s">Intervention proposals</h3>
+                  <p class="govuk-body">THINKING SKILLS ACCREDITED PROGRAMME,
+                    19 sessions (15 group, 4 1:1s)</p>
+                  <p class="govuk-body">ELECTRONIC GPS  MONITORED EXCLUSIONS
+                    (med band) Requirement, in the region of 6 months</p>
+                  <p class="govuk-body">STEPPING STONES, PS Intervention,
+                    Contains up to 32 sessions (edited)</p>
                 </div>
               </div>
-            </fieldset>
-          </div>
-          <div class="govuk-button-group">
-            <button class="govuk-button" data-module="govuk-button">
-              Save and continue
-            </button>
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
-              Save draft
-            </button>
+            </div>
           </div>
         </form>
       </main>

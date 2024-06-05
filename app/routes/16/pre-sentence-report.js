@@ -110,7 +110,103 @@ module.exports = function (router) {
   router.get('/' + version + '/pre-sentence-report/culpability-and-risk', function (req, res) {
     req.session.data.pageAction = 'false'
 
-    res.render(version + '/pre-sentence-report/culpability-and-risk')
+    const riskSeriousHarmOthersList = [
+      'Choose an option',
+      'No risk',
+      'Low risk',
+      'Medium risk',
+      'High risk',
+      'Very high risk'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['risk-serious-harm-others-verification']
+      }
+    })
+
+    const riskSeriousHarmKnownIndividualsList = [
+      'Choose an option',
+      'No risk',
+      'Low risk',
+      'Medium risk',
+      'High risk',
+      'Very high risk'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['risk-serious-harm-known-individuals-verification']
+      }
+    })
+
+    const riskSeriousHarmChildrenList = [
+      'Choose an option',
+      'No risk',
+      'Low risk',
+      'Medium risk',
+      'High risk',
+      'Very high risk'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['risk-serious-harm-children-verification']
+      }
+    })
+
+    const riskReconvictionList = [
+      'Choose an option',
+      'No risk',
+      'Low risk',
+      'Medium risk',
+      'High risk',
+      'Very high risk'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['risk-reconviction-verification']
+      }
+    })
+
+    const riskSeriousRecidivismList = [
+      'Choose an option',
+      'No risk',
+      'Low risk',
+      'Medium risk',
+      'High risk',
+      'Very high risk'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['risk-serious-recidivism-verification']
+      }
+    })
+
+    const riskSeriousHarmToSelfList = [
+      'Choose an option',
+      'No risk',
+      'Low risk',
+      'Medium risk',
+      'High risk',
+      'Very high risk'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['risk-serious-harm-to-self-verification']
+      }
+    })
+
+    res.render(version + '/pre-sentence-report/culpability-and-risk', {
+      riskSeriousHarmOthersList,
+      riskSeriousHarmKnownIndividualsList,
+      riskSeriousHarmChildrenList,
+      riskReconvictionList,
+      riskSeriousRecidivismList,
+      riskSeriousHarmToSelfList})
   });
 
   router.post('/' + version + '/pre-sentence-report/culpability-and-risk', function (req, res) {
