@@ -76,8 +76,6 @@
                     Punitive sentence component
                   </label>
                 </h2>
-                <h2 class="govuk-heading-l" for="dependant-caring-responsibilities">
-                </h2>
                 <div id="consider-punitive-sentence-component-hint" class="govuk-hint">
                   Explain what you think the punitive aspect of this sentence
                   should be and why.</div>
@@ -132,6 +130,17 @@
                     </div>
                   </div>
                 </fieldset>
+              </div>
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="alternative-sentencing-options">
+                    Alternative sentencing options
+                  </label>
+                </h2>
+                <div id="alternative-sentencing-options-hint" class="govuk-hint">
+                  Explain what relevant alternative sent options you considered
+                  and why that may be less appropriate.</div>
+                <textarea class="govuk-textarea" id="alternative-sentencing-options" name="alternative-sentencing-options" rows="12" aria-describedby="alternative-sentencing-options-hint">{{data['consider-punitive-sentence-component']}}</textarea>
               </div>
               <div class="govuk-button-group">
                 <button class="govuk-button" data-module="govuk-button">
