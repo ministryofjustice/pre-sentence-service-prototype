@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Delete address" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">&nbsp;</nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="delete-address" method="post" novalidate>
+          <span class="govuk-caption-l">
+            Dylan Adam Armstrong CRN: E234516
+          </span>
+          <h1 class="govuk-heading-l">Are you sure you want to delete this
+            address?</h1>
+          <div class="moj-ticket-panel-container">
+            <article class="moj-ticket-panel" aria-label="Other address 2">
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <div class="govuk-grid-row govuk-!-margin-bottom-3">
+                  <div class="govuk-grid-column-two-thirds">
+                    <h3 class="govuk-heading-s">Parent's address</h3>
+                  </div>
+                </div>
+                <p class="govuk-body">
+                  111b Baker Street<br />
+                  Fauxsham<br />
+                  Bedfordshire<br />
+                  BY1 8UT
+                </p>
+              </section>
+            </article>
+          </div>
+          <div class="govuk-button-group">
+            <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+              Delete address
+            </button>
+            <a href="../essential-information" class="govuk-link" style="font-weight: normal;">Cancel</a>
+          </div>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link"
+        href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+          xmlns="http://www.w3.org/2000/svg" width="13" height="17"
+          viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z">
+          </path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}
