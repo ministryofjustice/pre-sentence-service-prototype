@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Add address" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">&nbsp;</nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="add-address" method="post" novalidate>
+          <span class="govuk-caption-l">
+            Dylan Adam Armstrong CRN: E234516
+          </span>
+          <h1 class="govuk-heading-l">
+            {{data['addEditAddress'] | default('Add') }} address
+          </h1>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="other-address-description">
+                  Address description
+                </label>
+                <input class="govuk-input govuk-input--width-20"" id="other-address-description" name="other-address-description" type="text" autocomplete="off" value="{{data['other-address-description'] | default('Partner\'s address')}}">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="other-address-line-1">
+                  Address line 1
+                </label>
+                <input class="govuk-input govuk-input--width-30" id="other-address-line-1" name="other-address-line-1" type="text" autocomplete="off" value="{{data['other-address-line-1'] | default('19 Thorne Avenue')}}">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-2">
+                  Address line 2 (optional)
+                </label>
+                <input class="govuk-input govuk-input--width-30" id="other-address-line-2" name="other-address-line-2" type="text" autocomplete="off" value="{{data['other-address-line-2']}}">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="other-address-town">
+                  Town or city
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="other-address-town" name="other-address-town" autocomplete="off" type="text" value="{{data['other-address-town'] | default('Wissendine')}}">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-county">
+                  County (optional)
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="other-address-county" name="other-address-county" autocomplete="off" type="text" value="{{data['other-address-county'] | default('East Borsham')}}">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="other-address-postcode">
+                  Postcode
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="other-address-postcode" name="other-address-postcode" type="text" autocomplete="off" value="{{data['other-address-postcode'] | default('EA1 7ET')}}">
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and return
+            </button>
+            <a href="../defendant-details" class="govuk-link" style="font-weight: normal;">Cancel</a>
+          </div>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link"
+        href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+          xmlns="http://www.w3.org/2000/svg" width="13" height="17"
+          viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z">
+          </path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}
