@@ -39,11 +39,11 @@ module.exports = function (router) {
     } else if (pageAction ==='addAddress'){
       res.redirect('addresses/add-address')
     } else {
-      res.redirect('summary-of-offences-under-consideration')
+      res.redirect('offence-analysis')
     }
   });
 
-  router.get('/' + version + '/pre-sentence-report/summary-of-offences-under-consideration', function (req, res) {
+  router.get('/' + version + '/pre-sentence-report/offence-analysis', function (req, res) {
     req.session.data.pageAction = 'false'
 
     res.render(version + '/pre-sentence-report/summary-of-offences-under-consideration')
@@ -53,7 +53,7 @@ module.exports = function (router) {
     const pageAction = req.session.data['pageAction']
 
     if (pageAction == 'saveDraft'){
-      res.redirect('summary-of-offences-under-consideration')
+      res.redirect('offence-analysis')
     }else {
       res.redirect('victim-impact-assessment')
     }
