@@ -1,0 +1,80 @@
+@media (min-width: 40.0625em) {
+    .nhsuk-do-dont-list {
+        padding: 32px;
+    }
+}
+@media (min-width: 40.0625em) {
+    .nhsuk-do-dont-list {
+        margin-top: 48px;
+    }
+}
+@media (min-width: 40.0625em) {
+    .nhsuk-do-dont-list {
+        margin-bottom: 48px;
+    }
+}
+.nhsuk-do-dont-list__label {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    background-color: #005eb8;
+    color: #fff;
+    display: inline-block;
+    margin: 0 0 8px -33px;
+    padding: 8px 32px;
+    position: relative;
+    top: -16px;
+}
+
+.nhsuk-do-dont-list>*:last-child {
+    margin-bottom: 0;
+}
+
+.nhsuk-list--tick, .nhsuk-list--cross {
+    list-style: none;
+    margin-top: 0;
+    padding-left: 40px;
+    position: relative;
+}
+
+@media (min-width: 40.0625em) {
+    ol>li, ul>li, .nhsuk-list>li {
+        margin-bottom: 8px;
+    }
+}
+
+.nhsuk-list--tick svg, .nhsuk-list--cross svg {
+    left: -4px;
+    margin-top: -5px;
+    position: absolute;
+}
+
+.nhsuk-icon__tick {
+    stroke: #007f3b;
+}
+
+.nhsuk-list--tick svg, .nhsuk-list--cross svg {
+    left: -4px;
+    margin-top: -5px;
+    position: absolute;
+}
+
+.nhsuk-icon__cross {
+    fill: #d5281b;
+}
+
+.nhsuk-icon {
+    height: 34px;
+    width: 34px;
+}
+
+.nhsuk-do-dont-list {
+    margin-bottom: 40px;
+    margin-top: 40px;
+    padding: 24px;
+    background-color: #f0f4f5;
+    color: #212b32;
+    border: 1px solid #d8dde0;
+    padding-top: 0 !important;
+    font-family: "GDS Transport", arial, sans-serif;
+}
