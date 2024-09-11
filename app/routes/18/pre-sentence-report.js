@@ -103,14 +103,14 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('additional-behavioural-factors-and-lifestyle-considerations')
     } else {
-      res.redirect('culpability-and-risk')
+      res.redirect('risk-analysis')
     }
   });
 
-  router.get('/' + version + '/pre-sentence-report/culpability-and-risk', function (req, res) {
+  router.get('/' + version + '/pre-sentence-report/risk-analysis', function (req, res) {
     req.session.data.pageAction = 'false'
 
-    const riskSeriousHarmOthersList = [
+    const riskSeriousHarmToPublicList = [
       'Choose an option',
       'No risk',
       'Low risk',
@@ -121,11 +121,11 @@ module.exports = function (router) {
       return {
         value: item,
         text: item,
-        selected: item === req.session.data['risk-serious-harm-others-verification']
+        selected: item === req.session.data['risk-serious-harm-to-public']
       }
     })
 
-    const riskSeriousHarmKnownIndividualsList = [
+    const riskSeriousHarmToIntimatePartnersList = [
       'Choose an option',
       'No risk',
       'Low risk',
@@ -136,11 +136,11 @@ module.exports = function (router) {
       return {
         value: item,
         text: item,
-        selected: item === req.session.data['risk-serious-harm-known-individuals-verification']
+        selected: item === req.session.data['risk-serious-harm-to-intimate-partners']
       }
     })
 
-    const riskDomesticAbuseList = [
+    const riskSeriousHarmToStaffList = [
       'Choose an option',
       'No risk',
       'Low risk',
@@ -151,11 +151,11 @@ module.exports = function (router) {
       return {
         value: item,
         text: item,
-        selected: item === req.session.data['risk-domestic-abuse-verification']
+        selected: item === req.session.data['risk-serious-harm-to-intimate-partners']
       }
     })
 
-    const riskSeriousHarmChildrenList = [
+    const riskSeriousHarmToKnownIndividualsList = [
       'Choose an option',
       'No risk',
       'Low risk',
@@ -166,11 +166,11 @@ module.exports = function (router) {
       return {
         value: item,
         text: item,
-        selected: item === req.session.data['risk-serious-harm-children-verification']
+        selected: item === req.session.data['risk-serious-harm-to-known-individuals']
       }
     })
 
-    const riskReconvictionList = [
+    const riskSeriousHarmToChildrenList = [
       'Choose an option',
       'No risk',
       'Low risk',
@@ -181,55 +181,24 @@ module.exports = function (router) {
       return {
         value: item,
         text: item,
-        selected: item === req.session.data['risk-reconviction-verification']
+        selected: item === req.session.data['risk-serious-harm-to-children']
       }
     })
 
-    const riskSeriousRecidivismList = [
-      'Choose an option',
-      'No risk',
-      'Low risk',
-      'Medium risk',
-      'High risk',
-      'Very high risk'
-    ].map(item => {
-      return {
-        value: item,
-        text: item,
-        selected: item === req.session.data['risk-serious-recidivism-verification']
-      }
+    res.render(version + '/pre-sentence-report/risk-analysis', {
+      riskSeriousHarmToPublicList,
+      riskSeriousHarmToIntimatePartnersList,
+      riskSeriousHarmToStaffList,
+      riskSeriousHarmToKnownIndividualsList,
+      riskSeriousHarmToChildrenList
     })
-
-    const riskSeriousHarmToSelfList = [
-      'Choose an option',
-      'No risk',
-      'Low risk',
-      'Medium risk',
-      'High risk',
-      'Very high risk'
-    ].map(item => {
-      return {
-        value: item,
-        text: item,
-        selected: item === req.session.data['risk-serious-harm-to-self-verification']
-      }
-    })
-
-    res.render(version + '/pre-sentence-report/culpability-and-risk', {
-      riskSeriousHarmOthersList,
-      riskSeriousHarmKnownIndividualsList,
-      riskDomesticAbuseList,
-      riskSeriousHarmChildrenList,
-      riskReconvictionList,
-      riskSeriousRecidivismList,
-      riskSeriousHarmToSelfList})
   });
 
-  router.post('/' + version + '/pre-sentence-report/culpability-and-risk', function (req, res) {
+  router.post('/' + version + '/pre-sentence-report/risk-analysis', function (req, res) {
     const pageAction = req.session.data['pageAction']
 
     if (pageAction == 'saveDraft'){
-      res.redirect('culpability-and-risk')
+      res.redirect('risk-analysis')
     } else {
       res.redirect('consider-sentence-components')
     }

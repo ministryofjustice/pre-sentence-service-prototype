@@ -1,0 +1,252 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Risk analysis" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">
+                Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offence-analysis">
+                Offence analysis</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="victim-impact-assessment">
+                Victim impact assessment</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="pattern-of-offending-and-response-to-supervision">
+                Pattern of offending and response to supervision</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="additional-behavioural-factors-and-lifestyle-considerations.html">
+                Additional behaviours and lifestyle considerations</a>
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="culpability-and-risk">
+                Risk analysis</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="consider-sentence-components">
+                Consider sentence components</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="write-sentencing-proposal">
+                Write sentencing proposal</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sources-of-information">
+                Sources of information</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="preview-report">
+                Preview report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="risk-analysis" method="post" novalidate>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <span class="govuk-caption-xl">
+                Dylan Adam Armstrong CRN: E234516
+              </span>
+              <h1 class="govuk-heading-xl">
+                Risk analysis
+              </h1>
+              <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-visually-hidden">Warning</span>
+                  You must complete both an OASys Layer 1 Assessment, and EPF1
+                  Assessment before this report can be finished.
+                </strong>
+              </div>
+              <div class="govuk-form-group">
+                <h2 class="govuk-heading-l" for="defendant-culpability">
+                  Likelihood of reoffending
+                </h2>
+                <div id="defendant-culpability-hint">
+                  <p class="govuk-body">Analyse the nature and likelihood of
+                    reoffending. Focus on key features of circumstances of the
+                    defendant's life, past and present, and explain how they may
+                    influence offending. You should also relate things that have
+                    de-escalated or reduced the frequency of re-offending.</p>
+                  <p class="govuk-body"> Your analysis should be informed by the
+                    completion of the OGRS and RSR tools.</p>
+                </div>
+                <textarea class="govuk-textarea" id="defendant-likelihood-of-reoffending" name="defendant-likelihood-of-reoffending" rows="8" aria-describedby="defendant-likelihood-of-reoffending-hint">{{data['defendant-likelihood-of-reoffending']}}</textarea>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="risk-of-domestic-abuse-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h2 class="govuk-fieldset__heading">
+                      Is there a risk of domestic abuse?
+                    </h2>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-of-domestic-abuse" name="risk-of-domestic-abuse" type="radio" value="Yes, there is a risk of domestic abuse" data-aria-controls="conditional-risk-of-domestic-abuse">
+                      <label class="govuk-label govuk-radios__label" for="risk-of-domestic-abuse">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-risk-of-domestic-abuse">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="analyse-risk-of-domestic-abuse">
+                          <h3 class="govuk-heading-m">
+                            Analyse the risk of domestic abuse
+                          </h3>
+                        </label>
+                        <p class="govuk-body">The Spousal Assault Risk
+                          Assessment (SARA) should be completed for all
+                          individuals where there is evidence of domestic abuse,
+                          and OSP for those with a sexual offence.</p>
+                        <textarea class="govuk-textarea" id="analyse-risk-of-domestic-abuse" name="analyse-risk-of-domestic-abuse" rows="8">{{data['analyse-risk-of-domestic-abuse']}}</textarea>
+                      </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-of-domestic-abuse-2" name="risk-of-domestic-abuse" type="radio" value="No risk of domestic abuse">
+                      <label class="govuk-label govuk-radios__label" for="risk-of-domestic-abuse-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="risk-of-sexual-offence-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h2 class="govuk-fieldset__heading">
+                      Is there a sexual offence element?
+                    </h2>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-of-sexual-offence" name="risk-of-sexual-offence" type="radio" value="Yes, there is a sexual offence element" data-aria-controls="conditional-risk-of-sexual-offence">
+                      <label class="govuk-label govuk-radios__label" for="risk-of-sexual-offence">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-risk-of-sexual-offence">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="analyse-risk-of-sexual-offence">
+                          <h3 class="govuk-heading-m">
+                            Analyse the sexual offence element
+                          </h3>
+                        </label>
+                        <p class="govuk-body">TODO SOME GUIDANCE HERE</p>
+                        <textarea class="govuk-textarea" id="analyse-risk-of-sexual-offence" name="analyse-risk-of-sexual-offence" rows="8">{{data['analyse-risk-of-sexual-offence']}}</textarea>
+                      </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-of-sexual-offence-2" name="risk-of-sexual-offence" type="radio" value="No sexual offence element">
+                      <label class="govuk-label govuk-radios__label" for="risk-of-sexual-offence-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <h2 class="govuk-heading-l" for="dependant-caring-responsibilities">
+                Risk of serious harm
+              </h2>
+              <div class="govuk-form-group">
+                {{ govukSelect({
+                  id: "risk-serious-harm-to-public",
+                  name: "risk-serious-harm-to-public",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>Risk to public</h3>"
+                  },
+                  items: riskSeriousHarmToPublicList
+                }) }}
+              </div>
+              <div class="govuk-form-group">
+                {{ govukSelect({
+                  id: "risk-serious-harm-to-intimate-partners",
+                  name: "risk-serious-harm-to-intimate-partners",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>Risk to intimate partners</h3>"
+                  },
+                  items: riskSeriousHarmToIntimatePartnersList
+                }) }}
+              </div>
+              <div class="govuk-form-group">
+                {{ govukSelect({
+                  id: "risk-serious-harm-to-staff",
+                  name: "risk-serious-harm-to-staff",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>Risk to staff</h3>"
+                  },
+                  items: riskSeriousHarmToStaffList
+                }) }}
+              </div>
+              <div class="govuk-form-group">
+                {{ govukSelect({
+                  id: "risk-serious-harm-to-known-individuals",
+                  name: "risk-serious-harm-to-known-individuals",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>Risk to known individuals</h3>"
+                  },
+                  items: riskSeriousHarmToKnownIndividualsList
+                }) }}
+              </div>
+              <div class="govuk-form-group">
+                {{ govukSelect({
+                  id: "risk-serious-harm-to-children",
+                  name: "risk-serious-harm-to-children",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>Risk to children</h3>"
+                  },
+                  items: riskSeriousHarmToChildrenList
+                }) }}
+              </div>
+              <div class="govuk-form-group">
+                <h3 class="govuk-heading-m" for="defendant-risk-of-serious-harm">
+                  Explain the risk of serious harm</h3>
+                <div id="defendant-risk-of-serious-harm-hint" class="govuk-hint">
+                  WORDS WE MAY WANT TO USE
+                </div>
+                <textarea class="govuk-textarea" id="defendant-risk-of-serious-harm" name="defendant-risk-of-serious-harm" rows="8" aria-describedby="defendant-risk-of-serious-harm-hint" >{{data['defendant-risk-of-serious-harm']}}</textarea>
+              </div>
+              <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                  Save and continue
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
+                  Save draft
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}
