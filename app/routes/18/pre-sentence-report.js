@@ -216,21 +216,21 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('consider-sentence-components')
     } else {
-      res.redirect('write-sentencing-proposal')
+      res.redirect('sentencing-proposal')
     }
   });
 
-  router.get('/' + version + '/pre-sentence-report/write-sentencing-proposal', function (req, res) {
+  router.get('/' + version + '/pre-sentence-report/sentencing-proposal', function (req, res) {
     req.session.data.pageAction = 'false'
 
-    res.render(version + '/pre-sentence-report/write-sentencing-proposal')
+    res.render(version + '/pre-sentence-report/sentencing-proposal')
   });
 
-  router.post('/' + version + '/pre-sentence-report/write-sentencing-proposal', function (req, res) {
+  router.post('/' + version + '/pre-sentence-report/sentencing-proposal', function (req, res) {
     const pageAction = req.session.data['pageAction']
 
     if (pageAction == 'saveDraft'){
-      res.redirect('write-sentencing-proposal')
+      res.redirect('sentencing-proposal')
     } else {
       res.redirect('sources-of-information')
     }
