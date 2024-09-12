@@ -1,0 +1,170 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Summary page" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">
+                Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offence-analysis">
+                Offence analysis</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="additional-behavioural-factors-and-lifestyle-considerations">
+                Additional behaviours and lifestyle considerations</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="risk-analysis">
+                Risk analysis</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sentencing-proposal">
+                Sentencing proposal</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sources-of-information">
+                Sources of information</a>
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="summary-page">
+                Summary page</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="preview-report">
+                Preview report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="summary-page" method="post" novalidate>
+          <span class="govuk-caption-xl">
+            Dylan Adam Armstrong CRN: E234516
+          </span>
+          <h1 class="govuk-heading-xl">
+            Summary page
+          </h1>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="proposed-sentence">
+                    Impact of offence
+                  </label>
+                </h2>
+                <p class="govuk-body">List the main impacts this offence has had
+                  on the victim or community.</p>
+                <textarea class="govuk-textarea govuk-input--width-20" id="impact-of-offence" name="impact-of-offence" rows="7">{{data['impact-of-offence']}}</textarea>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="acceptance-of-responsibility-aggravating-factors">
+                    Acceptance of responsibility and aggravating factors
+                  </label>
+                </h2>
+                <p class="govuk-body">List the main factors that have affected
+                  responsibility, culpability and other aggravating factors.</p>
+                <textarea class="govuk-textarea govuk-input--width-20" id="acceptance-of-responsibility-aggravating-factors" name="acceptance-of-responsibility-aggravating-factors" rows="7">{{data['acceptance-of-responsibility-aggravating-factors']}}</textarea>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="risk-considerations">
+                    Risk considerations
+                  </label>
+                </h2>
+                <p class="govuk-body">List the main factors that will affect
+                  managing risk. Include important risk, relevant defendant
+                  needs and strengths or positive factors that may help manage
+                  risk.</p>
+                <textarea class="govuk-textarea govuk-input--width-20" id="risk-considerations" name="risk-considerations" rows="7">{{data['risk-considerations']}}</textarea>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="proposed-sentence-summary">
+                    Proposed sentence summary and key components?
+                  </label>
+                </h2>
+                <p class="govuk-body">Summarise the sentence and list relevant
+                  key components such as community orders, RAR days, prohibited
+                  activities.</p>
+                <textarea class="govuk-textarea" id="proposed-sentence-summary" name="proposed-sentence-summary" rows="4">{{data['proposed-sentence-summary']}}</textarea>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="why-best-outcome">
+                    Why will this lead to a better outcome?
+                  </label>
+                </h2>
+                <textarea class="govuk-textarea" id="why-better-outcome" name="why-better-outcome" rows="4">{{data['why-better-outcome']}}</textarea>
+              </div>
+            </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="custodial-sentencing-component">
+                    What is your recommendation for a custodial sentencing
+                    component and why is that relevant?
+                  </label>
+                </h2>
+                <textarea class="govuk-textarea" id="custodial-sentencing-component" name="custodial-sentencing-component" rows="4">{{data['custodial-sentencing-component']}}</textarea>
+              </div>
+            </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="alternative-sentencing-options">
+                    What alternative sentencing options are there and what
+                    outcomes do we think should not be considered?
+                  </label>
+                </h2>
+                <textarea class="govuk-textarea" id="alternative-sentencing-options" name="alternative-sentencing-options" rows="12">{{data['alternative-sentencing-options']}}</textarea>
+              </div>
+            </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
+              Save draft
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}

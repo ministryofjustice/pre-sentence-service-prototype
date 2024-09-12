@@ -1,0 +1,201 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Offence analysis" %}
+
+{% block content %}
+  <div class="app-split-pane app-width-container">
+    <div class="app-split-pane__nav">
+      <nav class="app-subnav" aria-labelledby="app-subnav-heading">
+        <h2 class="govuk-visually-hidden" id="app-subnav-heading">Sections</h2>
+          <ul class="app-subnav__section">
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="defendant-details">
+                Defendant details</a>
+            </li>
+            <li class="app-subnav__section-item app-subnav__section-item--current">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="offence-analysis">
+                Offence analysis</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="additional-behavioural-factors-and-lifestyle-considerations">
+                Additional behaviours and lifestyle considerations</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="risk-analysis">
+                Risk analysis</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sentencing-proposal">
+                Sentencing proposal</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sources-of-information">
+                Sources of information</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="summary-page">
+                Summary page</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="preview-report">
+                Preview report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="sign-your-report">
+                Sign your report</a>
+            </li>
+            <li class="app-subnav__section-item">
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="publish-report">
+                Publish report</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="app-split-pane__content">
+      <main id="main-content" class="app-content" role="main">
+        <form action="offence-analysis" method="post" novalidate>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-form-group">
+                <span class="govuk-caption-xl">
+                  Dylan Adam Armstrong CRN: E234516
+                </span>
+                <h1 class="govuk-heading-xl">Offence analysis</h1>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <table class="govuk-table">
+                    <caption class="govuk-table__caption govuk-table__caption--l">
+                      <h2 class="govuk-heading-l">Offences from NDelius</h2>
+                      <div id="signIn-hint" class="govuk-hint">Order offences
+                        starting with the most serious at the top. Tick the
+                        checkboxes to include the offences relevant to this report.
+                      </div>
+                    </caption>
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Offence</th>
+                        <th scope="col" class="govuk-table__header">Description</th>
+                        <th scope="col" class="govuk-table__header">Offence Date</th>
+                        <th scope="col" class="govuk-table__header">Plea</th>
+                        <th scope="col" class="govuk-table__header">Order</th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="offence1" name="offence1" type="checkbox" value="Theft of a motor vehicle">
+                            <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold" for="offence1">
+                              Theft of a motor vehicle
+                            </label>
+                          </div>
+                        </th>
+                        <td class="govuk-table__cell">Stole a car to the value of
+                          £30,000</td>
+                        <td class="govuk-table__cell">12 July 2024</td>
+                        <td class="govuk-table__cell">NG</td>
+                        <td class="govuk-table__cell">🔼 🔽</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="offence1" name="offence1" type="checkbox" value="Theft of a motor vehicle">
+                            <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold" for="offence1">
+                              Theft from a motor vehicle
+                            </label>
+                          </div>
+                        </th>
+                        <td class="govuk-table__cell">Stole Coat, bag and tablet
+                          to the value of £2,500</td>
+                        <td class="govuk-table__cell">12 July 2024</td>
+                        <td class="govuk-table__cell">NG</td>
+                        <td class="govuk-table__cell">🔼 🔽</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="offence1" name="offence1" type="checkbox" value="Theft of a motor vehicle">
+                            <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold" for="offence1">
+                              Theft
+                            </label>
+                          </div>
+                        </th>
+                        <td class="govuk-table__cell">Using keys stolen from the
+                          car they then went on to take a wallet, purse, and 2
+                          laptops to the value of £5,000</td>
+                        <td class="govuk-table__cell">12 July 2024</td>
+                        <td class="govuk-table__cell">NG</td>
+                        <td class="govuk-table__cell">🔼 🔽</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <div class="govuk-form-group">
+                <h2 class="govuk-heading-l">Analysis of offences under
+                  consideration</h2>
+                <p class="govuk-body">Give a rounded analysis of the offences
+                  under consideration for this report, assessing:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>the impact of the offence/s and the person's attitudes
+                    to it</li>
+                  <li>the person's level of responsibility, planning or
+                    pre-meditation and (where relevant) their role</li>
+                  <li>the factors relating to the commission of the offence</li>
+                </ul>
+                <details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help with analysis of offences under consideration
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">You may want to discuss the:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>nature of the offences</li>
+                      <li>opportunity and pre-meditation</li>
+                      <li>behaviour and circumstances of the defendant and how
+                        has changed over time</li>
+                      <li>effect this has had on the victim</li>
+                      <li>defendant's lifestyle considerations which could have
+                        contributed to this offence</li>
+                    </ul>
+                  </div>
+                </details>
+                <textarea class="govuk-textarea" id="summary-of-offences" name="summary-of-offences" rows="18" aria-describedby="summary-of-offences-hint">{{data['summary-of-offences']}}</textarea>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <div class="govuk-form-group">
+                <h2 class="govuk-heading-l">Pattern of offending and response to
+                  supervision</h2>
+                <p class="govuk-body">Analyse factors linked to previous
+                  offences, patterns in offending and offence/s similar in
+                  nature to the current offences under consideration.</p>
+                <p class="govuk-body">
+                  You should also highlight any previous responses to
+                  supervision that did or did not work as well as support that
+                  may reduce the chances of offending or circumstances that may
+                  increase it.</p>
+                <textarea class="govuk-textarea" id="pattern-of-offending-and-response-to-supervision" name="pattern-of-offending-and-response-to-supervision" rows="18" aria-describedby="pattern-of-offending-and-response-to-supervision-hint">{{data['pattern-of-offending-and-response-to-supervision']}}</textarea>
+              </div>
+            </div>
+            <div class="govuk-button-group">
+              <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="saveDraft">
+                Save draft
+              </button>
+            </div>
+          </form>
+        </main>
+      </div>
+    </div>
+    <div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+{% endblock %}
