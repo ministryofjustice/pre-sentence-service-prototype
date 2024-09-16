@@ -95,7 +95,7 @@
                   </legend>
                   <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="risk-of-domestic-abuse" name="risk-of-domestic-abuse" type="radio" value="Yes, there is a risk of domestic abuse" data-aria-controls="conditional-risk-of-domestic-abuse">
+                      <input class="govuk-radios__input" id="risk-of-domestic-abuse" name="risk-of-domestic-abuse" type="radio" value="Yes, there is a risk of domestic abuse" data-aria-controls="conditional-risk-of-domestic-abuse" {{ checked("risk-of-domestic-abuse", "Yes, there is a risk of domestic abuse") }}>
                       <label class="govuk-label govuk-radios__label" for="risk-of-domestic-abuse">
                         Yes
                       </label>
@@ -115,7 +115,7 @@
                       </div>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="risk-of-domestic-abuse-2" name="risk-of-domestic-abuse" type="radio" value="No risk of domestic abuse">
+                      <input class="govuk-radios__input" id="risk-of-domestic-abuse-2" name="risk-of-domestic-abuse" type="radio" value="No risk of domestic abuse" {{ checked("risk-of-domestic-abuse", "No risk of domestic abuse") }}>
                       <label class="govuk-label govuk-radios__label" for="risk-of-domestic-abuse-2">
                         No
                       </label>
@@ -133,7 +133,7 @@
                   </legend>
                   <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="risk-of-sexual-offence" name="risk-of-sexual-offence" type="radio" value="Yes, there is a sexual offence element" data-aria-controls="conditional-risk-of-sexual-offence">
+                      <input class="govuk-radios__input" id="risk-of-sexual-offence" name="risk-of-sexual-offence" type="radio" value="Yes, there is a sexual offence element" data-aria-controls="conditional-risk-of-sexual-offence" {{ checked("risk-of-sexual-offence", "Yes, there is a sexual offence element") }}>
                       <label class="govuk-label govuk-radios__label" for="risk-of-sexual-offence">
                         Yes
                       </label>
@@ -150,7 +150,7 @@
                       </div>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="risk-of-sexual-offence-2" name="risk-of-sexual-offence" type="radio" value="No sexual offence element">
+                      <input class="govuk-radios__input" id="risk-of-sexual-offence-2" name="risk-of-sexual-offence" type="radio" value="No sexual offence element" {{ checked("risk-of-sexual-offence", "No sexual offence element") }}>
                       <label class="govuk-label govuk-radios__label" for="risk-of-sexual-offence-2">
                         No
                       </label>
