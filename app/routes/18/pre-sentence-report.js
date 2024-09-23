@@ -285,7 +285,7 @@ module.exports = function (router) {
     const pageAction = req.session.data['pageAction']
 
     if (pageAction == 'saveDraft'){
-      res.redirect('risk-analysis')
+      res.redirect('risk-analysis-alt')
     } else {
       res.redirect('sentencing-proposal')
     }
