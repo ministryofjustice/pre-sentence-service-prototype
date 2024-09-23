@@ -1100,14 +1100,6 @@
                       <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-l report-heading--purple">
                           Risk analysis</h2>
-                        <h3 class="govuk-heading-m report-heading--purple">
-                          Likelihood of reoffending</h3>
-                        <p class="govuk-body">{{data['defendant-likelihood-of-reoffending']}}</p>
-                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                        <h3 class="govuk-heading-m report-heading--purple">
-                          Risk of domestic abuse</h3>
-                        <p class="govuk-body">{{data['analyse-risk-of-domestic-abuse']}}</p>
-                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                         <table class="govuk-table">
                           <caption class="govuk-table__caption govuk-table__caption--m">
                             <h3 class="govuk-heading-m report-heading--purple">
@@ -1170,6 +1162,14 @@
                             </tr>
                           </tbody>
                         </table>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                        <h3 class="govuk-heading-m report-heading--purple">
+                          Likelihood of reoffending</h3>
+                        <p class="govuk-body">{{data['defendant-likelihood-of-reoffending']}}</p>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                        <h3 class="govuk-heading-m report-heading--purple">
+                          Risk of domestic abuse</h3>
+                        <p class="govuk-body">{{data['analyse-risk-of-domestic-abuse']}}</p>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                         <h3 class="govuk-heading-m report-heading--purple">
                           Risk of serious harm analysis</h3>
@@ -1932,7 +1932,7 @@
                             </tr>
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Date of birth:</th>
-                              <td class="govuk-table__cell">{{data['date-of-birth-day']}}/{{data['date-of-birth-month']}}/{{data['date-of-birth-year']}} XX years old
+                              <td class="govuk-table__cell">{{data['date-of-birth-day']}}/{{data['date-of-birth-month']}}/{{data['date-of-birth-year']}} (XX years old)
                                 <br><a class="govuk-link" href="defendant-details">Change
                                 <span class="govuk-visually-hidden">date of birth</span>
                               </a></td>
@@ -1944,26 +1944,14 @@
                               <td class="govuk-table__cell">95/22151311354XY</td>
                             </tr>
                             <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">NINO:</th>
-                              <td class="govuk-table__cell">QQ 12 34 56 C</td>
-                              <th scope="row" class="govuk-table__header">Solicitor:</th>
-                              <td class="govuk-table__cell">Phoenix Wright</td>
-                            </tr>
-                            <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Requesting Court:</th>
                               <td class="govuk-table__cell">Oxford and Southern Oxfordshire Magistrates Court</td>
                               <th scope="row" class="govuk-table__header">Date requested:</th>
                               <td class="govuk-table__cell">21/08/2024</td>
                             </tr>
                             <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Originating Court:</th>
-                              <td class="govuk-table__cell">TODO HOW IS THIS DIFFERENT FROM THE REQUESTING COURT?</td>
                               <th scope="row" class="govuk-table__header">Sentencing Court:</th>
                               <td class="govuk-table__cell">Oxford and Southern Oxfordshire Magistrates Court</td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Local justice area:</th>
-                              <td class="govuk-table__cell">OXFORD Team</td>
                               <th scope="row" class="govuk-table__header">Date completed:</th>
                               <td class="govuk-table__cell">ADDED WHEN THE THING IS PUBLISHED</td>
                             </tr>
