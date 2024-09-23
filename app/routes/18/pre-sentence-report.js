@@ -112,7 +112,6 @@ module.exports = function (router) {
 
     const riskSeriousHarmToPublicList = [
       'Choose an option',
-      'No risk',
       'Low risk',
       'Medium risk',
       'High risk',
@@ -127,7 +126,6 @@ module.exports = function (router) {
 
     const riskSeriousHarmToIntimatePartnersList = [
       'Choose an option',
-      'No risk',
       'Low risk',
       'Medium risk',
       'High risk',
@@ -142,7 +140,6 @@ module.exports = function (router) {
 
     const riskSeriousHarmToStaffList = [
       'Choose an option',
-      'No risk',
       'Low risk',
       'Medium risk',
       'High risk',
@@ -157,7 +154,6 @@ module.exports = function (router) {
 
     const riskSeriousHarmToKnownIndividualsList = [
       'Choose an option',
-      'No risk',
       'Low risk',
       'Medium risk',
       'High risk',
@@ -172,7 +168,6 @@ module.exports = function (router) {
 
     const riskSeriousHarmToChildrenList = [
       'Choose an option',
-      'No risk',
       'Low risk',
       'Medium risk',
       'High risk',
@@ -195,6 +190,98 @@ module.exports = function (router) {
   });
 
   router.post('/' + version + '/pre-sentence-report/risk-analysis', function (req, res) {
+    const pageAction = req.session.data['pageAction']
+
+    if (pageAction == 'saveDraft'){
+      res.redirect('risk-analysis')
+    } else {
+      res.redirect('sentencing-proposal')
+    }
+  });
+
+  router.get('/' + version + '/pre-sentence-report/risk-analysis-alt', function (req, res) {
+    req.session.data.pageAction = 'false'
+
+    const riskSeriousHarmToPublicList = [
+      'Choose an option',
+      'Low risk',
+      'Medium risk',
+      'High risk',
+      'Very high risk'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['risk-serious-harm-to-public']
+      }
+    })
+
+    const riskSeriousHarmToIntimatePartnersList = [
+      'Choose an option',
+      'Low risk',
+      'Medium risk',
+      'High risk',
+      'Very high risk'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['risk-serious-harm-to-intimate-partners']
+      }
+    })
+
+    const riskSeriousHarmToStaffList = [
+      'Choose an option',
+      'Low risk',
+      'Medium risk',
+      'High risk',
+      'Very high risk'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['risk-serious-harm-to-intimate-partners']
+      }
+    })
+
+    const riskSeriousHarmToKnownIndividualsList = [
+      'Choose an option',
+      'Low risk',
+      'Medium risk',
+      'High risk',
+      'Very high risk'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['risk-serious-harm-to-known-individuals']
+      }
+    })
+
+    const riskSeriousHarmToChildrenList = [
+      'Choose an option',
+      'Low risk',
+      'Medium risk',
+      'High risk',
+      'Very high risk'
+    ].map(item => {
+      return {
+        value: item,
+        text: item,
+        selected: item === req.session.data['risk-serious-harm-to-children']
+      }
+    })
+
+    res.render(version + '/pre-sentence-report/risk-analysis-alt', {
+      riskSeriousHarmToPublicList,
+      riskSeriousHarmToIntimatePartnersList,
+      riskSeriousHarmToStaffList,
+      riskSeriousHarmToKnownIndividualsList,
+      riskSeriousHarmToChildrenList
+    })
+  });
+
+  router.post('/' + version + '/pre-sentence-report/risk-analysis-alt', function (req, res) {
     const pageAction = req.session.data['pageAction']
 
     if (pageAction == 'saveDraft'){
