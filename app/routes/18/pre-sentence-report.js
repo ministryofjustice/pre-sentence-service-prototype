@@ -216,20 +216,6 @@ module.exports = function (router) {
       }
     })
 
-    const riskSeriousHarmToIntimatePartnersList = [
-      'Choose an option',
-      'Low risk',
-      'Medium risk',
-      'High risk',
-      'Very high risk'
-    ].map(item => {
-      return {
-        value: item,
-        text: item,
-        selected: item === req.session.data['risk-serious-harm-to-intimate-partners']
-      }
-    })
-
     const riskSeriousHarmToStaffList = [
       'Choose an option',
       'Low risk',
@@ -244,7 +230,7 @@ module.exports = function (router) {
       }
     })
 
-    const riskSeriousHarmToKnownIndividualsList = [
+    const riskSeriousHarmToKnownAdultsList = [
       'Choose an option',
       'Low risk',
       'Medium risk',
@@ -274,9 +260,8 @@ module.exports = function (router) {
 
     res.render(version + '/pre-sentence-report/risk-analysis-alt', {
       riskSeriousHarmToPublicList,
-      riskSeriousHarmToIntimatePartnersList,
       riskSeriousHarmToStaffList,
-      riskSeriousHarmToKnownIndividualsList,
+      riskSeriousHarmToKnownAdultsList,
       riskSeriousHarmToChildrenList
     })
   });

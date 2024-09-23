@@ -95,6 +95,16 @@
               </p>
               <div class="govuk-form-group">
                 {{ govukSelect({
+                  id: "risk-serious-harm-to-children",
+                  name: "risk-serious-harm-to-children",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>Risk to children</h3>"
+                  },
+                  items: riskSeriousHarmToChildrenList
+                }) }}
+              </div>
+              <div class="govuk-form-group">
+                {{ govukSelect({
                   id: "risk-serious-harm-to-public",
                   name: "risk-serious-harm-to-public",
                   label: {
@@ -105,12 +115,12 @@
               </div>
               <div class="govuk-form-group">
                 {{ govukSelect({
-                  id: "risk-serious-harm-to-intimate-partners",
-                  name: "risk-serious-harm-to-intimate-partners",
+                  id: "risk-serious-harm-to-known-adults",
+                  name: "risk-serious-harm-to-known-adults",
                   label: {
-                    html: "<h3 class='govuk-heading-m'>Risk to intimate partners</h3>"
+                    html: "<h3 class='govuk-heading-m'>Risk to known adults</h3>"
                   },
-                  items: riskSeriousHarmToIntimatePartnersList
+                  items: riskSeriousHarmToKnownAdultsList
                 }) }}
               </div>
               <div class="govuk-form-group">
@@ -121,26 +131,6 @@
                     html: "<h3 class='govuk-heading-m'>Risk to staff</h3>"
                   },
                   items: riskSeriousHarmToStaffList
-                }) }}
-              </div>
-              <div class="govuk-form-group">
-                {{ govukSelect({
-                  id: "risk-serious-harm-to-known-individuals",
-                  name: "risk-serious-harm-to-known-individuals",
-                  label: {
-                    html: "<h3 class='govuk-heading-m'>Risk to known individuals</h3>"
-                  },
-                  items: riskSeriousHarmToKnownIndividualsList
-                }) }}
-              </div>
-              <div class="govuk-form-group">
-                {{ govukSelect({
-                  id: "risk-serious-harm-to-children",
-                  name: "risk-serious-harm-to-children",
-                  label: {
-                    html: "<h3 class='govuk-heading-m'>Risk to children</h3>"
-                  },
-                  items: riskSeriousHarmToChildrenList
                 }) }}
               </div>
               <div class="govuk-form-group">
