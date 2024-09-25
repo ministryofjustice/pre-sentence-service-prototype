@@ -55,7 +55,7 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('offence-analysis')
     }else {
-      res.redirect('additional-behavioural-factors-and-lifestyle-considerations')
+      res.redirect('behavioural-factors-and-lifestyle-considerations')
     }
   });
 
@@ -87,21 +87,21 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('pattern-of-offending-and-response-to-supervision')
     } else {
-      res.redirect('additional-behavioural-factors-and-lifestyle-considerations')
+      res.redirect('behavioural-factors-and-lifestyle-considerations')
     }
   });
 
-  router.get('/' + version + '/pre-sentence-report/additional-behavioural-factors-and-lifestyle-considerations', function (req, res) {
+  router.get('/' + version + '/pre-sentence-report/behavioural-factors-and-lifestyle-considerations', function (req, res) {
     req.session.data.pageAction = 'false'
 
-    res.render(version + '/pre-sentence-report/additional-behavioural-factors-and-lifestyle-considerations')
+    res.render(version + '/pre-sentence-report/behavioural-factors-and-lifestyle-considerations')
   });
 
-  router.post('/' + version + '/pre-sentence-report/additional-behavioural-factors-and-lifestyle-considerations', function (req, res) {
+  router.post('/' + version + '/pre-sentence-report/behavioural-factors-and-lifestyle-considerations', function (req, res) {
     const pageAction = req.session.data['pageAction']
 
     if (pageAction == 'saveDraft'){
-      res.redirect('additional-behavioural-factors-and-lifestyle-considerations')
+      res.redirect('behavioural-factors-and-lifestyle-considerations')
     } else {
       res.redirect('risk-analysis')
     }
