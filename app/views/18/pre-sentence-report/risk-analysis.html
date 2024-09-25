@@ -17,8 +17,8 @@
                 Offence analysis</a>
             </li>
             <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="additional-behavioural-factors-and-lifestyle-considerations">
-                Additional behaviours and lifestyle considerations</a>
+              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="behavioural-factors-and-lifestyle-considerations">
+                Behaviours factors and lifestyle considerations</a>
             </li>
             <li class="app-subnav__section-item app-subnav__section-item--current">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="risk-analysis">
@@ -63,128 +63,45 @@
                 Risk analysis
               </h1>
               <div class="govuk-form-group">
-                <div class="govuk-warning-text">
-                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                  <strong class="govuk-warning-text__text">
-                    <span class="govuk-visually-hidden">Warning</span>
-                    You must complete both an OASys Layer 1 Assessment, and EPF1
-                    Assessment before this report can be finished.
-                  </strong>
-                </div>
                 <h2 class="govuk-heading-l">
-                  Four step process
+                  Four step process of risk assessment
                 </h2>
-                <p class="govuk-body">The structured framework is a step-by-step
-                  process to help you make a decision about whether someone poses
-                  Low, Medium, High or Very High risk of serious harm. It uses
-                  actuarial risk predictor scores and professional assessment.</p>
-                <p class="govuk-body">Four step process:</p>
+                <p class="govuk-body">
+                  This is a step-by-step process to help you
+                  make a decision about whether someone poses Low, Medium, High
+                  or Very High risk of serious harm. Follow this process by:</p>
                 <ul class="govuk-list govuk-list--number">
-                  <li>Predictors: the level of risk based on the actuarial
-                    assessment and the characteristics that have influences that
-                    risk level</li>
-                  <li>Risk factors and protective factors: the longer-term
-                    influences (positive and negative) on the defendant's
-                    behaviour, and then the more recent influences based on
-                    professional assessment</li>
-                  <li>Immediacy: the current situations regarding the defendant,
-                    their potential victims and circumstances</li>
-                  <li>Assign the risk level: to make a decision about which RoSH
-                    level is appropriate</li>
+                  <li>confirming risk predictors</li>
+                  <li>analysing relevant risk and protective factors</li>
+                  <li>assessing immediacy and likelihood of future offending</li>
+                  <li>assigning the risk level</li>
                 </ul>
               </div>
-              <div class="govuk-form-group">
-                <h2 class="govuk-heading-l" for="defendant-culpability">
-                  Likelihood of reoffending
-                </h2>
-                <div id="defendant-culpability-hint">
-                  <p class="govuk-body">Analyse the nature and likelihood of
-                    reoffending. Focus on key features of circumstances of the
-                    defendant's life, past and present, and explain how they may
-                    influence offending. You should also relate things that have
-                    de-escalated or reduced the frequency of re-offending.</p>
-                  <p class="govuk-body"> Your analysis should be informed by the
-                    completion of the OGRS and RSR tools.</p>
-                </div>
-                <textarea class="govuk-textarea" id="defendant-likelihood-of-reoffending" name="defendant-likelihood-of-reoffending" rows="8" aria-describedby="defendant-likelihood-of-reoffending-hint">{{data['defendant-likelihood-of-reoffending']}}</textarea>
-              </div>
-              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-              <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="risk-of-domestic-abuse-hint">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h2 class="govuk-fieldset__heading">
-                      Is there a risk of domestic abuse?
-                    </h2>
-                  </legend>
-                  <div class="govuk-radios" data-module="govuk-radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="risk-of-domestic-abuse" name="risk-of-domestic-abuse" type="radio" value="Yes, there is a risk of domestic abuse" data-aria-controls="conditional-risk-of-domestic-abuse" {{ checked("risk-of-domestic-abuse", "Yes, there is a risk of domestic abuse") }}>
-                      <label class="govuk-label govuk-radios__label" for="risk-of-domestic-abuse">
-                        Yes
-                      </label>
-                    </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-risk-of-domestic-abuse">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label" for="analyse-risk-of-domestic-abuse">
-                          <h3 class="govuk-heading-m">
-                            Analyse the risk of domestic abuse
-                          </h3>
-                        </label>
-                        <p class="govuk-body">The Spousal Assault Risk
-                          Assessment (SARA) should be completed for all
-                          individuals where there is evidence of domestic abuse,
-                          and OSP for those with a sexual offence.</p>
-                        <textarea class="govuk-textarea" id="analyse-risk-of-domestic-abuse" name="analyse-risk-of-domestic-abuse" rows="8">{{data['analyse-risk-of-domestic-abuse']}}</textarea>
-                      </div>
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="risk-of-domestic-abuse-2" name="risk-of-domestic-abuse" type="radio" value="No risk of domestic abuse" {{ checked("risk-of-domestic-abuse", "No risk of domestic abuse") }}>
-                      <label class="govuk-label govuk-radios__label" for="risk-of-domestic-abuse-2">
-                        No
-                      </label>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-              <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="risk-of-sexual-offence-hint">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h2 class="govuk-fieldset__heading">
-                      Is there a sexual offence element?
-                    </h2>
-                  </legend>
-                  <div class="govuk-radios" data-module="govuk-radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="risk-of-sexual-offence" name="risk-of-sexual-offence" type="radio" value="Yes, there is a sexual offence element" data-aria-controls="conditional-risk-of-sexual-offence" {{ checked("risk-of-sexual-offence", "Yes, there is a sexual offence element") }}>
-                      <label class="govuk-label govuk-radios__label" for="risk-of-sexual-offence">
-                        Yes
-                      </label>
-                    </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-risk-of-sexual-offence">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label" for="analyse-risk-of-sexual-offence">
-                          <h3 class="govuk-heading-m">
-                            Analyse the sexual offence element
-                          </h3>
-                        </label>
-                        <p class="govuk-body">TODO SOME GUIDANCE HERE</p>
-                        <textarea class="govuk-textarea" id="analyse-risk-of-sexual-offence" name="analyse-risk-of-sexual-offence" rows="8">{{data['analyse-risk-of-sexual-offence']}}</textarea>
-                      </div>
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="risk-of-sexual-offence-2" name="risk-of-sexual-offence" type="radio" value="No sexual offence element" {{ checked("risk-of-sexual-offence", "No sexual offence element") }}>
-                      <label class="govuk-label govuk-radios__label" for="risk-of-sexual-offence-2">
-                        No
-                      </label>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
               <h2 class="govuk-heading-l" for="dependant-caring-responsibilities">
-                Risk of serious harm
+                Risk predictors
               </h2>
+              <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-visually-hidden">Warning</span>
+                  You must complete both an OASys Layer 1 Assessment to inform
+                  the the risk predictors.
+                </strong>
+              </div>
+              <p class="govuk-body">
+                <span class="govuk-hint">Enter the risk predictor scores from
+                  OASys</span>
+              </p>
+              <div class="govuk-form-group">
+                {{ govukSelect({
+                  id: "risk-serious-harm-to-children",
+                  name: "risk-serious-harm-to-children",
+                  label: {
+                    html: "<h3 class='govuk-heading-m'>Risk to children</h3>"
+                  },
+                  items: riskSeriousHarmToChildrenList
+                }) }}
+              </div>
               <div class="govuk-form-group">
                 {{ govukSelect({
                   id: "risk-serious-harm-to-public",
@@ -197,12 +114,12 @@
               </div>
               <div class="govuk-form-group">
                 {{ govukSelect({
-                  id: "risk-serious-harm-to-intimate-partners",
-                  name: "risk-serious-harm-to-intimate-partners",
+                  id: "risk-serious-harm-to-known-adults",
+                  name: "risk-serious-harm-to-known-adults",
                   label: {
-                    html: "<h3 class='govuk-heading-m'>Risk to intimate partners</h3>"
+                    html: "<h3 class='govuk-heading-m'>Risk to known adults</h3>"
                   },
-                  items: riskSeriousHarmToIntimatePartnersList
+                  items: riskSeriousHarmToKnownAdultsList
                 }) }}
               </div>
               <div class="govuk-form-group">
@@ -216,33 +133,103 @@
                 }) }}
               </div>
               <div class="govuk-form-group">
-                {{ govukSelect({
-                  id: "risk-serious-harm-to-known-individuals",
-                  name: "risk-serious-harm-to-known-individuals",
-                  label: {
-                    html: "<h3 class='govuk-heading-m'>Risk to known individuals</h3>"
-                  },
-                  items: riskSeriousHarmToKnownIndividualsList
-                }) }}
+                <fieldset class="govuk-fieldset" aria-describedby="risk-of-domestic-abuse-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      Is there evidence of current or past domestic abuse?
+                    </h2>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-of-domestic-abuse" name="risk-of-domestic-abuse" type="radio" value="Yes, there is a risk of domestic abuse" data-aria-controls="conditional-risk-of-domestic-abuse" {{ checked("risk-of-domestic-abuse", "Yes, there is a risk of domestic abuse") }}>
+                      <label class="govuk-label govuk-radios__label" for="risk-of-domestic-abuse">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-risk-of-domestic-abuse">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="analyse-risk-of-domestic-abuse">
+                          <h3 class="govuk-heading-s">Analyse the risk of
+                            domestic abuse</h3>
+                        </label>
+                        <p class="govuk-body">Consider the evidence of current
+                          or past domestic abuse. This includes family
+                          members and current or previous partners.</p>
+                        <p class="govuk-body">Tools such as the SARA (Spousal
+                          Assault Risk Assessment) should be completed for all
+                          individuals where there is evidence of current or past
+                          domestic abuse against a partner.</p>
+                        <textarea class="govuk-textarea" id="analyse-risk-of-domestic-abuse" name="analyse-risk-of-domestic-abuse" rows="8">{{data['analyse-risk-of-domestic-abuse']}}</textarea>
+                      </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-of-domestic-abuse-2" name="risk-of-domestic-abuse" type="radio" value="No risk of domestic abuse" {{ checked("risk-of-domestic-abuse", "No risk of domestic abuse") }}>
+                      <label class="govuk-label govuk-radios__label" for="risk-of-domestic-abuse-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
               </div>
               <div class="govuk-form-group">
-                {{ govukSelect({
-                  id: "risk-serious-harm-to-children",
-                  name: "risk-serious-harm-to-children",
-                  label: {
-                    html: "<h3 class='govuk-heading-m'>Risk to children</h3>"
-                  },
-                  items: riskSeriousHarmToChildrenList
-                }) }}
+                <fieldset class="govuk-fieldset" aria-describedby="risk-of-sexual-offence-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      Is there evidence of current or past sexual offences?
+                    </h2>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-of-sexual-offence" name="risk-of-sexual-offence" type="radio" value="Yes, there is a sexual offence element" data-aria-controls="conditional-risk-of-sexual-offence" {{ checked("risk-of-sexual-offence", "Yes, there is a sexual offence element") }}>
+                      <label class="govuk-label govuk-radios__label" for="risk-of-sexual-offence">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-risk-of-sexual-offence">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="analyse-risk-of-sexual-offence">
+                          <h3 class="govuk-heading-s">
+                            Analyse the risk of sexual offending
+                          </h3>
+                        </label>
+                        <p class="govuk-body">Use the OSP (OASys Sexual
+                          Predictor) as the basis of your risk analysis for
+                          those with a current or past sexual offence. This
+                          includes sexually motivated offences.</p>
+                        <textarea class="govuk-textarea" id="analyse-risk-of-sexual-offence" name="analyse-risk-of-sexual-offence" rows="8">{{data['analyse-risk-of-sexual-offence']}}</textarea>
+                      </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="risk-of-sexual-offence-2" name="risk-of-sexual-offence" type="radio" value="No sexual offence element" {{ checked("risk-of-sexual-offence", "No sexual offence element") }}>
+                      <label class="govuk-label govuk-radios__label" for="risk-of-sexual-offence-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
               </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
               <div class="govuk-form-group">
-                <h3 class="govuk-heading-m" for="defendant-risk-of-serious-harm">
-                  Explain the risk of serious harm</h3>
+                <h3 class="govuk-heading-l" for="defendant-risk-of-serious-harm">
+                  Risk analysis</h3>
                 <div id="defendant-risk-of-serious-harm-hint" class="govuk-hint">
-                  WORDS WE MAY WANT TO USE
+                  <p class="govuk-body"><span class="govuk-hint">Using
+                    your understanding of the individual risk factors in this
+                    case, construct a risk analysis based on:</span></p>
+                  <ul class="govuk-list govuk-list--bullet govuk-hint">
+                    <li>the longer-term influences (positive and negative) on
+                      the defendant's behaviour, and then the more recent
+                      influences based on professional assessment</li>
+                    <li>the defendant's circumstances both past and present and
+                      how this may influence offending</li>
+                    <li>the potential impact on victims</li>
+                    <li>a decision about which RoSH (Risk of Serious Harm) level
+                      is appropriate</li>
+                  </ul>
                 </div>
-                <textarea class="govuk-textarea" id="defendant-risk-of-serious-harm" name="defendant-risk-of-serious-harm" rows="8" aria-describedby="defendant-risk-of-serious-harm-hint" >{{data['defendant-risk-of-serious-harm']}}</textarea>
+                <textarea class="govuk-textarea govuk-!-margin-top-6" id="defendant-risk-of-serious-harm" name="defendant-risk-of-serious-harm" rows="14" aria-describedby="defendant-risk-of-serious-harm-hint" >{{data['defendant-risk-of-serious-harm']}}</textarea>
               </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
               <div class="govuk-button-group">
                 <button class="govuk-button" data-module="govuk-button">
                   Save and continue

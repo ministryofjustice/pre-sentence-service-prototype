@@ -55,7 +55,7 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('offence-analysis')
     }else {
-      res.redirect('additional-behavioural-factors-and-lifestyle-considerations')
+      res.redirect('behavioural-factors-and-lifestyle-considerations')
     }
   });
 
@@ -87,21 +87,21 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('pattern-of-offending-and-response-to-supervision')
     } else {
-      res.redirect('additional-behavioural-factors-and-lifestyle-considerations')
+      res.redirect('behavioural-factors-and-lifestyle-considerations')
     }
   });
 
-  router.get('/' + version + '/pre-sentence-report/additional-behavioural-factors-and-lifestyle-considerations', function (req, res) {
+  router.get('/' + version + '/pre-sentence-report/behavioural-factors-and-lifestyle-considerations', function (req, res) {
     req.session.data.pageAction = 'false'
 
-    res.render(version + '/pre-sentence-report/additional-behavioural-factors-and-lifestyle-considerations')
+    res.render(version + '/pre-sentence-report/behavioural-factors-and-lifestyle-considerations')
   });
 
-  router.post('/' + version + '/pre-sentence-report/additional-behavioural-factors-and-lifestyle-considerations', function (req, res) {
+  router.post('/' + version + '/pre-sentence-report/behavioural-factors-and-lifestyle-considerations', function (req, res) {
     const pageAction = req.session.data['pageAction']
 
     if (pageAction == 'saveDraft'){
-      res.redirect('additional-behavioural-factors-and-lifestyle-considerations')
+      res.redirect('behavioural-factors-and-lifestyle-considerations')
     } else {
       res.redirect('risk-analysis')
     }
@@ -124,20 +124,6 @@ module.exports = function (router) {
       }
     })
 
-    const riskSeriousHarmToIntimatePartnersList = [
-      'Choose an option',
-      'Low risk',
-      'Medium risk',
-      'High risk',
-      'Very high risk'
-    ].map(item => {
-      return {
-        value: item,
-        text: item,
-        selected: item === req.session.data['risk-serious-harm-to-intimate-partners']
-      }
-    })
-
     const riskSeriousHarmToStaffList = [
       'Choose an option',
       'Low risk',
@@ -152,7 +138,7 @@ module.exports = function (router) {
       }
     })
 
-    const riskSeriousHarmToKnownIndividualsList = [
+    const riskSeriousHarmToKnownAdultsList = [
       'Choose an option',
       'Low risk',
       'Medium risk',
@@ -182,106 +168,13 @@ module.exports = function (router) {
 
     res.render(version + '/pre-sentence-report/risk-analysis', {
       riskSeriousHarmToPublicList,
-      riskSeriousHarmToIntimatePartnersList,
       riskSeriousHarmToStaffList,
-      riskSeriousHarmToKnownIndividualsList,
+      riskSeriousHarmToKnownAdultsList,
       riskSeriousHarmToChildrenList
     })
   });
 
   router.post('/' + version + '/pre-sentence-report/risk-analysis', function (req, res) {
-    const pageAction = req.session.data['pageAction']
-
-    if (pageAction == 'saveDraft'){
-      res.redirect('risk-analysis')
-    } else {
-      res.redirect('sentencing-proposal')
-    }
-  });
-
-  router.get('/' + version + '/pre-sentence-report/risk-analysis-alt', function (req, res) {
-    req.session.data.pageAction = 'false'
-
-    const riskSeriousHarmToPublicList = [
-      'Choose an option',
-      'Low risk',
-      'Medium risk',
-      'High risk',
-      'Very high risk'
-    ].map(item => {
-      return {
-        value: item,
-        text: item,
-        selected: item === req.session.data['risk-serious-harm-to-public']
-      }
-    })
-
-    const riskSeriousHarmToIntimatePartnersList = [
-      'Choose an option',
-      'Low risk',
-      'Medium risk',
-      'High risk',
-      'Very high risk'
-    ].map(item => {
-      return {
-        value: item,
-        text: item,
-        selected: item === req.session.data['risk-serious-harm-to-intimate-partners']
-      }
-    })
-
-    const riskSeriousHarmToStaffList = [
-      'Choose an option',
-      'Low risk',
-      'Medium risk',
-      'High risk',
-      'Very high risk'
-    ].map(item => {
-      return {
-        value: item,
-        text: item,
-        selected: item === req.session.data['risk-serious-harm-to-intimate-partners']
-      }
-    })
-
-    const riskSeriousHarmToKnownIndividualsList = [
-      'Choose an option',
-      'Low risk',
-      'Medium risk',
-      'High risk',
-      'Very high risk'
-    ].map(item => {
-      return {
-        value: item,
-        text: item,
-        selected: item === req.session.data['risk-serious-harm-to-known-individuals']
-      }
-    })
-
-    const riskSeriousHarmToChildrenList = [
-      'Choose an option',
-      'Low risk',
-      'Medium risk',
-      'High risk',
-      'Very high risk'
-    ].map(item => {
-      return {
-        value: item,
-        text: item,
-        selected: item === req.session.data['risk-serious-harm-to-children']
-      }
-    })
-
-    res.render(version + '/pre-sentence-report/risk-analysis-alt', {
-      riskSeriousHarmToPublicList,
-      riskSeriousHarmToIntimatePartnersList,
-      riskSeriousHarmToStaffList,
-      riskSeriousHarmToKnownIndividualsList,
-      riskSeriousHarmToChildrenList
-    })
-  });
-
-  router.post('/' + version + '/pre-sentence-report/risk-analysis-alt', function (req, res) {
     const pageAction = req.session.data['pageAction']
 
     if (pageAction == 'saveDraft'){
