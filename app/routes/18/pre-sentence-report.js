@@ -212,26 +212,9 @@ module.exports = function (router) {
     if (pageAction == 'saveDraft'){
       res.redirect('sources-of-information')
     } else {
-      res.redirect('summary-page')
-    }
-  });
-
-  router.get('/' + version + '/pre-sentence-report/summary-page', function (req, res) {
-    req.session.data.pageAction = 'false'
-
-    res.render(version + '/pre-sentence-report/summary-page')
-  });
-
-  router.post('/' + version + '/pre-sentence-report/summary-page', function (req, res) {
-    const pageAction = req.session.data['pageAction']
-
-    if (pageAction == 'saveDraft'){
-      res.redirect('summary-page')
-    } else {
       res.redirect('preview-report')
     }
   });
-
 
   router.get('/' + version + '/pre-sentence-report/preview-report', function (req, res) {
     req.session.data.pageAction = 'false'
