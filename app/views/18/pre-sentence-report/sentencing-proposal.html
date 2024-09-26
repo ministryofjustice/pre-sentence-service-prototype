@@ -18,7 +18,7 @@
             </li>
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="behavioural-factors-and-lifestyle-considerations">
-                Behaviours factors and lifestyle considerations</a>
+                Behavioural factors and lifestyle considerations</a>
             </li>
             <li class="app-subnav__section-item">
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="risk-analysis">
@@ -60,24 +60,6 @@
           <h1 class="govuk-heading-xl">
             Sentencing proposal
           </h1>
-          <details class="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Help with the sentencing proposal
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <p class="govuk-body">You may want to discuss the:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>offence analysis</li>
-                <li>summary of additional life factors</li>
-                <li>risks this person poses</li>
-                <li>other potential sentencing options, and why you
-                  have not proposed these first</li>
-                <li>impact of custody</li>
-              </ul>
-            </div>
-          </details>
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
               <div class="govuk-form-group">
@@ -96,9 +78,24 @@
               <div class="govuk-form-group">
                 <h2 class="govuk-label-wrapper">
                   <label class="govuk-label govuk-label--l" for="why-best-outcome">
-                    Why will this result in the best outcome?
-                  </label>
+                    Explain your rationale for the proposed sentence</label>
                 </h2>
+                <details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help with explaining your rationale
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">You need to consider the information
+                      contained within the following pages:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>offence analysis</li>
+                      <li>behavioural factors and lifestyle considerations</li>
+                      <li>risk analysis</li>
+                    </ul>
+                  </div>
+                </details>
                 <textarea class="govuk-textarea" id="why-best-outcome" name="why-best-outcome" rows="12">{{data['why-best-outcome']}}</textarea>
               </div>
             </div>
@@ -109,10 +106,12 @@
               <div class="govuk-form-group">
                 <h2 class="govuk-label-wrapper">
                   <label class="govuk-label govuk-label--l" for="custodial-sentencing-component">
-                    What is your recommendation for a custodial sentencing
-                    component and why is that relevant?
+                    What impact would a custodial sentence have?
                   </label>
                 </h2>
+                <p class="govuk-body govuk-hint">Alongside any relevant factors
+                  you may want to consider the impact on the defendant's family
+                  (including dependents) and managing risk.</p>
                 <textarea class="govuk-textarea" id="custodial-sentencing-component" name="custodial-sentencing-component" rows="4">{{data['custodial-sentencing-component']}}</textarea>
               </div>
             </div>
@@ -123,11 +122,13 @@
               <div class="govuk-form-group">
                 <h2 class="govuk-label-wrapper">
                   <label class="govuk-label govuk-label--l" for="alternative-sentencing-options">
-                    What alternative sentencing options are there and what
-                    outcomes do we think should not be considered?
+                    Alternative sentencing options
                   </label>
                 </h2>
-                <textarea class="govuk-textarea" id="alternative-sentencing-options" name="alternative-sentencing-options" rows="12">{{data['alternative-sentencing-options']}}</textarea>
+                <p class="govuk-body govuk-hint">Explain what alternative
+                  sentencing options have been considered but not included in
+                  your sentencing proposal.</p>
+                <textarea class="govuk-textarea" id="alternative-sentencing-options" name="alternative-sentencing-options" rows="10">{{data['alternative-sentencing-options']}}</textarea>
               </div>
             </div>
           </div>
