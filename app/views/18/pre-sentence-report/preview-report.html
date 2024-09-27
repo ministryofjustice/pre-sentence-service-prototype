@@ -312,29 +312,7 @@
                             </tr>
                             <tr class="govuk-table__row">
                               <td class="govuk-table__cell">
-                                Theft of a motor vehicle <br/>
-                                <a class="govuk-link" href="defendant-details">
-                                  Change <span class="govuk-visually-hidden">
-                                    offences</span></a>
-                              </td>
-                              <td class="govuk-table__cell">
-                                12 July 2024
-                              </td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <td class="govuk-table__cell">
-                                Theft from a motor vehicle <br/>
-                                <a class="govuk-link" href="defendant-details">
-                                  Change <span class="govuk-visually-hidden">
-                                    offences</span></a>
-                              </td>
-                              <td class="govuk-table__cell">
-                                12 July 2024
-                              </td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <td class="govuk-table__cell">
-                                Theft <br/>
+                                S18 Wounding with intent <br/>
                                 <a class="govuk-link" href="defendant-details">
                                   Change <span class="govuk-visually-hidden">
                                     offences</span></a>
@@ -352,28 +330,84 @@
                       <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-l report-heading--purple">
                           Full proposal</h2>
-                        <p class="govuk-body">{{data['proposed-sentence']}}</p>
+                          {% if (data['proposed-sentence']) %}
+                            <p class="govuk-body">{{data['proposed-sentence']}}</p>
+                          {% else %}
+                            <p class="govuk-body">A custodial sentence is the
+                              proposal of this report.</p>
+                          {% endif %}
                       </div>
                     </div>
                     <div class="govuk-grid-row">
                       <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-m report-heading--purple">
                           Why this will result in the best outcome</h2>
-                        <p class="govuk-body">{{data['why-best-outcome']}}</p>
+                        {% if (data['proposed-sentence']) %}
+                          <p class="govuk-body">{{data['why-best-outcome']}}</p>
+                        {% else %}
+                          <p class="govuk-body">After consideration of the
+                            Sentencing Guidelines and due to the serious nature
+                            of the offence, it is recognised that a custodial
+                            sentence is the most likely sentencing outcome.
+                            There are concerns about the risk of serious harm Mr
+                            T presents at this time, should he be released into
+                            the community. A period of imprisonment would serve
+                            to protect the public and future victims for its
+                            duration, whilst also allowing Mr T the time to
+                            reflect on his behaviour and engage in interventions
+                            to reduce the risk factors in this case.</p>
+                        {% endif %}
                       </div>
                     </div>
                     <div class="govuk-grid-row">
                       <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-m report-heading--purple">
                           Custodial component</h2>
-                        <p class="govuk-body">{{data['custodial-sentencing-component']}}</p>
+                        {% if (data['custodial-sentencing-component']) %}
+                          <p class="govuk-body">{{data['custodial-sentencing-component']}}</p>
+                        {% else %}
+                          <p class="govuk-body">Mr T is current remanded in
+                            custody and this marks his first experience of the
+                            custodial setting. He appears to be coping with his
+                            current situation. Whilst Mr T clearly does not
+                            welcome the thought of a custodial sentence, he
+                            accepts it is a consequence of his behaviour and he
+                            is prepared for this outcome. There is no notable
+                            impact on others as the result of a custodial
+                            sentence being imposed.</p>
+                        {% endif %}
                       </div>
                     </div>
                     <div class="govuk-grid-row">
                       <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-m report-heading--purple">
                           Alternative sentencing options</h2>
-                        <p class="govuk-body">{{data['alternative-sentencing-options']}}</p>
+                        {% if (data['alternative-sentencing-options']) %}
+                          <p class="govuk-body">{{data['alternative-sentencing-options']}}</p>
+                        {% else %}
+                          <p class="govuk-body">In the event the Court wish to
+                            step away from the imposition of an immediate
+                            custodial sentence, consideration has been given to
+                            community based requirements.</p>
+                          <p class="govuk-body">Mr T is an indvudal who would
+                            benefit from structured intervention to address his
+                            use of violence and emotional management, delivered
+                            via a Rehabilitation activity Requirement (RAR).
+                            He is also suitable for an Alcohol Treatment
+                            Requirement (ATR), which would allow him to
+                            opportunity to address his alcohol dependency. I am
+                            mindful he has previous been afforded the
+                            opportunity to address his alcohol misuse with an
+                            ATR in 2022, however this was without success.</p>
+                          <p class="govuk-body">Mr T is physically fit enough to
+                            undertake unpaid work and whilst this would serve as
+                            a clear punishment, it would do little to address
+                            the risk factors in this case.</p>
+                          <p class="govuk-body">Mr T is physically fit enough to
+                            undertake unpaid work and whilst this would serve as
+                            a clear punishment, it would do little to address
+                            the risk factors in this case.</p>
+                        {% endif %}
                       </div>
                     </div>
                     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -603,35 +637,7 @@
                             </tr>
                             <tr class="govuk-table__row">
                               <td class="govuk-table__cell">
-                                Theft of a motor vehicle <br/>
-                                <a class="govuk-link" href="defendant-details">
-                                  Change <span class="govuk-visually-hidden">
-                                    offences</span></a>
-                              </td>
-                              <td class="govuk-table__cell">
-                                12 July 2024
-                              </td>
-                              <td class="govuk-table__cell">
-                                Not guilty
-                              </td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <td class="govuk-table__cell">
-                                Theft from a motor vehicle <br/>
-                                <a class="govuk-link" href="defendant-details">
-                                  Change <span class="govuk-visually-hidden">
-                                    offences</span></a>
-                              </td>
-                              <td class="govuk-table__cell">
-                                12 July 2024
-                              </td>
-                              <td class="govuk-table__cell">
-                                Not guilty
-                              </td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <td class="govuk-table__cell">
-                                Theft <br/>
+                                S18 Wounding with intent <br/>
                                 <a class="govuk-link" href="defendant-details">
                                   Change <span class="govuk-visually-hidden">
                                     offences</span></a>
@@ -651,14 +657,116 @@
                       <div class="govuk-grid-column-full">
                         <h3 class="govuk-heading-m report-heading--purple">
                           Analysis of offences</h3>
-                        <p class="govuk-body">{{data['summary-of-offences']}}</p>
+                        {% if(data['summary-of-offences']) %}
+                          <p class="govuk-body">{{data['summary-of-offences']}}</p>
+                        {% else %}
+                        <p class="govuk-body">The victim of this offence was an
+                          adult male, previously unknown to Mr T. CPS
+                          documentation outlines that there was a verbal
+                          dispute, over what was described as a "trivial matter",
+                          between the victim, Mr T and his group of friends
+                          earlier in the evening when they were all in a
+                          nightclub. Mr T. and his four friends left the
+                          nightclub in the early hours and saw the victim, alone,
+                          in a local takeaway. The victim goes on to describe a
+                          sudden blow to his head, which was caused by Mr T
+                          hitting him to the head with a glass bottle, after
+                          which he lost consciousness. Witness accounts state
+                          that Mr T then launched into a "frenzied attack"
+                          kicking and stamping on the victim's head whilst he
+                          was on the floor. The victim received injuries
+                          involving a fractured skull, a bleed to the brain and
+                          a laceration to his forehead, caused by the bottle,
+                          which required several stitches. Due to the nature
+                          of the injuries caused, medical professionals note
+                          that the longer term prognosis for the victim is
+                          unclear at this stage.</p>
+                        <p class="govuk-body">Mr T pleaded guilty to the offence
+                          of S18 Wounding on the day his Trial was due to start.
+                          When discussing the offence with Mr T his acceptance
+                          of responsibility appeared limited at times and he
+                          appeared to minimise his involvement in certain
+                          aspects, for example he claims he kicked the victim
+                          "just the once" to the head and that in fact it was
+                          his associate that also became involved and continued
+                          the assault, including stamping on the victim. At this
+                          stage Mr T is the only individual who has been charged
+                          with an offence in relation to this incident.</p>
+                        <p class="govuk-body">It is to his credit that he
+                          presented with what appeared to be genuine remorse for
+                          the victim and commented that no one deserved to
+                          received injuries like the victim did. Whilst he was
+                          again clear to point out he was not the only one
+                          responsible for the harm cause, therefore minimising
+                          the extent of his involvement he does recognise that
+                          kicking, punching and stamping to the head can
+                          ultimately cause fatal injury.</p>
+                        <p class="govuk-body">The influence of alcohol and Mr
+                          T's choice of associates, who were described in
+                          witness statements as "egging him on", are likely to
+                          be factors that play a part in involvement in the
+                          offences. This is not the first occasion Mr T has
+                          appeared before the Court for offences of violence and
+                          there are concerns about his emotional management and
+                          use of violence to gain control over situations where
+                          he perceives potential conflict.</p>
+                        {% endif %}
                       </div>
                     </div>
                     <div class="govuk-grid-row">
                       <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-m report-heading--purple">
                           Pattern of offending and response to supervision</h2>
-                        <p class="govuk-body">{{data['pattern-of-offending-and-response-to-supervision']}}</p>
+                        {% if(data['summary-of-offences']) %}
+                          <p class="govuk-body">{{data['pattern-of-offending-and-response-to-supervision']}}</p>
+                        {% else %}
+                          <p class="govuk-body">Mr T's previous offending
+                            behaviour is of significance to the matters before
+                            the Court today, although the current offence does
+                            mark a clear escalation in seriousness. He is an
+                            individual, who, since being a young adult has been
+                            involved in violent or threatening behaviour that
+                            has brought him to the attention of the Court on
+                            seven occasions. Probation Service records and
+                            previous risk assessments indicate that his previous
+                            offending has involved similar circumstances, where
+                            Mr T has perceived a situation of potential conflict
+                            and reacted in a violent or threatening manner and
+                            has on occasions caused damage to property. He has
+                            offended on his own and whilst on the company of
+                            others. The victims of his previous offending have
+                            been members of the public, who have witnessed
+                            his threatening and aggressive behaviour or adult
+                            male strangers. Mr T was under the influence of
+                            alcohol when the current offence took place and
+                            Probation Records and risk assessments identify
+                            alcohol misuse as a factor that has featured
+                            consistently in his previous offending.</p>
+                          <p class="govuk-body">
+                            Mr T has been dealt with using a variety of
+                            sanctions, involving punitive and rehabilitative
+                            requirements and is generally complaint with Orders
+                            imposed by the Court. In 2019 he completed an
+                            offending behaviour programme which addressed the
+                            use of instrumental violence, however, he was then
+                            convicted of a further offence of violence in 2022.
+                            For this offence of S47 Assault (victim was a
+                            stranger) and he was subject to an 24 month SSO with
+                            20 RAR, a 12 month Alcohol Treatment Requirement and
+                            a 3 month Electronically Monitored curfew
+                            requirement. Whilst he was compliant in terms of
+                            attending appointments with his offender manager and
+                            with alcohol services, there were concerns noted by
+                            his Offender Manager at regarding 'superficial'
+                            engagement and that he may not have always been
+                            entirely truthful regarding his alcohol use and
+                            lifestyle and associates, which were all factors
+                            linked to his risk of re-offending and serious harm
+                            at the time. Indeed, these risk factors continue to
+                            prevail in the current offence, which would indicate
+                            the previous Order had limited positive impact on
+                            Mr T.</p>
+                        {% endif %}
                       </div>
                     </div>
                   </div>
@@ -873,8 +981,60 @@
                     <div class="govuk-grid-row">
                       <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-l report-heading--purple govuk-!-static-padding-top-5">
-                          Additional behaviours and lifestyle considerations</h2>
-                        <p class="govuk-body">{{data['behavioural-factors-and-lifestyle-considerations']}}</p>
+                          Behavioural factors and lifestyle considerations</h2>
+                        {% if(data['behavioural-factors-and-lifestyle-considerations']) %}
+                          <p class="govuk-body">{{data['behavioural-factors-and-lifestyle-considerations']}}</p>
+                        {% else %}
+                          <p class="govuk-body">Mr T reports an unsettled
+                            accommodation history and at the time of the current
+                            offence was 'sofa surfing' between friends addresses.
+                            Until early 2024, he did have his own local
+                            authority tenancy, however, rent arrears and alleged
+                            anti-social behaviour resulted in his eviction from
+                            this address. Mr T states that he has been in
+                            contact with accommodation services whilst remanded
+                            in custody, however, at this stage he has no
+                            identified address which he could reside at and will
+                            likely return to a friends address.</p>
+                          <p class="govuk-body">Alcohol misuse is a key feature
+                            of Mr T's lifestyle and harmful offending behaviour,
+                            both past and current. Prior to his remand into
+                            custody he described the daily consumption of
+                            alcohol, however, from discussion he appeared to
+                            have limited insight into the influence alcohol may
+                            have on his behaviour and perception of situations.
+                            Mr T's alcohol misuse was also referenced as part of
+                            the alleged anti social behaviour, which ultimately
+                            resulted in him losing his address. Contact with
+                            community alcohol services confirms that Mr T has
+                            had intermittent contact with their services over
+                            the last five years, most recently, in March 2024
+                            requesting help trying to secure a detox and
+                            rehabilitation placement. Efforts were made to
+                            start this process, however, his remand into custody
+                            has since halted this.</p>
+                          <p class="govuk-body">Mr T does have one child, aged
+                            three years of age, who resides with his mother.
+                            Contact with children's services confirms that there
+                            has been previous involvement with the family and
+                            there remains concern about Mr T having contact with
+                            the child due to his alcohol misuse, which impacts
+                            on his ability to care for and safeguard the child.
+                            Mr T commented that he does want to have contact
+                            with his son, however, he struggled to recognise the
+                            safeguarding concerns that have been raised and
+                            considers them to be an "overreaction".</p>
+                          <p class="govuk-body">Mr T states he has a limited
+                            employment history, with him last working as a
+                            groundworker in 2022. He spoke positively about the
+                            structure employment brings to his lifestyle and
+                            that when unemployed he largely just spends time
+                            with his friends and lacks constructive activity,
+                            which often leads on to him consuming alcohol. Mr T
+                            described limited contact with his family, for
+                            reasons not disclosed, and relies on is friends for
+                            the majority of his support.</p>
+                        {% endif %}
                       </div>
                     </div>
                     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -1101,7 +1261,11 @@
                               <th scope="row" class="govuk-table__header">
                                 Public:</th>
                               <td class="govuk-table__cell">
-                                {{data['risk-serious-harm-to-public']}}
+                                {% if(data['risk-serious-harm-to-public']) %}
+                                  {{data['risk-serious-harm-to-public']}}
+                                {% else %}
+                                  High
+                                {% endif %}
                               </td>
                               <td class="govuk-table__cell">
                                 <a class="govuk-link" href="defendant-details">
@@ -1111,7 +1275,11 @@
                               <th scope="row" class="govuk-table__header">
                                 Intimate partners:</th>
                               <td class="govuk-table__cell">
-                                {{data['risk-serious-harm-to-intimate-partners']}}
+                                {% if(data['risk-serious-harm-to-intimate-partners']) %}
+                                  {{data['risk-serious-harm-to-intimate-partners']}}
+                                {% else %}
+                                  Low
+                                {% endif %}
                               </td>
                               <td class="govuk-table__cell">
                                 <a class="govuk-link" href="defendant-details">
@@ -1121,7 +1289,11 @@
                               <th scope="row" class="govuk-table__header">
                                 Staff:</th>
                               <td class="govuk-table__cell">
-                                {{data['risk-serious-harm-to-staff']}}
+                                {% if(data['risk-serious-harm-to-staff']) %}
+                                  {{data['risk-serious-harm-to-staff']}}
+                                {% else %}
+                                  Low
+                                {% endif %}
                               </td>
                               <td class="govuk-table__cell">
                                 <a class="govuk-link" href="defendant-details">
@@ -1133,7 +1305,11 @@
                               <th scope="row" class="govuk-table__header">
                                 Known individuals:</th>
                               <td class="govuk-table__cell">
-                                {{data['risk-serious-harm-to-known-individuals']}}
+                                {% if(data['risk-serious-harm-to-known-individuals']) %}
+                                  {{data['risk-serious-harm-to-known-individuals']}}
+                                {% else %}
+                                  Low
+                                {% endif %}
                               </td>
                               <td class="govuk-table__cell">
                                 <a class="govuk-link" href="defendant-details">
@@ -1143,7 +1319,11 @@
                               <th scope="row" class="govuk-table__header">
                                 Children:</th>
                               <td class="govuk-table__cell">
-                                {{data['risk-serious-harm-to-children']}}
+                                {% if(data['risk-serious-harm-to-children']) %}
+                                  {{data['risk-serious-harm-to-children']}}
+                                {% else %}
+                                  Low
+                                {% endif %}
                               </td>
                               <td class="govuk-table__cell">
                                 <a class="govuk-link" href="defendant-details">
@@ -1153,15 +1333,75 @@
                             </tr>
                           </tbody>
                         </table>
-                        <h3 class="govuk-heading-m report-heading--purple">
-                          Likelihood of reoffending</h3>
-                        <p class="govuk-body">{{data['defendant-likelihood-of-reoffending']}}</p>
-                        <h3 class="govuk-heading-m report-heading--purple">
-                          Risk of domestic abuse</h3>
-                        <p class="govuk-body">{{data['analyse-risk-of-domestic-abuse']}}</p>
-                        <h3 class="govuk-heading-m report-heading--purple">
-                          Risk of serious harm analysis</h3>
-                        <p class="govuk-body">{{data['defendant-risk-of-serious-harm']}}</p>
+                        <div class="govuk-form-group">
+                          <h3 class="govuk-heading-m report-heading--purple">
+                            Likelihood of reoffending</h3>
+                          <p class="govuk-body">{{data['defendant-likelihood-of-reoffending']}}</p>
+                        </div>
+                        <div class="govuk-form-group">
+                          <h3 class="govuk-heading-m report-heading--purple">
+                            Risk of domestic abuse</h3>
+                          {% if(data['analyse-risk-of-domestic-abuse']) %}
+                            <p class="govuk-body">{{data['analyse-risk-of-domestic-abuse']}}</p>
+                          {% else %}
+                          <p class="govuk-body">No, risk of domestic abuse</p>
+                          {% endif %}
+                        </div>
+                        <div class="govuk-form-group">
+                          <h3 class="govuk-heading-m report-heading--purple">
+                            Risk of sexual offending</h3>
+                          {% if(data['risk-of-sexual-offence']) %}
+                            <p class="govuk-body">{{data['risk-of-sexual-offence']}}</p>
+                          {% else %}
+                          <p class="govuk-body">No, risk of sexual offence</p>
+                          {% endif %}
+                        </div>
+                        <div class="govuk-form-group">
+                          <h3 class="govuk-heading-m report-heading--purple">
+                            Risk analysis</h3>
+                          {% if(data['defendant-risk-of-serious-harm']) %}
+                            <p class="govuk-body">{{data['defendant-risk-of-serious-harm']}}</p>
+                          {% else %}
+                            <p class="govuk-body">Mr T is assessed as a high
+                              risk of serious harm to the public, specifically
+                              individuals who he may come into perceived
+                              conflict with. The nature of the harm is serious
+                              physical injury, in which weapons may be used.</p>
+                            <p class="govuk-body">Mr T is an individual with an
+                              established pattern of threatening and violent
+                              offending behaviour. There are concerns regarding
+                              his emotional management, loss of temper and use
+                              of violence when he perceives there to be a
+                              situation of potential conflict. The current
+                              victim received serious injury as the result of
+                              extreme violence, in which a weapon was used, as
+                              well as kicks, punches and stamping to the head.
+                              The assault was unprovoked and this follows a
+                              pattern with his previous violent behaviour, which
+                              largely appears to be impulsive and difficult to
+                              predict. His choice of lifestyle and associates
+                              and the influence of alcohol are also key factors
+                              linked to his harmful offending behaviour.</p>
+                            <p class="govuk-body">At the time of the offence Mr
+                              T gave no consideration to the potential impact of
+                              his violent behaviour on the victim or himself. He
+                              is an individual with few, if any, protective
+                              factors in place. Mr T does present as remorseful,
+                              however, until he addresses the issues underlying
+                              his use of serious violence and surrounding
+                              factors, such as alcohol use and lifestyle choices,
+                              there remains a real risk of him causing serious
+                              harm to others.</p>
+                            <p class="govuk-body">There are no identified risk
+                              of serious harm concerns against children, known
+                              adults or staff. However, there are potential
+                              child safeguarding concerns detailed earlier in
+                              this report, which require ongoing monitoring. In
+                              the event Mr T has contact with his child without
+                              the consent of the local authority, risk of harm
+                              assessments should be reviewed accordingly.</p>
+                          {% endif %}
+                        </div>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                       </div>
                     </div>
